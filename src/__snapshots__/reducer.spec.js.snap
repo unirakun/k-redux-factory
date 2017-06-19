@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducer should add element [elm4] 1`] = `
+Object {
+  "datas": Object {
+    "elm1": Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    "elm2": Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+    "elm3": Object {
+      "code": "elm3",
+      "infos": "elm3",
+      "some": "other",
+    },
+    "elm4": Object {
+      "code": "elm4",
+      "infos": "elm4",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    "elm2",
+    "elm1",
+    "elm3",
+    "elm4",
+  ],
+  "nb": 4,
+}
+`;
+
+exports[`reducer should delete element [elm1] 1`] = `
+Object {
+  "datas": Object {
+    "elm2": Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+    "elm3": Object {
+      "code": "elm3",
+      "infos": "elm3",
+      "some": "other",
+    },
+  },
+  "keys": Array [
+    "elm2",
+    "elm3",
+  ],
+  "nb": 2,
+}
+`;
+
+exports[`reducer should initialize 1`] = `
+Object {
+  "datas": Object {},
+  "initialized": false,
+  "keys": Array [],
+  "nb": 0,
+}
+`;
+
+exports[`reducer should reset state 1`] = `
+Object {
+  "datas": Object {},
+  "initialized": false,
+  "keys": Array [],
+  "nb": 0,
+}
+`;
+
+exports[`reducer should set elements [elm1,elm2] 1`] = `
+Object {
+  "datas": Object {
+    "elm1": Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    "elm2": Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    "elm1",
+    "elm2",
+  ],
+  "nb": 2,
+}
+`;

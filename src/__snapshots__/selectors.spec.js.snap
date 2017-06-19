@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`selectors should retrieve data by id, with a single key 1`] = `
+Object {
+  "code": "elm3",
+  "infos": "elm3",
+  "some": "other",
+}
+`;
+
+exports[`selectors should retrieve data by ids, with an array 1`] = `
+Array [
+  Object {
+    "code": "elm1",
+    "infos": "elm1",
+    "some": "other",
+  },
+  Object {
+    "code": "elm3",
+    "infos": "elm3",
+    "some": "other",
+  },
+]
+`;
+
+exports[`selectors should retrieve datas 1`] = `
+Object {
+  "elm1": Object {
+    "code": "elm1",
+    "infos": "elm1",
+    "some": "other",
+  },
+  "elm2": Object {
+    "code": "elm2",
+    "infos": "elm2",
+    "some": "other",
+  },
+  "elm3": Object {
+    "code": "elm3",
+    "infos": "elm3",
+    "some": "other",
+  },
+}
+`;
+
+exports[`selectors should retrieve initialized value 1`] = `true`;
+
+exports[`selectors should retrieve keys 1`] = `
+Array [
+  "elm2",
+  "elm1",
+  "elm3",
+]
+`;
+
+exports[`selectors should retrieve nb 1`] = `3`;
+
+exports[`selectors should retrieve state 1`] = `
+Object {
+  "datas": Object {
+    "elm1": Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    "elm2": Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+    "elm3": Object {
+      "code": "elm3",
+      "infos": "elm3",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    "elm2",
+    "elm1",
+    "elm3",
+  ],
+  "nb": 3,
+}
+`;
+
+exports[`selectors should retrieve state, without path set 1`] = `
+Object {
+  "datas": Object {
+    "elm1": Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    "elm2": Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+    "elm3": Object {
+      "code": "elm3",
+      "infos": "elm3",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    "elm2",
+    "elm1",
+    "elm3",
+  ],
+  "nb": 3,
+}
+`;
