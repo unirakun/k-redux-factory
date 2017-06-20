@@ -19,9 +19,11 @@ export default key => prefix =>
           datas: { ...state.datas, [payload[key]]: payload },
           keys: uniq([...state.keys, payload[key]]),
           nb: state.keys.length + 1,
+          initialized: true,
         }
       case DEL(prefix):
         return {
+          ...state,
           datas: omit(state.datas, [payload]),
           keys: without(state.keys, payload),
           nb: state.keys.length - 1,

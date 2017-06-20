@@ -22,6 +22,7 @@ Object {
       "some": "information 2",
     },
   },
+  "initialized": true,
   "keys": Array [
     1,
     2,
@@ -69,6 +70,7 @@ Object {
       "some": "information 2",
     },
   },
+  "initialized": true,
   "keys": Array [
     1,
     2,

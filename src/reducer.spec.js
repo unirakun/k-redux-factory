@@ -12,7 +12,7 @@ const state = {
   },
   keys: ['elm2', 'elm1', 'elm3'],
   nb: 3,
-  initialized: true,
+  initialized: false,
 }
 
 describe('reducer', () => {

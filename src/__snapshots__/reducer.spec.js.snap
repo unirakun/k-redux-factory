@@ -49,6 +49,7 @@ Object {
       "some": "other",
     },
   },
+  "initialized": false,
   "keys": Array [
     "elm2",
     "elm3",
