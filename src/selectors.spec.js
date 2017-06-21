@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { getKeys, getNb, getState, getDatas, isInitialized, getByIds } from './selectors'
+import { getKeys, getNb, getState, get, isInitialized } from './selectors'
 
 const Element = code => ({ code, some: 'other', infos: code })
 
@@ -30,8 +30,8 @@ describe('selectors', () => {
   it('should retrieve state, without path set', () => expect(getState()(prefix)(subState)).toMatchSnapshot())
   it('should retrieve keys', () => expect(getKeys(path)(prefix)(state)).toMatchSnapshot())
   it('should retrieve nb', () => expect(getNb(path)(prefix)(state)).toMatchSnapshot())
-  it('should retrieve datas', () => expect(getDatas(path)(prefix)(state)).toMatchSnapshot())
   it('should retrieve initialized value', () => expect(isInitialized(path)(prefix)(state)).toMatchSnapshot())
-  it('should retrieve data by ids, with an array', () => expect(getByIds(path)(prefix)(state)(['elm1', 'elm3'])).toMatchSnapshot())
-  it('should retrieve data by id, with a single key', () => expect(getByIds(path)(prefix)(state)('elm3')).toMatchSnapshot())
+  it('should retrieve all datas, without key', () => expect(get(path)(prefix)(state)()).toMatchSnapshot())
+  it('should retrieve data by ids, with an array of keys', () => expect(get(path)(prefix)(state)(['elm1', 'elm3'])).toMatchSnapshot())
+  it('should retrieve data by id, with a single key', () => expect(get(path)(prefix)(state)('elm3')).toMatchSnapshot())
 })
