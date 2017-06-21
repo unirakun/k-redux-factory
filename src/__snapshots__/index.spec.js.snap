@@ -12,6 +12,7 @@ Object {
 
 exports[`index with path should prefix reducer 1`] = `
 Object {
+  "array": Array [],
   "datas": Object {
     "1": Object {
       "id": 1,
@@ -60,6 +61,7 @@ Object {
 
 exports[`index without path should prefix reducer 1`] = `
 Object {
+  "array": Array [],
   "datas": Object {
     "1": Object {
       "id": 1,
