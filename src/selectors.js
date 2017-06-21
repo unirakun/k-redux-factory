@@ -14,10 +14,11 @@ export const isInitialized = getFactory('initialized')
 
 const getDatas = getFactory('datas')
 export const get = path => prefix => state => (keys) => {
+  const getAll = getDatas(path)(prefix)(state)
   // All datas
-  if (!keys) return getDatas()
+  if (!keys) return getAll
   // By keys
-  if (Array.isArray(keys)) return keys.map(k => getDatas(path)(prefix)(state)[k])
+  if (Array.isArray(keys)) return keys.map(k => getAll[k])
   // By key
-  return getDatas(path)(prefix)(state)[keys]
+  return getAll[keys]
 }

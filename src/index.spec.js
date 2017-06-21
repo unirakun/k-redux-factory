@@ -17,7 +17,7 @@ const subState = {
 describe('index', () => {
   const test = (reducer, state) => {
     it('should prefix actions', () => expect(reducer.add(Todo(2))).toMatchSnapshot())
-    it('should prefix selectors', () => expect(reducer.get(state)).toMatchSnapshot())
+    it('should prefix selectors', () => expect(reducer.get(state)()).toMatchSnapshot())
     it('should prefix reducer', () => expect(reducer(subState, reducer.del(20))).toMatchSnapshot())
   }
 

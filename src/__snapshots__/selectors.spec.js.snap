@@ -1,6 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`selectors should retrieve all datas, without key 1`] = `[Function]`;
+exports[`selectors should retrieve all datas, without key 1`] = `
+Object {
+  "elm1": Object {
+    "code": "elm1",
+    "infos": "elm1",
+    "some": "other",
+  },
+  "elm2": Object {
+    "code": "elm2",
+    "infos": "elm2",
+    "some": "other",
+  },
+  "elm3": Object {
+    "code": "elm3",
+    "infos": "elm3",
+    "some": "other",
+  },
+}
+`;
 
 exports[`selectors should retrieve data by id, with a single key 1`] = `
 Object {

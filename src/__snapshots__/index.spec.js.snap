@@ -31,7 +31,22 @@ Object {
 }
 `;
 
-exports[`index with path should prefix selectors 1`] = `[Function]`;
+exports[`index with path should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
 
 exports[`index without path should prefix actions 1`] = `
 Object {
@@ -64,4 +79,19 @@ Object {
 }
 `;
 
-exports[`index without path should prefix selectors 1`] = `[Function]`;
+exports[`index without path should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
