@@ -1,4 +1,4 @@
-import { keyBy, without, uniq, omit, filter } from 'lodash'
+import { keyBy, without, uniq, omit } from 'lodash'
 import { SET, ADD, DEL, RESET } from './actions'
 
 export const initState = { datas: {}, keys: [], nb: 0, initialized: false }
@@ -28,7 +28,7 @@ export default key => prefix =>
           ...state,
           datas: omit(state.datas, [payload]),
           keys: without(state.keys, payload),
-          array: filter(state.array, o => o[key] !== payload),
+          array: state.array ? state.array.filter(o => o[key] !== payload) : [],
           nb: state.keys.length - 1,
         }
       case RESET(prefix):
