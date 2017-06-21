@@ -13,7 +13,7 @@ export const getNb = getFactory('nb')
 export const isInitialized = getFactory('initialized')
 
 const getDatas = getFactory('datas')
-export const get = path => prefix => state => (keys) => {
+export const get = path => prefix => keys => (state) => {
   const getAll = getDatas(path)(prefix)(state)
   // All datas
   if (!keys) return getAll
