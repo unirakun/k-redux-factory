@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`actions should trigger a del action 1`] = `
+Object {
+  "payload": "del",
+  "type": "DEL_testPrefix",
+}
+`;
+
+exports[`actions should trigger a reset action 1`] = `
+Object {
+  "type": "RESET_testPrefix",
+}
+`;
+
+exports[`actions should trigger a set action 1`] = `
+Object {
+  "payload": Array [
+    Object {
+      "an": "element_set1",
+      "code": "set1",
+    },
+    Object {
+      "an": "element_set2",
+      "code": "set2",
+    },
+  ],
+  "type": "SET_testPrefix",
+}
+`;
+
+exports[`actions should trigger an add action 1`] = `
+Object {
+  "payload": Object {
+    "an": "element_add",
+    "code": "add",
+  },
+  "type": "ADD_testPrefix",
+}
+`;
