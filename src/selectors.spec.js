@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { getKeys, getNb, getState, get, isInitialized } from './selectors'
+import { getKeys, getNb, getState, get, getAsArray, isInitialized } from './selectors'
 
 const Element = code => ({ code, some: 'other', infos: code })
 
@@ -13,6 +13,7 @@ const subState = {
       elm3: Element('elm3'),
     },
     keys: ['elm2', 'elm1', 'elm3'],
+    array: [Element('elm2'), Element('elm1'), Element('elm3')],
     nb: 3,
     initialized: true,
   },
@@ -34,4 +35,5 @@ describe('selectors', () => {
   it('should retrieve all datas, without key', () => expect(get(path)(prefix)()(state)).toMatchSnapshot())
   it('should retrieve data by ids, with an array of keys', () => expect(get(path)(prefix)(['elm1', 'elm3'])(state)).toMatchSnapshot())
   it('should retrieve data by id, with a single key', () => expect(get(path)(prefix)('elm3')(state)).toMatchSnapshot())
+  it('should retrieve all datas, without key to array', () => expect(getAsArray(path)(prefix)(state)).toMatchSnapshot())
 })

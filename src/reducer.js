@@ -10,6 +10,7 @@ export default key => prefix =>
         return {
           datas: keyBy(payload, key),
           keys: payload.map(element => element[key]),
+          array: payload,
           nb: payload.length,
           initialized: true,
         }
@@ -18,6 +19,7 @@ export default key => prefix =>
           ...state,
           datas: { ...state.datas, [payload[key]]: payload },
           keys: uniq([...state.keys, payload[key]]),
+          array: [...state.array, payload],
           nb: state.keys.length + 1,
           initialized: true,
         }
@@ -26,6 +28,7 @@ export default key => prefix =>
           ...state,
           datas: omit(state.datas, [payload]),
           keys: without(state.keys, payload),
+          array: state.array ? state.array.filter(o => o[key] !== payload) : [],
           nb: state.keys.length - 1,
         }
       case RESET(prefix):

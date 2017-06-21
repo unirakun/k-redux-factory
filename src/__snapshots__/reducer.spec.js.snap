@@ -2,6 +2,28 @@
 
 exports[`reducer should add element [elm4] 1`] = `
 Object {
+  "array": Array [
+    Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+    Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    Object {
+      "code": "elm3",
+      "infos": "elm3",
+      "some": "other",
+    },
+    Object {
+      "code": "elm4",
+      "infos": "elm4",
+      "some": "other",
+    },
+  ],
   "datas": Object {
     "elm1": Object {
       "code": "elm1",
@@ -37,6 +59,18 @@ Object {
 
 exports[`reducer should delete element [elm1] 1`] = `
 Object {
+  "array": Array [
+    Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+    Object {
+      "code": "elm3",
+      "infos": "elm3",
+      "some": "other",
+    },
+  ],
   "datas": Object {
     "elm2": Object {
       "code": "elm2",
@@ -78,6 +112,18 @@ Object {
 
 exports[`reducer should set elements [elm1,elm2] 1`] = `
 Object {
+  "array": Array [
+    Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+  ],
   "datas": Object {
     "elm1": Object {
       "code": "elm1",
