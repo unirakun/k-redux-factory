@@ -1,7 +1,7 @@
 import { keyBy, without, uniq, omit } from 'lodash'
 import { SET, ADD, DEL, RESET } from './actions'
 
-export const initState = { datas: {}, keys: [], array:[], nb: 0, initialized: false }
+export const initState = { datas: {}, keys: [], array: [], nb: 0, initialized: false }
 
 export default key => prefix =>
   (state = initState, { type = 'UNKONWN', payload } = {}) => {
