@@ -7,7 +7,7 @@ const path = 'api.raw'
 const prefix = 'testPrefix'
 const subState = {
   testPrefix: {
-    datas: {
+    data: {
       elm2: Element('elm2'),
       elm1: Element('elm1'),
       elm3: Element('elm3'),

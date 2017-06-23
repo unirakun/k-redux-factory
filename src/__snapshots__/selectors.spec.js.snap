@@ -94,7 +94,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "elm1": Object {
       "code": "elm1",
       "infos": "elm1",
@@ -140,7 +140,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "elm1": Object {
       "code": "elm1",
       "infos": "elm1",
