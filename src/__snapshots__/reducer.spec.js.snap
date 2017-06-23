@@ -25,13 +25,6 @@ Object {
     },
   ],
   "data": Object {
-    "elm4": Object {
-      "code": "elm4",
-      "infos": "elm4",
-      "some": "other",
-    },
-  },
-  "datas": Object {
     "elm1": Object {
       "code": "elm1",
       "infos": "elm1",
@@ -45,6 +38,11 @@ Object {
     "elm3": Object {
       "code": "elm3",
       "infos": "elm3",
+      "some": "other",
+    },
+    "elm4": Object {
+      "code": "elm4",
+      "infos": "elm4",
       "some": "other",
     },
   },
@@ -97,13 +95,7 @@ Object {
       "some": "other",
     },
   ],
-  "data": Object {},
-  "datas": Object {
-    "elm1": Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
+  "data": Object {
     "elm2": Object {
       "code": "elm2",
       "infos": "elm2",
