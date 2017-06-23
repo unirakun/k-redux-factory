@@ -57,6 +57,30 @@ Object {
 }
 `;
 
+exports[`reducer should add element [elm4] on initial store 1`] = `
+Object {
+  "array": Array [
+    Object {
+      "code": "elm4",
+      "infos": "elm4",
+      "some": "other",
+    },
+  ],
+  "datas": Object {
+    "elm4": Object {
+      "code": "elm4",
+      "infos": "elm4",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    "elm4",
+  ],
+  "nb": 1,
+}
+`;
+
 exports[`reducer should delete element [elm1] 1`] = `
 Object {
   "array": Array [
@@ -94,6 +118,7 @@ Object {
 
 exports[`reducer should initialize 1`] = `
 Object {
+  "array": Array [],
   "datas": Object {},
   "initialized": false,
   "keys": Array [],
@@ -103,6 +128,7 @@ Object {
 
 exports[`reducer should reset state 1`] = `
 Object {
+  "array": Array [],
   "datas": Object {},
   "initialized": false,
   "keys": Array [],
