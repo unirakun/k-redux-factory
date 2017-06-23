@@ -35,4 +35,11 @@ describe('index', () => {
   describe('without path', () => {
     test(factory('id')()('todos'), { todos: subState })
   })
+
+  describe('with id generator', () => {
+    test(factory('id', keys => keys[keys.length] + 1)()('todos'), { todos: subState })
+  })
+  describe('with id generator and default value to start', () => {
+    test(factory('id', (keys, start) => (keys.length < 1 ? start : keys[keys.length] + 1))()('todos'), { todos: subState })
+  })
 })

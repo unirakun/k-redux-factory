@@ -23,4 +23,3 @@ export const get = path => prefix => keys => (state) => {
   // By key
   return datas[keys]
 }
-

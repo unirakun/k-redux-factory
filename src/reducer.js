@@ -1,28 +1,33 @@
 import { keyBy, without, uniq, omit } from 'lodash'
 import { SET, ADD, DEL, RESET } from './actions'
+import generateId from './utils'
 
 export const initState = { datas: {}, keys: [], array: [], nb: 0, initialized: false }
 
-export default key => prefix =>
+export default (key, getNextId, start) => prefix =>
   (state = initState, { type = 'UNKONWN', payload } = {}) => {
     switch (type) {
-      case SET(prefix):
+      case SET(prefix): {
+        const p = generateId(payload)(key)(state.keys)(getNextId, start)
         return {
-          datas: keyBy(payload, key),
-          keys: payload.map(element => element[key]),
-          array: payload,
-          nb: payload.length,
+          datas: keyBy(p, key),
+          keys: p.map(element => element[key]),
+          array: p,
+          nb: p.length,
           initialized: true,
         }
-      case ADD(prefix):
+      }
+      case ADD(prefix): {
+        const p = generateId(payload)(key)(state.keys)(getNextId, start)
         return {
           ...state,
-          datas: { ...state.datas, [payload[key]]: payload },
-          keys: uniq([...state.keys, payload[key]]),
-          array: [...state.array, payload],
+          datas: { ...state.datas, [p[key]]: p },
+          keys: uniq([...state.keys, p[key]]),
+          array: [...state.array, p],
           nb: state.keys.length + 1,
           initialized: true,
         }
+      }
       case DEL(prefix):
         return {
           ...state,
