@@ -24,3 +24,9 @@ export const get = path => prefix => keys => (state) => {
   return datas[keys]
 }
 
+export const getBy = path => prefix => (propertyPath, values) => (state) => {
+  const data = getAsArray(path)(prefix)(state)
+  if (!data) return []
+  if (Array.isArray(values)) return data.filter(d => values.includes(at(d, propertyPath)[0]))
+  return data.filter(d => values === at(d, propertyPath)[0])
+}
