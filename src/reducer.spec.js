@@ -5,7 +5,7 @@ import reducer, { initState } from './reducer'
 const prefix = 'testPrefix'
 const Element = code => ({ code, some: 'other', infos: code })
 const state = {
-  datas: {
+  data: {
     elm2: Element('elm2'),
     elm1: Element('elm1'),
     elm3: Element('elm3'),
