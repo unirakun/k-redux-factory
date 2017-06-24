@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`selectors should retrieve all datas, without key 1`] = `
+exports[`selectors should retrieve all data, without key 1`] = `
 Object {
   "elm1": Object {
     "code": "elm1",
@@ -20,7 +20,7 @@ Object {
 }
 `;
 
-exports[`selectors should retrieve all datas, without key to array 1`] = `
+exports[`selectors should retrieve all data, without key to array 1`] = `
 Array [
   Object {
     "code": "elm2",
@@ -94,7 +94,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "elm1": Object {
       "code": "elm1",
       "infos": "elm1",
@@ -140,7 +140,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "elm1": Object {
       "code": "elm1",
       "infos": "elm1",
