@@ -24,22 +24,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
-    "elm1": Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    "elm2": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    "elm3": Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
+  "data": Object {
     "elm31": Object {
       "code": "elm31",
       "infos": "elmWithoutCode",
@@ -81,22 +66,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
-    "elm1": Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    "elm2": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    "elm3": Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
+  "data": Object {
     "elm4": Object {
       "code": "elm4",
       "infos": "elm4",
@@ -123,7 +93,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "elm4": Object {
       "code": "elm4",
       "infos": "elm4",
@@ -162,22 +132,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
-    "elm1": Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    "elm2": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    "elm3": Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
+  "data": Object {
     "elm4": Object {
       "code": "elm4",
       "infos": "elm4",
@@ -209,7 +164,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "elm2": Object {
       "code": "elm2",
       "infos": "elm2",
@@ -233,7 +188,7 @@ Object {
 exports[`reducer should initialize 1`] = `
 Object {
   "array": Array [],
-  "datas": Object {},
+  "data": Object {},
   "initialized": false,
   "keys": Array [],
   "nb": 0,
@@ -243,7 +198,7 @@ Object {
 exports[`reducer should reset state 1`] = `
 Object {
   "array": Array [],
-  "datas": Object {},
+  "data": Object {},
   "initialized": false,
   "keys": Array [],
   "nb": 0,
@@ -264,7 +219,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "elm1": Object {
       "code": "elm1",
       "infos": "elm1",
@@ -299,7 +254,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "elm1": Object {
       "code": "elm1",
       "infos": "elm1",
@@ -334,7 +289,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "elm1": Object {
       "code": "elm1",
       "infos": "elm1",
@@ -369,7 +324,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "elm1": Object {
       "code": "elm1",
       "infos": "elm12",
@@ -402,7 +357,7 @@ Object {
       "some": "other",
     },
   ],
-  "datas": Object {
+  "data": Object {
     "undefined": Object {
       "infos": "elm13",
       "some": "other",

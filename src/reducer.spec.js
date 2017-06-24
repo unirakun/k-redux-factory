@@ -6,7 +6,7 @@ const prefix = 'testPrefix'
 const ElementWithoutCode = code => ({ some: 'other', infos: code })
 const Element = code => ({ ...ElementWithoutCode(code), code })
 const state = {
-  datas: {
+  data: {
     elm2: Element('elm2'),
     elm1: Element('elm1'),
     elm3: Element('elm3'),

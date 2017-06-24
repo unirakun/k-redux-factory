@@ -13,7 +13,7 @@ Object {
 exports[`index with id generator and default value to start should prefix reducer 1`] = `
 Object {
   "array": Array [],
-  "datas": Object {
+  "data": Object {
     "1": Object {
       "id": 1,
       "some": "information 1",
@@ -62,7 +62,7 @@ Object {
 exports[`index with id generator should prefix reducer 1`] = `
 Object {
   "array": Array [],
-  "datas": Object {
+  "data": Object {
     "1": Object {
       "id": 1,
       "some": "information 1",
@@ -111,7 +111,7 @@ Object {
 exports[`index with path should prefix reducer 1`] = `
 Object {
   "array": Array [],
-  "datas": Object {
+  "data": Object {
     "1": Object {
       "id": 1,
       "some": "information 1",
@@ -160,7 +160,7 @@ Object {
 exports[`index without path should prefix reducer 1`] = `
 Object {
   "array": Array [],
-  "datas": Object {
+  "data": Object {
     "1": Object {
       "id": 1,
       "some": "information 1",

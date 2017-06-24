@@ -4,7 +4,7 @@ import factory from './index'
 const Todo = id => ({ id, some: `information ${id}` })
 
 const subState = {
-  datas: {
+  data: {
     1: Todo(1),
     20: Todo(20),
     2: Todo(2),
