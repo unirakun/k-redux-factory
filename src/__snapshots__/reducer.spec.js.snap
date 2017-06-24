@@ -1,5 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`reducer should add element [elm] with getNextId 1`] = `
+Object {
+  "array": Array [
+    Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+    Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    Object {
+      "code": "elm3",
+      "infos": "elm3",
+      "some": "other",
+    },
+    Object {
+      "code": "elm31",
+      "infos": "elmWithoutCode",
+      "some": "other",
+    },
+  ],
+  "data": Object {
+    "elm31": Object {
+      "code": "elm31",
+      "infos": "elmWithoutCode",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    "elm2",
+    "elm1",
+    "elm3",
+    "elm31",
+  ],
+  "nb": 4,
+}
+`;
+
 exports[`reducer should add element [elm4] 1`] = `
 Object {
   "array": Array [
@@ -25,21 +67,6 @@ Object {
     },
   ],
   "data": Object {
-    "elm1": Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    "elm2": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    "elm3": Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
     "elm4": Object {
       "code": "elm4",
       "infos": "elm4",
@@ -78,6 +105,48 @@ Object {
     "elm4",
   ],
   "nb": 1,
+}
+`;
+
+exports[`reducer should add element [elm4] with getNextId 1`] = `
+Object {
+  "array": Array [
+    Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+    Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    Object {
+      "code": "elm3",
+      "infos": "elm3",
+      "some": "other",
+    },
+    Object {
+      "code": "elm4",
+      "infos": "elm4",
+      "some": "other",
+    },
+  ],
+  "data": Object {
+    "elm4": Object {
+      "code": "elm4",
+      "infos": "elm4",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    "elm2",
+    "elm1",
+    "elm3",
+    "elm4",
+  ],
+  "nb": 4,
 }
 `;
 
@@ -166,6 +235,138 @@ Object {
   "keys": Array [
     "elm1",
     "elm2",
+  ],
+  "nb": 2,
+}
+`;
+
+exports[`reducer should set elements [elm1,elm2] with initState 1`] = `
+Object {
+  "array": Array [
+    Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+  ],
+  "data": Object {
+    "elm1": Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    "elm2": Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    "elm1",
+    "elm2",
+  ],
+  "nb": 2,
+}
+`;
+
+exports[`reducer should set elements [elm1,elm2] without code and initState 1`] = `
+Object {
+  "array": Array [
+    Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    Object {
+      "code": "elm11",
+      "infos": "elm2",
+      "some": "other",
+    },
+  ],
+  "data": Object {
+    "elm1": Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+    },
+    "elm11": Object {
+      "code": "elm11",
+      "infos": "elm2",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    "elm1",
+    "elm11",
+  ],
+  "nb": 2,
+}
+`;
+
+exports[`reducer should set elements [elm12,elm13] without code 1`] = `
+Object {
+  "array": Array [
+    Object {
+      "code": "elm1",
+      "infos": "elm12",
+      "some": "other",
+    },
+    Object {
+      "code": "elm11",
+      "infos": "elm13",
+      "some": "other",
+    },
+  ],
+  "data": Object {
+    "elm1": Object {
+      "code": "elm1",
+      "infos": "elm12",
+      "some": "other",
+    },
+    "elm11": Object {
+      "code": "elm11",
+      "infos": "elm13",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    "elm1",
+    "elm11",
+  ],
+  "nb": 2,
+}
+`;
+
+exports[`reducer should set elements [elm12,elm13] without nextId and code 1`] = `
+Object {
+  "array": Array [
+    Object {
+      "infos": "elm12",
+      "some": "other",
+    },
+    Object {
+      "infos": "elm13",
+      "some": "other",
+    },
+  ],
+  "data": Object {
+    "undefined": Object {
+      "infos": "elm13",
+      "some": "other",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    undefined,
+    undefined,
   ],
   "nb": 2,
 }
