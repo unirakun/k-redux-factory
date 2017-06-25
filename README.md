@@ -23,6 +23,10 @@ Using `redux-saga` make our Redux code base simpler : it's like a key/value stor
 To avoid growing Redux code base, and to avoid inconsistency, and pain maintenability, we created this lightweight library (<4Kb) that is a factory of reducers, actions and selectors.
 
 ## API
+* [factory](#factory)
+* [actions](#actions)
+* [selectors](#selectors)
+
 ### factory
 You need to use the factory to get a new set of reducer/actions/selectors :
 ```es6
