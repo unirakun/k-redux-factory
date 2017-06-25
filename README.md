@@ -5,6 +5,12 @@ Factory of Redux reducers and their associated actions and selectors.
 
 [![CircleCI](https://circleci.com/gh/Trampss/trampss-redux-data-store.svg?style=shield)](https://circleci.com/gh/Trampss/trampss-redux-data-store) [![Coverage Status](https://coveralls.io/repos/github/Trampss/trampss-redux-data-store/badge.svg?branch=master)](https://coveralls.io/github/Trampss/trampss-redux-data-store?branch=master) [![NPM Version](https://badge.fury.io/js/trampss-redux-data-store.svg)](https://www.npmjs.com/package/trampss-redux-data-store)
 
+## Contents
+ - [Purpose](#purpose)
+ - [Why](#why)
+ - [Installation](#installation)
+ - [API](#api)
+
 ## Purpose
 `trampss-redux-data-store` generates generic reducers, actions and selectors in two lines.
 
@@ -22,10 +28,22 @@ Using `redux-saga` make our Redux code base simpler : it's like a key/value stor
 
 To avoid growing Redux code base, and to avoid inconsistency, and pain maintenability, we created this lightweight library (<4Kb) that is a factory of reducers, actions and selectors.
 
+## Installation
+ - `yarn add trampss-redux-data-store`
+ - `npm i trampss-redux-data-store``
+
+### peer dependency
+ - `lodash` : we use the minimum of lodash function trying to have a lightweight webpack bundle.
+   - `keyBy`
+   - `without`
+   - `uniq`
+   - `omit`
+   - `at`
+
 ## API
-* [factory](#factory)
-* [actions](#actions)
-* [selectors](#selectors)
+ - [factory](#factory)
+ - [actions](#actions)
+ - [selectors](#selectors)
 
 ### factory
 You need to use the factory to get a new set of reducer/actions/selectors :
