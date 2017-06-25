@@ -6,21 +6,21 @@ Factory of Redux reducers and their associated actions and selectors.
 [![CircleCI](https://circleci.com/gh/Trampss/trampss-redux-data-store.svg?style=shield)](https://circleci.com/gh/Trampss/trampss-redux-data-store) [![Coverage Status](https://coveralls.io/repos/github/Trampss/trampss-redux-data-store/badge.svg?branch=master)](https://coveralls.io/github/Trampss/trampss-redux-data-store?branch=master) [![NPM Version](https://badge.fury.io/js/trampss-redux-data-store.svg)](https://www.npmjs.com/package/trampss-redux-data-store)
 
 ## Purpose
-`trampss-redux-data-store` generates generics reducers, actions and selectors in two line.
+`trampss-redux-data-store` generates generic reducers, actions and selectors in two lines.
 
 ```es6
 import factory from 'trampss-redux-data-store'
 export default factory('id')('api')('todos')
 ```
-That's it, you exported a function that is a reducer to include in a Redux `combineReducer`.
+That's it, you exported a function wich is a reducer to include in a Redux `combineReducer`.
 The exported function also have actions and selectors ! Easy.
 
-In this example, we have a `todos` reducers, it has to be combined into `state.api.todos`
+In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`
 
 ## Why
-By using `redux-saga` our Redux code base was simpler every day : it is almost a key/value store right now. But we had plenty of duplicate code (each of our ressource has its reducers, its actions, its selectors).
+Using `redux-saga` make our Redux code base simpler : it's like a key/value store. But one drawback is the amount of duplicate code, each ressource has its reducers, actions and selectors.
 
-To avoid growing Redux code base, and to avoid inconsistency, and pain maintenability, we created this little library that is a factory of reducers, actions and selectors.
+To avoid growing Redux code base, and to avoid inconsistency, and pain maintenability, we created this lightweight library (<4Kb) that is a factory of reducers, actions and selectors.
 
 ## API
 ### factory
@@ -33,7 +33,7 @@ This factory takes three parameters :
  - **first**, the field used to identify your objects (`id` for example)
    - you have to set this parameter.
  - **second**, where the reducer will be combined via `combineReducer`
-   - you can leave it empty: the reducer is to the root of the Reduc state
+   - you can leave it empty: the reducer is to the root of the Redux state
    - you can use dot notation, like `api.raw`: your reducer will be combined into `state.api.raw.<your_reducer>`
  - **third**, the reducer name (for instance: `todos`)
    - it's used to generate actions types
@@ -42,17 +42,17 @@ This factory takes three parameters :
 Example:
  - this reducer will use `id` as key field
  - it's combined into `state.api.raw`
- - it's name is `todos`
+ - its name is `todos`
 ```es6
 import factory from 'trampss-redux-data-store'
 // factory(fieldKey)(path)(name)
 export default factory('id')('api.raw')('todos')
 ```
 
-Datas will be into `state.api.raw.todos`
+Data will be stored into `state.api.raw.todos`
 
 ### reducer
-Previous factory returns a function that is a reducer.
+Previous factory returns a function which is a reducer.
 You just have to combine it like any other reducer :
 ```es6
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
@@ -80,7 +80,7 @@ export default store
 
 ### actions
 The factory returns a reducer (function). It also contains actions and selectors as fields.
-We have created some generics actions. By now, this is not possible to add yours.
+We have created some generic actions. By now, this is not possible to add yours.
 
 Actions are:
  - `set` : set an array of instances of your ressource
@@ -112,7 +112,7 @@ dispatch(
   // set todos
   todos.set([
     {
-      id: '1', // we setted 'id' as key in the factory
+      id: '1', // we set 'id' as key in the factory
       visible: true,
       label: 'My first todo',
     },
@@ -132,22 +132,22 @@ The factory returns a reducer (function). It also contains actions and selectors
 We have created some generics selectors. By now, this is not possible to add yours.
 
 Selectors are:
- - `get(<id>)(state)`: returns all datas, or specific(s) one(s) (by key(s))
+ - `get(<id>)(state)`: returns all data, or specific(s) one(s) (by key(s))
    - if `<id>` is `undefined`, it returns all data
-   - if `<id>` is an array, it returns all instance that have their `id` into the array
-   - in other cases, it returns the instance with its id that equal the parameter
- - `getBy(<propertyPath>, <value>)(state)`: get datas specified by the field you want to filter with (take care, selectors are not memoized)
-   - Example: `getBy('visible', true)(state)` returns all todos that are visibles
- - `getKeys(state)`: returns all stores keys (in array)
+   - if `<id>` is an array, it returns all instances that have their `id` into the array
+   - in other cases, it returns the instance with its `id` that equal the parameter
+ - `getBy(<propertyPath>, <value>)(state)`: get data specified by the field you want to filter with (take care, selectors are not memoized)
+   - Example: `getBy('visible', true)(state)` returns all visible todos.
+ - `getKeys(state)`: returns all store keys (in array)
  - `getAsArray(state)`: returns all data in array (raw)
  - `getNb(state)`:  returns number of stored instances
  - `isInitialized(state)`: return true if the store is initialized (by `add` or by `set` action)
- - `getState(state)`: returns the global state of you reducer, containing:
+ - `getState(state)`: returns the global state of your reducer, containing:
    - `data`: key/value store
    - `array`: raw data
    - `keys`: keys array
    - `nb`: number of instances
-   - `initialized`: boolean (setted to true by `set` and `add` actions)
+   - `initialized`: boolean (set to true by `set` and `add` actions)
 
 Example, we retrieve the todo with id `1`:
 ```es6
