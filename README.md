@@ -4,6 +4,7 @@ Factory of Redux reducers and their associated actions and selectors.
 > Make your Redux code base tinier and simpler to maintain
 
 [![CircleCI](https://circleci.com/gh/Trampss/trampss-redux-factory.svg?style=shield)](https://circleci.com/gh/Trampss/trampss-redux-factory) [![Coverage Status](https://coveralls.io/repos/github/Trampss/trampss-redux-factory/badge.svg?branch=master)](https://coveralls.io/github/Trampss/trampss-redux-factory?branch=master) [![NPM Version](https://badge.fury.io/js/trampss-redux-factory.svg)](https://www.npmjs.com/package/trampss-redux-factory)
+[![Size](http://img.badgesize.io/Trampss/trampss-redux-factory/master/index.js.svg)]()
 
 ## Contents
  - [Purpose](#purpose)
@@ -26,7 +27,7 @@ In this example, we have a `todos` reducer, it has to be combined into `state.ap
 We like to write Redux code as simple as possible and use its middlewares to handle real world problems.
 From this point of view, our Redux code base simpler : it's like a key/value store. But one drawback is the amount of duplicated code, each resource has its own reducers, actions and selectors.
 
-To avoid Redux code base from growing, inconsistency and lowering maintainability, we created this lightweight library (<4Kb) that is a factory of reducers, actions and selectors.
+To avoid Redux code base from growing, inconsistency and lowering maintainability, we created this lightweight library that is a factory of reducers, actions and selectors.
 
 ## Installation
  - `yarn add trampss-redux-factory`
