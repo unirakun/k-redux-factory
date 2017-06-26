@@ -16,7 +16,7 @@ Factory of Redux reducers and their associated actions and selectors.
 
 ```es6
 import factory from 'trampss-redux-data-store'
-export default factory('id')('api')('todos')
+export default factory(/* middlewares */)('id')('api')('todos')
 ```
 That's it, you exported a reducer function you can register thanks to combinerReducer in Redux.
 
@@ -51,7 +51,8 @@ You need to use the factory to get a new set of reducer/actions/selectors :
 import factory from 'trampss-redux-data-store'
 ```
 
-This factory takes three parameters `factory(fieldKey)(path)(name)`:
+This factory takes four parameters `factory(middlewares)(fieldKey)(path)(name)`:
+ - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware.
  - **fieldKey** (mandatory), the field used to identify your objects (`id` for example)
    - you have to set this parameter.
  - **path** (optional), where the reducer will be combined via `combineReducer`
@@ -68,7 +69,7 @@ Example:
 ```es6
 import factory from 'trampss-redux-data-store'
 // factory(fieldKey)(path)(name)
-export default factory('id')('api.raw')('todos')
+export default factory()('id')('api.raw')('todos')
 ```
 
 Data will be stored into `state.api.raw.todos`
