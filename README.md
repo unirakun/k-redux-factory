@@ -1,9 +1,9 @@
-# trampss-redux-data-store
+# trampss-redux-factory
 
 Factory of Redux reducers and their associated actions and selectors.
 > Make your Redux code base tinier and simpler to maintain
 
-[![CircleCI](https://circleci.com/gh/Trampss/trampss-redux-data-store.svg?style=shield)](https://circleci.com/gh/Trampss/trampss-redux-data-store) [![Coverage Status](https://coveralls.io/repos/github/Trampss/trampss-redux-data-store/badge.svg?branch=master)](https://coveralls.io/github/Trampss/trampss-redux-data-store?branch=master) [![NPM Version](https://badge.fury.io/js/trampss-redux-data-store.svg)](https://www.npmjs.com/package/trampss-redux-data-store)
+[![CircleCI](https://circleci.com/gh/Trampss/trampss-redux-factory.svg?style=shield)](https://circleci.com/gh/Trampss/trampss-redux-factory) [![Coverage Status](https://coveralls.io/repos/github/Trampss/trampss-redux-factory/badge.svg?branch=master)](https://coveralls.io/github/Trampss/trampss-redux-factory?branch=master) [![NPM Version](https://badge.fury.io/js/trampss-redux-factory.svg)](https://www.npmjs.com/package/trampss-redux-factory)
 
 ## Contents
  - [Purpose](#purpose)
@@ -12,10 +12,10 @@ Factory of Redux reducers and their associated actions and selectors.
  - [API](#api)
 
 ## Purpose
-`trampss-redux-data-store` creates generic reducers, actions and selectors in two lines.
+`trampss-redux-factory` creates generic reducers, actions and selectors in two lines.
 
 ```es6
-import factory from 'trampss-redux-data-store'
+import factory from 'trampss-redux-factory'
 export default factory(/* middlewares */)('id')('api')('todos')
 ```
 That's it, you exported a reducer function you can register thanks to combinerReducer in Redux.
@@ -29,8 +29,8 @@ From this point of view, our Redux code base simpler : it's like a key/value sto
 To avoid Redux code base from growing, inconsistency and lowering maintainability, we created this lightweight library (<4Kb) that is a factory of reducers, actions and selectors.
 
 ## Installation
- - `yarn add trampss-redux-data-store`
- - `npm i trampss-redux-data-store`
+ - `yarn add trampss-redux-factory`
+ - `npm i trampss-redux-factory`
 
 ### peer dependency
  - `lodash` : we use the minimum of lodash function trying to have a lightweight webpack bundle.
@@ -48,7 +48,7 @@ To avoid Redux code base from growing, inconsistency and lowering maintainabilit
 ### factory
 You need to use the factory to get a new set of reducer/actions/selectors :
 ```es6
-import factory from 'trampss-redux-data-store'
+import factory from 'trampss-redux-factory'
 ```
 
 This factory takes four parameters, you could use between these signatures :
@@ -73,7 +73,7 @@ Example:
  - it's combined into `state.api.raw`
  - its name is `todos`
 ```es6
-import factory from 'trampss-redux-data-store'
+import factory from 'trampss-redux-factory'
 // factory(fieldKey)(path)(name)
 export default factory()('id')('api.raw')('todos')
 ```

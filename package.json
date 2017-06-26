@@ -1,6 +1,6 @@
 {
-  "name": "trampss-redux-data-store",
-  "version": "4.0.0",
+  "name": "trampss-redux-factory",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
