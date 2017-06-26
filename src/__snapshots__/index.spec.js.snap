@@ -6,7 +6,7 @@ Object {
     "id": 2,
     "some": "information 2",
   },
-  "type": "ADD_todos",
+  "type": "@trampss/ADD_TODOS",
 }
 `;
 
@@ -55,7 +55,7 @@ Object {
     "id": 2,
     "some": "information 2",
   },
-  "type": "ADD_todos",
+  "type": "@trampss/ADD_TODOS",
 }
 `;
 
