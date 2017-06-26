@@ -1,5 +1,5 @@
 import { keyBy, without, uniq, omit } from 'lodash'
-import { SET, ADD, DEL, RESET } from './actions'
+import { SET, ADD, REMOVE, RESET } from './actions'
 
 export const initState = { data: {}, keys: [], array: [], nb: 0, initialized: false }
 
@@ -23,7 +23,7 @@ export default key => prefix =>
           nb: state.keys.length + 1,
           initialized: true,
         }
-      case DEL(prefix):
+      case REMOVE(prefix):
         return {
           ...state,
           data: omit(state.data, [payload]),

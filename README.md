@@ -114,7 +114,7 @@ Actions are:
 |---|---|---|---|
 | `set` | set an array of instances of your resource | `set(<array>)` | `{ type: 'SET_todos', payload: <array> }` |
 | `add` | add an instance of your resource | `add(<instance>)` | `{ type: 'ADD_todos', payload: <instance> }` |
-| `del` | delete one instance of your resource by its key | `del(<key>)` | `{ type: 'DEL_todos', payload: <key> }` |
+| `remove` | remove one instance of your resource by its key | `remove(<key>)` | `{ type: 'REMOVE_todos', payload: <key> }` |
 | `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: 'RESET_todos' }` |
 
 

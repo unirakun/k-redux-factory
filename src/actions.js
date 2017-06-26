@@ -7,5 +7,5 @@ export const reset = prefix => () => ({ type: RESET(prefix) })
 export const ADD = prefix => `ADD_${prefix}`
 export const add = prefix => payload => ({ type: ADD(prefix), payload })
 
-export const DEL = prefix => `DEL_${prefix}`
-export const del = prefix => key => ({ type: DEL(prefix), payload: key })
+export const REMOVE = prefix => `REMOVE_${prefix}`
+export const remove = prefix => key => ({ type: REMOVE(prefix), payload: key })

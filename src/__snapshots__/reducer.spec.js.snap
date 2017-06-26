@@ -81,7 +81,17 @@ Object {
 }
 `;
 
-exports[`reducer should delete element [elm1] 1`] = `
+exports[`reducer should initialize 1`] = `
+Object {
+  "array": Array [],
+  "data": Object {},
+  "initialized": false,
+  "keys": Array [],
+  "nb": 0,
+}
+`;
+
+exports[`reducer should remove element [elm1] 1`] = `
 Object {
   "array": Array [
     Object {
@@ -113,16 +123,6 @@ Object {
     "elm3",
   ],
   "nb": 2,
-}
-`;
-
-exports[`reducer should initialize 1`] = `
-Object {
-  "array": Array [],
-  "data": Object {},
-  "initialized": false,
-  "keys": Array [],
-  "nb": 0,
 }
 `;
 
