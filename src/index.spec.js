@@ -10,7 +10,6 @@ const subState = {
     2: Todo(2),
   },
   keys: [1, 20, 2],
-  nb: 3,
   initialized: true,
 }
 
