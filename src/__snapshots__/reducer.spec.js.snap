@@ -1,172 +1,196 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`reducer should add element [elm4] 1`] = `
+exports[`reducer should call -core- middleware 1`] = `
 Object {
-  "array": Array [
-    Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
-    Object {
-      "code": "elm4",
-      "infos": "elm4",
-      "some": "other",
-    },
-  ],
-  "data": Object {
-    "elm1": Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    "elm2": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    "elm3": Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
-    "elm4": Object {
-      "code": "elm4",
-      "infos": "elm4",
-      "some": "other",
-    },
-  },
-  "initialized": true,
-  "keys": Array [
-    "elm2",
-    "elm1",
-    "elm3",
-    "elm4",
-  ],
-  "nb": 4,
-}
-`;
-
-exports[`reducer should add element [elm4] on initial store 1`] = `
-Object {
-  "array": Array [
-    Object {
-      "code": "elm4",
-      "infos": "elm4",
-      "some": "other",
-    },
-  ],
-  "data": Object {
-    "elm4": Object {
-      "code": "elm4",
-      "infos": "elm4",
-      "some": "other",
-    },
-  },
-  "initialized": true,
-  "keys": Array [
-    "elm4",
-  ],
-  "nb": 1,
-}
-`;
-
-exports[`reducer should delete element [elm1] 1`] = `
-Object {
-  "array": Array [
-    Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
-  ],
-  "data": Object {
-    "elm2": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    "elm3": Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
-  },
+  "array": Array [],
+  "core": true,
+  "data": Object {},
   "initialized": false,
-  "keys": Array [
-    "elm2",
-    "elm3",
-  ],
-  "nb": 2,
+  "keys": Array [],
+  "nb": 0,
+  "prev": Object {
+    "action": Object {
+      "payload": Object {
+        "code": "1",
+        "some": "info",
+      },
+      "type": "ADD_testPrefix",
+    },
+    "state": Object {
+      "array": Array [],
+      "data": Object {},
+      "initialized": false,
+      "keys": Array [],
+      "nb": 0,
+    },
+  },
+}
+`;
+
+exports[`reducer should call -post- middlewares 1`] = `
+Object {
+  "array": Array [],
+  "core": true,
+  "data": Object {},
+  "initialized": false,
+  "key": "code",
+  "keys": Array [],
+  "nb": 0,
+  "path": "testPrefix",
+  "post1": true,
+  "post2": true,
+  "prev": Object {
+    "action": Object {
+      "core": true,
+      "payload": Object {
+        "code": "1",
+        "some": "info",
+      },
+      "post1": true,
+      "type": "ADD_testPrefix",
+    },
+    "state": Object {
+      "array": Array [],
+      "core": true,
+      "data": Object {},
+      "initialized": false,
+      "key": "code",
+      "keys": Array [],
+      "nb": 0,
+      "path": "testPrefix",
+      "post1": true,
+      "prev": Object {
+        "action": Object {
+          "core": true,
+          "payload": Object {
+            "code": "1",
+            "some": "info",
+          },
+          "type": "ADD_testPrefix",
+        },
+        "state": Object {
+          "array": Array [],
+          "core": true,
+          "data": Object {},
+          "initialized": false,
+          "keys": Array [],
+          "nb": 0,
+          "prev": Object {
+            "action": Object {
+              "payload": Object {
+                "code": "1",
+                "some": "info",
+              },
+              "type": "ADD_testPrefix",
+            },
+            "state": Object {
+              "array": Array [],
+              "data": Object {},
+              "initialized": false,
+              "keys": Array [],
+              "nb": 0,
+            },
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`reducer should call -pre- middlewares 1`] = `
+Object {
+  "array": Array [],
+  "core": true,
+  "data": Object {},
+  "initialized": false,
+  "key": "code",
+  "keys": Array [],
+  "nb": 0,
+  "path": "testPrefix",
+  "pre1": true,
+  "pre2": true,
+  "prev": Object {
+    "action": Object {
+      "payload": Object {
+        "code": "1",
+        "some": "info",
+      },
+      "pre1": true,
+      "pre2": true,
+      "type": "ADD_testPrefix",
+    },
+    "state": Object {
+      "array": Array [],
+      "data": Object {},
+      "initialized": false,
+      "key": "code",
+      "keys": Array [],
+      "nb": 0,
+      "path": "testPrefix",
+      "pre1": true,
+      "pre2": true,
+      "prev": Object {
+        "action": Object {
+          "payload": Object {
+            "code": "1",
+            "some": "info",
+          },
+          "pre1": true,
+          "type": "ADD_testPrefix",
+        },
+        "state": Object {
+          "array": Array [],
+          "data": Object {},
+          "initialized": false,
+          "key": "code",
+          "keys": Array [],
+          "nb": 0,
+          "path": "testPrefix",
+          "pre1": true,
+          "prev": Object {
+            "action": Object {
+              "payload": Object {
+                "code": "1",
+                "some": "info",
+              },
+              "type": "ADD_testPrefix",
+            },
+            "state": Object {
+              "array": Array [],
+              "data": Object {},
+              "initialized": false,
+              "keys": Array [],
+              "nb": 0,
+            },
+          },
+        },
+      },
+    },
+  },
 }
 `;
 
 exports[`reducer should initialize 1`] = `
 Object {
   "array": Array [],
+  "core": true,
   "data": Object {},
   "initialized": false,
   "keys": Array [],
   "nb": 0,
-}
-`;
-
-exports[`reducer should reset state 1`] = `
-Object {
-  "array": Array [],
-  "data": Object {},
-  "initialized": false,
-  "keys": Array [],
-  "nb": 0,
-}
-`;
-
-exports[`reducer should set elements [elm1,elm2] 1`] = `
-Object {
-  "array": Array [
-    Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
+  "prev": Object {
+    "action": Object {
+      "payload": undefined,
+      "type": "UNKNOWN",
     },
-    Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-  ],
-  "data": Object {
-    "elm1": Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    "elm2": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
+    "state": Object {
+      "array": Array [],
+      "data": Object {},
+      "initialized": false,
+      "keys": Array [],
+      "nb": 0,
     },
   },
-  "initialized": true,
-  "keys": Array [
-    "elm1",
-    "elm2",
-  ],
-  "nb": 2,
 }
 `;

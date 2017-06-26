@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`middlewares/core should add element [elm4] 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "code": "elm4",
+      "infos": "elm4",
+      "some": "other",
+    },
+    "type": "ADD_testPrefix",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+      Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+      "elm4": Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm2",
+      "elm1",
+      "elm3",
+      "elm4",
+    ],
+    "nb": 4,
+  },
+}
+`;
+
+exports[`middlewares/core should add element [elm4] on initial store 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "code": "elm4",
+      "infos": "elm4",
+      "some": "other",
+    },
+    "type": "ADD_testPrefix",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm4": Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm4",
+    ],
+    "nb": 1,
+  },
+}
+`;
+
+exports[`middlewares/core should delete element [elm1] 1`] = `
+Object {
+  "action": Object {
+    "payload": "elm1",
+    "type": "DEL_testPrefix",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm2",
+      "elm3",
+    ],
+    "nb": 2,
+  },
+}
+`;
+
+exports[`middlewares/core should initialize 1`] = `
+Object {
+  "state": Object {
+    "array": Array [],
+    "data": Object {},
+    "initialized": false,
+    "keys": Array [],
+    "nb": 0,
+  },
+}
+`;
+
+exports[`middlewares/core should reset state 1`] = `
+Object {
+  "action": Object {
+    "type": "RESET_testPrefix",
+  },
+  "state": Object {
+    "array": Array [],
+    "data": Object {},
+    "initialized": false,
+    "keys": Array [],
+    "nb": 0,
+  },
+}
+`;
+
+exports[`middlewares/core should set elements [elm1,elm2] 1`] = `
+Object {
+  "action": Object {
+    "payload": Array [
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+    ],
+    "type": "SET_testPrefix",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm1",
+      "elm2",
+    ],
+    "nb": 2,
+  },
+}
+`;
