@@ -156,9 +156,9 @@ Selectors are:
 | `getBy(<propertyPath>, <value>)(state)` | get data specified by the field you want to filter with (take care, selectors are not memoized) | Example: `getBy('visible', true)(state)` returns all visible todos.
 | `getKeys(state)` | returns all store keys (in array) | |
 | `getAsArray(state)` | returns all data in array (raw) | |
-| `getNb(state)` | returns number of stored instances | |
+| `getLength(state)` | returns number of stored instances | |
 | `isInitialized(state)` | return true if the store has been initialized (by `add` or by `set` action) | |
-| `getState(state)` | returns the global state of your reducer | The global state contains :<ul><li>`data`: key/value store</li><li>`array`: raw data</li><li>`keys`: keys array</li><li>`nb`: store length</li><li>`initialized`: boolean (set to true by `set` and `add` actions)</li></ul>
+| `getState(state)` | returns the global state of your reducer | The global state contains :<ul><li>`data`: key/value store</li><li>`array`: raw data</li><li>`keys`: keys array</li><li>`initialized`: boolean (set to true by `set` and `add` actions)</li></ul>
 
 Example, we retrieve the todo with id `1`:
 ```es6
