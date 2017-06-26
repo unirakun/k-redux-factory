@@ -1,7 +1,7 @@
 import { keyBy, without, uniq, omit } from 'lodash'
 import { SET, ADD, REMOVE, RESET } from './actions'
 
-export const initState = { data: {}, keys: [], array: [], nb: 0, initialized: false }
+export const initState = { data: {}, keys: [], array: [], initialized: false }
 
 export default key => prefix =>
   (state = initState, { type = 'UNKONWN', payload } = {}) => {
@@ -11,7 +11,6 @@ export default key => prefix =>
           data: keyBy(payload, key),
           keys: payload.map(element => element[key]),
           array: payload,
-          nb: payload.length,
           initialized: true,
         }
       case ADD(prefix):
@@ -20,7 +19,6 @@ export default key => prefix =>
           data: { ...state.data, [payload[key]]: payload },
           keys: uniq([...state.keys, payload[key]]),
           array: [...state.array, payload],
-          nb: state.keys.length + 1,
           initialized: true,
         }
       case REMOVE(prefix):
@@ -29,7 +27,6 @@ export default key => prefix =>
           data: omit(state.data, [payload]),
           keys: without(state.keys, payload),
           array: state.array ? state.array.filter(o => o[key] !== payload) : [],
-          nb: state.keys.length - 1,
         }
       case RESET(prefix):
         return initState

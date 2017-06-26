@@ -3,13 +3,13 @@
 exports[`actions should trigger a remove action 1`] = `
 Object {
   "payload": "remove",
-  "type": "REMOVE_testPrefix",
+  "type": "@trampss/REMOVE_TESTPREFIX",
 }
 `;
 
 exports[`actions should trigger a reset action 1`] = `
 Object {
-  "type": "RESET_testPrefix",
+  "type": "@trampss/RESET_TESTPREFIX",
 }
 `;
 
@@ -25,7 +25,7 @@ Object {
       "code": "set2",
     },
   ],
-  "type": "SET_testPrefix",
+  "type": "@trampss/SET_TESTPREFIX",
 }
 `;
 
@@ -35,6 +35,6 @@ Object {
     "an": "element_add",
     "code": "add",
   },
-  "type": "ADD_testPrefix",
+  "type": "@trampss/ADD_TESTPREFIX",
 }
 `;

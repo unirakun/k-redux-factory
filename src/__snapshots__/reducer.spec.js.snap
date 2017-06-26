@@ -53,7 +53,6 @@ Object {
     "elm3",
     "elm4",
   ],
-  "nb": 4,
 }
 `;
 
@@ -77,7 +76,6 @@ Object {
   "keys": Array [
     "elm4",
   ],
-  "nb": 1,
 }
 `;
 
@@ -87,7 +85,6 @@ Object {
   "data": Object {},
   "initialized": false,
   "keys": Array [],
-  "nb": 0,
 }
 `;
 
@@ -122,7 +119,6 @@ Object {
     "elm2",
     "elm3",
   ],
-  "nb": 2,
 }
 `;
 
@@ -132,7 +128,6 @@ Object {
   "data": Object {},
   "initialized": false,
   "keys": Array [],
-  "nb": 0,
 }
 `;
 
@@ -167,6 +162,5 @@ Object {
     "elm1",
     "elm2",
   ],
-  "nb": 2,
 }
 `;
