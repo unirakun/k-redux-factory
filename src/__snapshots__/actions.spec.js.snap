@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`actions should trigger a del action 1`] = `
+exports[`actions should trigger a remove action 1`] = `
 Object {
-  "payload": "del",
-  "type": "@trampss/DEL_TESTPREFIX",
+  "payload": "remove",
+  "type": "@trampss/REMOVE_TESTPREFIX",
 }
 `;
 
