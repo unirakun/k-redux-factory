@@ -51,7 +51,13 @@ You need to use the factory to get a new set of reducer/actions/selectors :
 import factory from 'trampss-redux-factory'
 ```
 
-This factory takes four parameters `factory(middlewares)(fieldKey)(path)(name)`:
+This factory takes four parameters, you could use between these signatures :
+ - `factory(middlewares, fieldKey, path, name)`
+ - `factory(middlewares, fieldKey, path)(name)`
+ - `factory(middlewares, fieldKey)(path)(name)`
+ - `factory(middlewares)(fieldKey)(path)(name)`
+
+Parameters are :
  - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware.
  - **fieldKey** (mandatory), the field used to identify your objects (`id` for example)
    - you have to set this parameter.
