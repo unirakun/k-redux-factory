@@ -112,10 +112,10 @@ Actions are:
 
 | function name | description | signature | generated action |
 |---|---|---|---|
-| `set` | set an array of instances of your resource | `set(<array>)` | `{ type: 'SET_todos', payload: <array> }` |
-| `add` | add an instance of your resource | `add(<instance>)` | `{ type: 'ADD_todos', payload: <instance> }` |
-| `del` | delete one instance of your resource by its key | `del(<key>)` | `{ type: 'DEL_todos', payload: <key> }` |
-| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: 'RESET_todos' }` |
+| `set` | set an array of instances of your resource | `set(<array>)` | `{ type: '@trampss/SET_TODOS', payload: <array> }` |
+| `add` | add an instance of your resource | `add(<instance>)` | `{ type: '@trampss/ADD_TODOS', payload: <instance> }` |
+| `del` | delete one instance of your resource by its key | `del(<key>)` | `{ type: '@trampss/DEL_TODOS', payload: <key> }` |
+| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@trampss/RESET_TODOS' }` |
 
 
 Example, we set todos to our reducer:
