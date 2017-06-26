@@ -7,7 +7,7 @@ Factory of Redux reducers and their associated actions and selectors.
 
 ## Contents
  - [Purpose](#purpose)
- - [Why](#why)
+ - [Why ?](#why)
  - [Installation](#installation)
  - [API](#api)
 
