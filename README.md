@@ -29,7 +29,7 @@ To avoid Redux code base from growing, inconsistency and lowering maintainabilit
 
 ## Installation
  - `yarn add trampss-redux-data-store`
- - `npm i trampss-redux-data-store``
+ - `npm i trampss-redux-data-store`
 
 ### peer dependency
  - `lodash` : we use the minimum of lodash function trying to have a lightweight webpack bundle.
