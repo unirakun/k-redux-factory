@@ -85,13 +85,17 @@ import todos from './myTodosReducer'
 // create your Redux store as usual
 const store = createStore(
   combineReducers({
+    // [other reducer]
     api: combineReducers({
+      // [other reducer]
       raw: combineReducers({
         // import your reducer into api.raw
         // since we configured this path
         todos,
       }),
+      // [other reducer]
     }),
+    // [other reducer]
   }),
   /* your Redux middlewares */
 )
