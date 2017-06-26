@@ -23,7 +23,8 @@ That's it, you exported a reducer function you can register thanks to combinerRe
 In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`
 
 ## Why
-Using `redux-saga` make our Redux code base simpler : it's like a key/value store. But one drawback is the amount of duplicated code, each resource has its own reducers, actions and selectors.
+We like to write Redux code as simple as possible and use its middlewares to handle real world problems.
+From this point of view, our Redux code base simpler : it's like a key/value store. But one drawback is the amount of duplicated code, each resource has its own reducers, actions and selectors.
 
 To avoid Redux code base from growing, inconsistency and lowering maintainability, we created this lightweight library (<4Kb) that is a factory of reducers, actions and selectors.
 
@@ -108,22 +109,14 @@ The factory returns a function (this is the reducer) that also contains actions 
 Some generic actions are available. By now, it's not possible to add custom ones.
 
 Actions are:
- - `set` : set an array of instances of your resource
-   - `set(<array>)`
-   - will generate this kind of Redux action:
-     - `{ type: 'SET_todos', payload: <array> }`
- - `add` : add an instance of your resource
-   - `add(<instance>)`
-   - will generate this kind of Redux action:
-     - `{ type: 'GET_todos', payload: <instance> }`
- - `del` : delete one instance of your resource by its key
-   - `del(<key>)`
-   - will generate this kind of Redux action:
-     - `{ type: 'DEL_todos', payload: <key> }`
- - `reset` : reset the reducer (wipe all data)
-   - `reset()`
-   - will generate this kind of Redux action:
-     - `{ type: 'RESET_todos' }`
+
+| function name | description | signature | generated action |
+|---|---|---|---|
+| `set` | set an array of instances of your resource | `set(<array>)` | `{ type: 'SET_todos', payload: <array> }` |
+| `add` | add an instance of your resource | `add(<instance>)` | `{ type: 'ADD_todos', payload: <instance> }` |
+| `del` | delete one instance of your resource by its key | `del(<key>)` | `{ type: 'DEL_todos', payload: <key> }` |
+| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: 'RESET_todos' }` |
+
 
 Example, we set todos to our reducer:
 ```es6
@@ -156,22 +149,16 @@ The factory returns a function (this is the reducer) that also contains actions 
 Some generic selectors are available. By now, it's not possible to add custom ones.
 
 Selectors are:
- - `get(<id>)(state)`: returns all data, or specific(s) one(s) (by key(s))
-   - if `<id>` is `undefined`, it returns all data
-   - if `<id>` is an array, it returns all instances that match one of ids
-   - in other cases, it returns the instance with its `id` that that match the parameter
- - `getBy(<propertyPath>, <value>)(state)`: get data specified by the field you want to filter with (take care, selectors are not memoized)
-   - Example: `getBy('visible', true)(state)` returns all visible todos.
- - `getKeys(state)`: returns all store keys (in array)
- - `getAsArray(state)`: returns all data in array (raw)
- - `getNb(state)`:  returns number of stored instances
- - `isInitialized(state)`: return true if the store has been initialized (by `add` or by `set` action)
- - `getState(state)`: returns the global state of your reducer, containing:
-   - `data`: key/value store
-   - `array`: raw data
-   - `keys`: keys array
-   - `nb`: store length
-   - `initialized`: boolean (set to true by `set` and `add` actions)
+
+| signature | description | comment |
+|---|---|---|
+| `get(<id>)(state)` | returns all data, or specific(s) one(s) (by key(s)) | <ul><li>if `<id>` is `undefined`, it returns all data</li><li>if `<id>` is an array, it returns all instances that match one of ids</li><li>in other cases, it returns the instance with its `id` that that match the parameter</li></ul> |
+| `getBy(<propertyPath>, <value>)(state)` | get data specified by the field you want to filter with (take care, selectors are not memoized) | Example: `getBy('visible', true)(state)` returns all visible todos.
+| `getKeys(state)` | returns all store keys (in array) | |
+| `getAsArray(state)` | returns all data in array (raw) | |
+| `getNb(state)` | returns number of stored instances | |
+| `isInitialized(state)` | return true if the store has been initialized (by `add` or by `set` action) | |
+| `getState(state)` | returns the global state of your reducer | The global state contains :<ul><li>`data`: key/value store</li><li>`array`: raw data</li><li>`keys`: keys array</li><li>`nb`: store length</li><li>`initialized`: boolean (set to true by `set` and `add` actions)</li></ul>
 
 Example, we retrieve the todo with id `1`:
 ```es6
