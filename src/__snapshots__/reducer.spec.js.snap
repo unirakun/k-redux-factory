@@ -7,21 +7,19 @@ Object {
   "data": Object {},
   "initialized": false,
   "keys": Array [],
-  "nb": 0,
   "prev": Object {
     "action": Object {
       "payload": Object {
         "code": "1",
         "some": "info",
       },
-      "type": "ADD_testPrefix",
+      "type": "@trampss/ADD_TESTPREFIX",
     },
     "state": Object {
       "array": Array [],
       "data": Object {},
       "initialized": false,
       "keys": Array [],
-      "nb": 0,
     },
   },
 }
@@ -35,7 +33,6 @@ Object {
   "initialized": false,
   "key": "code",
   "keys": Array [],
-  "nb": 0,
   "path": "testPrefix",
   "post1": true,
   "post2": true,
@@ -47,7 +44,7 @@ Object {
         "some": "info",
       },
       "post1": true,
-      "type": "ADD_testPrefix",
+      "type": "@trampss/ADD_TESTPREFIX",
     },
     "state": Object {
       "array": Array [],
@@ -56,7 +53,6 @@ Object {
       "initialized": false,
       "key": "code",
       "keys": Array [],
-      "nb": 0,
       "path": "testPrefix",
       "post1": true,
       "prev": Object {
@@ -66,7 +62,7 @@ Object {
             "code": "1",
             "some": "info",
           },
-          "type": "ADD_testPrefix",
+          "type": "@trampss/ADD_TESTPREFIX",
         },
         "state": Object {
           "array": Array [],
@@ -74,21 +70,19 @@ Object {
           "data": Object {},
           "initialized": false,
           "keys": Array [],
-          "nb": 0,
           "prev": Object {
             "action": Object {
               "payload": Object {
                 "code": "1",
                 "some": "info",
               },
-              "type": "ADD_testPrefix",
+              "type": "@trampss/ADD_TESTPREFIX",
             },
             "state": Object {
               "array": Array [],
               "data": Object {},
               "initialized": false,
               "keys": Array [],
-              "nb": 0,
             },
           },
         },
@@ -106,7 +100,6 @@ Object {
   "initialized": false,
   "key": "code",
   "keys": Array [],
-  "nb": 0,
   "path": "testPrefix",
   "pre1": true,
   "pre2": true,
@@ -118,7 +111,7 @@ Object {
       },
       "pre1": true,
       "pre2": true,
-      "type": "ADD_testPrefix",
+      "type": "@trampss/ADD_TESTPREFIX",
     },
     "state": Object {
       "array": Array [],
@@ -126,7 +119,6 @@ Object {
       "initialized": false,
       "key": "code",
       "keys": Array [],
-      "nb": 0,
       "path": "testPrefix",
       "pre1": true,
       "pre2": true,
@@ -137,7 +129,7 @@ Object {
             "some": "info",
           },
           "pre1": true,
-          "type": "ADD_testPrefix",
+          "type": "@trampss/ADD_TESTPREFIX",
         },
         "state": Object {
           "array": Array [],
@@ -145,7 +137,6 @@ Object {
           "initialized": false,
           "key": "code",
           "keys": Array [],
-          "nb": 0,
           "path": "testPrefix",
           "pre1": true,
           "prev": Object {
@@ -154,14 +145,13 @@ Object {
                 "code": "1",
                 "some": "info",
               },
-              "type": "ADD_testPrefix",
+              "type": "@trampss/ADD_TESTPREFIX",
             },
             "state": Object {
               "array": Array [],
               "data": Object {},
               "initialized": false,
               "keys": Array [],
-              "nb": 0,
             },
           },
         },
@@ -178,7 +168,6 @@ Object {
   "data": Object {},
   "initialized": false,
   "keys": Array [],
-  "nb": 0,
   "prev": Object {
     "action": Object {
       "payload": undefined,
@@ -189,7 +178,6 @@ Object {
       "data": Object {},
       "initialized": false,
       "keys": Array [],
-      "nb": 0,
     },
   },
 }

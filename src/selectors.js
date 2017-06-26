@@ -10,7 +10,7 @@ export const getState = path => prefix => (state) => {
 const getFactory = key => path => prefix => state => getState(path)(prefix)(state)[key]
 export const getKeys = getFactory('keys')
 export const getAsArray = getFactory('array')
-export const getNb = getFactory('nb')
+export const getLength = path => prefix => state => getKeys(path)(prefix)(state).length
 export const isInitialized = getFactory('initialized')
 
 const getData = getFactory('data')
@@ -26,7 +26,6 @@ export const get = path => prefix => keys => (state) => {
 
 export const getBy = path => prefix => (propertyPath, values) => (state) => {
   const data = getAsArray(path)(prefix)(state)
-  if (!data) return []
   if (Array.isArray(values)) return data.filter(d => values.includes(at(d, propertyPath)[0]))
   return data.filter(d => values === at(d, propertyPath)[0])
 }

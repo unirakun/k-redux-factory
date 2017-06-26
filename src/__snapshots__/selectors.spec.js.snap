@@ -173,7 +173,7 @@ Array [
 ]
 `;
 
-exports[`selectors should retrieve nb 1`] = `5`;
+exports[`selectors should retrieve length 1`] = `5`;
 
 exports[`selectors should retrieve state 1`] = `
 Object {
@@ -251,7 +251,6 @@ Object {
     "elm4",
     "elm5",
   ],
-  "nb": 5,
 }
 `;
 
@@ -331,6 +330,5 @@ Object {
     "elm4",
     "elm5",
   ],
-  "nb": 5,
 }
 `;

@@ -6,7 +6,7 @@ Object {
     "id": 2,
     "some": "information 2",
   },
-  "type": "ADD_todos",
+  "type": "@trampss/ADD_TODOS",
 }
 `;
 
@@ -29,7 +29,6 @@ Object {
     1,
     2,
   ],
-  "nb": 2,
   "post1": true,
   "pre1": true,
   "prefix": "todos",
@@ -37,7 +36,7 @@ Object {
     "action": Object {
       "payload": 20,
       "pre1": true,
-      "type": "DEL_todos",
+      "type": "@trampss/REMOVE_TODOS",
     },
     "state": Object {
       "array": Array [],
@@ -57,13 +56,12 @@ Object {
         1,
         2,
       ],
-      "nb": 2,
       "pre1": true,
       "prefix": "todos",
       "prevCtx": Object {
         "action": Object {
           "payload": 20,
-          "type": "DEL_todos",
+          "type": "@trampss/REMOVE_TODOS",
         },
         "state": Object {
           "data": Object {
@@ -86,7 +84,6 @@ Object {
             20,
             2,
           ],
-          "nb": 3,
         },
       },
     },
@@ -117,7 +114,7 @@ Object {
     "id": 2,
     "some": "information 2",
   },
-  "type": "ADD_todos",
+  "type": "@trampss/ADD_TODOS",
 }
 `;
 
@@ -139,7 +136,6 @@ Object {
     1,
     2,
   ],
-  "nb": 2,
 }
 `;
 
@@ -166,7 +162,7 @@ Object {
     "id": 2,
     "some": "information 2",
   },
-  "type": "ADD_todos",
+  "type": "@trampss/ADD_TODOS",
 }
 `;
 
@@ -188,7 +184,6 @@ Object {
     1,
     2,
   ],
-  "nb": 2,
 }
 `;
 

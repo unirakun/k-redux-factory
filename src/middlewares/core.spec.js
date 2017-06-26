@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { set, add, del, reset } from '../actions'
+import { set, add, remove, reset } from '../actions'
 import { initState } from '../reducer'
 import core from './core'
 
@@ -13,7 +13,6 @@ const state = {
   },
   keys: ['elm2', 'elm1', 'elm3'],
   array: [Element('elm2'), Element('elm1'), Element('elm3')],
-  nb: 3,
   initialized: false,
 }
 
@@ -45,10 +44,10 @@ describe('middlewares/core', () => {
     }),
   ).toMatchSnapshot())
 
-  it('should delete element [elm1]', () => expect(
+  it('should remove element [elm1]', () => expect(
     testPrefix({
       state,
-      action: del(prefix)('elm1'),
+      action: remove(prefix)('elm1'),
     }),
   ).toMatchSnapshot())
 

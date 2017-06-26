@@ -8,7 +8,7 @@ Object {
       "infos": "elm4",
       "some": "other",
     },
-    "type": "ADD_testPrefix",
+    "type": "@trampss/ADD_TESTPREFIX",
   },
   "state": Object {
     "array": Array [
@@ -62,7 +62,6 @@ Object {
       "elm3",
       "elm4",
     ],
-    "nb": 4,
   },
 }
 `;
@@ -75,7 +74,7 @@ Object {
       "infos": "elm4",
       "some": "other",
     },
-    "type": "ADD_testPrefix",
+    "type": "@trampss/ADD_TESTPREFIX",
   },
   "state": Object {
     "array": Array [
@@ -96,16 +95,26 @@ Object {
     "keys": Array [
       "elm4",
     ],
-    "nb": 1,
   },
 }
 `;
 
-exports[`middlewares/core should delete element [elm1] 1`] = `
+exports[`middlewares/core should initialize 1`] = `
+Object {
+  "state": Object {
+    "array": Array [],
+    "data": Object {},
+    "initialized": false,
+    "keys": Array [],
+  },
+}
+`;
+
+exports[`middlewares/core should remove element [elm1] 1`] = `
 Object {
   "action": Object {
     "payload": "elm1",
-    "type": "DEL_testPrefix",
+    "type": "@trampss/REMOVE_TESTPREFIX",
   },
   "state": Object {
     "array": Array [
@@ -137,19 +146,6 @@ Object {
       "elm2",
       "elm3",
     ],
-    "nb": 2,
-  },
-}
-`;
-
-exports[`middlewares/core should initialize 1`] = `
-Object {
-  "state": Object {
-    "array": Array [],
-    "data": Object {},
-    "initialized": false,
-    "keys": Array [],
-    "nb": 0,
   },
 }
 `;
@@ -157,14 +153,13 @@ Object {
 exports[`middlewares/core should reset state 1`] = `
 Object {
   "action": Object {
-    "type": "RESET_testPrefix",
+    "type": "@trampss/RESET_TESTPREFIX",
   },
   "state": Object {
     "array": Array [],
     "data": Object {},
     "initialized": false,
     "keys": Array [],
-    "nb": 0,
   },
 }
 `;
@@ -184,7 +179,7 @@ Object {
         "some": "other",
       },
     ],
-    "type": "SET_testPrefix",
+    "type": "@trampss/SET_TESTPREFIX",
   },
   "state": Object {
     "array": Array [
@@ -216,7 +211,6 @@ Object {
       "elm1",
       "elm2",
     ],
-    "nb": 2,
   },
 }
 `;

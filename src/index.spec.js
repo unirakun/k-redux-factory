@@ -10,7 +10,6 @@ const subState = {
     2: Todo(2),
   },
   keys: [1, 20, 2],
-  nb: 3,
   initialized: true,
 }
 
@@ -18,7 +17,7 @@ describe('index', () => {
   const test = (reducer, state) => {
     it('should prefix actions', () => expect(reducer.add(Todo(2))).toMatchSnapshot())
     it('should prefix selectors', () => expect(reducer.get()(state)).toMatchSnapshot())
-    it('should prefix reducer', () => expect(reducer(subState, reducer.del(20))).toMatchSnapshot())
+    it('should prefix reducer', () => expect(reducer(subState, reducer.remove(20))).toMatchSnapshot())
   }
 
   describe('with path', () => {

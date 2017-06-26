@@ -1,6 +1,6 @@
 import { core } from './middlewares'
 
-export const initState = { data: {}, keys: [], array: [], nb: 0, initialized: false }
+export const initState = { data: {}, keys: [], array: [], initialized: false }
 
 export default (middlewares = {}) => key => prefix =>
   (state = initState, { type = 'UNKNOWN', payload } = {}) => {
