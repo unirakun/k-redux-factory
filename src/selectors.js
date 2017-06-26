@@ -10,7 +10,7 @@ export const getState = path => prefix => (state) => {
 const getFactory = key => path => prefix => state => getState(path)(prefix)(state)[key]
 export const getKeys = getFactory('keys')
 export const getAsArray = getFactory('array')
-export const getNb = getFactory('nb')
+export const getLength = path => prefix => state => getKeys(path)(prefix)(state).length
 export const isInitialized = getFactory('initialized')
 
 const getData = getFactory('data')
