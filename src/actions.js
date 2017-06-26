@@ -9,5 +9,5 @@ export const reset = prefix => () => ({ type: RESET(prefix) })
 export const ADD = prefix => scope(`ADD_${prefix}`)
 export const add = prefix => payload => ({ type: ADD(prefix), payload })
 
-export const DEL = prefix => scope(`DEL_${prefix}`)
-export const del = prefix => key => ({ type: DEL(prefix), payload: key })
+export const REMOVE = prefix => scope(`REMOVE_${prefix}`)
+export const remove = prefix => key => ({ type: REMOVE(prefix), payload: key })
