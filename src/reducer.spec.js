@@ -1,29 +1,60 @@
 /* eslint-env jest */
-import { set, add, remove, reset } from './actions'
+import { add } from './actions'
 import reducer, { initState } from './reducer'
 
+jest.mock('./middlewares', () => ({
+  core: (/* key */) => (/* path */) => ctx => ({
+    ...ctx,
+    state: { ...ctx.state, core: true, prev: ctx },
+    action: { ...ctx.action, core: true },
+  }),
+}))
+
 const prefix = 'testPrefix'
-const Element = code => ({ code, some: 'other', infos: code })
-const state = {
-  data: {
-    elm2: Element('elm2'),
-    elm1: Element('elm1'),
-    elm3: Element('elm3'),
-  },
-  keys: ['elm2', 'elm1', 'elm3'],
-  array: [Element('elm2'), Element('elm1'), Element('elm3')],
-  initialized: false,
-}
+
+const middleware = name => key => path => ctx => ({
+  state: { ...ctx.state, key, path, [name]: true, prev: ctx },
+  action: { ...ctx.action, [name]: true },
+})
 
 describe('reducer', () => {
-  // Use the factory to create a new reducer named 'testPrefix'
-  // It uses 'code' as key in givent elements
-  const testPrefix = reducer('code')(prefix)
+  it('should initialize', () => {
+    const testPrefix = reducer(/* no middleware */)('code')(prefix)
+    expect(
+      testPrefix(),
+    ).toMatchSnapshot()
+  })
 
-  it('should initialize', () => expect(testPrefix()).toMatchSnapshot())
-  it('should add element [elm4] on initial store', () => expect(testPrefix(initState, add(prefix)(Element('elm4')))).toMatchSnapshot())
-  it('should add element [elm4]', () => expect(testPrefix(state, add(prefix)(Element('elm4')))).toMatchSnapshot())
-  it('should set elements [elm1,elm2]', () => expect(testPrefix(state, set(prefix)([Element('elm1'), Element('elm2')]))).toMatchSnapshot())
-  it('should remove element [elm1]', () => expect(testPrefix(state, remove(prefix)('elm1'))).toMatchSnapshot())
-  it('should reset state', () => expect(testPrefix(state, reset(prefix)())).toMatchSnapshot())
+  it('should call -core- middleware', () => {
+    const testPrefix = reducer(/* no middleware */)('code')(prefix)
+    expect(
+      testPrefix(initState, add(prefix)({ code: '1', some: 'info' })),
+    ).toMatchSnapshot()
+  })
+
+  it('should call -pre- middlewares', () => {
+    const testPrefix = reducer({
+      pre: [
+        middleware('pre1'),
+        middleware('pre2'),
+      ],
+    })('code')(prefix)
+
+    expect(
+      testPrefix(initState, add(prefix)({ code: '1', some: 'info' })),
+    ).toMatchSnapshot()
+  })
+
+  it('should call -post- middlewares', () => {
+    const testPrefix = reducer({
+      post: [
+        middleware('post1'),
+        middleware('post2'),
+      ],
+    })('code')(prefix)
+
+    expect(
+      testPrefix(initState, add(prefix)({ code: '1', some: 'info' })),
+    ).toMatchSnapshot()
+  })
 })

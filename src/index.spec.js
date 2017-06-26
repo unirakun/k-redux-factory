@@ -22,7 +22,7 @@ describe('index', () => {
 
   describe('with path', () => {
     test(
-      factory('id')('api')('todos'),
+      factory(/* no middleware */)('id')('api')('todos'),
       {
         api: {
           todos: subState,
@@ -32,6 +32,22 @@ describe('index', () => {
   })
 
   describe('without path', () => {
-    test(factory('id')()('todos'), { todos: subState })
+    test(factory(/* no middleware */)('id')()('todos'), { todos: subState })
+  })
+
+  describe('with middleware', () => {
+    const middleware = name => key => prefix => ctx => ({
+      ...ctx,
+      state: { ...ctx.state, [name]: true, key, prefix, prevCtx: ctx },
+      action: { ...ctx.action, [name]: true },
+    })
+
+    test(
+      factory({
+        pre: [middleware('pre1')],
+        post: [middleware('post1')],
+      })('id')()('todos'),
+      { todos: subState },
+    )
   })
 })
