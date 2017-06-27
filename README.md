@@ -52,7 +52,7 @@ You need to use the factory to get a new set of reducer/actions/selectors :
 import factory from 'trampss-redux-factory'
 ```
 
-This factory takes four parameters, you could use between these signatures :
+This factory takes four parameters, you can use one of these signatures :
  - `factory(middlewares, fieldKey, path, name)`
  - `factory(middlewares, fieldKey, path)(name)`
  - `factory(middlewares, fieldKey)(path)(name)`
