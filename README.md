@@ -25,9 +25,9 @@ In this example, we have a `todos` reducer, it has to be combined into `state.ap
 
 ## Why
 We like to write Redux code as simple as possible and use its middlewares to handle real world problems.
-From this point of view, our Redux code base simpler : it's like a key/value store. But one drawback is the amount of duplicated code, each resource has its own reducers, actions and selectors.
+From this point of view, our Redux code base is simpler : it's like a key/value store. But one drawback is the amount of duplicated code, each resource has its own reducers, actions and selectors.
 
-To avoid Redux code base from growing, inconsistency and lowering maintainability, we created this lightweight library that is a factory of reducers, actions and selectors.
+We created this lightweight library, a factory of reducers, actions and selectors, to avoid inconsistency and painful maintainability from our growing Redux code base.
 
 ## Installation
  - `yarn add trampss-redux-factory`
@@ -52,7 +52,7 @@ You need to use the factory to get a new set of reducer/actions/selectors :
 import factory from 'trampss-redux-factory'
 ```
 
-This factory takes four parameters, you could use between these signatures :
+This factory takes four parameters, you can use one of these signatures :
  - `factory(middlewares, fieldKey, path, name)`
  - `factory(middlewares, fieldKey, path)(name)`
  - `factory(middlewares, fieldKey)(path)(name)`
@@ -63,7 +63,7 @@ Parameters are :
  - **fieldKey** (mandatory), the field used to identify your objects (`id` for example)
    - you have to set this parameter.
  - **path** (optional), where the reducer will be combined via `combineReducer`
-   - if empty `export default factory('id')()('todos')`, the reducer will be register ate the root level of the redux state
+   - if empty `export default factory('id')()('todos')`, the reducer will be register at the root level of the redux state
    - you can use dot notation, like `api.raw`: your reducer will be combined into `state.api.raw.<your_reducer>`
  - **name** (mandatory), the reducer name (for instance: `todos`)
    - it's used to generate actions types
