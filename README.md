@@ -27,7 +27,7 @@ In this example, we have a `todos` reducer, it has to be combined into `state.ap
 We like to write Redux code as simple as possible and use its middlewares to handle real world problems.
 From this point of view, our Redux code base is simpler : it's like a key/value store. But one drawback is the amount of duplicated code, each resource has its own reducers, actions and selectors.
 
-To avoid Redux code base from growing, inconsistency and lowering maintainability, we created this lightweight library that is a factory of reducers, actions and selectors.
+We created this lightweight library, a factory of reducers, actions and selectors, to avoid inconsistency and painful maintainability from our growing Redux code base.
 
 ## Installation
  - `yarn add trampss-redux-factory`
