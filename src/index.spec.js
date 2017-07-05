@@ -20,50 +20,11 @@ describe('index', () => {
     it('should prefix reducer', () => expect(reducer(subState, reducer.remove(20))).toMatchSnapshot())
   }
 
-  describe('currification', () => {
-    describe('should works with 4 parameters, 1 function', () => {
-      test(
-        factory(undefined, 'id', 'api', 'todos'),
-        {
-          api: {
-            todos: subState,
-          },
-        },
-      )
-    })
-
-    describe('should works with 3 parameters, 2 function', () => {
-      test(
-        factory(undefined, 'id', 'api')('todos'),
-        {
-          api: {
-            todos: subState,
-          },
-        },
-      )
-    })
-
-    describe('should works with 2 parameters, 3 function', () => {
-      test(
-        factory(undefined, 'id')('api')('todos'),
-        {
-          api: {
-            todos: subState,
-          },
-        },
-      )
-    })
-
-    describe('should works with 1 parameters, 4 function', () => {
-      test(
-        factory(undefined)('id')('api')('todos'),
-        {
-          api: {
-            todos: subState,
-          },
-        },
-      )
-    })
+  describe('with name and prefix', () => {
+    test(
+      factory(/* no middleware */)('id')()({ name: 'todos', prefix: 'ui' }),
+      { todos: subState },
+    )
   })
 
   describe('with path', () => {

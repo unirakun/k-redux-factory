@@ -2,18 +2,23 @@ import * as actions from './actions'
 import * as selectors from './selectors'
 import reducer from './reducer'
 
-const func = middlewares => key => path => prefix => Object.assign(
-  reducer(middlewares)(key)(prefix),
-  ...Object.keys(actions).map(k => ({ [k]: actions[k](prefix) })),
-  ...Object.keys(selectors).map(k => ({ [k]: selectors[k](path)(prefix) })),
+const func = middlewares => key => path => name => prefix => Object.assign(
+  reducer(middlewares)(key)(`${prefix}${name}`),
+  ...Object.keys(actions).map(k => ({ [k]: actions[k](`${prefix}${name}`) })),
+  ...Object.keys(selectors).map(k => ({ [k]: selectors[k](path)(name) })),
 )
 
-export default (...args) => {
-  const length = args.length
-  const [middlewares, key, path, prefix] = args
 
-  if (length < 2) return func(middlewares)
-  if (length === 2) return func(middlewares)(key)
-  if (length === 3) return func(middlewares)(key)(path)
-  return func(middlewares)(key)(path)(prefix)
+export default middlewares => key => path => (options) => {
+  let name
+  let prefix = ''
+
+  // retrieve options
+  if (typeof options === 'string') name = options
+  else {
+    name = options.name
+    prefix = (options.prefix) || ''
+  }
+
+  return func(middlewares)(key)(path)(name)(prefix)
 }
