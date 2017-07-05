@@ -8,18 +8,29 @@ const coreReducer = key => prefix =>
       case SET(prefix):
         return {
           data: keyBy(payload, key),
-          keys: payload.map(element => element[key]),
+          keys: uniq(payload.map(element => element[key])),
           array: payload,
           initialized: true,
         }
-      case ADD(prefix):
+      case ADD(prefix): {
+        const sameKey = state.array.find(o => o[key] === payload[key])
+        let array
+        if (sameKey === undefined) {
+          array = [...state.array, payload]
+        } else {
+          array = state.array.map(
+            o => (o[key] === payload[key] ? payload : o),
+          )
+        }
+
         return {
           ...state,
           data: { ...state.data, [payload[key]]: payload },
           keys: uniq([...state.keys, payload[key]]),
-          array: [...state.array, payload],
+          array,
           initialized: true,
         }
+      }
       case REMOVE(prefix):
         return {
           ...state,
