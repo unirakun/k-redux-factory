@@ -66,7 +66,7 @@ Parameters are :
  - **name** (mandatory), the reducer name (for instance: `todos`)
    - it's used to generate actions types
    - it's used to retrieve informations from selectors
-   - it can be an object : `{name, prefix}` where `prefix` is added to actions so we avoid some collides if you two reducers with same name in two distincts pathes.
+   - it can be an object : `{name, prefix}` where `prefix` is added to actions to avoid some collisions when there are two reducers with same name in two distincts pathes.
 
 Example:
  - this reducer will use `id` as key field
