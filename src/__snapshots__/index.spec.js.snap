@@ -1,197 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index currification should works with 1 parameters, 4 function should prefix actions 1`] = `
-Object {
-  "payload": Object {
-    "id": 2,
-    "some": "information 2",
-  },
-  "type": "@trampss/ADD_TODOS",
-}
-`;
-
-exports[`index currification should works with 1 parameters, 4 function should prefix reducer 1`] = `
-Object {
-  "array": Array [],
-  "data": Object {
-    "1": Object {
-      "id": 1,
-      "some": "information 1",
-    },
-    "2": Object {
-      "id": 2,
-      "some": "information 2",
-    },
-  },
-  "initialized": true,
-  "keys": Array [
-    1,
-    2,
-  ],
-}
-`;
-
-exports[`index currification should works with 1 parameters, 4 function should prefix selectors 1`] = `
-Object {
-  "1": Object {
-    "id": 1,
-    "some": "information 1",
-  },
-  "2": Object {
-    "id": 2,
-    "some": "information 2",
-  },
-  "20": Object {
-    "id": 20,
-    "some": "information 20",
-  },
-}
-`;
-
-exports[`index currification should works with 2 parameters, 3 function should prefix actions 1`] = `
-Object {
-  "payload": Object {
-    "id": 2,
-    "some": "information 2",
-  },
-  "type": "@trampss/ADD_TODOS",
-}
-`;
-
-exports[`index currification should works with 2 parameters, 3 function should prefix reducer 1`] = `
-Object {
-  "array": Array [],
-  "data": Object {
-    "1": Object {
-      "id": 1,
-      "some": "information 1",
-    },
-    "2": Object {
-      "id": 2,
-      "some": "information 2",
-    },
-  },
-  "initialized": true,
-  "keys": Array [
-    1,
-    2,
-  ],
-}
-`;
-
-exports[`index currification should works with 2 parameters, 3 function should prefix selectors 1`] = `
-Object {
-  "1": Object {
-    "id": 1,
-    "some": "information 1",
-  },
-  "2": Object {
-    "id": 2,
-    "some": "information 2",
-  },
-  "20": Object {
-    "id": 20,
-    "some": "information 20",
-  },
-}
-`;
-
-exports[`index currification should works with 3 parameters, 2 function should prefix actions 1`] = `
-Object {
-  "payload": Object {
-    "id": 2,
-    "some": "information 2",
-  },
-  "type": "@trampss/ADD_TODOS",
-}
-`;
-
-exports[`index currification should works with 3 parameters, 2 function should prefix reducer 1`] = `
-Object {
-  "array": Array [],
-  "data": Object {
-    "1": Object {
-      "id": 1,
-      "some": "information 1",
-    },
-    "2": Object {
-      "id": 2,
-      "some": "information 2",
-    },
-  },
-  "initialized": true,
-  "keys": Array [
-    1,
-    2,
-  ],
-}
-`;
-
-exports[`index currification should works with 3 parameters, 2 function should prefix selectors 1`] = `
-Object {
-  "1": Object {
-    "id": 1,
-    "some": "information 1",
-  },
-  "2": Object {
-    "id": 2,
-    "some": "information 2",
-  },
-  "20": Object {
-    "id": 20,
-    "some": "information 20",
-  },
-}
-`;
-
-exports[`index currification should works with 4 parameters, 1 function should prefix actions 1`] = `
-Object {
-  "payload": Object {
-    "id": 2,
-    "some": "information 2",
-  },
-  "type": "@trampss/ADD_TODOS",
-}
-`;
-
-exports[`index currification should works with 4 parameters, 1 function should prefix reducer 1`] = `
-Object {
-  "array": Array [],
-  "data": Object {
-    "1": Object {
-      "id": 1,
-      "some": "information 1",
-    },
-    "2": Object {
-      "id": 2,
-      "some": "information 2",
-    },
-  },
-  "initialized": true,
-  "keys": Array [
-    1,
-    2,
-  ],
-}
-`;
-
-exports[`index currification should works with 4 parameters, 1 function should prefix selectors 1`] = `
-Object {
-  "1": Object {
-    "id": 1,
-    "some": "information 1",
-  },
-  "2": Object {
-    "id": 2,
-    "some": "information 2",
-  },
-  "20": Object {
-    "id": 20,
-    "some": "information 20",
-  },
-}
-`;
-
 exports[`index with middleware should prefix actions 1`] = `
 Object {
   "payload": Object {
@@ -284,6 +92,102 @@ Object {
 `;
 
 exports[`index with middleware should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`index with name and empty prefix should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@trampss/ADD_TODOS",
+}
+`;
+
+exports[`index with name and empty prefix should prefix reducer 1`] = `
+Object {
+  "array": Array [],
+  "data": Object {
+    "1": Object {
+      "id": 1,
+      "some": "information 1",
+    },
+    "2": Object {
+      "id": 2,
+      "some": "information 2",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    1,
+    2,
+  ],
+}
+`;
+
+exports[`index with name and empty prefix should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`index with name and prefix should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@trampss/ADD_UITODOS",
+}
+`;
+
+exports[`index with name and prefix should prefix reducer 1`] = `
+Object {
+  "array": Array [],
+  "data": Object {
+    "1": Object {
+      "id": 1,
+      "some": "information 1",
+    },
+    "2": Object {
+      "id": 2,
+      "some": "information 2",
+    },
+  },
+  "initialized": true,
+  "keys": Array [
+    1,
+    2,
+  ],
+}
+`;
+
+exports[`index with name and prefix should prefix selectors 1`] = `
 Object {
   "1": Object {
     "id": 1,

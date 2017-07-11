@@ -53,10 +53,8 @@ import factory from 'trampss-redux-factory'
 ```
 
 This factory takes four parameters, you can use one of these signatures :
- - `factory(middlewares, fieldKey, path, name)`
- - `factory(middlewares, fieldKey, path)(name)`
- - `factory(middlewares, fieldKey)(path)(name)`
  - `factory(middlewares)(fieldKey)(path)(name)`
+ - `factory(middlewares)(fieldKey)(path)({ name, prefix })`
 
 Parameters are :
  - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware.
@@ -68,6 +66,7 @@ Parameters are :
  - **name** (mandatory), the reducer name (for instance: `todos`)
    - it's used to generate actions types
    - it's used to retrieve informations from selectors
+   - it can be an object : `{name, prefix}` where `prefix` is added to actions to avoid some collisions when there are two reducers with same name in two distincts pathes.
 
 Example:
  - this reducer will use `id` as key field
