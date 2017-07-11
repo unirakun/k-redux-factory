@@ -193,7 +193,7 @@ import factory from 'trampss-redux-factory'
 import { mapAction } from 'trampss-redux-factory/helpers'
 
 // define a function to map action
-const mapper = action => { ...action, type: `SET_${action.type}` }
+const mapper = action => ({ ...action, type: `SET_${action.type}` })
 // create your reducer and transform only the type of action before call core middleware
 export default factory({ pre: [mapAction(mapper)] })('id')('api.raw')('todos')
 ```
@@ -205,7 +205,7 @@ import factory from 'trampss-redux-factory'
 import { mapPayload } from 'trampss-redux-factory/helpers'
 
 // define a function to map payload
-const mapper = payload => payload.map(p => {...p, id: `ID_${p.id}`)
+const mapper = payload => payload.map(p => ({ ...p, id: `ID_${p.id}` }))
 // create your reducer and transform only the payload before call core middleware
 export default factory({ pre: [mapPayload(/SET_TODOS/)(mapper)] })('id')('api.raw')('todos')
 ```
