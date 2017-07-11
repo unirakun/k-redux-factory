@@ -27,6 +27,13 @@ describe('index', () => {
     )
   })
 
+  describe('with name and empty prefix', () => {
+    test(
+      factory(/* no middleware */)('id')()({ name: 'todos', prefix: undefined }),
+      { todos: subState },
+    )
+  })
+
   describe('with path', () => {
     test(
       factory(/* no middleware */)('id')('api')('todos'),
