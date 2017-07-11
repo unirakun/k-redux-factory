@@ -180,10 +180,23 @@ todos.get('1')(state)
 ```
 ### helpers
 helpers are :
+
 | signature | description | comment |
 |---|---|---|
 |`mapAction(<mapper(action)>)`| create middleware and map only redux action | function mapper(action) is mandatory |
 |`mapPayload(<mapper(payload)>)`| create middleware and map only redux payload | function mapper(payload) is mandatory |
+
+Example, we create a middleware but we modify only the action :
+```es6
+import factory from 'trampss-redux-factory'
+// import your helpers
+import { mapAction } from 'trampss-redux-factory/helpers'
+
+// define a function to map action
+const mapper = action => { ...action, type: `SET_${action.type}` }
+// create your reducer and transform only the type of action before call core middleware
+export default factory({ pre: [mapAction(mapper)] })('id')('api.raw')('todos')
+```
 
 Example, we create a middleware but we modify only the payload :
 ```es6
@@ -192,7 +205,7 @@ import factory from 'trampss-redux-factory'
 import { mapPayload } from 'trampss-redux-factory/helpers'
 
 // define a function to map payload
-const mapper = payload => payload.map(p => p.toUpperCase())
-// create your reducer and transform only the payload before core middleware
+const mapper = payload => payload.map(p => {...p, id: `ID_${p.id}`)
+// create your reducer and transform only the payload before call core middleware
 export default factory({ pre: [mapPayload(/SET_TODOS/)(mapper)] })('id')('api.raw')('todos')
 ```
