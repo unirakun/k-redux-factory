@@ -45,6 +45,7 @@ We created this lightweight library, a factory of reducers, actions and selector
  - [factory](#factory)
  - [actions](#actions)
  - [selectors](#selectors)
+ - [helpers](#helpers)
 
 ### factory
 You need to use the factory to get a new set of reducer/actions/selectors :
@@ -176,5 +177,22 @@ import todos from './myTodosReducer'
 // state can be given by one of your middleware (redux-thunk, redux-saga, etc)
 // or it can be given by react-redux for example (mapStateToProps)
 todos.get('1')(state)
+```
+### helpers
+helpers are :
+| signature | description | comment |
+|---|---|---|
+|`mapAction(<mapper(action)>)`| create middleware and map only redux action | function mapper(action) is mandatory |
+|`mapPayload(<mapper(payload)>)`| create middleware and map only redux payload | function mapper(payload) is mandatory |
 
+Example, we create a middleware but we modify only the payload :
+```es6
+import factory from 'trampss-redux-factory'
+// import your helpers
+import { mapPayload } from 'trampss-redux-factory/helpers'
+
+// define a function to map payload
+const mapper = payload => payload.map(p => p.toUpperCase())
+// create your reducer and transform only the payload before core middleware
+export default factory({ pre: [mapPayload(/SET_TODOS/)(mapper)] })('id')('api.raw')('todos')
 ```
