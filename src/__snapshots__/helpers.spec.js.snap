@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`helpers/payloadWrapper should not wrappe without wrapper function 1`] = `
+Object {
+  "action": Object {
+    "payload": "payload",
+    "type": "TYPE",
+  },
+  "state": Object {},
+}
+`;
+
+exports[`helpers/payloadWrapper should wrappe payload 1`] = `
+Object {
+  "action": Object {
+    "payload": "PAYLOAD WRAPPED !",
+    "type": "TYPE",
+  },
+  "state": Object {},
+}
+`;
+
+exports[`helpers/payloadWrapper should wrappe without type 1`] = `
+Object {
+  "action": Object {
+    "payload": "PAYLOAD WRAPPED !",
+    "type": "TYPE",
+  },
+  "state": Object {},
+}
+`;
+
+exports[`helpers/payloadWrapper should wrappe without type and wrapper function 1`] = `
+Object {
+  "action": Object {
+    "payload": "payload",
+    "type": "TYPE",
+  },
+  "state": Object {},
+}
+`;

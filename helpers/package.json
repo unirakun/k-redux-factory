@@ -1,0 +1,5 @@
+{
+  "name": "trampss-redux-factory/helpers",
+  "private": true,
+  "main": "../helpers.js"
+}
