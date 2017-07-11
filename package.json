@@ -1,6 +1,6 @@
 {
   "name": "trampss-redux-factory",
-  "version": "2.1.0",
+  "version": "2.1.0-rc1",
   "main": "index.js",
   "helpers": "helpers.js",
   "license": "MIT",

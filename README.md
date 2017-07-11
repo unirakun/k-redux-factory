@@ -116,8 +116,6 @@ export default store
 The factory returns a function (this is the reducer) that also contains actions and selectors as fields.
 Some generic actions are available. By now, it's not possible to add custom ones.
 
-Actions are:
-
 | function name | description | signature | generated action |
 |---|---|---|---|
 | `set` | set an array of instances of your resource | `set(<array>)` | `{ type: '@trampss/SET_TODOS', payload: <array> }` |
@@ -156,8 +154,6 @@ dispatch(
 The factory returns a function (this is the reducer) that also contains actions and selectors as fields.
 Some generic selectors are available. By now, it's not possible to add custom ones.
 
-Selectors are:
-
 | signature | description | comment |
 |---|---|---|
 | `get(<id>)(state)` | returns all data, or specific(s) one(s) (by key(s)) | <ul><li>if `<id>` is `undefined`, it returns all data</li><li>if `<id>` is an array, it returns all instances that match one of ids</li><li>in other cases, it returns the instance with its `id` that that match the parameter</li></ul> |
@@ -179,14 +175,13 @@ import todos from './myTodosReducer'
 todos.get('1')(state)
 ```
 ### helpers
-helpers are :
 
 | signature | description | comment |
 |---|---|---|
 |`mapAction(<mapper(action)>)`| create middleware and map only redux action | function mapper(action) is mandatory |
 |`mapPayload(<mapper(payload)>)`| create middleware and map only redux payload | function mapper(payload) is mandatory |
 
-Example, we create a middleware but we modify only the action :
+#### Example, we create a middleware but we modify only the action :
 ```es6
 import factory from 'trampss-redux-factory'
 // import your helpers
@@ -194,11 +189,11 @@ import { mapAction } from 'trampss-redux-factory/helpers'
 
 // define a function to map action
 const mapper = action => ({ ...action, type: `SET_${action.type}` })
-// create your reducer and transform only the type of action before call core middleware
+// create your reducer and transform the type of action before core middleware
 export default factory({ pre: [mapAction(mapper)] })('id')('api.raw')('todos')
 ```
 
-Example, we create a middleware but we modify only the payload :
+#### Example, we create a middleware but we modify only the payload :
 ```es6
 import factory from 'trampss-redux-factory'
 // import your helpers
@@ -206,6 +201,6 @@ import { mapPayload } from 'trampss-redux-factory/helpers'
 
 // define a function to map payload
 const mapper = payload => payload.map(p => ({ ...p, id: `ID_${p.id}` }))
-// create your reducer and transform only the payload before call core middleware
+// create your reducer and transform the payload before core middleware
 export default factory({ pre: [mapPayload(/SET_TODOS/)(mapper)] })('id')('api.raw')('todos')
 ```
