@@ -11,9 +11,9 @@ const external = [
 ]
 
 export default {
-  entry: pkg['jsnext:main'] || `src/${pkg.helpers}`,
-  dest: pkg.helpers,
-  sourceMap: path.resolve(pkg.helpers),
+  entry: pkg['jsnext:main'] || 'src/helpers.js',
+  dest: path.resolve('helpers', pkg.main),
+  sourceMap: path.resolve('helpers', pkg.main),
   moduleName: pkg.amdName || pkg.name,
   format: process.env.FORMAT || 'umd',
   external,

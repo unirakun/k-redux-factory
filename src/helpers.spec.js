@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { payloadWrapper } from './helpers'
+import { mapAction, mapPayload } from './helpers'
 
 const ctx = {
   action: {
@@ -10,11 +10,14 @@ const ctx = {
 }
 
 const actionMatches = /TYPE/
-const wrapper = () => 'PAYLOAD WRAPPED !'
+const mapperAction = () => 'ACTION MAPPED !'
+const mapperPayload = () => 'PAYLOAD MAPPED !'
 
-describe('helpers/payloadWrapper', () => {
-  it('should wrappe without type and wrapper function', () => expect(payloadWrapper()()()()(ctx)).toMatchSnapshot())
-  it('should not wrappe without wrapper function', () => expect(payloadWrapper(actionMatches)()()()(ctx)).toMatchSnapshot())
-  it('should wrappe without type', () => expect(payloadWrapper()(wrapper)()()(ctx)).toMatchSnapshot())
-  it('should wrappe payload', () => expect(payloadWrapper(actionMatches)(wrapper)()()(ctx)).toMatchSnapshot())
+describe('helpers/mapPayload', () => {
+  it('should map payload without type', () => expect(mapPayload()(mapperPayload)()()(ctx)).toMatchSnapshot())
+  it('should map payload', () => expect(mapPayload(actionMatches)(mapperPayload)()()(ctx)).toMatchSnapshot())
+})
+
+describe('helpers/mapAction', () => {
+  it('should map action', () => expect(mapAction(mapperAction)()()(ctx)).toMatchSnapshot())
 })
