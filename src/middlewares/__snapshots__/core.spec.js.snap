@@ -112,7 +112,14 @@ Object {
 
 exports[`middlewares/core should not duplicate object with same key [elm2] 1`] = `
 Object {
-  "action": [Function],
+  "action": Object {
+    "payload": Object {
+      "code": "elm2",
+      "infos": "elm2",
+      "some": "other",
+    },
+    "type": "@trampss/ADD_TESTPREFIX",
+  },
   "state": Object {
     "array": Array [
       Object {
@@ -148,7 +155,7 @@ Object {
         "some": "other",
       },
     },
-    "initialized": false,
+    "initialized": true,
     "keys": Array [
       "elm2",
       "elm1",
