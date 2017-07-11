@@ -57,4 +57,11 @@ describe('middlewares/core', () => {
       action: reset(prefix)(),
     }),
   ).toMatchSnapshot())
+
+  it('should not duplicate object with same key [elm2]', () => expect(
+    testPrefix({
+      state,
+      action: add(Element('elm2')),
+    }),
+  ).toMatchSnapshot())
 })
