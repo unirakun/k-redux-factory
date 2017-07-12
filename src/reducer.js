@@ -1,15 +1,14 @@
-import { core } from './middlewares'
-
-export const initState = { data: {}, keys: [], array: [], initialized: false }
-
-export default (middlewares = {}) => key => prefix =>
-  (state = initState, { type = 'UNKNOWN', payload } = {}) => {
+export default middlewares => key => prefix =>
+  (state, { type = 'UNKNOWN', payload } = {}) => {
     let prevCtx = { state, action: { type, payload } }
 
     // middlewares to call (in right order)
     const middlewaresToCall = [
+      // injected by user
       ...(middlewares.pre || []),
-      core,
+      // injected by types selection (reducer type)
+      ...(middlewares.engine || []),
+      // injected by user
       ...(middlewares.post || []),
     ]
 

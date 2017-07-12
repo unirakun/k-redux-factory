@@ -1,8 +1,9 @@
 import { keyBy, without, uniq, omit } from 'lodash'
 import { SET, ADD, REMOVE, RESET } from '../actions'
-import { initState } from '../reducer'
 
-const coreReducer = key => prefix =>
+export const initState = { data: {}, keys: [], array: [], initialized: false }
+
+const reducer = key => prefix =>
   (state = initState, { type, payload } = {}) => {
     switch (type) {
       case SET(prefix):
@@ -47,5 +48,5 @@ const coreReducer = key => prefix =>
 
 export default key => prefix => (ctx = {}) => ({
   ...ctx,
-  state: coreReducer(key)(prefix)(ctx.state, ctx.action),
+  state: reducer(key)(prefix)(ctx.state, ctx.action),
 })
