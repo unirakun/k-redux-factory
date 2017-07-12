@@ -84,10 +84,27 @@ Data will be stored into `state.api.raw.todos`.
 
 ### Types
 Types are :
-  - `map` : your state is a hashmap, usefull to bind your API to Redux
-  - `uniq` : your state is an object, much simplier
+  - `map` : your state is a hashmap, usefull to bind your API to Redux with the following redux state model :
+```es6
+{
+  data: { <key1>: <instance1>, <key2>: <instance2> },
+  array: [<instance1>, <instance2>],
+  keys: [<key1>, <key2>],
+  initialized: true,
+
+}
+```
+
+  - `uniq` : your state is an object, much simplier, with the following redux state model :
+```es6
+{
+  data: <instance>,
+  initialized: true,
+}
+```
 
 Default type is `map`.
+
 To see more informations about types, [go to the specific page](./TYPES.md).
 
 ### reducer
