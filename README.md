@@ -80,7 +80,15 @@ import factory from 'trampss-redux-factory'
 export default factory()('id')('api.raw')('todos')
 ```
 
-Data will be stored into `state.api.raw.todos`
+Data will be stored into `state.api.raw.todos`.
+
+### Types
+Types are :
+  - `map` : your state is a hashmap, usefull to bind your API to Redux
+  - `uniq` : your state is an object, much simplier
+
+Default type is `map`.
+To see more informations about types, [go to the specific page](./TYPES.md).
 
 ### reducer
 The previous factory returns a function which is a reducer.
@@ -117,17 +125,9 @@ export default store
 The factory returns a function (this is the reducer) that also contains actions and selectors as fields.
 Some generic actions are available. By now, it's not possible to add custom ones.
 
-Actions are:
+To see them go to [TYPES.md](./TYPES.md).
 
-| function name | description | signature | generated action |
-|---|---|---|---|
-| `set` | set an array of instances of your resource | `set(<array>)` | `{ type: '@trampss/SET_TODOS', payload: <array> }` |
-| `add` | add an instance of your resource | `add(<instance>)` | `{ type: '@trampss/ADD_TODOS', payload: <instance> }` |
-| `remove` | remove one instance of your resource by its key | `remove(<key>)` | `{ type: '@trampss/REMOVE_TODOS', payload: <key> }` |
-| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@trampss/RESET_TODOS' }` |
-
-
-Example, we set todos to our reducer:
+Example, we set todos to our typed `map` reducer:
 ```es6
 // import your reducer
 // (created by tramps-redux-data-store factory)
@@ -157,17 +157,7 @@ dispatch(
 The factory returns a function (this is the reducer) that also contains actions and selectors as fields.
 Some generic selectors are available. By now, it's not possible to add custom ones.
 
-Selectors are:
-
-| signature | description | comment |
-|---|---|---|
-| `get(<id>)(state)` | returns all data, or specific(s) one(s) (by key(s)) | <ul><li>if `<id>` is `undefined`, it returns all data</li><li>if `<id>` is an array, it returns all instances that match one of ids</li><li>in other cases, it returns the instance with its `id` that that match the parameter</li></ul> |
-| `getBy(<propertyPath>, <value>)(state)` | get data specified by the field you want to filter with (take care, selectors are not memoized) | Example: `getBy('visible', true)(state)` returns all visible todos.
-| `getKeys(state)` | returns all store keys (in array) | |
-| `getAsArray(state)` | returns all data in array (raw) | |
-| `getLength(state)` | returns number of stored instances | |
-| `isInitialized(state)` | return true if the store has been initialized (by `add` or by `set` action) | |
-| `getState(state)` | returns the global state of your reducer | The global state contains :<ul><li>`data`: key/value store</li><li>`array`: raw data</li><li>`keys`: keys array</li><li>`initialized`: boolean (set to true by `set` and `add` actions)</li></ul>
+To see them go to [TYPES.md](./TYPES.md).
 
 Example, we retrieve the todo with id `1`:
 ```es6
