@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import factory from './index'
+import factory, { withMiddleware } from './index'
 
 const Todo = id => ({ id, some: `information ${id}` })
 
@@ -22,21 +22,21 @@ describe('index', () => {
 
   describe('with name and prefix', () => {
     test(
-      factory(/* no middleware */)('id')()({ name: 'todos', prefix: 'ui' }),
+      factory('id')()({ name: 'todos', prefix: 'ui' }),
       { todos: subState },
     )
   })
 
   describe('with name and empty prefix', () => {
     test(
-      factory(/* no middleware */)('id')()({ name: 'todos', prefix: undefined }),
+      factory('id')()({ name: 'todos', prefix: undefined }),
       { todos: subState },
     )
   })
 
   describe('with path', () => {
     test(
-      factory(/* no middleware */)('id')('api')('todos'),
+      factory('id')('api')('todos'),
       {
         api: {
           todos: subState,
@@ -46,20 +46,20 @@ describe('index', () => {
   })
 
   describe('without path', () => {
-    test(factory(/* no middleware */)('id')()('todos'), { todos: subState })
+    test(factory('id')()('todos'), { todos: subState })
   })
 
   describe('with middleware', () => {
-    const middleware = name => key => prefix => ctx => ({
+    const testMiddleware = name => key => prefix => ctx => ({
       ...ctx,
       state: { ...ctx.state, [name]: true, key, prefix, prevCtx: ctx },
       action: { ...ctx.action, [name]: true },
     })
 
     test(
-      factory({
-        pre: [middleware('pre1')],
-        post: [middleware('post1')],
+      withMiddleware({
+        pre: [testMiddleware('pre1')],
+        post: [testMiddleware('post1')],
       })('id')()('todos'),
       { todos: subState },
     )
