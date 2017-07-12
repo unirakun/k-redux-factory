@@ -128,3 +128,29 @@ Object {
   },
 }
 `;
+
+exports[`reducer should initialize an action if undefined 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "some": "data",
+    },
+  ],
+  "engine": true,
+  "key": "code",
+  "path": "testPrefix",
+  "prev": Object {
+    "action": Object {
+      "payload": undefined,
+      "type": "UNKNOWN",
+    },
+    "state": Object {
+      "data": Array [
+        Object {
+          "some": "data",
+        },
+      ],
+    },
+  },
+}
+`;

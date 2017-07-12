@@ -20,6 +20,17 @@ const middleware = name => key => path => ctx => ({
 })
 
 describe('reducer', () => {
+  it('should initialize an action if undefined', () => {
+    const testPrefix = reducer({
+      engine: [
+        middleware('engine'),
+      ],
+    })('code')(prefix)
+    expect(
+      testPrefix(initState, undefined),
+    ).toMatchSnapshot()
+  })
+
   it('should call -engine- middleware', () => {
     const testPrefix = reducer({
       engine: [
