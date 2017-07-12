@@ -50,11 +50,17 @@ We created this lightweight library, a factory of reducers, actions and selector
 You need to use the factory to get a new set of reducer/actions/selectors :
 ```es6
 import factory from 'trampss-redux-factory'
+
+// or
+
+import { withMiddleware } from 'trampss-redux-factory'
 ```
 
 This factory takes four parameters, you can use one of these signatures :
- - `factory(middlewares)(fieldKey)(path)(name)`
- - `factory(middlewares)(fieldKey)(path)({ name, prefix })`
+ - `factory(fieldKey)(path)(name)`
+ - `factory(fieldKey)(path)({ name, prefix })`
+ - `withMiddleware(middlewares)(fieldKey)(path)(name)`
+ - `withMiddleware(middlewares)(fieldKey)(path)({ name, prefix })`
 
 Parameters are :
  - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware.
@@ -75,7 +81,7 @@ Example:
 ```es6
 import factory from 'trampss-redux-factory'
 // factory(fieldKey)(path)(name)
-export default factory()('id')('api.raw')('todos')
+export default factory('id')('api.raw')('todos')
 ```
 
 Data will be stored into `state.api.raw.todos`
