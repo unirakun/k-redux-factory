@@ -8,8 +8,7 @@ const func = middlewares => key => path => prefix => name => Object.assign(
   ...Object.keys(selectors).map(k => ({ [k]: selectors[k](path)(name) })),
 )
 
-
-export default middlewares => key => path => (options) => {
+export const publicFactory = middlewares => key => path => (options) => {
   let name
   let prefix = ''
 
@@ -22,3 +21,6 @@ export default middlewares => key => path => (options) => {
 
   return func(middlewares)(key)(path)(prefix)(name)
 }
+
+export default publicFactory()
+export const withMiddleware = publicFactory
