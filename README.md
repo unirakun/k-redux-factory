@@ -178,8 +178,8 @@ todos.get('1')(state)
 
 | signature | description | comment |
 |---|---|---|
-|`mapAction(<mapper(action)>)`| create middleware and map only redux action | function mapper(action) is mandatory |
-|`mapPayload(<mapper(payload)>)`| create middleware and map only redux payload | function mapper(payload) is mandatory |
+|`mapAction(<mapper(action)>)`| create middleware and map only redux action | mapper(action) is mandatory |
+|`mapPayload(<mapper(payload)>)`| create middleware and map only redux payload | mapper(payload) is mandatory |
 
 #### Example, we create a middleware but we modify only the action :
 ```es6
