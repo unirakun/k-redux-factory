@@ -1,5 +1,5 @@
 import { keyBy, without, uniq, omit } from 'lodash'
-import { SET, ADD, REMOVE, RESET } from '../actions'
+import { SET, ADD, UPDATE, REMOVE, RESET } from '../actions'
 import { initState } from '../reducer'
 
 const coreReducer = key => prefix =>
@@ -29,6 +29,15 @@ const coreReducer = key => prefix =>
           keys: uniq([...state.keys, payload[key]]),
           array,
           initialized: true,
+        }
+      }
+      case UPDATE(prefix): {
+        const sameKey = state.array.find(o => o[key] === payload[key])
+        if (!sameKey) return state
+        return {
+          ...state,
+          data: { ...state.data, [payload[key]]: { ...state.data[payload[key]], ...payload } },
+          array: state.array.map(o => (o[key] === payload[key] ? { ...o, ...payload } : o)),
         }
       }
       case REMOVE(prefix):
