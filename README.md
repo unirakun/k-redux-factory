@@ -57,7 +57,7 @@ import factory from 'trampss-redux-factory'
 import { uniq } from 'trampss-redux-factory'
 
 // or - prebuild map factory
-import { map } from 'trampss-redux-factory`
+import { map } from 'trampss-redux-factory'
 ```
 
 There are multiple factories signatures, take you preferred between :

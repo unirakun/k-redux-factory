@@ -57,7 +57,7 @@ export default factory({ type: 'map', /* other options */ })
 ```es6
 import { uniq } from 'trampss-redux-factory'
 
-export default map(/* options */)
+export default uniq(/* options */)
 ```
 
 or
