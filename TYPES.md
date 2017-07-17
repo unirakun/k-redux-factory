@@ -4,6 +4,21 @@
  - [uniq](#uniq)
 
 ## map
+### factory
+```es6
+import { map } from 'trampss-redux-factory'
+
+export default map(/* options */)
+```
+
+or
+
+```es6
+import factory from 'trampss-redux-factory'
+
+export default factory({ type: 'map', /* other options */ })
+```
+
 ### state
 ```es6
 {
@@ -38,6 +53,21 @@
 | `getState(state)` | returns the global state of your reducer | |
 
 ## uniq
+### factory
+```es6
+import { uniq } from 'trampss-redux-factory'
+
+export default map(/* options */)
+```
+
+or
+
+```es6
+import factory from 'trampss-redux-factory'
+
+export default factory({ type: 'uniq', /* other options */ })
+```
+
 ### state
 ```es6
 {
