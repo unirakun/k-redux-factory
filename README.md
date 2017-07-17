@@ -95,7 +95,7 @@ Types are :
 }
 ```
 
-  - `uniq` : your state is an object, simplier, with the following redux state model :
+  - `uniq` : your state is an object, simpler, with the following redux state model :
 ```es6
 {
   data: <instance>,
