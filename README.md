@@ -19,7 +19,7 @@ Factory of Redux reducers and their associated actions and selectors.
 import { map } from 'trampss-redux-factory'
 export default map({ key: 'id', path: 'api', name: 'todos' })
 ```
-That's it, you exported a reducer function you can register thanks to combinerReducer in Redux.
+That's it, you just exported the reducer function and now you can register it through combinerReducer in Redux.
 
 In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`
 

@@ -26,7 +26,6 @@ export default factory({ type: 'map', /* other options */ })
   array: [<instance1>, <instance2>],
   keys: [<key1>, <key2>],
   initialized: true,
-
 }
 ```
 
