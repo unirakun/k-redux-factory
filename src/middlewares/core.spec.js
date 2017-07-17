@@ -72,7 +72,7 @@ describe('middlewares/core', () => {
     }),
   ).toMatchSnapshot())
 
-  it('should update an element not present [elm12]', () => expect(
+  it('should not update element if not found [elm12]', () => expect(
     testPrefix({
       state,
       action: update(prefix)(Element('elm12')),

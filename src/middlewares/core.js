@@ -32,12 +32,12 @@ const coreReducer = key => prefix =>
         }
       }
       case UPDATE(prefix): {
-        const sameKey = state.array.find(o => o[key] === payload[key])
-        if (!sameKey) return state
+        const instanceKey = payload[key]
+        if (!instanceKey) return state
         return {
           ...state,
-          data: { ...state.data, [payload[key]]: { ...state.data[payload[key]], ...payload } },
-          array: state.array.map(o => (o[key] === payload[key] ? { ...o, ...payload } : o)),
+          data: { ...state.data, [instanceKey]: { ...state.data[instanceKey], ...payload } },
+          array: state.array.map(o => (o[key] === instanceKey ? { ...o, ...payload } : o)),
         }
       }
       case REMOVE(prefix):
