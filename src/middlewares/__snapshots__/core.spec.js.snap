@@ -199,11 +199,6 @@ Object {
         "infos": "elm1",
         "some": "other",
       },
-      "elm12": Object {
-        "code": "elm12",
-        "infos": "elm12",
-        "some": "other",
-      },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
