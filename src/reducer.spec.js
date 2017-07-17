@@ -1,6 +1,8 @@
 /* eslint-env jest */
 import { add } from './actions'
-import reducer, { initState } from './reducer'
+import reducer from './reducer'
+
+const initState = { data: [{ some: 'data' }] }
 
 jest.mock('./middlewares', () => ({
   core: (/* key */) => (/* path */) => ctx => ({
@@ -18,15 +20,23 @@ const middleware = name => key => path => ctx => ({
 })
 
 describe('reducer', () => {
-  it('should initialize', () => {
-    const testPrefix = reducer(/* no middleware */)('code')(prefix)
+  it('should initialize an action if undefined', () => {
+    const testPrefix = reducer({
+      engine: [
+        middleware('engine'),
+      ],
+    })('code')(prefix)
     expect(
-      testPrefix(),
+      testPrefix(initState, undefined),
     ).toMatchSnapshot()
   })
 
-  it('should call -core- middleware', () => {
-    const testPrefix = reducer(/* no middleware */)('code')(prefix)
+  it('should call -engine- middleware', () => {
+    const testPrefix = reducer({
+      engine: [
+        middleware('engine'),
+      ],
+    })('code')(prefix)
     expect(
       testPrefix(initState, add(prefix)({ code: '1', some: 'info' })),
     ).toMatchSnapshot()
