@@ -2,6 +2,7 @@
   "name": "trampss-redux-factory",
   "version": "2.2.0",
   "main": "index.js",
+  "helpers": "helpers.js",
   "license": "MIT",
   "peerDependencies": {
     "lodash": "^4.17.4"
@@ -34,7 +35,9 @@
   "scripts": {
     "lint:js": "eslint --ext js,jsx src",
     "lint": "npm-run-all --parallel lint:*",
-    "build": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.js",
+    "build:core": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.js",
+    "build:helpers": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.helpers.js",
+    "build": "npm-run-all --parallel build:*",
     "test": "jest",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },

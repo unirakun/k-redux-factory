@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { set, add, remove, reset } from '../actions'
+import { set, add, update, remove, reset } from '../actions'
 import { initState } from '../reducer'
 import map from './map'
 
@@ -62,6 +62,20 @@ describe('middlewares/map', () => {
     testPrefix({
       state,
       action: add(prefix)(Element('elm2')),
+    }),
+  ).toMatchSnapshot())
+
+  it('should update an element [elm3]', () => expect(
+    testPrefix({
+      state,
+      action: update(prefix)({ ...Element('elm3'), some: 'other UPDATE' }),
+    }),
+  ).toMatchSnapshot())
+
+  it('should not update element if not found [elm12]', () => expect(
+    testPrefix({
+      state,
+      action: update(prefix)(Element('elm12')),
     }),
   ).toMatchSnapshot())
 })

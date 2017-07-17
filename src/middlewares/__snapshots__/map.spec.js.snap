@@ -165,6 +165,61 @@ Object {
 }
 `;
 
+exports[`middlewares/map should not update element if not found [elm12] 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "code": "elm12",
+      "infos": "elm12",
+      "some": "other",
+    },
+    "type": "@trampss/UPDATE_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm2",
+      "elm1",
+      "elm3",
+    ],
+  },
+}
+`;
+
 exports[`middlewares/map should remove element [elm1] 1`] = `
 Object {
   "action": Object {
@@ -265,6 +320,61 @@ Object {
     "keys": Array [
       "elm1",
       "elm2",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/map should update an element [elm3] 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "code": "elm3",
+      "infos": "elm3",
+      "some": "other UPDATE",
+    },
+    "type": "@trampss/UPDATE_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other UPDATE",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other UPDATE",
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm2",
+      "elm1",
+      "elm3",
     ],
   },
 }

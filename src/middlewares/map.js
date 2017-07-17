@@ -1,7 +1,10 @@
 import { keyBy, without, uniq, omit } from 'lodash'
-import { SET, ADD, REMOVE, RESET } from '../actions'
+import { SET, ADD, UPDATE, REMOVE, RESET } from '../actions'
 
 export const initState = { data: {}, keys: [], array: [], initialized: false }
+
+const keyAlreadyExists =
+  state => (key, instanceKey) => state.array.find(o => o[key] === instanceKey)
 
 const reducer = key => prefix =>
   (state = initState, { type, payload } = {}) => {
@@ -14,22 +17,29 @@ const reducer = key => prefix =>
           initialized: true,
         }
       case ADD(prefix): {
-        const sameKey = state.array.find(o => o[key] === payload[key])
         let array
-        if (sameKey === undefined) {
+        const instanceKey = payload[key]
+        if (!keyAlreadyExists(state)(key, instanceKey)) {
           array = [...state.array, payload]
         } else {
-          array = state.array.map(
-            o => (o[key] === payload[key] ? payload : o),
-          )
+          array = state.array.map(o => (o[key] === instanceKey ? payload : o))
         }
 
         return {
           ...state,
-          data: { ...state.data, [payload[key]]: payload },
-          keys: uniq([...state.keys, payload[key]]),
+          data: { ...state.data, [instanceKey]: payload },
+          keys: uniq([...state.keys, instanceKey]),
           array,
           initialized: true,
+        }
+      }
+      case UPDATE(prefix): {
+        const instanceKey = payload[key]
+        if (!keyAlreadyExists(state)(key, instanceKey)) return state
+        return {
+          ...state,
+          data: { ...state.data, [instanceKey]: { ...state.data[instanceKey], ...payload } },
+          array: state.array.map(o => (o[key] === instanceKey ? { ...o, ...payload } : o)),
         }
       }
       case REMOVE(prefix):
