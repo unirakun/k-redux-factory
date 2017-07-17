@@ -67,8 +67,8 @@ Parameters are :
    - it's used to generate actions types
    - it's used to retrieve informations from selectors
    - it can be an object : `{name, prefix, type}` where :
-     - `prefix` is added to actions to avoid some collisions when there are two reducers with same name in two distincts pathes
-     - `type` could be `map` or `uniq` (default is `map`)
+     - `prefix` is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
+     - `type` can be `map` or `uniq` (default is `map`)
 
 Example:
  - this reducer will use `id` as key field
@@ -84,7 +84,7 @@ Data will be stored into `state.api.raw.todos`.
 
 ### Types
 Types are :
-  - `map` : your state is a hashmap, usefull to bind your API to Redux with the following redux state model :
+  - `map` : your state is a hashmap, useful to bind your API to Redux with the following redux state model :
 ```es6
 {
   data: { <key1>: <instance1>, <key2>: <instance2> },
@@ -95,7 +95,7 @@ Types are :
 }
 ```
 
-  - `uniq` : your state is an object, much simplier, with the following redux state model :
+  - `uniq` : your state is an object, simplier, with the following redux state model :
 ```es6
 {
   data: <instance>,
