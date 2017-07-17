@@ -1,12 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`reducer should call -core- middleware 1`] = `
+exports[`reducer should call -engine- middleware 1`] = `
 Object {
-  "array": Array [],
-  "core": true,
-  "data": Object {},
-  "initialized": false,
-  "keys": Array [],
+  "data": Array [
+    Object {
+      "some": "data",
+    },
+  ],
+  "engine": true,
+  "key": "code",
+  "path": "testPrefix",
   "prev": Object {
     "action": Object {
       "payload": Object {
@@ -16,10 +19,11 @@ Object {
       "type": "@trampss/ADD_TESTPREFIX",
     },
     "state": Object {
-      "array": Array [],
-      "data": Object {},
-      "initialized": false,
-      "keys": Array [],
+      "data": Array [
+        Object {
+          "some": "data",
+        },
+      ],
     },
   },
 }
@@ -27,18 +31,17 @@ Object {
 
 exports[`reducer should call -post- middlewares 1`] = `
 Object {
-  "array": Array [],
-  "core": true,
-  "data": Object {},
-  "initialized": false,
+  "data": Array [
+    Object {
+      "some": "data",
+    },
+  ],
   "key": "code",
-  "keys": Array [],
   "path": "testPrefix",
   "post1": true,
   "post2": true,
   "prev": Object {
     "action": Object {
-      "core": true,
       "payload": Object {
         "code": "1",
         "some": "info",
@@ -47,17 +50,16 @@ Object {
       "type": "@trampss/ADD_TESTPREFIX",
     },
     "state": Object {
-      "array": Array [],
-      "core": true,
-      "data": Object {},
-      "initialized": false,
+      "data": Array [
+        Object {
+          "some": "data",
+        },
+      ],
       "key": "code",
-      "keys": Array [],
       "path": "testPrefix",
       "post1": true,
       "prev": Object {
         "action": Object {
-          "core": true,
           "payload": Object {
             "code": "1",
             "some": "info",
@@ -65,26 +67,11 @@ Object {
           "type": "@trampss/ADD_TESTPREFIX",
         },
         "state": Object {
-          "array": Array [],
-          "core": true,
-          "data": Object {},
-          "initialized": false,
-          "keys": Array [],
-          "prev": Object {
-            "action": Object {
-              "payload": Object {
-                "code": "1",
-                "some": "info",
-              },
-              "type": "@trampss/ADD_TESTPREFIX",
+          "data": Array [
+            Object {
+              "some": "data",
             },
-            "state": Object {
-              "array": Array [],
-              "data": Object {},
-              "initialized": false,
-              "keys": Array [],
-            },
-          },
+          ],
         },
       },
     },
@@ -94,12 +81,12 @@ Object {
 
 exports[`reducer should call -pre- middlewares 1`] = `
 Object {
-  "array": Array [],
-  "core": true,
-  "data": Object {},
-  "initialized": false,
+  "data": Array [
+    Object {
+      "some": "data",
+    },
+  ],
   "key": "code",
-  "keys": Array [],
   "path": "testPrefix",
   "pre1": true,
   "pre2": true,
@@ -110,50 +97,31 @@ Object {
         "some": "info",
       },
       "pre1": true,
-      "pre2": true,
       "type": "@trampss/ADD_TESTPREFIX",
     },
     "state": Object {
-      "array": Array [],
-      "data": Object {},
-      "initialized": false,
+      "data": Array [
+        Object {
+          "some": "data",
+        },
+      ],
       "key": "code",
-      "keys": Array [],
       "path": "testPrefix",
       "pre1": true,
-      "pre2": true,
       "prev": Object {
         "action": Object {
           "payload": Object {
             "code": "1",
             "some": "info",
           },
-          "pre1": true,
           "type": "@trampss/ADD_TESTPREFIX",
         },
         "state": Object {
-          "array": Array [],
-          "data": Object {},
-          "initialized": false,
-          "key": "code",
-          "keys": Array [],
-          "path": "testPrefix",
-          "pre1": true,
-          "prev": Object {
-            "action": Object {
-              "payload": Object {
-                "code": "1",
-                "some": "info",
-              },
-              "type": "@trampss/ADD_TESTPREFIX",
+          "data": Array [
+            Object {
+              "some": "data",
             },
-            "state": Object {
-              "array": Array [],
-              "data": Object {},
-              "initialized": false,
-              "keys": Array [],
-            },
-          },
+          ],
         },
       },
     },
@@ -161,23 +129,27 @@ Object {
 }
 `;
 
-exports[`reducer should initialize 1`] = `
+exports[`reducer should initialize an action if undefined 1`] = `
 Object {
-  "array": Array [],
-  "core": true,
-  "data": Object {},
-  "initialized": false,
-  "keys": Array [],
+  "data": Array [
+    Object {
+      "some": "data",
+    },
+  ],
+  "engine": true,
+  "key": "code",
+  "path": "testPrefix",
   "prev": Object {
     "action": Object {
       "payload": undefined,
       "type": "UNKNOWN",
     },
     "state": Object {
-      "array": Array [],
-      "data": Object {},
-      "initialized": false,
-      "keys": Array [],
+      "data": Array [
+        Object {
+          "some": "data",
+        },
+      ],
     },
   },
 }
