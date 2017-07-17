@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`index type validation should be on error [not a middleware object, nor an option object] 1`] = `[Error: parameter is not a middleware configuration, nor a factory option object.]`;
+
+exports[`index type validation should be on error [undefined] 1`] = `[Error: parameter is not a middleware configuration, nor a factory option object.]`;
+
+exports[`index type validation should instanciate a reducer (options as object) 1`] = `"map"`;
+
+exports[`index type validation should instanciate a reducer (options as string -name-) 1`] = `"map"`;
+
+exports[`index uniq factory should instanciate a map reducer (default) 1`] = `"map"`;
+
+exports[`index uniq factory should instanciate a map reducer (specified) 1`] = `"map"`;
+
+exports[`index uniq factory should instanciate a uniq reducer 1`] = `"uniq"`;
+
 exports[`index with middleware should prefix actions 1`] = `
 Object {
   "payload": Object {

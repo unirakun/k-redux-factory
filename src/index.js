@@ -3,33 +3,56 @@ import * as selectors from './selectors'
 import * as types from './types'
 import reducer from './reducer'
 
-const func = (middlewares = {}) => key => path => type => prefix => name => Object.assign(
-  reducer({ ...middlewares, engine: type.middlewares })(key)(`${prefix}${name}`),
+const getWrappedStore = (middlewares = {}) => (options) => {
+  const { key, path, type = 'map', prefix = '', name } = options
+  const typeConfig = types[type]
 
-  // actions
-  ...Object.keys(actions)
-    .filter(k => type.actions.includes(k))
-    .map(k => ({ [k]: actions[k](`${prefix}${name}`) })),
+  return Object.assign(
+    reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(`${prefix}${name}`),
 
-  // selectors
-  ...Object.keys(selectors)
-    .filter(k => type.selectors.includes(k))
-    .map(k => ({ [k]: selectors[k](path)(name) })),
-)
+    // type (debug purpose)
+    { trampssType: type },
 
+    // actions
+    ...Object.keys(actions)
+      .filter(k => typeConfig.actions.includes(k))
+      .map(k => ({ [k]: actions[k](`${prefix}${name}`) })),
 
-export default middlewares => key => path => (options) => {
-  let name
-  let prefix = ''
-  let type = 'map'
+    // selectors
+    ...Object.keys(selectors)
+      .filter(k => typeConfig.selectors.includes(k))
+      .map(k => ({ [k]: selectors[k](path)(name) })),
+  )
+}
 
-  // retrieve options
-  if (typeof options === 'string') name = options
-  else {
-    name = options.name
-    prefix = options.prefix || ''
-    type = options.type || 'map'
+// error :( - not a middleware nor an option parameter
+const error = () => { throw Error('parameter is not a middleware configuration, nor a factory option object.') }
+
+// params checkers
+const isMiddleware = params => params.engine || params.pre || params.post
+const isOptions = params => (!!params.name) || (typeof params === 'string')
+
+// eslint-disable-next-line consistent-return
+const factory = (forcedOptions = {}) => (params) => {
+  // no param : error
+  if (params === null || params === undefined) error()
+
+  // middleware case
+  if (isMiddleware(params)) {
+    return options => getWrappedStore(params)({ ...options, ...forcedOptions })
+  }
+  // no middleware case
+  if (isOptions(params)) {
+    if (typeof params === 'string') return getWrappedStore()({ name: params, ...forcedOptions })
+    return getWrappedStore()({ ...params, ...forcedOptions })
   }
 
-  return func(middlewares)(key)(path)(types[type])(prefix)(name)
+  // not a valid param
+  error()
 }
+
+export const uniq = factory({ type: 'uniq' })
+export const map = factory({ type: 'map' })
+
+// default public factory
+export default factory()

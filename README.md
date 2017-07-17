@@ -16,10 +16,10 @@ Factory of Redux reducers and their associated actions and selectors.
 `trampss-redux-factory` creates generic reducers, actions and selectors in two lines.
 
 ```es6
-import factory from 'trampss-redux-factory'
-export default factory(/* middlewares */)('id')('api')('todos')
+import { map } from 'trampss-redux-factory'
+export default map({ key: 'id', path: 'api', name: 'todos' })
 ```
-That's it, you exported a reducer function you can register thanks to combinerReducer in Redux.
+That's it, you just exported the reducer function and now you can register it through combinerReducer in Redux.
 
 In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`
 
@@ -50,26 +50,36 @@ We created this lightweight library, a factory of reducers, actions and selector
 ### factory
 You need to use the factory to get a new set of reducer/actions/selectors :
 ```es6
+// modular factory
 import factory from 'trampss-redux-factory'
+
+// or - prebuild uniq factory
+import { uniq } from 'trampss-redux-factory'
+
+// or - prebuild map factory
+import { map } from 'trampss-redux-factory'
 ```
 
-This factory takes four parameters, you can use one of these signatures :
- - `factory(middlewares)(fieldKey)(path)(name)`
- - `factory(middlewares)(fieldKey)(path)({ name, prefix, type })`
+There are multiple factories signatures, take you preferred between :
+ - `factory(middlewares)(options)` : this is the root factory, with middlewares
+ - `factory(options)` : this is the root factory, without middlewares
+ - `uniq(middlewares)(options)` : this is a `uniq` factory with middlewares
+ - `uniq(options)` : this is a `uniq` factory without middlewares
+ - `map(middlewares)(options)` : this is a `map`  factory with middlewares
+ - `map(options)` : this is a `map`  factory without middlewares
 
 Parameters are :
  - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware.
- - **fieldKey** (mandatory), the field used to identify your objects (`id` for example)
-   - you have to set this parameter.
- - **path** (optional), where the reducer will be combined via `combineReducer`
-   - if empty `export default factory('id')()('todos')`, the reducer will be register at the root level of the redux state
-   - you can use dot notation, like `api.raw`: your reducer will be combined into `state.api.raw.<your_reducer>`
- - **name** (mandatory), the reducer name (for instance: `todos`)
-   - it's used to generate actions types
-   - it's used to retrieve informations from selectors
-   - it can be an object : `{name, prefix, type}` where :
-     - `prefix` is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
-     - `type` can be `map` or `uniq` (default is `map`)
+ - **options** (mandatory), either a string representating the reducer `name`, either an object with these fields :
+   - **key** (optional), the field used to identify your objects (`id` for example)
+   - **path** (optional), where the reducer will be combined via `combineReducer`
+     - if empty, the reducer will be register at the root level of the redux state
+     - you can use dot notation, like `api.raw`: your reducer will be combined into `state.api.raw.<your_reducer>`
+   - **name** (mandatory), the reducer name (for instance: `todos`)
+     - it's used to generate actions types
+     - it's used to retrieve informations from selectors
+   - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
+   - **type** (optional) can be `map` or `uniq` (default is `map`)
 
 Example:
  - this reducer will use `id` as key field
@@ -77,8 +87,8 @@ Example:
  - its name is `todos`
 ```es6
 import factory from 'trampss-redux-factory'
-// factory(fieldKey)(path)(name)
-export default factory()('id')('api.raw')('todos')
+
+export default factory({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
 
 Data will be stored into `state.api.raw.todos`.

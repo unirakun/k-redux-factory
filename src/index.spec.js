@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import factory from './index'
+import factory, { map, uniq } from './index'
 
 const Todo = id => ({ id, some: `information ${id}` })
 
@@ -22,21 +22,21 @@ describe('index', () => {
 
   describe('with name and prefix', () => {
     test(
-      factory(/* no middleware */)('id')()({ name: 'todos', prefix: 'ui' }),
+      factory({ key: 'id', name: 'todos', prefix: 'ui' }),
       { todos: subState },
     )
   })
 
   describe('with name and empty prefix', () => {
     test(
-      factory(/* no middleware */)('id')()({ name: 'todos', prefix: undefined }),
+      factory({ key: 'id', name: 'todos', prefix: undefined }),
       { todos: subState },
     )
   })
 
   describe('with path', () => {
     test(
-      factory(/* no middleware */)('id')('api')('todos'),
+      factory({ key: 'id', path: 'api', name: 'todos' }),
       {
         api: {
           todos: subState,
@@ -46,7 +46,7 @@ describe('index', () => {
   })
 
   describe('without path', () => {
-    test(factory(/* no middleware */)('id')()('todos'), { todos: subState })
+    test(factory({ key: 'id', name: 'todos' }), { todos: subState })
   })
 
   describe('with middleware', () => {
@@ -60,8 +60,56 @@ describe('index', () => {
       factory({
         pre: [middleware('pre1')],
         post: [middleware('post1')],
-      })('id')()('todos'),
+      })({ key: 'id', name: 'todos' }),
       { todos: subState },
     )
+  })
+
+  describe('type validation', () => {
+    it('should be on error [undefined]', () => {
+      let error
+
+      try {
+        factory()
+      } catch (ex) {
+        error = ex
+      }
+
+      expect(error).toMatchSnapshot()
+    })
+
+    it('should be on error [not a middleware object, nor an option object]', () => {
+      let error
+
+      try {
+        factory({ oups: 'unknown' })
+      } catch (ex) {
+        error = ex
+      }
+
+      expect(error).toMatchSnapshot()
+    })
+
+    it('should instanciate a reducer (options as object)', () => {
+      expect(factory({ name: 'aa' }).trampssType).toMatchSnapshot()
+    })
+
+    it('should instanciate a reducer (options as string -name-)', () => {
+      expect(factory('a reducer').trampssType).toMatchSnapshot()
+    })
+  })
+
+  describe('uniq factory', () => {
+    it('should instanciate a uniq reducer', () => {
+      expect(uniq({ name: 'a uniq' }).trampssType).toMatchSnapshot()
+    })
+
+    it('should instanciate a map reducer (specified)', () => {
+      expect(map({ name: 'a map' }).trampssType).toMatchSnapshot()
+    })
+
+    it('should instanciate a map reducer (default)', () => {
+      expect(factory({ name: 'a map' }).trampssType).toMatchSnapshot()
+    })
   })
 })
