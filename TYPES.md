@@ -80,6 +80,7 @@ export default factory({ type: 'uniq', /* other options */ })
 | function name | description | signature | generated action |
 |---|---|---|---|
 | `set` | set the instance | `set(<instance>)` | `{ type: '@trampss/SET_TODOS', payload: <instance> }` |
+| `update` | update the instance of your resource | `update(<instance>)` | `{ type: '@trampss/UPDATE_TODOS', payload: <instance> }` |
 | `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@trampss/RESET_TODOS' }` |
 
 ### selectors
