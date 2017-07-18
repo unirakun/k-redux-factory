@@ -4,7 +4,7 @@ import * as types from './types'
 import reducer from './reducer'
 
 const getWrappedStore = (middlewares = {}) => (options) => {
-  const { key, path, type = 'map', prefix = '', name } = options
+  const { key, path, type = 'keyValue', prefix = '', name } = options
   const typeConfig = types[type]
 
   return Object.assign(
@@ -51,8 +51,8 @@ const factory = (forcedOptions = {}) => (params) => {
   error()
 }
 
-export const uniq = factory({ type: 'uniq' })
-export const map = factory({ type: 'map' })
+export const simpleObject = factory({ type: 'simpleObject' })
+export const keyValue = factory({ type: 'keyValue' })
 
 // default public factory
 export default factory()
