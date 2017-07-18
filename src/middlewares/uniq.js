@@ -1,4 +1,4 @@
-import { SET, RESET } from '../actions'
+import { SET, RESET, UPDATE } from '../actions'
 
 export const initState = { data: undefined, initialized: false }
 
@@ -9,6 +9,14 @@ const reducer = (/* key */) => prefix =>
         return {
           data: payload,
           initialized: true,
+        }
+      case UPDATE(prefix):
+        return {
+          ...state,
+          data: {
+            ...state.data,
+            ...payload,
+          },
         }
       case RESET(prefix):
         return initState

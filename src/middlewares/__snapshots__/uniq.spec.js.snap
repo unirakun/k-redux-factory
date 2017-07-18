@@ -41,3 +41,24 @@ Object {
   },
 }
 `;
+
+exports[`middlewares/uniq should update element 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "modifi": "cation",
+      "some": "other 2",
+    },
+    "type": "@trampss/UPDATE_TESTPREFIX",
+  },
+  "state": Object {
+    "data": Object {
+      "code": "elm",
+      "infos": "elm",
+      "modifi": "cation",
+      "some": "other 2",
+    },
+    "initialized": true,
+  },
+}
+`;
