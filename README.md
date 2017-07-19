@@ -95,7 +95,7 @@ export default factory({ key: 'id', path: 'api.raw', name: 'todos' })
 
 Data will be stored into `state.api.raw.todos`.
 
-### Types
+### [Types](./TYPES.md)
 Types are :
   - `map` : your state is a hashmap, useful to bind your API to Redux with the following redux state model :
 ```es6
@@ -117,8 +117,6 @@ Types are :
 ```
 
 Default type is `map`.
-
-To see more informations about types, [go to the specific page](./TYPES.md).
 
 ### reducer
 The previous factory returns a function which is a reducer.
