@@ -1,2 +1,2 @@
-export { default as map } from './map'
-export { default as uniq } from './uniq'
+export { default as keyValue } from './keyValue'
+export { default as simpleObject } from './simpleObject'

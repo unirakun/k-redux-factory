@@ -1,7 +1,7 @@
-import map from '../middlewares/map'
+import keyValue from '../middlewares/keyValue'
 
 export default {
-  middlewares: [map],
+  middlewares: [keyValue],
   actions: ['set', 'add', 'reset', 'remove'],
   selectors: ['getState', 'getKeys', 'getAsArray', 'getLength', 'isInitialized', 'get', 'getBy'],
 }

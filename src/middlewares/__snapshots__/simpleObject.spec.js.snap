@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`middlewares/uniq should initialize 1`] = `
+exports[`middlewares/simpleObject should initialize 1`] = `
 Object {
   "state": Object {
     "data": undefined,
@@ -9,7 +9,7 @@ Object {
 }
 `;
 
-exports[`middlewares/uniq should reset state 1`] = `
+exports[`middlewares/simpleObject should reset state 1`] = `
 Object {
   "action": Object {
     "type": "@trampss/RESET_TESTPREFIX",
@@ -21,7 +21,7 @@ Object {
 }
 `;
 
-exports[`middlewares/uniq should set element [elm2] 1`] = `
+exports[`middlewares/simpleObject should set element [elm2] 1`] = `
 Object {
   "action": Object {
     "payload": Object {
