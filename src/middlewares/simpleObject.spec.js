@@ -24,7 +24,7 @@ describe('middlewares/simpleObject', () => {
   ).toMatchSnapshot())
 
   it('should reset state', () => expect(
-    testPrefix({
+    testPrefix(/* defaultData */)({
       state,
       action: reset(prefix)(),
     }),
