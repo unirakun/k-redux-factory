@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`middlewares/map should add element [elm4] 1`] = `
+exports[`middlewares/keyValue should add element [elm4] 1`] = `
 Object {
   "action": Object {
     "payload": Object {
@@ -66,7 +66,7 @@ Object {
 }
 `;
 
-exports[`middlewares/map should add element [elm4] on initial store 1`] = `
+exports[`middlewares/keyValue should add element [elm4] on initial store 1`] = `
 Object {
   "action": Object {
     "payload": Object {
@@ -99,7 +99,7 @@ Object {
 }
 `;
 
-exports[`middlewares/map should initialize 1`] = `
+exports[`middlewares/keyValue should initialize 1`] = `
 Object {
   "state": Object {
     "array": Array [],
@@ -110,7 +110,7 @@ Object {
 }
 `;
 
-exports[`middlewares/map should not duplicate object with same key [elm2] 1`] = `
+exports[`middlewares/keyValue should not duplicate object with same key [elm2] 1`] = `
 Object {
   "action": Object {
     "payload": Object {
@@ -165,7 +165,7 @@ Object {
 }
 `;
 
-exports[`middlewares/map should not update element if not found [elm12] 1`] = `
+exports[`middlewares/keyValue should not update element if not found [elm12] 1`] = `
 Object {
   "action": Object {
     "payload": Object {
@@ -220,7 +220,7 @@ Object {
 }
 `;
 
-exports[`middlewares/map should remove element [elm1] 1`] = `
+exports[`middlewares/keyValue should remove element [elm1] 1`] = `
 Object {
   "action": Object {
     "payload": "elm1",
@@ -260,7 +260,7 @@ Object {
 }
 `;
 
-exports[`middlewares/map should reset state 1`] = `
+exports[`middlewares/keyValue should reset state 1`] = `
 Object {
   "action": Object {
     "type": "@trampss/RESET_TESTPREFIX",
@@ -274,7 +274,7 @@ Object {
 }
 `;
 
-exports[`middlewares/map should set elements [elm1,elm2] 1`] = `
+exports[`middlewares/keyValue should set elements [elm1,elm2] 1`] = `
 Object {
   "action": Object {
     "payload": Array [
@@ -325,7 +325,7 @@ Object {
 }
 `;
 
-exports[`middlewares/map should update an element [elm3] 1`] = `
+exports[`middlewares/keyValue should update an element [elm3] 1`] = `
 Object {
   "action": Object {
     "payload": Object {
