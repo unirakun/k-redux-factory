@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { set, reset } from '../actions'
+import { set, reset, update } from '../actions'
 import simpleObject from './simpleObject'
 
 const prefix = 'testPrefix'
@@ -27,6 +27,13 @@ describe('middlewares/simpleObject', () => {
     testPrefix({
       state,
       action: reset(prefix)(),
+    }),
+  ).toMatchSnapshot())
+
+  it('should update element', () => expect(
+    testPrefix({
+      state,
+      action: update(prefix)({ some: 'other 2', modifi: 'cation' }),
     }),
   ).toMatchSnapshot())
 })
