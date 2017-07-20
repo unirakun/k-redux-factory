@@ -19,7 +19,7 @@ const state = {
 describe('middlewares/keyValue', () => {
   // Use the factory to create a new reducer named 'testPrefix'
   // It uses 'code' as key in givent elements
-  const testPrefix = keyValue('code')(prefix)
+  const testPrefix = keyValue('code')(prefix)(/* defaultData */)
 
   it('should initialize', () => expect(testPrefix()).toMatchSnapshot())
 

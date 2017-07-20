@@ -14,26 +14,35 @@ describe('middlewares/simpleObject', () => {
   // It uses 'code' as key in givent elements
   const testPrefix = simpleObject('code')(prefix)
 
-  it('should initialize', () => expect(testPrefix()).toMatchSnapshot())
+  it('should initialize', () => expect(testPrefix(/* defaultData */)()).toMatchSnapshot())
 
   it('should set element [elm2]', () => expect(
-    testPrefix({
+    testPrefix(/* defaultData */)({
       state,
       action: set(prefix)(Element('elm2')),
     }),
   ).toMatchSnapshot())
 
   it('should reset state', () => expect(
-    testPrefix({
+    testPrefix(/* defaultData */)({
       state,
       action: reset(prefix)(),
     }),
   ).toMatchSnapshot())
 
   it('should update element', () => expect(
-    testPrefix({
+    testPrefix(/* defaultData */)({
       state,
       action: update(prefix)({ some: 'other 2', modifi: 'cation' }),
     }),
   ).toMatchSnapshot())
+
+  it('should take defaultData param to populate data field', () => {
+    const defaultData = { im: 'default' }
+    // init
+    expect(testPrefix(defaultData)()).toMatchSnapshot()
+
+    // reset
+    expect(testPrefix(defaultData)({ state, action: reset(prefix)() })).toMatchSnapshot()
+  })
 })

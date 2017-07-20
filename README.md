@@ -82,6 +82,7 @@ Parameters are :
      - it's used to retrieve informations from selectors
    - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
    - **type** (optional) can be `keyValue` or `simpleObject` (default is `keyValue`)
+   - **defaultData** (optional), for `simpleObject` only, set the default data value (used by `reset` action and for initialisation)
 
 Example:
  - this reducer will use `id` as key field

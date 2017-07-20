@@ -42,6 +42,31 @@ Object {
 }
 `;
 
+exports[`middlewares/simpleObject should take defaultData param to populate data field 1`] = `
+Object {
+  "state": Object {
+    "data": Object {
+      "im": "default",
+    },
+    "initialized": false,
+  },
+}
+`;
+
+exports[`middlewares/simpleObject should take defaultData param to populate data field 2`] = `
+Object {
+  "action": Object {
+    "type": "@trampss/RESET_TESTPREFIX",
+  },
+  "state": Object {
+    "data": Object {
+      "im": "default",
+    },
+    "initialized": false,
+  },
+}
+`;
+
 exports[`middlewares/simpleObject should update element 1`] = `
 Object {
   "action": Object {
