@@ -37,6 +37,7 @@ Object {
       "some": "information 2",
     },
   },
+  "defaultData": undefined,
   "initialized": true,
   "key": "id",
   "keys": Array [
@@ -64,6 +65,7 @@ Object {
           "some": "information 2",
         },
       },
+      "defaultData": undefined,
       "initialized": true,
       "key": "id",
       "keys": Array [

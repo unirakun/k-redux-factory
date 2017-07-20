@@ -6,7 +6,7 @@ export const initState = { data: {}, keys: [], array: [], initialized: false }
 const keyAlreadyExists =
   state => (key, instanceKey) => state.array.find(o => o[key] === instanceKey)
 
-const reducer = key => prefix =>
+const reducer = key => prefix => (/* defaultData */) =>
   (state = initState, { type, payload } = {}) => {
     switch (type) {
       case SET(prefix):
@@ -56,7 +56,7 @@ const reducer = key => prefix =>
     }
   }
 
-export default key => prefix => (ctx = {}) => ({
+export default key => prefix => defaultData => (ctx = {}) => ({
   ...ctx,
-  state: reducer(key)(prefix)(ctx.state, ctx.action),
+  state: reducer(key)(prefix)(defaultData)(ctx.state, ctx.action),
 })
