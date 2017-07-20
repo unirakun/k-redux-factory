@@ -1,7 +1,7 @@
-import uniq from '../middlewares/uniq'
+import simpleObject from '../middlewares/simpleObject'
 
 export default {
-  middlewares: [uniq],
+  middlewares: [simpleObject],
   actions: ['set', 'reset', 'update'],
   selectors: ['getState', 'isInitialized', 'get'],
 }

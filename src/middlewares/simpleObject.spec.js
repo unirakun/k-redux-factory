@@ -1,6 +1,6 @@
 /* eslint-env jest */
 import { set, reset, update } from '../actions'
-import uniq from './uniq'
+import simpleObject from './simpleObject'
 
 const prefix = 'testPrefix'
 const Element = code => ({ code, some: 'other', infos: code })
@@ -9,10 +9,10 @@ const state = {
   initialized: true,
 }
 
-describe('middlewares/uniq', () => {
+describe('middlewares/simpleObject', () => {
   // Use the factory to create a new reducer named 'testPrefix'
   // It uses 'code' as key in givent elements
-  const testPrefix = uniq('code')(prefix)
+  const testPrefix = simpleObject('code')(prefix)
 
   it('should initialize', () => expect(testPrefix()).toMatchSnapshot())
 

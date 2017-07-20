@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import factory, { map, uniq } from './index'
+import factory, { keyValue, simpleObject } from './index'
 
 const Todo = id => ({ id, some: `information ${id}` })
 
@@ -99,17 +99,17 @@ describe('index', () => {
     })
   })
 
-  describe('uniq factory', () => {
-    it('should instanciate a uniq reducer', () => {
-      expect(uniq({ name: 'a uniq' }).trampssType).toMatchSnapshot()
+  describe('named factory', () => {
+    it('should instanciate a simpleObject reducer', () => {
+      expect(simpleObject({ name: 'a simpleObject' }).trampssType).toMatchSnapshot()
     })
 
-    it('should instanciate a map reducer (specified)', () => {
-      expect(map({ name: 'a map' }).trampssType).toMatchSnapshot()
+    it('should instanciate a keyValue reducer (specified)', () => {
+      expect(keyValue({ name: 'a keyValue' }).trampssType).toMatchSnapshot()
     })
 
-    it('should instanciate a map reducer (default)', () => {
-      expect(factory({ name: 'a map' }).trampssType).toMatchSnapshot()
+    it('should instanciate a keyValue reducer (default)', () => {
+      expect(factory({ name: 'a keyValue' }).trampssType).toMatchSnapshot()
     })
   })
 })

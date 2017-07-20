@@ -16,12 +16,14 @@ Factory of Redux reducers and their associated actions and selectors.
 `trampss-redux-factory` creates generic reducers, actions and selectors in two lines.
 
 ```es6
-import { map } from 'trampss-redux-factory'
-export default map({ key: 'id', path: 'api', name: 'todos' })
+import { keyValue } from 'trampss-redux-factory'
+export default keyValue({ key: 'id', path: 'api', name: 'todos' })
 ```
 That's it, you just exported the reducer function and now you can register it through combinerReducer in Redux.
 
-In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`
+In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`.
+
+One more thing, this lib handle state immutability for you !
 
 ## Why
 We like to write Redux code as simple as possible and use its middlewares to handle real world problems.
@@ -53,20 +55,20 @@ You need to use the factory to get a new set of reducer/actions/selectors :
 // modular factory
 import factory from 'trampss-redux-factory'
 
-// or - prebuild uniq factory
-import { uniq } from 'trampss-redux-factory'
+// or - prebuild simpleObject factory
+import { simpleObject } from 'trampss-redux-factory'
 
-// or - prebuild map factory
-import { map } from 'trampss-redux-factory'
+// or - prebuild keyValue factory
+import { keyValue } from 'trampss-redux-factory'
 ```
 
 There are multiple factories signatures, take you preferred between :
  - `factory(middlewares)(options)` : this is the root factory, with middlewares
  - `factory(options)` : this is the root factory, without middlewares
- - `uniq(middlewares)(options)` : this is a `uniq` factory with middlewares
- - `uniq(options)` : this is a `uniq` factory without middlewares
- - `map(middlewares)(options)` : this is a `map`  factory with middlewares
- - `map(options)` : this is a `map`  factory without middlewares
+ - `simpleObject(middlewares)(options)` : this is a `simpleObject` factory with middlewares
+ - `simpleObject(options)` : this is a `simpleObject` factory without middlewares
+ - `keyValue(middlewares)(options)` : this is a `keyValue`  factory with middlewares
+ - `keyValue(options)` : this is a `keyValue`  factory without middlewares
 
 Parameters are :
  - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware.
@@ -79,7 +81,7 @@ Parameters are :
      - it's used to generate actions types
      - it's used to retrieve informations from selectors
    - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
-   - **type** (optional) can be `map` or `uniq` (default is `map`)
+   - **type** (optional) can be `keyValue` or `simpleObject` (default is `keyValue`)
 
 Example:
  - this reducer will use `id` as key field
@@ -93,9 +95,9 @@ export default factory({ key: 'id', path: 'api.raw', name: 'todos' })
 
 Data will be stored into `state.api.raw.todos`.
 
-### Types
+### [Types](./TYPES.md)
 Types are :
-  - `map` : your state is a hashmap, useful to bind your API to Redux with the following redux state model :
+  - `keyValue` : your state is a hashmap, useful to bind your API to Redux with the following redux state model :
 ```es6
 {
   data: { <key1>: <instance1>, <key2>: <instance2> },
@@ -106,7 +108,7 @@ Types are :
 }
 ```
 
-  - `uniq` : your state is an object, simpler, with the following redux state model :
+  - `simpleObject` : your state is an object, simpler, with the following redux state model :
 ```es6
 {
   data: <instance>,
@@ -114,9 +116,7 @@ Types are :
 }
 ```
 
-Default type is `map`.
-
-To see more informations about types, [go to the specific page](./TYPES.md).
+Default type is `keyValue`.
 
 ### reducer
 The previous factory returns a function which is a reducer.
@@ -155,7 +155,7 @@ Some generic actions are available. By now, it's not possible to add custom ones
 
 To see them go to [TYPES.md](./TYPES.md).
 
-Example, we set todos to our typed `map` reducer:
+Example, we set todos to our typed `keyValue` reducer:
 ```es6
 // import your reducer
 // (created by tramps-redux-data-store factory)
@@ -202,7 +202,7 @@ todos.get('1')(state)
 | signature | description | comment |
 |---|---|---|
 |`mapAction(<mapper(action)>)`| create middleware and map only redux action | mapper(action) is mandatory |
-|`mapPayload(<mapper(payload)>)`| create middleware and map only redux payload | mapper(payload) is mandatory |
+|`mapPayload(<regex>)(<mapper(payload)>)`| create middleware and map the payload of the corresponding redux actions type by the regex |
 
 #### Example, we create a middleware but we modify only the action :
 ```es6
@@ -213,7 +213,7 @@ import { mapAction } from 'trampss-redux-factory/helpers'
 // define a function to map action
 const mapper = action => ({ ...action, type: `SET_${action.type}` })
 // create your reducer and transform the type of action before core middleware
-export default factory({ pre: [mapAction(mapper)] })('id')('api.raw')('todos')
+export default factory({ pre: [mapAction(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
 
 #### Example, we create a middleware but we modify only the payload :
@@ -225,5 +225,5 @@ import { mapPayload } from 'trampss-redux-factory/helpers'
 // define a function to map payload
 const mapper = payload => payload.map(p => ({ ...p, id: `ID_${p.id}` }))
 // create your reducer and transform the payload before core middleware
-export default factory({ pre: [mapPayload(/SET_TODOS/)(mapper)] })('id')('api.raw')('todos')
+export default factory({ pre: [mapPayload(/SET_TODOS/)(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
 ```

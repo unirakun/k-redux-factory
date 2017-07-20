@@ -1,14 +1,14 @@
 # Types
 
- - [map](#map)
- - [uniq](#uniq)
+ - [keyValue](#keyValue)
+ - [simpleObject](#simpleObject)
 
-## map
+## keyValue
 ### factory
 ```es6
-import { map } from 'trampss-redux-factory'
+import { keyValue } from 'trampss-redux-factory'
 
-export default map(/* options */)
+export default keyValue(/* options */)
 ```
 
 or
@@ -16,7 +16,7 @@ or
 ```es6
 import factory from 'trampss-redux-factory'
 
-export default factory({ type: 'map', /* other options */ })
+export default factory({ type: 'keyValue', /* other options */ })
 ```
 
 ### state
@@ -51,12 +51,12 @@ export default factory({ type: 'map', /* other options */ })
 | `isInitialized(state)` | returns true if the store has been initialized (by `add` or by `set` action) | |
 | `getState(state)` | returns the global state of your reducer | |
 
-## uniq
+## simpleObject
 ### factory
 ```es6
-import { uniq } from 'trampss-redux-factory'
+import { simpleObject } from 'trampss-redux-factory'
 
-export default uniq(/* options */)
+export default simpleObject(/* options */)
 ```
 
 or
@@ -64,7 +64,7 @@ or
 ```es6
 import factory from 'trampss-redux-factory'
 
-export default factory({ type: 'uniq', /* other options */ })
+export default factory({ type: 'simpleObject', /* other options */ })
 ```
 
 ### state
