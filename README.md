@@ -21,7 +21,9 @@ export default map({ key: 'id', path: 'api', name: 'todos' })
 ```
 That's it, you just exported the reducer function and now you can register it through combinerReducer in Redux.
 
-In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`
+In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`.
+
+One more thing, this lib handle state immutability for you !
 
 ## Why
 We like to write Redux code as simple as possible and use its middlewares to handle real world problems.
@@ -93,7 +95,7 @@ export default factory({ key: 'id', path: 'api.raw', name: 'todos' })
 
 Data will be stored into `state.api.raw.todos`.
 
-### Types
+### [Types](./TYPES.md)
 Types are :
   - `map` : your state is a hashmap, useful to bind your API to Redux with the following redux state model :
 ```es6
@@ -115,8 +117,6 @@ Types are :
 ```
 
 Default type is `map`.
-
-To see more informations about types, [go to the specific page](./TYPES.md).
 
 ### reducer
 The previous factory returns a function which is a reducer.
@@ -202,7 +202,7 @@ todos.get('1')(state)
 | signature | description | comment |
 |---|---|---|
 |`mapAction(<mapper(action)>)`| create middleware and map only redux action | mapper(action) is mandatory |
-|`mapPayload(<mapper(payload)>)`| create middleware and map only redux payload | mapper(payload) is mandatory |
+|`mapPayload(<regex>)(<mapper(payload)>)`| create middleware and map the payload of the corresponding redux actions type by the regex |
 
 #### Example, we create a middleware but we modify only the action :
 ```es6
@@ -213,7 +213,7 @@ import { mapAction } from 'trampss-redux-factory/helpers'
 // define a function to map action
 const mapper = action => ({ ...action, type: `SET_${action.type}` })
 // create your reducer and transform the type of action before core middleware
-export default factory({ pre: [mapAction(mapper)] })('id')('api.raw')('todos')
+export default factory({ pre: [mapAction(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
 
 #### Example, we create a middleware but we modify only the payload :
@@ -225,5 +225,5 @@ import { mapPayload } from 'trampss-redux-factory/helpers'
 // define a function to map payload
 const mapper = payload => payload.map(p => ({ ...p, id: `ID_${p.id}` }))
 // create your reducer and transform the payload before core middleware
-export default factory({ pre: [mapPayload(/SET_TODOS/)(mapper)] })('id')('api.raw')('todos')
+export default factory({ pre: [mapPayload(/SET_TODOS/)(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
