@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import { set, add, update, remove, reset } from '../actions'
 import { initState } from '../reducer'
-import map from './map'
+import keyValue from './keyValue'
 
 const prefix = 'testPrefix'
 const Element = code => ({ code, some: 'other', infos: code })
@@ -16,10 +16,10 @@ const state = {
   initialized: false,
 }
 
-describe('middlewares/map', () => {
+describe('middlewares/keyValue', () => {
   // Use the factory to create a new reducer named 'testPrefix'
   // It uses 'code' as key in givent elements
-  const testPrefix = map('code')(prefix)
+  const testPrefix = keyValue('code')(prefix)
 
   it('should initialize', () => expect(testPrefix()).toMatchSnapshot())
 
