@@ -112,4 +112,10 @@ describe('index', () => {
       expect(factory({ name: 'a keyValue' }).trampssType).toMatchSnapshot()
     })
   })
+
+  describe('action type factories', () => {
+    it('should export action type factories', () => {
+      expect(simpleObject({ name: 'a simpleObject' }).SET).toMatchSnapshot()
+    })
+  })
 })

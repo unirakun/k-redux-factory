@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`index action type factories should export action type factories 1`] = `"@trampss/SET_A SIMPLEOBJECT"`;
+
 exports[`index named factory should instanciate a keyValue reducer (default) 1`] = `"keyValue"`;
 
 exports[`index named factory should instanciate a keyValue reducer (specified) 1`] = `"keyValue"`;
