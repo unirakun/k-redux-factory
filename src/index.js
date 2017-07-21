@@ -15,7 +15,7 @@ const getWrappedStore = (middlewares = {}) => (options) => {
 
     // actions
     ...Object.keys(actions)
-      .filter(k => typeConfig.actions.includes(k))
+      .filter(k => typeConfig.actions.includes(k.toLowerCase()))
       .map(k => ({ [k]: actions[k](`${prefix}${name}`) })),
 
     // selectors

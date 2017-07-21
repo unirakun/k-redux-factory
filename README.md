@@ -179,8 +179,9 @@ dispatch(
     },
   ])
 )
-
 ```
+
+You can also retrieve action name like this : `todos.SET`
 
 ### selectors
 The factory returns a function (this is the reducer) that also contains actions and selectors as fields.
