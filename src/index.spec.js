@@ -113,7 +113,7 @@ describe('index', () => {
     })
   })
 
-  describe('extends selectors', () => {
+  describe('extended selectors', () => {
     const so = simpleObject({ name: 'o', defaultData: {} })
     it('should extends isInitialized() selector on simpleObject', () => {
       expect(simpleObject({ name: 'o' }).isInitialized({ o: '' })).toMatchSnapshot()
@@ -121,14 +121,11 @@ describe('index', () => {
     it('should extends get() selector on simpleObject', () => {
       expect(so.get()({ o: 'DATA' })).toMatchSnapshot()
     })
-    it('should extends getState() selector on simpleObject', () => {
-      expect(so.getState({ o: 'DATA' })).toMatchSnapshot()
-    })
   })
 
   describe('action type factories', () => {
     it('should export action type factories', () => {
-      expect(simpleObject({ name: 'a simpleObject' }).SET).toMatchSnapshot()
+      expect(simpleObject({ name: 'a simpleObject' }).set().type).toMatchSnapshot()
     })
   })
 })

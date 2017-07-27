@@ -1,68 +1,68 @@
 /* eslint-env jest */
-import { isInitialized, get } from './simpleObject.selectors'
+import * as selectors from './simpleObject.selectors'
 import { initState } from './simpleObject.middleware'
 
 describe('selectors/simpleObject => ', () => {
   describe('isInitialized() :', () => {
     describe('without defaultData', () => {
-      const withoutDefault = { name: 'o' }
-      it('not initialized', () => {
-        expect(isInitialized(withoutDefault)({ o: initState })).toMatchSnapshot()
+      const options = { name: 'o' }
+      it('should not be initialized', () => {
+        expect(selectors.isInitialized(options)({ o: initState })).toMatchSnapshot()
       })
-      it('initialized with object value', () => {
-        expect(isInitialized(withoutDefault)({ o: { i: 'initialized' } })).toMatchSnapshot()
+      it('should be initialized -object-', () => {
+        expect(selectors.isInitialized(options)({ o: { i: 'initialized' } })).toMatchSnapshot()
       })
-      it('initialized with string value', () => {
-        expect(isInitialized(withoutDefault)({ o: 'initialized' })).toMatchSnapshot()
+      it('should be initialized -string-', () => {
+        expect(selectors.isInitialized(options)({ o: 'initialized' })).toMatchSnapshot()
       })
     })
 
     describe('defaultData should be a string', () => {
-      const string = { name: 'o', defaultData: 'defaultData' }
-      it('not initialized', () => {
-        expect(isInitialized(string)({ o: string.defaultData })).toMatchSnapshot()
+      const options = { name: 'o', defaultData: 'defaultData' }
+      it('should not be initialized', () => {
+        expect(selectors.isInitialized(options)({ o: options.defaultData })).toMatchSnapshot()
       })
-      it('initialized', () => {
-        expect(isInitialized(string)({ o: 'initialized' })).toMatchSnapshot()
+      it('should be initialized', () => {
+        expect(selectors.isInitialized(options)({ o: 'initialized' })).toMatchSnapshot()
       })
     })
 
     describe('defaultData should be an object', () => {
-      const object = { name: 'o', defaultData: {} }
-      it('not initialized', () => {
-        expect(isInitialized(object)({ o: object.defaultData })).toMatchSnapshot()
+      const options = { name: 'o', defaultData: {} }
+      it('should not be initialized', () => {
+        expect(selectors.isInitialized(options)({ o: options.defaultData })).toMatchSnapshot()
       })
-      it('initialized', () => {
-        expect(isInitialized(object)({ o: { i: 'initialized' } })).toMatchSnapshot()
+      it('should be initialized', () => {
+        expect(selectors.isInitialized(options)({ o: { i: 'initialized' } })).toMatchSnapshot()
       })
     })
   })
 
   describe('get(): ', () => {
     describe('without defaultData', () => {
-      const withoutDefault = { name: 'o' }
-      it('and get the initState', () => {
-        expect(get(withoutDefault)()({ o: initState })).toMatchSnapshot()
+      const options = { name: 'o' }
+      it('should return the initState', () => {
+        expect(selectors.get(options)()({ o: initState })).toMatchSnapshot()
       })
     })
 
-    describe('defaultData should be a string', () => {
-      const string = { name: 'o', defaultData: '' }
-      it('and get the default data', () => {
-        expect(get(string)()({ o: string.defaultData })).toMatchSnapshot()
+    describe('defaultData as a string', () => {
+      const options = { name: 'o', defaultData: '' }
+      it('should return the default data', () => {
+        expect(selectors.get(options)()({ o: options.defaultData })).toMatchSnapshot()
       })
-      it('and get the data', () => {
-        expect(get(string)()({ o: 'DATA' })).toMatchSnapshot()
+      it('should return the current data', () => {
+        expect(selectors.get(options)()({ o: 'DATA' })).toMatchSnapshot()
       })
     })
 
-    describe('defaultData should be an object', () => {
-      const object = { name: 'o', defaultData: {} }
-      it('and get the default data', () => {
-        expect(get({ name: 'o' })()({ o: object.defaultData })).toMatchSnapshot()
+    describe('defaultData as an object', () => {
+      const options = { name: 'o', defaultData: {} }
+      it('should return the default data', () => {
+        expect(selectors.get({ name: 'o' })()({ o: options.defaultData })).toMatchSnapshot()
       })
-      it('and get the data', () => {
-        expect(get(object)()({ o: { i: 'DATA' } })).toMatchSnapshot()
+      it('should return the current data', () => {
+        expect(selectors.get(options)()({ o: { i: 'DATA' } })).toMatchSnapshot()
       })
     })
   })

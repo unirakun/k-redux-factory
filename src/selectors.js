@@ -13,7 +13,7 @@ export const getAsArray = getFactory('array')
 export const getLength = ({ path, name }) => state => getKeys({ path, name })(state).length
 export const isInitialized = getFactory('initialized')
 
-export const getData = options => getFactory('data')(options)
+const getData = options => getFactory('data')(options)
 export const get = ({ path, name }) => keys => (state) => {
   const data = getData({ path, name })(state)
   // All data

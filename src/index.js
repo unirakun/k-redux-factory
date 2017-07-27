@@ -1,5 +1,3 @@
-import * as actions from './actions'
-import * as selectors from './selectors'
 import * as types from './types'
 import reducer from './reducer'
 
@@ -14,17 +12,10 @@ const getWrappedStore = (middlewares = {}) => (options) => {
     { trampssType: type },
 
     // actions
-    ...Object.keys(actions)
-      .filter(k => typeConfig.actions.includes(k.toLowerCase()))
-      .map(k => ({ [k]: actions[k](`${prefix}${name}`) })),
+    ...Object.keys(typeConfig.actions).map(k => ({ [k]: typeConfig.actions[k](`${prefix}${name}`) })),
 
     // selectors
-    ...typeConfig.selectorsEnabled
-      .map((k) => {
-        const s = (typeConfig.selectors && typeConfig.selectors[k]) ?
-          typeConfig.selectors[k] : selectors[k]
-        return { [k]: s(options) }
-      }),
+    ...Object.keys(typeConfig.selectors).map(k => ({ [k]: typeConfig.selectors[k](options) })),
   )
 }
 

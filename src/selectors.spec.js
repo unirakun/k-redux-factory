@@ -5,9 +5,9 @@ const Element = code => ({ code, some: 'other', infos: code })
 const SubElement = code => subCode => ({ ...Element(code), sub: { subCode } })
 
 const path = 'api.raw'
-const name = 'testPrefix'
+const name = 'testName'
 const subState = {
-  testPrefix: {
+  testName: {
     data: {
       elm2: Element('elm2'),
       elm1: Element('elm1'),
