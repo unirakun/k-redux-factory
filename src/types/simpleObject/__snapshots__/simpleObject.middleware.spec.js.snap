@@ -39,7 +39,13 @@ Object {
 }
 `;
 
-exports[`middlewares/simpleObject should take defaultData param to populate data field 1`] = `
+exports[`middlewares/simpleObject should take defaultData param to populate data field -init- 1`] = `
+Object {
+  "state": Object {},
+}
+`;
+
+exports[`middlewares/simpleObject should take defaultData param to populate data field -init- 2`] = `
 Object {
   "state": Object {
     "im": "default",
@@ -47,7 +53,13 @@ Object {
 }
 `;
 
-exports[`middlewares/simpleObject should take defaultData param to populate data field 2`] = `
+exports[`middlewares/simpleObject should take defaultData param to populate data field -init- 3`] = `
+Object {
+  "state": "",
+}
+`;
+
+exports[`middlewares/simpleObject should take defaultData param to populate data field -reset- 1`] = `
 Object {
   "action": Object {
     "type": "@trampss/RESET_TESTPREFIX",

@@ -36,12 +36,16 @@ describe('middlewares/simpleObject', () => {
     }),
   ).toMatchSnapshot())
 
-  it('should take defaultData param to populate data field', () => {
-    const defaultData = { im: 'default' }
-    // init
-    expect(testPrefix(defaultData)()).toMatchSnapshot()
-
+  it('should take defaultData param to populate data field -init-', () => {
+    // init - with empty object
+    expect(testPrefix({})()).toMatchSnapshot()
+    // init - with object
+    expect(testPrefix({ im: 'default' })()).toMatchSnapshot()
+    // init - with empty string
+    expect(testPrefix('')()).toMatchSnapshot()
+  })
+  it('should take defaultData param to populate data field -reset-', () => {
     // reset
-    expect(testPrefix(defaultData)({ state, action: reset(prefix)() })).toMatchSnapshot()
+    expect(testPrefix({ im: 'default' })({ state, action: reset(prefix)() })).toMatchSnapshot()
   })
 })

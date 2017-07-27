@@ -17,7 +17,7 @@ describe('selectors/simpleObject => ', () => {
       })
     })
 
-    describe('defaultData should be a string', () => {
+    describe('defaultData as a string', () => {
       const options = { name: 'o', defaultData: 'defaultData' }
       it('should not be initialized', () => {
         expect(selectors.isInitialized(options)({ o: options.defaultData })).toMatchSnapshot()
@@ -27,7 +27,7 @@ describe('selectors/simpleObject => ', () => {
       })
     })
 
-    describe('defaultData should be an object', () => {
+    describe('defaultData as an object', () => {
       const options = { name: 'o', defaultData: {} }
       it('should not be initialized', () => {
         expect(selectors.isInitialized(options)({ o: options.defaultData })).toMatchSnapshot()
