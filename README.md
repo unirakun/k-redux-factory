@@ -71,7 +71,7 @@ There are multiple factories signatures, take you preferred between :
  - `keyValue(options)` : this is a `keyValue`  factory without middlewares
 
 Parameters are :
- - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware.
+ - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware
  - **options** (mandatory), either a string representating the reducer `name`, either an object with these fields :
    - **key** (optional), the field used to identify your objects (`id` for example)
    - **path** (optional), where the reducer will be combined via `combineReducer`
@@ -82,7 +82,7 @@ Parameters are :
      - it's used to retrieve informations from selectors
    - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
    - **type** (optional) can be `keyValue` or `simpleObject` (default is `keyValue`)
-   - **defaultData** (optional), for `simpleObject` only, set the default data value (used by `reset` action and for initialisation). Default is an empty object `{}`
+   - **defaultData** (optional), for `simpleObject` only, set the default data value, used by `reset` action and for initialisation (default is an empty object `{}`)
 
 Example:
  - this reducer will use `id` as key field
