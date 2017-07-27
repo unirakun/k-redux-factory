@@ -32,12 +32,9 @@ Object {
     "type": "@trampss/SET_TESTPREFIX",
   },
   "state": Object {
-    "data": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    "initialized": true,
+    "code": "elm2",
+    "infos": "elm2",
+    "some": "other",
   },
 }
 `;
@@ -71,13 +68,10 @@ Object {
     "type": "@trampss/UPDATE_TESTPREFIX",
   },
   "state": Object {
-    "data": Object {
-      "code": "elm",
-      "infos": "elm",
-      "modifi": "cation",
-      "some": "other 2",
-    },
-    "initialized": true,
+    "code": "elm",
+    "infos": "elm",
+    "modifi": "cation",
+    "some": "other 2",
   },
 }
 `;

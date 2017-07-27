@@ -4,10 +4,7 @@ import simpleObject from './simpleObject.middleware'
 
 const prefix = 'testPrefix'
 const Element = code => ({ code, some: 'other', infos: code })
-const state = {
-  data: Element('elm'),
-  initialized: true,
-}
+const state = Element('elm')
 
 describe('middlewares/simpleObject', () => {
   // Use the factory to create a new reducer named 'testPrefix'

@@ -5,17 +5,11 @@ const reducer = (/* key */) => prefix => defaultData =>
   (state = defaultData || initState, { type, payload } = {}) => {
     switch (type) {
       case SET(prefix):
-        return {
-          data: payload,
-          initialized: true,
-        }
+        return payload
       case UPDATE(prefix):
         return {
           ...state,
-          data: {
-            ...state.data,
-            ...payload,
-          },
+          ...payload,
         }
       case RESET(prefix):
         return defaultData || initState
