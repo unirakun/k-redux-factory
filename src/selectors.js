@@ -10,7 +10,7 @@ export const getState = options => (state) => {
 const getFactory = key => options => state => getState(options)(state)[key]
 export const getKeys = getFactory('keys')
 export const getAsArray = getFactory('array')
-export const getLength = ({ path, name }) => state => getKeys({ path, name })(state).length
+export const getLength = options => state => getKeys(options)(state).length
 export const isInitialized = getFactory('initialized')
 
 const getData = options => getFactory('data')(options)
