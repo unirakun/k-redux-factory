@@ -114,10 +114,10 @@ describe('index', () => {
   })
 
   describe('extended selectors', () => {
-    it('should extends isInitialized() selector on simpleObject', () => {
+    it('should extends isInitialized selector on simpleObject', () => {
       expect(simpleObject({ name: 'o' }).isInitialized({ o: '' })).toMatchSnapshot()
     })
-    it('should extends get() selector on simpleObject', () => {
+    it('should extends get selector on simpleObject', () => {
       expect(simpleObject({ name: 'o', defaultData: {} }).get()({ o: 'DATA' })).toMatchSnapshot()
     })
   })

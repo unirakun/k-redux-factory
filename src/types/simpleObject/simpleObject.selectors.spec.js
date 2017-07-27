@@ -3,7 +3,7 @@ import * as selectors from './simpleObject.selectors'
 import { initState } from './simpleObject.middleware'
 
 describe('selectors/simpleObject => ', () => {
-  describe('isInitialized :', () => {
+  describe('isInitialized', () => {
     describe('without defaultData', () => {
       const options = { name: 'o' }
       it('should not be initialized', () => {
@@ -38,7 +38,7 @@ describe('selectors/simpleObject => ', () => {
     })
   })
 
-  describe('get: ', () => {
+  describe('get', () => {
     describe('without defaultData', () => {
       const options = { name: 'o' }
       it('should return the initState', () => {

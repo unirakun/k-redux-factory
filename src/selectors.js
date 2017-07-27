@@ -14,8 +14,8 @@ export const getLength = options => state => getKeys(options)(state).length
 export const isInitialized = getFactory('initialized')
 
 const getData = options => getFactory('data')(options)
-export const get = ({ path, name }) => keys => (state) => {
-  const data = getData({ path, name })(state)
+export const get = options => keys => (state) => {
+  const data = getData(options)(state)
   // All data
   if (!keys) return data
   // By keys
@@ -24,8 +24,8 @@ export const get = ({ path, name }) => keys => (state) => {
   return data[keys]
 }
 
-export const getBy = ({ path, name }) => (propertyPath, values) => (state) => {
-  const data = getAsArray({ path, name })(state)
+export const getBy = options => (propertyPath, values) => (state) => {
+  const data = getAsArray(options)(state)
   if (Array.isArray(values)) return data.filter(d => values.includes(at(d, propertyPath)[0]))
   return data.filter(d => values === at(d, propertyPath)[0])
 }
