@@ -4,7 +4,7 @@ import * as types from './types'
 import reducer from './reducer'
 
 const getWrappedStore = (middlewares = {}) => (options) => {
-  const { key, path, type = 'keyValue', prefix = '', name, defaultData } = options
+  const { key, type = 'keyValue', prefix = '', name, defaultData } = options
   const typeConfig = types[type]
 
   return Object.assign(
@@ -19,9 +19,12 @@ const getWrappedStore = (middlewares = {}) => (options) => {
       .map(k => ({ [k]: actions[k](`${prefix}${name}`) })),
 
     // selectors
-    ...Object.keys(selectors)
-      .filter(k => typeConfig.selectors.includes(k))
-      .map(k => ({ [k]: selectors[k](path)(name) })),
+    ...typeConfig.selectorsEnabled
+      .map((k) => {
+        const s = (typeConfig.selectors && typeConfig.selectors[k]) ?
+          typeConfig.selectors[k] : selectors[k]
+        return { [k]: s(options) }
+      }),
   )
 }
 

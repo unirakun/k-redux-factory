@@ -16,6 +16,8 @@ describe('middlewares/simpleObject', () => {
 
   it('should initialize', () => expect(testPrefix(/* defaultData */)()).toMatchSnapshot())
 
+  it('should initialize with defaultData', () => expect(testPrefix('default')()).toMatchSnapshot())
+
   it('should set element [elm2]', () => expect(
     testPrefix(/* defaultData */)({
       state,

@@ -2,10 +2,13 @@
 
 exports[`middlewares/simpleObject should initialize 1`] = `
 Object {
-  "state": Object {
-    "data": undefined,
-    "initialized": false,
-  },
+  "state": Object {},
+}
+`;
+
+exports[`middlewares/simpleObject should initialize with defaultData 1`] = `
+Object {
+  "state": "default",
 }
 `;
 
@@ -14,10 +17,7 @@ Object {
   "action": Object {
     "type": "@trampss/RESET_TESTPREFIX",
   },
-  "state": Object {
-    "data": undefined,
-    "initialized": false,
-  },
+  "state": Object {},
 }
 `;
 
@@ -45,10 +45,7 @@ Object {
 exports[`middlewares/simpleObject should take defaultData param to populate data field 1`] = `
 Object {
   "state": Object {
-    "data": Object {
-      "im": "default",
-    },
-    "initialized": false,
+    "im": "default",
   },
 }
 `;
@@ -59,10 +56,7 @@ Object {
     "type": "@trampss/RESET_TESTPREFIX",
   },
   "state": Object {
-    "data": Object {
-      "im": "default",
-    },
-    "initialized": false,
+    "im": "default",
   },
 }
 `;

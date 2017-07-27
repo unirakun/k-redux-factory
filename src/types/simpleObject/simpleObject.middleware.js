@@ -1,11 +1,8 @@
 import { SET, RESET, UPDATE } from '../../actions'
 
-export const initState = { data: undefined, initialized: false }
-
-const init = defaultData => ({ ...initState, data: defaultData })
-
+export const initState = {}
 const reducer = (/* key */) => prefix => defaultData =>
-  (state = init(defaultData), { type, payload } = {}) => {
+  (state = defaultData || initState, { type, payload } = {}) => {
     switch (type) {
       case SET(prefix):
         return {
@@ -21,7 +18,7 @@ const reducer = (/* key */) => prefix => defaultData =>
           },
         }
       case RESET(prefix):
-        return init(defaultData)
+        return defaultData || initState
       default:
         return state
     }
