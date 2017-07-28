@@ -3,7 +3,7 @@
 exports[`helpers/mapAction should map action 1`] = `
 Object {
   "action": "ACTION MAPPED !",
-  "state": Object {},
+  "state": 1,
 }
 `;
 
@@ -13,7 +13,17 @@ Object {
     "payload": "PAYLOAD MAPPED !",
     "type": "TYPE",
   },
-  "state": Object {},
+  "state": 1,
+}
+`;
+
+exports[`helpers/mapPayload should map payload retrieve current state 1`] = `
+Object {
+  "action": Object {
+    "payload": 2,
+    "type": "TYPE",
+  },
+  "state": 1,
 }
 `;
 
@@ -23,7 +33,7 @@ Object {
     "payload": "PAYLOAD MAPPED !",
     "type": "TYPE",
   },
-  "state": Object {},
+  "state": 1,
 }
 `;
 
@@ -33,6 +43,36 @@ Object {
     "payload": "payload",
     "type": "TYPE",
   },
-  "state": Object {},
+  "state": 1,
+}
+`;
+
+exports[`helpers/mapState should map state (type matcher OK) 1`] = `
+Object {
+  "action": Object {
+    "payload": "payload",
+    "type": "TYPE",
+  },
+  "state": "1 MAPPED !",
+}
+`;
+
+exports[`helpers/mapState should map state (type matcher is KO) 1`] = `
+Object {
+  "action": Object {
+    "payload": "payload",
+    "type": "TYPE",
+  },
+  "state": 1,
+}
+`;
+
+exports[`helpers/mapState should map state without matching type 1`] = `
+Object {
+  "action": Object {
+    "payload": "payload",
+    "type": "TYPE",
+  },
+  "state": "1 MAPPED !",
 }
 `;

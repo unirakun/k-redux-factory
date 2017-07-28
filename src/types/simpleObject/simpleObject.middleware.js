@@ -12,8 +12,9 @@ const reducer = (/* key */) => prefix => defaultData =>
         return { ...state, ...payload }
       case RESET(prefix):
         return defaultState(defaultData)
-      default:
+      default: {
         return state
+      }
     }
   }
 
