@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { set, add, update, remove, reset } from '../../actions'
+import { set, add, update, remove, reset, addOrUpdate } from '../../actions'
 import { initState } from '../../reducer'
 import keyValue from './keyValue.middleware'
 
@@ -76,6 +76,20 @@ describe('middlewares/keyValue', () => {
     testPrefix({
       state,
       action: update(prefix)(Element('elm12')),
+    }),
+  ).toMatchSnapshot())
+
+  it('should update element [elm3]', () => expect(
+    testPrefix({
+      state,
+      action: addOrUpdate(prefix)({ ...Element('elm3'), some: 'other ADD OR UPDATE' }),
+    }),
+  ).toMatchSnapshot())
+
+  it('should add element if not found [elm12]', () => expect(
+    testPrefix({
+      state,
+      action: addOrUpdate(prefix)(Element('elm12')),
     }),
   ).toMatchSnapshot())
 })
