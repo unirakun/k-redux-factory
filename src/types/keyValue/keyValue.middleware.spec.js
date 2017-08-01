@@ -1,7 +1,7 @@
 /* eslint-env jest */
-import { set, add, update, remove, reset, addOrUpdate } from '../actions'
-import { initState } from '../reducer'
-import keyValue from './keyValue'
+import { set, add, update, remove, reset, addOrUpdate } from '../../actions'
+import { initState } from '../../reducer'
+import keyValue from './keyValue.middleware'
 
 const prefix = 'testPrefix'
 const Element = code => ({ code, some: 'other', infos: code })
