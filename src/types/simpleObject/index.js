@@ -1,7 +1,7 @@
-import simpleObject from '../middlewares/simpleObject'
+import middleware from './simpleObject.middleware'
 
 export default {
-  middlewares: [simpleObject],
+  middlewares: [middleware],
   actions: ['set', 'reset', 'update'],
   selectors: ['getState', 'isInitialized', 'get'],
 }

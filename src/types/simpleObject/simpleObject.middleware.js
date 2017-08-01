@@ -1,4 +1,4 @@
-import { SET, RESET, UPDATE } from '../actions'
+import { SET, RESET, UPDATE } from '../../actions'
 
 export const initState = { data: undefined, initialized: false }
 
