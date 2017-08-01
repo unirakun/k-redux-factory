@@ -4,14 +4,6 @@ import reducer from './reducer'
 
 const initState = { data: [{ some: 'data' }] }
 
-jest.mock('./middlewares', () => ({
-  core: (/* key */) => (/* path */) => (/* defaultData */) => ctx => ({
-    ...ctx,
-    state: { ...ctx.state, core: true, prev: ctx },
-    action: { ...ctx.action, core: true },
-  }),
-}))
-
 const prefix = 'testPrefix'
 
 const middleware = name => key => path => defaultData => ctx => ({

@@ -1,6 +1,6 @@
 /* eslint-env jest */
-import { set, reset, update } from '../actions'
-import simpleObject from './simpleObject'
+import { set, reset, update } from '../../actions'
+import simpleObject from './simpleObject.middleware'
 
 const prefix = 'testPrefix'
 const Element = code => ({ code, some: 'other', infos: code })
