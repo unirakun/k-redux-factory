@@ -126,6 +126,11 @@ Object {
         "infos": "elm3",
         "some": "other",
       },
+      Object {
+        "code": "elm12",
+        "infos": "elm12",
+        "some": "other",
+      },
     ],
     "data": Object {
       "elm1": Object {
@@ -149,11 +154,12 @@ Object {
         "some": "other",
       },
     },
-    "initialized": false,
+    "initialized": true,
     "keys": Array [
       "elm2",
       "elm1",
       "elm3",
+      "elm12",
     ],
   },
 }
