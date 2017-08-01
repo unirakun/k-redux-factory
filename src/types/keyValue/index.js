@@ -1,7 +1,7 @@
-import keyValue from '../middlewares/keyValue'
+import middleware from './keyValue.middleware'
 
 export default {
-  middlewares: [keyValue],
+  middlewares: [middleware],
   actions: ['set', 'add', 'reset', 'remove', 'update'],
   selectors: ['getState', 'getKeys', 'getAsArray', 'getLength', 'isInitialized', 'get', 'getBy'],
 }

@@ -1,5 +1,5 @@
 import { keyBy, without, uniq, omit } from 'lodash'
-import { SET, ADD, UPDATE, REMOVE, RESET } from '../actions'
+import { SET, ADD, UPDATE, REMOVE, RESET } from '../../actions'
 
 export const initState = { data: {}, keys: [], array: [], initialized: false }
 
