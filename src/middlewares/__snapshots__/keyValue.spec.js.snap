@@ -99,6 +99,66 @@ Object {
 }
 `;
 
+exports[`middlewares/keyValue should add element if not found [elm12] 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "code": "elm12",
+      "infos": "elm12",
+      "some": "other",
+    },
+    "type": "@trampss/ADD_OR_UPDATE_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      "elm12": Object {
+        "code": "elm12",
+        "infos": "elm12",
+        "some": "other",
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm2",
+      "elm1",
+      "elm3",
+    ],
+  },
+}
+`;
+
 exports[`middlewares/keyValue should initialize 1`] = `
 Object {
   "state": Object {
@@ -368,6 +428,61 @@ Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other UPDATE",
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm2",
+      "elm1",
+      "elm3",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should update element [elm3] 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "code": "elm3",
+      "infos": "elm3",
+      "some": "other ADD OR UPDATE",
+    },
+    "type": "@trampss/ADD_OR_UPDATE_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other ADD OR UPDATE",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other ADD OR UPDATE",
       },
     },
     "initialized": false,

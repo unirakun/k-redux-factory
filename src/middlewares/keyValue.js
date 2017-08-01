@@ -1,10 +1,20 @@
 import { keyBy, without, uniq, omit } from 'lodash'
-import { SET, ADD, UPDATE, REMOVE, RESET } from '../actions'
+import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE } from '../actions'
 
 export const initState = { data: {}, keys: [], array: [], initialized: false }
 
 const keyAlreadyExists =
   state => (key, instanceKey) => state.array.find(o => o[key] === instanceKey)
+
+const update = (key, state, payload) => {
+  const instanceKey = payload[key]
+
+  return {
+    ...state,
+    data: { ...state.data, [instanceKey]: { ...state.data[instanceKey], ...payload } },
+    array: state.array.map(o => (o[key] === instanceKey ? { ...o, ...payload } : o)),
+  }
+}
 
 const reducer = key => prefix => (/* defaultData */) =>
   (state = initState, { type, payload } = {}) => {
@@ -33,14 +43,11 @@ const reducer = key => prefix => (/* defaultData */) =>
           initialized: true,
         }
       }
+      case ADD_OR_UPDATE(prefix): return update(key, state, payload)
       case UPDATE(prefix): {
         const instanceKey = payload[key]
         if (!keyAlreadyExists(state)(key, instanceKey)) return state
-        return {
-          ...state,
-          data: { ...state.data, [instanceKey]: { ...state.data[instanceKey], ...payload } },
-          array: state.array.map(o => (o[key] === instanceKey ? { ...o, ...payload } : o)),
-        }
+        return update(key, state, payload)
       }
       case REMOVE(prefix):
         return {

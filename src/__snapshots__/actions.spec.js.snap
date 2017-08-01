@@ -38,3 +38,13 @@ Object {
   "type": "@trampss/ADD_TESTPREFIX",
 }
 `;
+
+exports[`actions should trigger an addOrUpdate action 1`] = `
+Object {
+  "payload": Object {
+    "an": "element_add",
+    "code": "add",
+  },
+  "type": "@trampss/ADD_OR_UPDATE_TESTPREFIX",
+}
+`;
