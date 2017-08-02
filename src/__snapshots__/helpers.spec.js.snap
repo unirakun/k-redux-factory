@@ -36,3 +36,53 @@ Object {
   "state": Object {},
 }
 `;
+
+exports[`helpers/mapState should map state (type matcher OK) 1`] = `
+Object {
+  "action": Object {
+    "payload": "payload",
+    "type": "CUSTOM",
+  },
+  "state": "STATE MAPPED !",
+}
+`;
+
+exports[`helpers/mapState should map state (type matcher is KO) 1`] = `
+Object {
+  "action": Object {
+    "payload": "payload",
+    "type": "CUSTOM",
+  },
+  "state": "STATE",
+}
+`;
+
+exports[`helpers/mapState should map state without matching type 1`] = `
+Object {
+  "action": Object {
+    "payload": "payload",
+    "type": "CUSTOM",
+  },
+  "state": "STATE MAPPED !",
+}
+`;
+
+exports[`helpers/reducer should add reducer but not change state 1`] = `
+Object {
+  "action": Object {
+    "payload": "payload",
+    "type": "TYPE",
+  },
+  "state": Object {},
+}
+`;
+
+exports[`helpers/reducer should add reducer to change state 1`] = `
+Object {
+  "action": Object {
+    "payload": "payload",
+    "type": "CUSTOM",
+  },
+  "state": "CUSTOM_STATE",
+}
+`;
