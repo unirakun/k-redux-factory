@@ -36,6 +36,7 @@ export default factory({ type: 'keyValue', /* other options */ })
 | `set` | set an array of instances of your resource | `set(<array>)` | `{ type: '@trampss/SET_TODOS', payload: <array> }` |
 | `add` | add an instance of your resource | `add(<instance>)` | `{ type: '@trampss/ADD_TODOS', payload: <instance> }` |
 | `update` | update an existing instance of your resource | `update(<instance>)` | `{ type: '@trampss/UPDATE_TODOS', payload: <instance> }` |
+| `addOrUpdate` | update an existing instance of your resource, or add it if not found | `addOrUpdate(<instance>)` | `{ type: '@trampss/ADD_OR_UPDATE_TODOS', payload: <instance> }` |
 | `remove` | remove one instance of your resource by its key | `remove(<key>)` | `{ type: '@trampss/REMOVE_TODOS', payload: <key> }` |
 | `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@trampss/RESET_TODOS' }` |
 
