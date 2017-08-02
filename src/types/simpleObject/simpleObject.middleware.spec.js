@@ -4,10 +4,7 @@ import simpleObject from './simpleObject.middleware'
 
 const prefix = 'testPrefix'
 const Element = code => ({ code, some: 'other', infos: code })
-const state = {
-  data: Element('elm'),
-  initialized: true,
-}
+const state = Element('elm')
 
 describe('middlewares/simpleObject', () => {
   // Use the factory to create a new reducer named 'testPrefix'
@@ -15,6 +12,8 @@ describe('middlewares/simpleObject', () => {
   const testPrefix = simpleObject('code')(prefix)
 
   it('should initialize', () => expect(testPrefix(/* defaultData */)()).toMatchSnapshot())
+
+  it('should initialize with defaultData', () => expect(testPrefix('default')()).toMatchSnapshot())
 
   it('should set element [elm2]', () => expect(
     testPrefix(/* defaultData */)({
@@ -37,12 +36,16 @@ describe('middlewares/simpleObject', () => {
     }),
   ).toMatchSnapshot())
 
-  it('should take defaultData param to populate data field', () => {
-    const defaultData = { im: 'default' }
-    // init
-    expect(testPrefix(defaultData)()).toMatchSnapshot()
-
+  it('should take defaultData param to populate data field -init-', () => {
+    // init - with empty object
+    expect(testPrefix({})()).toMatchSnapshot()
+    // init - with object
+    expect(testPrefix({ im: 'default' })()).toMatchSnapshot()
+    // init - with empty string
+    expect(testPrefix('')()).toMatchSnapshot()
+  })
+  it('should take defaultData param to populate data field -reset-', () => {
     // reset
-    expect(testPrefix(defaultData)({ state, action: reset(prefix)() })).toMatchSnapshot()
+    expect(testPrefix({ im: 'default' })({ state, action: reset(prefix)() })).toMatchSnapshot()
   })
 })

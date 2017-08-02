@@ -68,13 +68,15 @@ import factory from 'trampss-redux-factory'
 export default factory({ type: 'simpleObject', /* other options */ })
 ```
 
-### state
+### state (without defaultData)
 ```es6
-{
-  data: <instance>,
-  initialized: true,
-}
+{}
 ```
+### state (with defaultData: `'todo'`)
+```es6
+'todo'
+```
+
 
 ### actions
 
@@ -90,4 +92,3 @@ export default factory({ type: 'simpleObject', /* other options */ })
 |---|---|---|
 | `get()(state)` | returns data (instance) | |
 | `isInitialized(state)` | returns true if the store has been initialized (by `set` action) | |
-| `getState(state)` | returns the global state of your reducer | |
