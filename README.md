@@ -198,6 +198,8 @@ todos.get('1')(state)
 | signature | description | comment |
 |---|---|---|
 |`mapAction(<mapper(action)>)`| create middleware and map only redux action | mapper(action) is mandatory |
+|`mapState(<regex>)(<mapper(state)>)`| create middleware and map the state of the corresponding redux actions type by the regex |
+|`reducer(<yourReducer(action, state)>)`| create middleware and map action and state |
 |`mapPayload(<regex>)(<mapper(payload)>)`| create middleware and map the payload of the corresponding redux actions type by the regex |
 
 #### Example, we create a middleware but we modify only the action :
@@ -210,6 +212,34 @@ import { mapAction } from 'trampss-redux-factory/helpers'
 const mapper = action => ({ ...action, type: `SET_${action.type}` })
 // create your reducer and transform the type of action before core middleware
 export default factory({ pre: [mapAction(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
+```
+
+#### Example, we create a middleware but we modify only the state :
+```es6
+import factory from 'trampss-redux-factory'
+// import your helpers
+import { mapState } from 'trampss-redux-factory/helpers'
+
+// define a function to change state
+const mapper = state => ({...state, todos: 'TODO_CHANGED'})
+// create your reducer and transform the state before core middleware
+export default factory({ pre: [mapState(/SET_TODOS/)(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
+```
+
+#### Example, we create a middleware but we modify action and state :
+```es6
+import factory from 'trampss-redux-factory'
+// import your helpers
+import { reducer } from 'trampss-redux-factory/helpers'
+
+// define a function to map action and state
+const mapper = (action, state) =>
+  ({
+    action: { ...action, type: `SET_${action.type}` },
+    state: { ...state, todos: 'TODO_CHANGED' }
+  })
+// create your reducer and transform the action and state before core middleware
+export default factory({ pre: [reducer(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
 
 #### Example, we create a middleware but we modify only the payload :
