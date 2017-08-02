@@ -234,8 +234,12 @@ import { reducer } from 'trampss-redux-factory/helpers'
 
 // define a function to map state depending on the action
 const mapper = (action, state) => {
-  if (/SET_TODOS/.test(action.type)) return { todos: 'TODOS_CHANGED' }
-  return state
+  switch (action.type) {
+    case 'SET_TODOS': return { todos: 'TODOS_CHANGED' }
+    case 'LOG_TODOS': console.log(state)
+    default: return state
+  }
+}
 // create your reducer and transform the action and state before core middleware
 export default factory({ pre: [reducer(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
