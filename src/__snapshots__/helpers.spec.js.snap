@@ -80,7 +80,7 @@ Object {
 exports[`helpers/reducer should add reducer to change state 1`] = `
 Object {
   "action": Object {
-    "payload": "change",
+    "payload": "payload",
     "type": "CUSTOM",
   },
   "state": "CUSTOM_STATE",

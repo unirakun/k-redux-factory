@@ -199,7 +199,7 @@ todos.get('1')(state)
 |---|---|---|
 |`mapAction(<mapper(action)>)`| create middleware and map only redux action | mapper(action) is mandatory |
 |`mapState(<regex>)(<mapper(state)>)`| create middleware and map the state of the corresponding redux actions type by the regex |
-|`reducer(<yourReducer(action, state)>)`| create middleware and map action and state |
+|`reducer(<yourReducer(action, state)>)`| create middleware and map state depending on the action |
 |`mapPayload(<regex>)(<mapper(payload)>)`| create middleware and map the payload of the corresponding redux actions type by the regex |
 
 #### Example, we create a middleware but we modify only the action :
@@ -232,12 +232,10 @@ import factory from 'trampss-redux-factory'
 // import your helpers
 import { reducer } from 'trampss-redux-factory/helpers'
 
-// define a function to map action and state
-const mapper = (action, state) =>
-  ({
-    action: { ...action, type: `SET_${action.type}` },
-    state: { ...state, todos: 'TODO_CHANGED' }
-  })
+// define a function to map state depending on the action
+const mapper = (action, state) => {
+  if (/SET_TODOS/.test(action.type)) return { todos: 'TODOS_CHANGED' }
+  return state
 // create your reducer and transform the action and state before core middleware
 export default factory({ pre: [reducer(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
