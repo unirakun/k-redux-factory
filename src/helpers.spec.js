@@ -20,7 +20,7 @@ const customCtx = {
 const mapperAction = () => 'ACTION MAPPED !'
 const mapperPayload = () => 'PAYLOAD MAPPED !'
 const mapperState = state => `${state} MAPPED !`
-const customReducer = (action, state) => (/CUSTOM/.test(action.type) ? { action: { ...action, payload: 'change' }, state: 'CUSTOM_STATE' } : { action, state })
+const customReducer = (action, state) => (/CUSTOM/.test(action.type) ? 'CUSTOM_STATE' : state)
 
 const execHelper = context => helper => helper()()()(context)
 
