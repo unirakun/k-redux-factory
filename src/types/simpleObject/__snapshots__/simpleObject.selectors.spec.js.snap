@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`selectors/simpleObject =>  get defaultData as a string should return the current data 1`] = `"DATA"`;
+
+exports[`selectors/simpleObject =>  get defaultData as a string should return the default data 1`] = `""`;
+
+exports[`selectors/simpleObject =>  get defaultData as an object should return the current data 1`] = `
+Object {
+  "i": "DATA",
+}
+`;
+
+exports[`selectors/simpleObject =>  get defaultData as an object should return the default data 1`] = `Object {}`;
+
+exports[`selectors/simpleObject =>  get without defaultData should return the initState 1`] = `Object {}`;
+
+exports[`selectors/simpleObject =>  isInitialized defaultData as a string should be initialized 1`] = `true`;
+
+exports[`selectors/simpleObject =>  isInitialized defaultData as a string should not be initialized 1`] = `false`;
+
+exports[`selectors/simpleObject =>  isInitialized defaultData as an object should be initialized 1`] = `true`;
+
+exports[`selectors/simpleObject =>  isInitialized defaultData as an object should not be initialized 1`] = `false`;
+
+exports[`selectors/simpleObject =>  isInitialized without defaultData should be initialized -object- 1`] = `true`;
+
+exports[`selectors/simpleObject =>  isInitialized without defaultData should be initialized -string- 1`] = `true`;
+
+exports[`selectors/simpleObject =>  isInitialized without defaultData should not be initialized 1`] = `false`;

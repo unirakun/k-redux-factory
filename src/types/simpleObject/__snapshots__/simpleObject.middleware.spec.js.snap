@@ -2,10 +2,13 @@
 
 exports[`middlewares/simpleObject should initialize 1`] = `
 Object {
-  "state": Object {
-    "data": undefined,
-    "initialized": false,
-  },
+  "state": Object {},
+}
+`;
+
+exports[`middlewares/simpleObject should initialize with defaultData 1`] = `
+Object {
+  "state": "default",
 }
 `;
 
@@ -14,10 +17,7 @@ Object {
   "action": Object {
     "type": "@trampss/RESET_TESTPREFIX",
   },
-  "state": Object {
-    "data": undefined,
-    "initialized": false,
-  },
+  "state": Object {},
 }
 `;
 
@@ -32,37 +32,40 @@ Object {
     "type": "@trampss/SET_TESTPREFIX",
   },
   "state": Object {
-    "data": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    "initialized": true,
+    "code": "elm2",
+    "infos": "elm2",
+    "some": "other",
   },
 }
 `;
 
-exports[`middlewares/simpleObject should take defaultData param to populate data field 1`] = `
+exports[`middlewares/simpleObject should take defaultData param to populate data field -init- 1`] = `
+Object {
+  "state": Object {},
+}
+`;
+
+exports[`middlewares/simpleObject should take defaultData param to populate data field -init- 2`] = `
 Object {
   "state": Object {
-    "data": Object {
-      "im": "default",
-    },
-    "initialized": false,
+    "im": "default",
   },
 }
 `;
 
-exports[`middlewares/simpleObject should take defaultData param to populate data field 2`] = `
+exports[`middlewares/simpleObject should take defaultData param to populate data field -init- 3`] = `
+Object {
+  "state": "",
+}
+`;
+
+exports[`middlewares/simpleObject should take defaultData param to populate data field -reset- 1`] = `
 Object {
   "action": Object {
     "type": "@trampss/RESET_TESTPREFIX",
   },
   "state": Object {
-    "data": Object {
-      "im": "default",
-    },
-    "initialized": false,
+    "im": "default",
   },
 }
 `;
@@ -77,13 +80,10 @@ Object {
     "type": "@trampss/UPDATE_TESTPREFIX",
   },
   "state": Object {
-    "data": Object {
-      "code": "elm",
-      "infos": "elm",
-      "modifi": "cation",
-      "some": "other 2",
-    },
-    "initialized": true,
+    "code": "elm",
+    "infos": "elm",
+    "modifi": "cation",
+    "some": "other 2",
   },
 }
 `;
