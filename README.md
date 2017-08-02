@@ -199,7 +199,7 @@ todos.get('1')(state)
 |---|---|---|
 |`mapAction(<mapper(action)>)`| create middleware and map only redux action | mapper(action) is mandatory |
 |`mapState(<regex>)(<mapper(state)>)`| create middleware and map the state of the corresponding redux actions type by the regex |
-|`reducer(<yourReducer(action, state)>)`| create middleware and map state depending on the action |
+|`reducer(<yourReducer(action, state)>)`| create a middleware from a standard redux reducer |
 |`mapPayload(<regex>)(<mapper(payload)>)`| create middleware and map the payload of the corresponding redux actions type by the regex |
 
 #### Example, we create a middleware but we modify only the action :
