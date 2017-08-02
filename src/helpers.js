@@ -10,6 +10,16 @@ export const mapAction = mapper =>
     action: mapper(ctx.action),
   })
 
+export const mapState = actionMatches => mapper =>
+  // middleware signature
+  () => () => () => (ctx) => {
+    const action = ctx.action
+    if (!actionMatches || actionMatches.test(action.type)) {
+      return { action, state: mapper(ctx.state) }
+    }
+    return ctx
+  }
+
 export const mapPayload = actionMatches => mapper =>
   // middleware signature
   () => () => () => (ctx) => {
