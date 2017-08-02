@@ -109,7 +109,7 @@ Types are :
 }
 ```
 
-  - `simpleObject` : your state is directly your `<instance>`.
+  - `simpleObject` : your state is directly your `<instance>`. **This implies that you can not set undefined.**
 
 Default type is `keyValue`.
 
