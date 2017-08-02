@@ -36,3 +36,17 @@ Object {
   "state": Object {},
 }
 `;
+
+exports[`helpers/reducer should add reducer but not change state 1`] = `
+Object {
+  "payload": "payload",
+  "type": "TYPE",
+}
+`;
+
+exports[`helpers/reducer should add reducer to change state 1`] = `
+Object {
+  "payload": "payload",
+  "type": "CUSTOM",
+}
+`;
