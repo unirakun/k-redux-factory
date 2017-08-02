@@ -1,3 +1,8 @@
+export const reducer = mapper =>
+  // middleware signature
+  () => () => () => ctx => mapper(ctx.action, ctx.state)
+
+
 export const mapAction = mapper =>
   // middleware signature
   () => () => () => ctx => ({
