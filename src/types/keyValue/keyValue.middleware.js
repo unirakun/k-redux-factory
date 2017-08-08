@@ -1,5 +1,5 @@
-import { keyBy, without, uniq, omit } from 'lodash'
-import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE } from '../../actions'
+import { keyBy, without, uniq, omit, orderBy } from 'lodash'
+import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE, ORDER_BY } from '../../actions'
 
 export const initState = { data: {}, keys: [], array: [], initialized: false }
 
@@ -52,6 +52,14 @@ const reducer = key => prefix => (/* defaultData */) =>
       case UPDATE(prefix): {
         if (!keyAlreadyExists(state)(key, payload[key])) return state
         return update(key, state, payload)
+      }
+      case ORDER_BY(prefix): {
+        const arraySorted = orderBy(state.array, payload.tests, payload.orders)
+        return {
+          ...state,
+          array: arraySorted,
+          keys: uniq(arraySorted.map(element => element[key])),
+        }
       }
       case REMOVE(prefix):
         return {

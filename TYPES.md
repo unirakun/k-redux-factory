@@ -38,6 +38,7 @@ export default factory({ type: 'keyValue', /* other options */ })
 | `update` | update an existing instance of your resource | `update(<instance>)` | `{ type: '@trampss/UPDATE_TODOS', payload: <instance> }` |
 | `addOrUpdate` | update an existing instance of your resource, or add it if not found | `addOrUpdate(<instance>)` | `{ type: '@trampss/ADD_OR_UPDATE_TODOS', payload: <instance> }` |
 | `remove` | remove one instance of your resource by its key | `remove(<key>)` | `{ type: '@trampss/REMOVE_TODOS', payload: <key> }` |
+| `orderBy` | order array and keys by iteratees, see lodash function `orderBy` | `orderBy({ tests: <identity|function>, orders: 'asc'|'desc') })` | `{ type: '@trampss/ORDER_BY_TODOS', payload: { tests: <identity|function>, orders: 'asc'|'desc' } }` |
 | `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@trampss/RESET_TODOS' }` |
 
 ### selectors
