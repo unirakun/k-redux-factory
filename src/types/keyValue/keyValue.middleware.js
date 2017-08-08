@@ -54,7 +54,13 @@ const reducer = key => prefix => (/* defaultData */) =>
         return update(key, state, payload)
       }
       case ORDER_BY(prefix): {
-        const arraySorted = orderBy(state.array, payload.tests, payload.orders)
+        let by = payload
+        let orders = 'asc'
+        if (payload instanceof Object && !(payload instanceof Function)) {
+          by = payload.by
+          orders = payload.desc ? 'desc' : 'asc'
+        }
+        const arraySorted = orderBy(state.array, by, orders)
         return {
           ...state,
           array: arraySorted,

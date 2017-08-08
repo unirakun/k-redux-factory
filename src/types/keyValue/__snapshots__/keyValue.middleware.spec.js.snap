@@ -289,10 +289,7 @@ Object {
 exports[`middlewares/keyValue should order elements by identity -code asc- 1`] = `
 Object {
   "action": Object {
-    "payload": Object {
-      "orders": "asc",
-      "tests": "code",
-    },
+    "payload": "code",
     "type": "@trampss/ORDER_BY_TESTPREFIX",
   },
   "state": Object {
@@ -344,8 +341,8 @@ exports[`middlewares/keyValue should order elements by identity -code desc- 1`] 
 Object {
   "action": Object {
     "payload": Object {
-      "orders": "desc",
-      "tests": "code",
+      "by": "code",
+      "desc": true,
     },
     "type": "@trampss/ORDER_BY_TESTPREFIX",
   },
@@ -397,10 +394,7 @@ Object {
 exports[`middlewares/keyValue should order elements with function -code asc- 1`] = `
 Object {
   "action": Object {
-    "payload": Object {
-      "orders": "asc",
-      "tests": [Function],
-    },
+    "payload": [Function],
     "type": "@trampss/ORDER_BY_TESTPREFIX",
   },
   "state": Object {
@@ -452,8 +446,8 @@ exports[`middlewares/keyValue should order elements with function -code desc- 1`
 Object {
   "action": Object {
     "payload": Object {
-      "orders": "desc",
-      "tests": [Function],
+      "by": [Function],
+      "desc": true,
     },
     "type": "@trampss/ORDER_BY_TESTPREFIX",
   },

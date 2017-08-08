@@ -96,28 +96,28 @@ describe('middlewares/keyValue', () => {
   it('should order elements by identity -code asc-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)({ tests: 'code', orders: 'asc' }),
+      action: orderBy(prefix)('code'),
     }),
   ).toMatchSnapshot())
 
   it('should order elements by identity -code desc-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)({ tests: 'code', orders: 'desc' }),
+      action: orderBy(prefix)({ by: 'code', desc: true }),
     }),
   ).toMatchSnapshot())
 
   it('should order elements with function -code desc-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)({ tests: e => e.code, orders: 'desc' }),
+      action: orderBy(prefix)({ by: e => e.code, desc: true }),
     }),
   ).toMatchSnapshot())
 
   it('should order elements with function -code asc-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)({ tests: e => e.code, orders: 'asc' }),
+      action: orderBy(prefix)(e => e.code),
     }),
   ).toMatchSnapshot())
 })
