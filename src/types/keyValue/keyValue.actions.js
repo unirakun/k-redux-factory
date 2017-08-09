@@ -5,6 +5,7 @@ import {
   remove, REMOVE,
   update, UPDATE,
   addOrUpdate, ADD_OR_UPDATE,
+  orderBy, ORDER_BY,
 } from '../../actions'
 
 export {
@@ -14,4 +15,5 @@ export {
   remove, REMOVE,
   update, UPDATE,
   addOrUpdate, ADD_OR_UPDATE,
+  orderBy, ORDER_BY,
 }

@@ -286,6 +286,216 @@ Object {
 }
 `;
 
+exports[`middlewares/keyValue should order elements by identity -code asc- 1`] = `
+Object {
+  "action": Object {
+    "payload": "code",
+    "type": "@trampss/ORDER_BY_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm1",
+      "elm2",
+      "elm3",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should order elements by identity -code desc- 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "by": "code",
+      "desc": true,
+    },
+    "type": "@trampss/ORDER_BY_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm3",
+      "elm2",
+      "elm1",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should order elements with function -code asc- 1`] = `
+Object {
+  "action": Object {
+    "payload": [Function],
+    "type": "@trampss/ORDER_BY_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm1",
+      "elm2",
+      "elm3",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should order elements with function -code desc- 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "by": [Function],
+      "desc": true,
+    },
+    "type": "@trampss/ORDER_BY_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm3",
+      "elm2",
+      "elm1",
+    ],
+  },
+}
+`;
+
 exports[`middlewares/keyValue should remove element [elm1] 1`] = `
 Object {
   "action": Object {

@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { set, add, update, remove, reset, addOrUpdate } from '../../actions'
+import { set, add, update, remove, reset, addOrUpdate, orderBy } from '../../actions'
 import { initState } from '../../reducer'
 import keyValue from './keyValue.middleware'
 
@@ -90,6 +90,34 @@ describe('middlewares/keyValue', () => {
     testPrefix({
       state,
       action: addOrUpdate(prefix)(Element('elm12')),
+    }),
+  ).toMatchSnapshot())
+
+  it('should order elements by identity -code asc-', () => expect(
+    testPrefix({
+      state,
+      action: orderBy(prefix)('code'),
+    }),
+  ).toMatchSnapshot())
+
+  it('should order elements by identity -code desc-', () => expect(
+    testPrefix({
+      state,
+      action: orderBy(prefix)({ by: 'code', desc: true }),
+    }),
+  ).toMatchSnapshot())
+
+  it('should order elements with function -code desc-', () => expect(
+    testPrefix({
+      state,
+      action: orderBy(prefix)({ by: e => e.code, desc: true }),
+    }),
+  ).toMatchSnapshot())
+
+  it('should order elements with function -code asc-', () => expect(
+    testPrefix({
+      state,
+      action: orderBy(prefix)(e => e.code),
     }),
   ).toMatchSnapshot())
 })
