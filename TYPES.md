@@ -38,7 +38,7 @@ export default factory({ type: 'keyValue', /* other options */ })
 | `update` | update an existing instance of your resource | `update(<instance>)` | `{ type: '@trampss/UPDATE_TODOS', payload: <instance> }` |
 | `addOrUpdate` | update an existing instance of your resource, or add it if not found | `addOrUpdate(<instance>)` | `{ type: '@trampss/ADD_OR_UPDATE_TODOS', payload: <instance> }` |
 | `remove` | remove one instance of your resource by its key | `remove(<key>)` | `{ type: '@trampss/REMOVE_TODOS', payload: <key> }` |
-| `orderBy` | order array and keys by iteratees (see lodash function `orderBy`). The payload can be a `string` or `Function`, then the desc is `false` . | `orderBy({ by: <identity|function>, desc: <boolean>) })` | `{ type: '@trampss/ORDER_BY_TODOS', payload: { by: <identity|function>, desc: <boolean> } }` |
+| `orderBy` | order array and keys by iteratees (see lodash function `orderBy`). The payload can be a `string` or a `function`, then the desc is `false` . | `orderBy({ by: <identity|function>, desc: <boolean>) })` | `{ type: '@trampss/ORDER_BY_TODOS', payload: { by: <identity|function>, desc: <boolean> } }` |
 | `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@trampss/RESET_TODOS' }` |
 
 ### selectors
