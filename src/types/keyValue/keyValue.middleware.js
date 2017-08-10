@@ -60,8 +60,11 @@ const reducer = key => prefix => (/* defaultData */) =>
           by = payload.by
           orders = payload.desc ? 'desc' : 'asc'
         }
-        if (by instanceof String) by = p => get(p, by)
-        const arraySorted = orderBy(state.array, by, orders)
+        const arraySorted = orderBy(
+          state.array,
+          by instanceof String ? p => get(p, by) : by,
+          orders,
+        )
         return {
           ...state,
           array: arraySorted,
