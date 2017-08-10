@@ -7,6 +7,9 @@ Object {
       "code": "elm4",
       "infos": "elm4",
       "some": "other",
+      "subinfos": Object {
+        "info": "elm4",
+      },
     },
     "type": "@trampss/ADD_TESTPREFIX",
   },
@@ -16,21 +19,33 @@ Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
       Object {
         "code": "elm4",
         "infos": "elm4",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm4",
+        },
       },
     ],
     "data": Object {
@@ -38,21 +53,33 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
       "elm4": Object {
         "code": "elm4",
         "infos": "elm4",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm4",
+        },
       },
     },
     "initialized": true,
@@ -73,6 +100,9 @@ Object {
       "code": "elm4",
       "infos": "elm4",
       "some": "other",
+      "subinfos": Object {
+        "info": "elm4",
+      },
     },
     "type": "@trampss/ADD_TESTPREFIX",
   },
@@ -82,6 +112,9 @@ Object {
         "code": "elm4",
         "infos": "elm4",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm4",
+        },
       },
     ],
     "data": Object {
@@ -89,6 +122,9 @@ Object {
         "code": "elm4",
         "infos": "elm4",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm4",
+        },
       },
     },
     "initialized": true,
@@ -106,6 +142,9 @@ Object {
       "code": "elm12",
       "infos": "elm12",
       "some": "other",
+      "subinfos": Object {
+        "info": "elm12",
+      },
     },
     "type": "@trampss/ADD_OR_UPDATE_TESTPREFIX",
   },
@@ -115,21 +154,33 @@ Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
       Object {
         "code": "elm12",
         "infos": "elm12",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm12",
+        },
       },
     ],
     "data": Object {
@@ -137,21 +188,33 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm12": Object {
         "code": "elm12",
         "infos": "elm12",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm12",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     },
     "initialized": true,
@@ -183,6 +246,9 @@ Object {
       "code": "elm2",
       "infos": "elm2",
       "some": "other",
+      "subinfos": Object {
+        "info": "elm2",
+      },
     },
     "type": "@trampss/ADD_TESTPREFIX",
   },
@@ -192,16 +258,25 @@ Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     ],
     "data": Object {
@@ -209,16 +284,25 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     },
     "initialized": true,
@@ -238,6 +322,9 @@ Object {
       "code": "elm12",
       "infos": "elm12",
       "some": "other",
+      "subinfos": Object {
+        "info": "elm12",
+      },
     },
     "type": "@trampss/UPDATE_TESTPREFIX",
   },
@@ -247,16 +334,25 @@ Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     ],
     "data": Object {
@@ -264,16 +360,25 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     },
     "initialized": false,
@@ -298,16 +403,25 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     ],
     "data": Object {
@@ -315,16 +429,25 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     },
     "initialized": false,
@@ -352,16 +475,25 @@ Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
       Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
     ],
     "data": Object {
@@ -369,16 +501,25 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     },
     "initialized": false,
@@ -386,6 +527,219 @@ Object {
       "elm3",
       "elm2",
       "elm1",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should order elements by identity -sub info asc- 1`] = `
+Object {
+  "action": Object {
+    "payload": "subinfos.info",
+    "type": "@trampss/ORDER_BY_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm1",
+      "elm2",
+      "elm3",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should order elements by identity -sub info desc- 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "by": "subinfos.info",
+      "desc": true,
+    },
+    "type": "@trampss/ORDER_BY_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm3",
+      "elm2",
+      "elm1",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should order elements with function -code asc (objec mode)- 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "by": [Function],
+      "desc": false,
+    },
+    "type": "@trampss/ORDER_BY_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm1",
+      "elm2",
+      "elm3",
     ],
   },
 }
@@ -403,16 +757,25 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     ],
     "data": Object {
@@ -420,16 +783,25 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     },
     "initialized": false,
@@ -457,16 +829,25 @@ Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
       Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
     ],
     "data": Object {
@@ -474,16 +855,25 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     },
     "initialized": false,
@@ -508,11 +898,17 @@ Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     ],
     "data": Object {
@@ -520,11 +916,17 @@ Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     },
     "initialized": false,
@@ -558,11 +960,17 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
     ],
     "type": "@trampss/SET_TESTPREFIX",
@@ -573,11 +981,17 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
     ],
     "data": Object {
@@ -585,11 +999,17 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
     },
     "initialized": true,
@@ -608,6 +1028,9 @@ Object {
       "code": "elm3",
       "infos": "elm3",
       "some": "other UPDATE",
+      "subinfos": Object {
+        "info": "elm3",
+      },
     },
     "type": "@trampss/UPDATE_TESTPREFIX",
   },
@@ -617,16 +1040,25 @@ Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other UPDATE",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     ],
     "data": Object {
@@ -634,16 +1066,25 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other UPDATE",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     },
     "initialized": false,
@@ -663,6 +1104,9 @@ Object {
       "code": "elm3",
       "infos": "elm3",
       "some": "other ADD OR UPDATE",
+      "subinfos": Object {
+        "info": "elm3",
+      },
     },
     "type": "@trampss/ADD_OR_UPDATE_TESTPREFIX",
   },
@@ -672,16 +1116,25 @@ Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other ADD OR UPDATE",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     ],
     "data": Object {
@@ -689,16 +1142,25 @@ Object {
         "code": "elm1",
         "infos": "elm1",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
       },
       "elm2": Object {
         "code": "elm2",
         "infos": "elm2",
         "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
       },
       "elm3": Object {
         "code": "elm3",
         "infos": "elm3",
         "some": "other ADD OR UPDATE",
+        "subinfos": Object {
+          "info": "elm3",
+        },
       },
     },
     "initialized": false,
