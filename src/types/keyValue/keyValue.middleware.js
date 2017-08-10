@@ -1,4 +1,4 @@
-import { keyBy, without, uniq, omit, orderBy } from 'lodash'
+import { keyBy, without, uniq, omit, orderBy, get } from 'lodash'
 import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE, ORDER_BY } from '../../actions'
 
 export const initState = { data: {}, keys: [], array: [], initialized: false }
@@ -60,6 +60,7 @@ const reducer = key => prefix => (/* defaultData */) =>
           by = payload.by
           orders = payload.desc ? 'desc' : 'asc'
         }
+        if (by instanceof String) by = p => get(p, by)
         const arraySorted = orderBy(state.array, by, orders)
         return {
           ...state,

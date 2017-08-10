@@ -4,7 +4,7 @@ import { initState } from '../../reducer'
 import keyValue from './keyValue.middleware'
 
 const prefix = 'testPrefix'
-const Element = code => ({ code, some: 'other', infos: code })
+const Element = code => ({ code, some: 'other', infos: code, subinfos: { info: code } })
 const state = {
   data: {
     elm2: Element('elm2'),
@@ -100,6 +100,13 @@ describe('middlewares/keyValue', () => {
     }),
   ).toMatchSnapshot())
 
+  it('should order elements by identity -sub info asc-', () => expect(
+    testPrefix({
+      state,
+      action: orderBy(prefix)('subinfos.info'),
+    }),
+  ).toMatchSnapshot())
+
   it('should order elements by identity -code desc-', () => expect(
     testPrefix({
       state,
@@ -107,10 +114,24 @@ describe('middlewares/keyValue', () => {
     }),
   ).toMatchSnapshot())
 
+  it('should order elements by identity -sub info desc-', () => expect(
+    testPrefix({
+      state,
+      action: orderBy(prefix)({ by: 'subinfos.info', desc: true }),
+    }),
+  ).toMatchSnapshot())
+
   it('should order elements with function -code desc-', () => expect(
     testPrefix({
       state,
       action: orderBy(prefix)({ by: e => e.code, desc: true }),
+    }),
+  ).toMatchSnapshot())
+
+  it('should order elements with function -code asc (objec mode)-', () => expect(
+    testPrefix({
+      state,
+      action: orderBy(prefix)({ by: e => e.code, desc: false }),
     }),
   ).toMatchSnapshot())
 
