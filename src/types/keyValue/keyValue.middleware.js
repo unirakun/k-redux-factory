@@ -1,4 +1,4 @@
-import { keyBy, without, uniq, omit, orderBy, get, isObjectLike, isString } from 'lodash'
+import { keyBy, without, uniq, omit, orderBy, get, isObjectLike, isString, flatten } from 'lodash'
 import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE, ORDER_BY } from '../../actions'
 
 export const initState = { data: {}, keys: [], array: [], initialized: false }
@@ -71,13 +71,15 @@ const reducer = key => prefix => (/* defaultData */) =>
           keys: uniq(arraySorted.map(element => element[key])),
         }
       }
-      case REMOVE(prefix):
+      case REMOVE(prefix): {
+        const removeIds = flatten([payload])
         return {
           ...state,
-          data: omit(state.data, [payload]),
-          keys: without(state.keys, payload),
-          array: state.array ? state.array.filter(o => o[key] !== payload) : [],
+          data: omit(state.data, removeIds),
+          keys: without(state.keys, ...removeIds),
+          array: state.array ? state.array.filter(o => !removeIds.includes(o[key])) : [],
         }
+      }
       case RESET(prefix):
         return initState
       default:
