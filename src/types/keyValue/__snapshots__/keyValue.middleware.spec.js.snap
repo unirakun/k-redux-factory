@@ -938,6 +938,44 @@ Object {
 }
 `;
 
+exports[`middlewares/keyValue should remove many element [elm1, elm2] 1`] = `
+Object {
+  "action": Object {
+    "payload": Array [
+      "elm1",
+      "elm2",
+    ],
+    "type": "@trampss/REMOVE_TESTPREFIX",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    ],
+    "data": Object {
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm3",
+    ],
+  },
+}
+`;
+
 exports[`middlewares/keyValue should reset state 1`] = `
 Object {
   "action": Object {

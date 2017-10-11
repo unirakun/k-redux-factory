@@ -51,6 +51,13 @@ describe('middlewares/keyValue', () => {
     }),
   ).toMatchSnapshot())
 
+  it('should remove many element [elm1, elm2]', () => expect(
+    testPrefix({
+      state,
+      action: remove(prefix)(['elm1', 'elm2']),
+    }),
+  ).toMatchSnapshot())
+
   it('should reset state', () => expect(
     testPrefix({
       state,
