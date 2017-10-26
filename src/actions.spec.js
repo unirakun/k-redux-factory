@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { set, remove, add, reset, addOrUpdate } from './actions'
+import { set, remove, add, reset, addOrUpdate, replace } from './actions'
 
 const prefix = 'testPrefix'
 const Element = code => ({ code, an: `element_${code}` })
@@ -10,4 +10,5 @@ describe('actions', () => {
   it('should trigger an add action', () => expect(add(prefix)(Element('add'))).toMatchSnapshot())
   it('should trigger a reset action', () => expect(reset(prefix)()).toMatchSnapshot())
   it('should trigger an addOrUpdate action', () => expect(addOrUpdate(prefix)(Element('add'))).toMatchSnapshot())
+  it('should trigger an replace action', () => expect(replace(prefix)(Element('replace'))).toMatchSnapshot())
 })

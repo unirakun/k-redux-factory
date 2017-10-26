@@ -18,5 +18,8 @@ export const remove = prefix => key => ({ type: REMOVE(prefix), payload: key })
 export const ADD_OR_UPDATE = prefix => scope(`ADD_OR_UPDATE_${prefix}`)
 export const addOrUpdate = prefix => payload => ({ type: ADD_OR_UPDATE(prefix), payload })
 
+export const REPLACE = prefix => scope(`REPLACE_${prefix}`)
+export const replace = prefix => payload => ({ type: REPLACE(prefix), payload })
+
 export const ORDER_BY = prefix => scope(`ORDER_BY_${prefix}`)
 export const orderBy = prefix => payload => ({ type: ORDER_BY(prefix), payload })
