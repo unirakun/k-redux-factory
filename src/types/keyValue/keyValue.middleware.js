@@ -1,5 +1,5 @@
 import { keyBy, without, uniq, omit, orderBy, get, isObjectLike, isString, flatten } from 'lodash'
-import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE, ORDER_BY } from '../../actions'
+import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE, REPLACE, ORDER_BY } from '../../actions'
 
 export const initState = { data: {}, keys: [], array: [], initialized: false }
 
@@ -34,6 +34,16 @@ const update = (key, state, payload) => {
   }
 }
 
+const replace =  (key, state, payload) => {
+  const instanceKey = payload[key]
+
+    return {
+      ...state,
+      data: { ...state.data, [instanceKey]: payload },
+      array: state.array.map(o => (o[key] === instanceKey ? payload : o)),
+    }
+}
+
 const reducer = key => prefix => (/* defaultData */) =>
   (state = initState, { type, payload } = {}) => {
     switch (type) {
@@ -52,6 +62,10 @@ const reducer = key => prefix => (/* defaultData */) =>
       case UPDATE(prefix): {
         if (!keyAlreadyExists(state)(key, payload[key])) return state
         return update(key, state, payload)
+      }
+      case REPLACE(prefix): {
+        if (!keyAlreadyExists(state)(key, payload[key])) return state
+        return replace(key, state, payload)
       }
       case ORDER_BY(prefix): {
         let by = payload

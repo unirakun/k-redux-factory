@@ -1,10 +1,11 @@
 /* eslint-env jest */
-import { set, add, update, remove, reset, addOrUpdate, orderBy } from '../../actions'
+import { set, add, update, remove, reset, addOrUpdate, replace, orderBy } from '../../actions'
 import { initState } from '../../reducer'
 import keyValue from './keyValue.middleware'
 
 const prefix = 'testPrefix'
 const Element = code => ({ code, some: 'other', infos: code, subinfos: { info: code } })
+const ElementWithoutSubInfo = code => ({ code, some: 'other', infos: code })
 const state = {
   data: {
     elm2: Element('elm2'),
@@ -97,6 +98,20 @@ describe('middlewares/keyValue', () => {
     testPrefix({
       state,
       action: addOrUpdate(prefix)(Element('elm12')),
+    }),
+  ).toMatchSnapshot())
+
+  it('should replace element [elm1]', () => expect(
+    testPrefix({
+      state,
+      action: replace(prefix)(ElementWithoutSubInfo('elm1')),
+    }),
+  ).toMatchSnapshot())
+
+  it('should not replace element doesn\'t exist [elm12]', () => expect(
+    testPrefix({
+      state,
+      action: replace(prefix)(Element('elm12')),
     }),
   ).toMatchSnapshot())
 

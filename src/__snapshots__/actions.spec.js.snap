@@ -48,3 +48,13 @@ Object {
   "type": "@trampss/ADD_OR_UPDATE_TESTPREFIX",
 }
 `;
+
+exports[`actions should trigger an replace action 1`] = `
+Object {
+  "payload": Object {
+    "an": "element_replace",
+    "code": "replace",
+  },
+  "type": "@trampss/REPLACE_TESTPREFIX",
+}
+`;
