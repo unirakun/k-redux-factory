@@ -34,14 +34,14 @@ const update = (key, state, payload) => {
   }
 }
 
-const replace =  (key, state, payload) => {
+const replace = (key, state, payload) => {
   const instanceKey = payload[key]
 
-    return {
-      ...state,
-      data: { ...state.data, [instanceKey]: payload },
-      array: state.array.map(o => (o[key] === instanceKey ? payload : o)),
-    }
+  return {
+    ...state,
+    data: { ...state.data, [instanceKey]: payload },
+    array: state.array.map(o => (o[key] === instanceKey ? payload : o)),
+  }
 }
 
 const reducer = key => prefix => (/* defaultData */) =>
