@@ -39,7 +39,7 @@ export default factory({ type: 'keyValue', /* other options */ })
 | `addOrUpdate` | update an existing instance of your resource, or add it if not found | `addOrUpdate(<instance>)` | `{ type: '@trampss/ADD_OR_UPDATE_TODOS', payload: <instance> }` |
 | `replace` | replace an existing instance of your resource, unlike `update`, `replace` will remove the old instance | `replace(<instance>)` | `{ type: '@trampss/REPLACE_TODOS', payload: <instance> }` |
 | `remove` | remove one or more instance of your resource by its key | `remove([<key>])` | `{ type: '@trampss/REMOVE_TODOS', payload: [<key>] }` |
-| `orderBy` | order array and keys by path (see lodash function `orderBy` and `get`). The payload can be a `string` or a `function`, then the desc is `false`. | `orderBy({ by: <path|function>, desc: <boolean>) })` | `{ type: '@trampss/ORDER_BY_TODOS', payload: { by: <path|function>, desc: <boolean> } }` |
+| `orderBy` | order array and keys by path (see lodash function `orderBy` and `get`). The payload can be a `string` or a `function`, then the desc is `false`. | <code>orderBy({ by: <path&#124;function>, desc: <boolean>) })</code> | <code>{ type: '@trampss/ORDER_BY_TODOS', payload: { by: <path&#124;function>, desc: <boolean> } }</code> |
 | `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@trampss/RESET_TODOS' }` |
 
 ### selectors
