@@ -41,7 +41,8 @@
     "build:helpers": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.helpers.js",
     "build": "npm-run-all --parallel build:*",
     "test": "jest",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "ci": "npm-run-all --parallel coveralls lint"
   },
   "babel": {
     "presets": [
