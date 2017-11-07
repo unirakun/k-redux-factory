@@ -1,10 +1,10 @@
-# trampss-redux-factory
+# k-redux-factory
 
 Factory of Redux reducers and their associated actions and selectors.
 > Make your Redux code base tinier and simpler to maintain
 
-[![CircleCI](https://circleci.com/gh/Trampss/trampss-redux-factory.svg?style=shield)](https://circleci.com/gh/Trampss/trampss-redux-factory) [![Coverage Status](https://coveralls.io/repos/github/Trampss/trampss-redux-factory/badge.svg?branch=master)](https://coveralls.io/github/Trampss/trampss-redux-factory?branch=master) [![NPM Version](https://badge.fury.io/js/trampss-redux-factory.svg)](https://www.npmjs.com/package/trampss-redux-factory)
-[![Size](http://img.badgesize.io/Trampss/trampss-redux-factory/master/index.js.svg)]()
+[![CircleCI](https://circleci.com/gh/alakarteio/k-redux-factory.svg?style=shield)](https://circleci.com/gh/alakarteio/k-redux-factory) [![Coverage Status](https://coveralls.io/repos/github/alakarteio/k-redux-factory/badge.svg?branch=master)](https://coveralls.io/github/alakarteio/k-redux-factory?branch=master) [![NPM Version](https://badge.fury.io/js/k-redux-factory.svg)](https://www.npmjs.com/package/k-redux-factory)
+[![Size](http://img.badgesize.io/alakarteio/k-redux-factory/master/index.js.svg)]()
 
 ## Contents
  - [Purpose](#purpose)
@@ -13,10 +13,10 @@ Factory of Redux reducers and their associated actions and selectors.
  - [API](#api)
 
 ## Purpose
-`trampss-redux-factory` creates generic reducers, actions and selectors in two lines.
+`k-redux-factory` creates generic reducers, actions and selectors in two lines.
 
 ```es6
-import { keyValue } from 'trampss-redux-factory'
+import { keyValue } from 'k-redux-factory'
 export default keyValue({ key: 'id', path: 'api', name: 'todos' })
 ```
 That's it, you just exported the reducer function and now you can register it through combinerReducer in Redux.
@@ -32,8 +32,8 @@ From this point of view, our Redux code base is simpler : it's like a key/value 
 We created this lightweight library, a factory of reducers, actions and selectors, to avoid inconsistency and painful maintainability from our growing Redux code base.
 
 ## Installation
- - `yarn add trampss-redux-factory`
- - `npm i trampss-redux-factory`
+ - `yarn add k-redux-factory`
+ - `npm i k-redux-factory`
 
 ### peer dependency
  - `lodash` : we use the minimum of lodash function trying to have a lightweight webpack bundle.
@@ -53,13 +53,13 @@ We created this lightweight library, a factory of reducers, actions and selector
 You need to use the factory to get a new set of reducer/actions/selectors :
 ```es6
 // modular factory
-import factory from 'trampss-redux-factory'
+import factory from 'k-redux-factory'
 
 // or - prebuild simpleObject factory
-import { simpleObject } from 'trampss-redux-factory'
+import { simpleObject } from 'k-redux-factory'
 
 // or - prebuild keyValue factory
-import { keyValue } from 'trampss-redux-factory'
+import { keyValue } from 'k-redux-factory'
 ```
 
 There are multiple factories signatures, take you preferred between :
@@ -89,7 +89,7 @@ Example:
  - it's combined into `state.api.raw`
  - its name is `todos`
 ```es6
-import factory from 'trampss-redux-factory'
+import factory from 'k-redux-factory'
 
 export default factory({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
@@ -204,9 +204,9 @@ todos.get('1')(state)
 
 #### Example, we create a middleware but we modify only the action :
 ```es6
-import factory from 'trampss-redux-factory'
+import factory from 'k-redux-factory'
 // import your helpers
-import { mapAction } from 'trampss-redux-factory/helpers'
+import { mapAction } from 'k-redux-factory/helpers'
 
 // define a function to map action
 const mapper = action => ({ ...action, type: `SET_${action.type}` })
@@ -216,9 +216,9 @@ export default factory({ pre: [mapAction(mapper)] })({ key: 'id', path: 'api.raw
 
 #### Example, we create a middleware but we modify only the state :
 ```es6
-import factory from 'trampss-redux-factory'
+import factory from 'k-redux-factory'
 // import your helpers
-import { mapState } from 'trampss-redux-factory/helpers'
+import { mapState } from 'k-redux-factory/helpers'
 
 // define a function to change state
 const mapper = state => ({...state, todos: 'TODO_CHANGED'})
@@ -228,9 +228,9 @@ export default factory({ pre: [mapState(/SET_TODOS/)(mapper)] })({ key: 'id', pa
 
 #### Example, we create a middleware but we modify action and state :
 ```es6
-import factory from 'trampss-redux-factory'
+import factory from 'k-redux-factory'
 // import your helpers
-import { reducer } from 'trampss-redux-factory/helpers'
+import { reducer } from 'k-redux-factory/helpers'
 
 // define a function to map state depending on the action
 const mapper = (action, state) => {
@@ -246,9 +246,9 @@ export default factory({ pre: [reducer(mapper)] })({ key: 'id', path: 'api.raw',
 
 #### Example, we create a middleware but we modify only the payload :
 ```es6
-import factory from 'trampss-redux-factory'
+import factory from 'k-redux-factory'
 // import your helpers
-import { mapPayload } from 'trampss-redux-factory/helpers'
+import { mapPayload } from 'k-redux-factory/helpers'
 
 // define a function to map payload
 const mapper = payload => payload.map(p => ({ ...p, id: `ID_${p.id}` }))

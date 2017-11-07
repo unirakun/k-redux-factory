@@ -1,11 +1,11 @@
 {
-  "name": "trampss-redux-factory",
+  "name": "k-redux-factory",
   "version": "3.7.0",
   "main": "index.js",
   "helpers": "helpers.js",
   "license": "MIT",
-  "repository": "https://github.com/Trampss/trampss-redux-factory",
-  "bugs": "https://github.com/Trampss/trampss-redux-factory/issues",
+  "repository": "https://github.com/alakarteio/k-redux-factory",
+  "bugs": "https://github.com/alakarteio/k-redux-factory/issues",
   "peerDependencies": {
     "lodash": "^4.17.4"
   },
