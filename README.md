@@ -120,7 +120,7 @@ You just have to combine it like any other reducer :
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 
 // import your reducer
-// (created by tramps-redux-data-store factory)
+// (created by k-redux-factory)
 import todos from './myTodosReducer'
 
 // create your Redux store as usual
@@ -153,7 +153,7 @@ To see them go to [TYPES.md](./TYPES.md).
 Example, we set todos to our typed `keyValue` reducer:
 ```es6
 // import your reducer
-// (created by tramps-redux-data-store factory)
+// (created by k-redux-factory)
 import todos from './myTodosReducer'
 
 // dispatch can be given by one of your middleware (redux-thunk, redux-saga, etc)
@@ -186,7 +186,7 @@ To see them go to [TYPES.md](./TYPES.md).
 Example, we retrieve the todo with id `1`:
 ```es6
 // import your reducer
-// (created by tramps-redux-data-store factory)
+// (created by k-redux-factory)
 import todos from './myTodosReducer'
 
 // state can be given by one of your middleware (redux-thunk, redux-saga, etc)
