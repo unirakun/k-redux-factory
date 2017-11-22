@@ -17,7 +17,7 @@ Object {
         "code": "1",
         "some": "info",
       },
-      "type": "@trampss/ADD_TESTPREFIX",
+      "type": "@@krf/ADD_TESTPREFIX",
     },
     "state": Object {
       "data": Array [
@@ -49,7 +49,7 @@ Object {
         "some": "info",
       },
       "post1": true,
-      "type": "@trampss/ADD_TESTPREFIX",
+      "type": "@@krf/ADD_TESTPREFIX",
     },
     "state": Object {
       "data": Array [
@@ -67,7 +67,7 @@ Object {
             "code": "1",
             "some": "info",
           },
-          "type": "@trampss/ADD_TESTPREFIX",
+          "type": "@@krf/ADD_TESTPREFIX",
         },
         "state": Object {
           "data": Array [
@@ -101,7 +101,7 @@ Object {
         "some": "info",
       },
       "pre1": true,
-      "type": "@trampss/ADD_TESTPREFIX",
+      "type": "@@krf/ADD_TESTPREFIX",
     },
     "state": Object {
       "data": Array [
@@ -119,7 +119,7 @@ Object {
             "code": "1",
             "some": "info",
           },
-          "type": "@trampss/ADD_TESTPREFIX",
+          "type": "@@krf/ADD_TESTPREFIX",
         },
         "state": Object {
           "data": Array [

@@ -9,7 +9,7 @@ const getWrappedStore = (middlewares = {}) => (options) => {
     reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(`${prefix}${name}`)(defaultData),
 
     // type (debug purpose)
-    { trampssType: type },
+    { krfType: type },
 
     // actions
     ...Object.keys(typeConfig.actions).map(k => ({ [k]: typeConfig.actions[k](`${prefix}${name}`) })),
