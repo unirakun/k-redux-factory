@@ -6,7 +6,7 @@
 ## keyValue
 ### factory
 ```es6
-import { keyValue } from 'trampss-redux-factory'
+import { keyValue } from 'k-redux-factory'
 
 export default keyValue(/* options */)
 ```
@@ -14,7 +14,7 @@ export default keyValue(/* options */)
 or
 
 ```es6
-import factory from 'trampss-redux-factory'
+import factory from 'k-redux-factory'
 
 export default factory({ type: 'keyValue', /* other options */ })
 ```
@@ -33,14 +33,14 @@ export default factory({ type: 'keyValue', /* other options */ })
 
 | function name | description | signature | generated action |
 |---|---|---|---|
-| `set` | set an array of instances of your resource | `set(<array>)` | `{ type: '@trampss/SET_TODOS', payload: <array> }` |
-| `add` | add an instance of your resource | `add(<instance>)` | `{ type: '@trampss/ADD_TODOS', payload: <instance> }` |
-| `update` | update an existing instance of your resource | `update(<instance>)` | `{ type: '@trampss/UPDATE_TODOS', payload: <instance> }` |
-| `addOrUpdate` | update an existing instance of your resource, or add it if not found | `addOrUpdate(<instance>)` | `{ type: '@trampss/ADD_OR_UPDATE_TODOS', payload: <instance> }` |
-| `replace` | replace an existing instance of your resource, unlike `update`, `replace` will remove the old instance | `replace(<instance>)` | `{ type: '@trampss/REPLACE_TODOS', payload: <instance> }` |
-| `remove` | remove one or more instance of your resource by its key | `remove([<key>])` | `{ type: '@trampss/REMOVE_TODOS', payload: [<key>] }` |
-| `orderBy` | order array and keys by path (see lodash function `orderBy` and `get`). The payload can be a `string` or a `function`, then the desc is `false`. | <code>orderBy({ by: <path&#124;function>, desc: <boolean>) })</code> | <code>{ type: '@trampss/ORDER_BY_TODOS', payload: { by: <path&#124;function>, desc: <boolean> } }</code> |
-| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@trampss/RESET_TODOS' }` |
+| `set` | set an array of instances of your resource | `set(<array>)` | `{ type: '@@krf/SET_TODOS', payload: <array> }` |
+| `add` | add an instance of your resource | `add(<instance>)` | `{ type: '@@krf/ADD_TODOS', payload: <instance> }` |
+| `update` | update an existing instance of your resource | `update(<instance>)` | `{ type: '@@krf/UPDATE_TODOS', payload: <instance> }` |
+| `addOrUpdate` | update an existing instance of your resource, or add it if not found | `addOrUpdate(<instance>)` | `{ type: '@@krf/ADD_OR_UPDATE_TODOS', payload: <instance> }` |
+| `replace` | replace an existing instance of your resource, unlike `update`, `replace` will remove the old instance | `replace(<instance>)` | `{ type: '@@krf/REPLACE_TODOS', payload: <instance> }` |
+| `remove` | remove one or more instance of your resource by its key | `remove([<key>])` | `{ type: '@@krf/REMOVE_TODOS', payload: [<key>] }` |
+| `orderBy` | order array and keys by path (see lodash function `orderBy` and `get`). The payload can be a `string` or a `function`, then the desc is `false`. | <code>orderBy({ by: <path&#124;function>, desc: <boolean>) })</code> | <code>{ type: '@@krf/ORDER_BY_TODOS', payload: { by: <path&#124;function>, desc: <boolean> } }</code> |
+| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@@krf/RESET_TODOS' }` |
 
 ### selectors
 
@@ -57,7 +57,7 @@ export default factory({ type: 'keyValue', /* other options */ })
 ## simpleObject
 ### factory
 ```es6
-import { simpleObject } from 'trampss-redux-factory'
+import { simpleObject } from 'k-redux-factory'
 
 export default simpleObject(/* options */)
 ```
@@ -65,7 +65,7 @@ export default simpleObject(/* options */)
 or
 
 ```es6
-import factory from 'trampss-redux-factory'
+import factory from 'k-redux-factory'
 
 export default factory({ type: 'simpleObject', /* other options */ })
 ```
@@ -84,9 +84,9 @@ export default factory({ type: 'simpleObject', /* other options */ })
 
 | function name | description | signature | generated action |
 |---|---|---|---|
-| `set` | set the instance | `set(<instance>)` | `{ type: '@trampss/SET_TODOS', payload: <instance> }` |
-| `update` | update the instance of your resource | `update(<instance>)` | `{ type: '@trampss/UPDATE_TODOS', payload: <instance> }` |
-| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@trampss/RESET_TODOS' }` |
+| `set` | set the instance | `set(<instance>)` | `{ type: '@@krf/SET_TODOS', payload: <instance> }` |
+| `update` | update the instance of your resource | `update(<instance>)` | `{ type: '@@krf/UPDATE_TODOS', payload: <instance> }` |
+| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@@krf/RESET_TODOS' }` |
 
 ### selectors
 

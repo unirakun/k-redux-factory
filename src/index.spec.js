@@ -91,25 +91,25 @@ describe('index', () => {
     })
 
     it('should instanciate a reducer (options as object)', () => {
-      expect(factory({ name: 'aa' }).trampssType).toMatchSnapshot()
+      expect(factory({ name: 'aa' }).krfType).toMatchSnapshot()
     })
 
     it('should instanciate a reducer (options as string -name-)', () => {
-      expect(factory('a reducer').trampssType).toMatchSnapshot()
+      expect(factory('a reducer').krfType).toMatchSnapshot()
     })
   })
 
   describe('named factory', () => {
     it('should instanciate a simpleObject reducer', () => {
-      expect(simpleObject({ name: 'a simpleObject' }).trampssType).toMatchSnapshot()
+      expect(simpleObject({ name: 'a simpleObject' }).krfType).toMatchSnapshot()
     })
 
     it('should instanciate a keyValue reducer (specified)', () => {
-      expect(keyValue({ name: 'a keyValue' }).trampssType).toMatchSnapshot()
+      expect(keyValue({ name: 'a keyValue' }).krfType).toMatchSnapshot()
     })
 
     it('should instanciate a keyValue reducer (default)', () => {
-      expect(factory({ name: 'a keyValue' }).trampssType).toMatchSnapshot()
+      expect(factory({ name: 'a keyValue' }).krfType).toMatchSnapshot()
     })
   })
 

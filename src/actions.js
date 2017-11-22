@@ -1,4 +1,4 @@
-const scope = action => `@trampss/${action.toUpperCase()}`
+const scope = action => `@@krf/${action.toUpperCase()}`
 
 export const SET = prefix => scope(`SET_${prefix}`)
 export const set = prefix => payload => ({ type: SET(prefix), payload })
