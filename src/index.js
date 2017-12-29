@@ -2,11 +2,11 @@ import * as types from './types'
 import reducer from './reducer'
 
 const getWrappedStore = (middlewares = {}) => (options) => {
-  const { key, type = 'keyValue', prefix = '', name, defaultData } = options
+  const { key, type = 'keyValue', prefix = '', name } = options
   const typeConfig = types[type]
 
   return Object.assign(
-    reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(`${prefix}${name}`)(defaultData),
+    reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(`${prefix}${name}`)(options),
 
     // type (debug purpose)
     { krfType: type },

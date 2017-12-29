@@ -1,5 +1,6 @@
 import { keyBy, without, uniq, omit, orderBy, get, isObjectLike, isString, flatten } from 'lodash'
 import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE, REPLACE, ORDER_BY } from '../../actions'
+import copyToLocalStorage from '../../localStorage'
 
 export const initState = { data: {}, keys: [], array: [], initialized: false }
 
@@ -101,7 +102,18 @@ const reducer = key => prefix => (/* defaultData */) =>
     }
   }
 
-export default key => prefix => defaultData => (ctx = {}) => ({
+const mapLocalStorage = (key, data) => {
+  if (data && data.initialized) localStorage.setItem(key, JSON.stringify(data))
+  else {
+    const localData = JSON.parse(localStorage.getItem(key))
+    if (localData) return localData
+  }
+  return data
+}
+
+export default key => prefix => options => (ctx = {}) => ({
   ...ctx,
-  state: reducer(key)(prefix)(defaultData)(ctx.state, ctx.action),
+  state: copyToLocalStorage(
+    reducer(key)(prefix)(options)(ctx.state, ctx.action),
+  )(options)(mapLocalStorage),
 })
