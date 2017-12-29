@@ -1,9 +1,14 @@
 import { at } from 'lodash'
 
 export const getState = options => (state) => {
-  let subState = state
-  if (options.path !== undefined) subState = at(state, options.path)[0]
+  /* local storage option */
+  if (options.localStorage && localStorage) {
+    const key = `@@KRF_${options.path ? `${options.path}.` : ''}${options.name}`
+    if (localStorage.getItem(key)) return JSON.parse(localStorage.getItem(key))
+  }
 
+  let subState = state
+  if (options.path !== undefined) subState = at(subState, options.path)[0]
   return subState[options.name]
 }
 
