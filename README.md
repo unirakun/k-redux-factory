@@ -259,7 +259,7 @@ export default factory({ pre: [mapPayload(/SET_TODOS/)(mapper)] })({ key: 'id', 
 # About ![alakarte](https://i.imgur.com/PKlqzvj.png)
 **alakarte** is created by two passionate french developers.
 
-Do you want to contact them ? Go to their [website](https://alakarte.io)
+Do you want to contact them ? Go to their [website](http://alakarte.io)
 
 <table border="0">
  <tr>
