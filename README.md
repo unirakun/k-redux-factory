@@ -267,6 +267,6 @@ Do you want to contact them ? Go to their [website](http://alakarte.io)
   <td align="center"><img src="https://avatars1.githubusercontent.com/u/17828231?s=460&v=4" width="100" /></td>
  </tr>
  <tr>
-  <td align="center" style="border:0;background: inherit"><a href="https://github.com/guillaumecrespel">Guillaume CRESPEL</a></td>
+  <td align="center"><a href="https://github.com/guillaumecrespel">Guillaume CRESPEL</a></td>
   <td align="center"><a href="https://github.com/fabienjuif">Fabien JUIF</a></td>
 </table>
