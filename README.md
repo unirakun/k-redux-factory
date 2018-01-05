@@ -44,7 +44,7 @@ We created this lightweight library, a factory of reducers, actions and selector
    - `omit`
    - `at`
 
-## API
+## Documentation
  - [factory](#factory)
  - [actions](#actions)
  - [selectors](#selectors)
