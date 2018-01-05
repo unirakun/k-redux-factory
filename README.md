@@ -10,7 +10,8 @@ Factory of Redux reducers and their associated actions and selectors.
  - [Purpose](#purpose)
  - [Why ?](#why)
  - [Installation](#installation)
- - [API](#api)
+ - [Documentation](#api)
+ - [API](./TYPES.md)
 
 ## Purpose
 `k-redux-factory` creates generic reducers, actions and selectors in two lines.
