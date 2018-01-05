@@ -38,11 +38,6 @@ We created this lightweight library, a factory of reducers, actions and selector
 
 ### peer dependency
  - `lodash` : we use the minimum of lodash function trying to have a lightweight webpack bundle.
-   - `keyBy`
-   - `without`
-   - `uniq`
-   - `omit`
-   - `at`
 
 ## Documentation
  - [factory](#factory)
