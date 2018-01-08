@@ -24,7 +24,22 @@ That's it, you just exported the reducer function and now you can register it th
 
 In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`.
 
+You can now use it to dispatch actions and select some datas from this reducer:
+```es6
+import myReducer from './myReducer'
+
+// ...
+// add a todo
+dispatch(myReducer.add({ id: 1, title: 'Apply to some CFP', completed: false })
+
+// ...
+// select a todo
+myReducer.get(1)(getState())
+```
+
 One more thing, this lib handle state immutability for you !
+
+Click [right here to see the full API.](./TYPES.md)
 
 ## Why
 We like to write Redux code as simple as possible and use its middlewares to handle real world problems.
