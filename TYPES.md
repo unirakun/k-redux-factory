@@ -1,7 +1,7 @@
 # Types
 
- - [keyValue](#keyValue)
- - [simpleObject](#simpleObject)
+ - [keyValue](#keyvalue)
+ - [simpleObject](#simpleobject)
 
 ## keyValue
 ### factory
