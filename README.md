@@ -10,7 +10,8 @@ Factory of Redux reducers and their associated actions and selectors.
  - [Purpose](#purpose)
  - [Why ?](#why)
  - [Installation](#installation)
- - [API](#api)
+ - [Documentation](#api)
+ - [API](./TYPES.md)
 
 ## Purpose
 `k-redux-factory` creates generic reducers, actions and selectors in two lines.
@@ -23,7 +24,22 @@ That's it, you just exported the reducer function and now you can register it th
 
 In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`.
 
+You can now use it to dispatch actions and select some datas from this reducer:
+```es6
+import myReducer from './myReducer'
+
+// ...
+// add a todo
+dispatch(myReducer.add({ id: 1, title: 'Apply to some CFP', completed: false })
+
+// ...
+// select a todo
+myReducer.get(1)(getState())
+```
+
 One more thing, this lib handle state immutability for you !
+
+Click [right here to see the full API.](./TYPES.md)
 
 ## Why
 We like to write Redux code as simple as possible and use its middlewares to handle real world problems.
@@ -37,13 +53,8 @@ We created this lightweight library, a factory of reducers, actions and selector
 
 ### peer dependency
  - `lodash` : we use the minimum of lodash function trying to have a lightweight webpack bundle.
-   - `keyBy`
-   - `without`
-   - `uniq`
-   - `omit`
-   - `at`
 
-## API
+## Documentation
  - [factory](#factory)
  - [actions](#actions)
  - [selectors](#selectors)
@@ -73,7 +84,7 @@ There are multiple factories signatures, take you preferred between :
 Parameters are :
  - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware
  - **options** (mandatory), either a string representating the reducer `name`, either an object with these fields :
-   - **key** (optional), the field used to identify your objects (`id` for example)
+   - **key** (exists only for the `keyValue` type -mandatory-), the field used to identify your objects (`id` for example)
    - **path** (optional), where the reducer will be combined via `combineReducer`
      - if empty, the reducer will be register at the root level of the redux state
      - you can use dot notation, like `api.raw`: your reducer will be combined into `state.api.raw.<your_reducer>`
