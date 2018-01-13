@@ -239,6 +239,65 @@ Object {
 }
 `;
 
+exports[`middlewares/keyValue should initialize with defaultData 1`] = `
+Object {
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      Object {
+        "code": "elmSub",
+        "infos": "elmSub",
+        "some": "other",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      "elmSub": Object {
+        "code": "elmSub",
+        "infos": "elmSub",
+        "some": "other",
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm1",
+      "elm2",
+      "elmSub",
+    ],
+  },
+}
+`;
+
 exports[`middlewares/keyValue should not duplicate object with same key [elm2] 1`] = `
 Object {
   "action": Object {

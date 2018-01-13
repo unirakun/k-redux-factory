@@ -6,6 +6,13 @@ export const initState = { data: {}, keys: [], array: [], initialized: false }
 const keyAlreadyExists =
   state => (key, instanceKey) => state.array.find(o => o[key] === instanceKey)
 
+const set = (key, payload) => ({
+  data: keyBy(payload, key),
+  keys: uniq(payload.map(element => element[key])),
+  array: payload,
+  initialized: true,
+})
+
 const add = (key, state, payload) => {
   let array
   const instanceKey = payload[key]
@@ -44,16 +51,13 @@ const replace = (key, state, payload) => {
   }
 }
 
-const reducer = key => prefix => (/* defaultData */) =>
-  (state = initState, { type, payload } = {}) => {
+const defaultState =
+  (key, defaultData) => (defaultData !== undefined ? set(key, defaultData) : initState)
+
+const reducer = key => prefix => defaultData =>
+  (state = defaultState(key, defaultData), { type, payload } = {}) => {
     switch (type) {
-      case SET(prefix):
-        return {
-          data: keyBy(payload, key),
-          keys: uniq(payload.map(element => element[key])),
-          array: payload,
-          initialized: true,
-        }
+      case SET(prefix): return set(key, payload)
       case ADD(prefix): return add(key, state, payload)
       case ADD_OR_UPDATE(prefix): {
         if (!keyAlreadyExists(state)(key, payload[key])) return add(key, state, payload)
@@ -95,7 +99,7 @@ const reducer = key => prefix => (/* defaultData */) =>
         }
       }
       case RESET(prefix):
-        return initState
+        return defaultState(key, defaultData)
       default:
         return state
     }

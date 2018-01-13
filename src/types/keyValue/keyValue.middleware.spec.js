@@ -6,6 +6,11 @@ import keyValue from './keyValue.middleware'
 const prefix = 'testPrefix'
 const Element = code => ({ code, some: 'other', infos: code, subinfos: { info: code } })
 const ElementWithoutSubInfo = code => ({ code, some: 'other', infos: code })
+const Elements = [
+  Element('elm1'),
+  Element('elm2'),
+  ElementWithoutSubInfo('elmSub'),
+]
 const state = {
   data: {
     elm2: Element('elm2'),
@@ -21,8 +26,11 @@ describe('middlewares/keyValue', () => {
   // Use the factory to create a new reducer named 'testPrefix'
   // It uses 'code' as key in givent elements
   const testPrefix = keyValue('code')(prefix)(/* defaultData */)
+  const testPrefixWithDefaultData = keyValue('code')(prefix)(Elements)
 
   it('should initialize', () => expect(testPrefix()).toMatchSnapshot())
+
+  it('should initialize with defaultData', () => expect(testPrefixWithDefaultData()).toMatchSnapshot())
 
   it('should add element [elm4] on initial store', () => expect(
     testPrefix({
