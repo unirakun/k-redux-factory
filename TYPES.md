@@ -64,12 +64,39 @@ Parameters are :
      - it's used to retrieve informations from selectors
    - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
 
-### state
+### state (without defaultData)
 ```es6
 {
   data: { <key1>: <instance1>, <key2>: <instance2> },
   array: [<instance1>, <instance2>],
   keys: [<key1>, <key2>],
+  initialized: false,
+}
+```
+
+### state (with defaultData)
+```es6
+import { keyValue } from 'k-redux-factory'
+
+const defaultData = [
+  {
+    id: 1,
+    todo: 'write README.MD',
+  },
+  {
+    id: 2,
+    todo: 'watch rick and morty season three',
+  },
+]
+
+export default keyValue({ key: 'id', defaultData})
+```
+
+```es6
+{
+  data: { 1: { id: 1, todo: 'write README.MD' }, 2: { id: 2, todo: 'watch rick and morty season three' }},
+  array: [{ id: 1, todo: 'write README.MD' }, { id: 2, todo: 'watch rick and morty season three' }],
+  keys: [1, 2],
   initialized: true,
 }
 ```
