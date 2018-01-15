@@ -71,7 +71,7 @@ Parameters are :
   data: { <key1>: <instance1>, <key2>: <instance2> },
   array: [<instance1>, <instance2>],
   keys: [<key1>, <key2>],
-  initialized: false,
+  initialized: <boolean>,
 }
 ```
 
