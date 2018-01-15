@@ -26,7 +26,7 @@ Parameters are :
      - it's used to retrieve informations from selectors
    - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
    - **type** (optional) can be `keyValue` or `simpleObject` (default is `keyValue`)
-   - **defaultData** (optional), for `simpleObject` only, set the default data value, used by `reset` action and for initialisation (default is an empty object `{}`)
+   - **defaultData** (optional), set the default data value, used by `reset` action and for initialisation
 
 You can see documentation about specific factories there:
  - [keyValue](#keyvalue)
@@ -63,41 +63,15 @@ Parameters are :
      - it's used to generate actions types
      - it's used to retrieve informations from selectors
    - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
+   - **defaultData** (optional), set the default data value, used by `reset` action and for initialisation (default is an empty hashmap model)
 
-### state (without defaultData)
+### state
 ```es6
 {
   data: { <key1>: <instance1>, <key2>: <instance2> },
   array: [<instance1>, <instance2>],
   keys: [<key1>, <key2>],
   initialized: false,
-}
-```
-
-### state (with defaultData)
-```es6
-import { keyValue } from 'k-redux-factory'
-
-const defaultData = [
-  {
-    id: 1,
-    todo: 'write README.MD',
-  },
-  {
-    id: 2,
-    todo: 'watch rick and morty season three',
-  },
-]
-
-export default keyValue({ key: 'id', defaultData})
-```
-
-```es6
-{
-  data: { 1: { id: 1, todo: 'write README.MD' }, 2: { id: 2, todo: 'watch rick and morty season three' }},
-  array: [{ id: 1, todo: 'write README.MD' }, { id: 2, todo: 'watch rick and morty season three' }],
-  keys: [1, 2],
-  initialized: true,
 }
 ```
 
