@@ -103,18 +103,7 @@ Example:
 ```es6
 import factory from 'k-redux-factory'
 
-const defaultData = [
-  {
-    id: 1,
-    todo: 'write README.MD',
-  },
-  {
-    id: 2,
-    todo: 'watch rick and morty season three',
-  },
-]
-
-export default factory({ key: 'id', path: 'api.raw', name: 'todos', defaultData })
+export default factory({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
 
 Data will be stored into `state.api.raw.todos`.
