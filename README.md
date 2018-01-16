@@ -93,12 +93,13 @@ Parameters are :
      - it's used to retrieve informations from selectors
    - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
    - **type** (optional) can be `keyValue` or `simpleObject` (default is `keyValue`)
-   - **defaultData** (optional), for `simpleObject` only, set the default data value, used by `reset` action and for initialisation (default is an empty object `{}`)
+   - **defaultData** (optional), set the default data value, used by `reset` action and for initialisation (default is an empty object `{}` for `simpleObject` and default hashmap model for `keyValue` - see [keyValue types section](./TYPES.md#state))
 
 Example:
  - this reducer will use `id` as key field
  - it's combined into `state.api.raw`
- - its name is `todos`
+ - it's name is `todos`
+ - have default data
 ```es6
 import factory from 'k-redux-factory'
 
@@ -116,7 +117,6 @@ Types are :
   array: [<instance1>, <instance2>],
   keys: [<key1>, <key2>],
   initialized: true,
-
 }
 ```
 
@@ -153,6 +153,33 @@ const store = createStore(
 )
 
 export default store
+```
+
+#### Exemple keyValue with default state
+```es6
+import { keyValue } from 'k-redux-factory'
+
+const defaultData = [
+  {
+    id: 1,
+    todo: 'write README.MD',
+  },
+  {
+    id: 2,
+    todo: 'watch rick and morty season three',
+  },
+]
+
+export default keyValue({ key: 'id', defaultData})
+```
+
+```es6
+{
+  data: { 1: { id: 1, todo: 'write README.MD' }, 2: { id: 2, todo: 'watch rick and morty season three' }},
+  array: [{ id: 1, todo: 'write README.MD' }, { id: 2, todo: 'watch rick and morty season three' }],
+  keys: [1, 2],
+  initialized: true,
+}
 ```
 
 ### actions
