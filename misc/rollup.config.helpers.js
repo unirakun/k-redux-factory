@@ -11,12 +11,14 @@ const external = [
 ]
 
 export default {
-  entry: pkg['jsnext:main'] || 'src/helpers.js',
-  dest: path.resolve('helpers', pkg.main),
-  sourceMap: path.resolve('helpers', pkg.main),
-  moduleName: pkg.amdName || pkg.name,
-  format: process.env.FORMAT || 'umd',
-  external,
+  input: pkg['jsnext:main'] || 'src/helpers.js',
+  output: {
+    file: path.resolve('helpers', pkg.main),
+    sourcemap: path.resolve('helpers', pkg.main),
+    name: pkg.amdName || pkg.name,
+    format: process.env.FORMAT || 'umd',
+    external,
+  },
   plugins: [
     babel(),
     commonjs({

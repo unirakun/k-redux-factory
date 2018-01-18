@@ -11,17 +11,22 @@ const external = [
 ]
 
 export default {
-  entry: pkg['jsnext:main'] || 'src/index.js',
-  dest: pkg.main,
-  sourceMap: path.resolve(pkg.main),
-  moduleName: pkg.amdName || pkg.name,
-  format: process.env.FORMAT || 'umd',
-  external,
+  input: pkg['jsnext:main'] || 'src/index.js',
+  output: {
+    file: pkg.main,
+    sourcemap: path.resolve(pkg.main),
+    name: pkg.amdName || pkg.name,
+    format: process.env.FORMAT || 'umd',
+    globals: {
+      lodash: '_',
+    },
+  },
   plugins: [
-    babel(),
     commonjs({
       include: 'node_modules/**',
     }),
+    babel(),
     uglify(),
   ],
+  external,
 }
