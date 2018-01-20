@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`selectors bugs should works with empty path (not undefined) for first level reducer 1`] = `"firstLevel"`;
+
 exports[`selectors should retrieve all data, validate (path, values), when not find value 1`] = `Array []`;
 
 exports[`selectors should retrieve all data, validate (path, values), with simple path and multi value 1`] = `

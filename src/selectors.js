@@ -2,9 +2,11 @@ import { at } from 'lodash'
 
 export const getState = options => (state) => {
   let subState = state
-  if (options.path !== undefined) subState = at(state, options.path)[0]
+  const { name, path } = options
 
-  return subState[options.name]
+  if (path !== undefined && path.length > 0) subState = at(state, path)[0]
+
+  return subState[name]
 }
 
 const getFactory = key => options => state => getState(options)(state)[key]
