@@ -44,4 +44,14 @@ describe('selectors', () => {
   it('should retrieve all data, validate (path, values), with sub path and multi value', () => expect(getBy({ path, name })('sub.subCode', ['subelm4', 'subelm5', 'elm1'])(state)).toMatchSnapshot())
   it('should retrieve all data, validate (path, values), with wrong path', () => expect(getBy({ path, name })('sub.wrong', 'subelm4')(state)).toMatchSnapshot())
   it('should retrieve all data, validate (path, values), when not find value', () => expect(getBy({ path, name })('sub.wrong', 'subelm4')(state)).toMatchSnapshot())
+
+  describe('bugs', () => {
+    it('should works with empty path (not undefined) for first level reducer', () => {
+      const bugState = {
+        firstLevel: 'firstLevel',
+      }
+
+      expect(getState({ path: '', name: 'firstLevel' })(bugState)).toMatchSnapshot()
+    })
+  })
 })
