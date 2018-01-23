@@ -1,5 +1,14 @@
 /* eslint-env jest */
-import { getKeys, getLength, getState, get, getBy, getAsArray, isInitialized } from './selectors'
+import {
+  getKeys,
+  getLength,
+  getState,
+  get,
+  getBy,
+  getAsArray,
+  isInitialized,
+  hasKey,
+} from './selectors'
 
 const Element = code => ({ code, some: 'other', infos: code })
 const SubElement = code => subCode => ({ ...Element(code), sub: { subCode } })
@@ -44,6 +53,8 @@ describe('selectors', () => {
   it('should retrieve all data, validate (path, values), with sub path and multi value', () => expect(getBy({ path, name })('sub.subCode', ['subelm4', 'subelm5', 'elm1'])(state)).toMatchSnapshot())
   it('should retrieve all data, validate (path, values), with wrong path', () => expect(getBy({ path, name })('sub.wrong', 'subelm4')(state)).toMatchSnapshot())
   it('should retrieve all data, validate (path, values), when not find value', () => expect(getBy({ path, name })('sub.wrong', 'subelm4')(state)).toMatchSnapshot())
+  it('should find the given key', () => expect(hasKey({ path, name })('elm3')(state)).toBe(true))
+  it('should not find the given key', () => expect(hasKey({ path, name })('not-found')(state)).toBe(false))
 
   describe('bugs', () => {
     it('should works with empty path (not undefined) for first level reducer', () => {

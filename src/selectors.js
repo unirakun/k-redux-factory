@@ -31,3 +31,9 @@ export const getBy = options => (propertyPath, values) => (state) => {
   if (Array.isArray(values)) return data.filter(d => values.includes(at(d, propertyPath)[0]))
   return data.filter(d => values === at(d, propertyPath)[0])
 }
+
+export const hasKey = options => key => (state) => {
+  const keys = getKeys(options)(state)
+
+  return !!keys.includes(key)
+}

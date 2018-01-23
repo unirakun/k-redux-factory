@@ -1,4 +1,4 @@
-import { SET, RESET, UPDATE } from '../../actions'
+import { SET, RESET, UPDATE } from './simpleObject.actions'
 
 export const initState = {}
 const defaultState = defaultData => (defaultData !== undefined ? defaultData : initState)

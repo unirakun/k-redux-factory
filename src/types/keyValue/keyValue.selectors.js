@@ -1,3 +1,1 @@
-import { getState, getKeys, getAsArray, getLength, isInitialized, get, getBy } from '../../selectors'
-
-export { getState, getKeys, getAsArray, getLength, isInitialized, get, getBy }
+export { getState, getKeys, getAsArray, getLength, isInitialized, get, getBy, hasKey } from '../../selectors'
