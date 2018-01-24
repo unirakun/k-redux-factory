@@ -35,5 +35,5 @@ export const getBy = options => (propertyPath, values) => (state) => {
 export const hasKey = options => key => (state) => {
   const keys = getKeys(options)(state)
 
-  return !!keys.includes(key)
+  return keys.includes(key)
 }
