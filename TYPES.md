@@ -89,9 +89,9 @@ Parameters are :
 | `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@@krf/RESET_TODOS' }` |
 
 ### selectors
-
 | signature | description | comment |
 |---|---|---|
+| primary |
 | `get(<id>)(state)` | returns all data, or specific one(s) (by key(s)) | <ul><li>if `<id>` is `undefined`, it returns all data</li><li>if `<id>` is an array, it returns all instances that match one of the ids</li><li>in other cases, it returns the instance which `id` matches the parameter</li></ul> |
 | `getBy(<propertyPath>, <value>)(state)` | get data specified by the field you want to filter with (take care, selectors are not memoized) | Example: `getBy('visible', true)(state)` returns all visible todos.
 | `getKeys(state)` | returns all store keys (in array) | |
@@ -99,6 +99,8 @@ Parameters are :
 | `getLength(state)` | returns number of stored instances | |
 | `isInitialized(state)` | returns true if the store has been initialized (by `add` or by `set` action) | |
 | `getState(state)` | returns the global state of your reducer | |
+| secondary |
+| `hasKey(<key>)(state)` | returns `true` if the given `<key>` is present | |
 
 ## simpleObject
 ### factory
