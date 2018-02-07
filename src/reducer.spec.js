@@ -5,9 +5,10 @@ import reducer from './reducer'
 const initState = { data: [{ some: 'data' }] }
 
 const prefix = 'testPrefix'
+const name = 'testName'
 
-const middleware = name => key => path => defaultData => ctx => ({
-  state: { ...ctx.state, key, path, defaultData, [name]: true, prev: ctx },
+const middleware = middlewareName => key => prefix => name => defaultData => ctx => ({
+  state: { ...ctx.state, key, prefix, name, defaultData, [middlewareName]: true, prev: ctx },
   action: { ...ctx.action, [name]: true },
 })
 
@@ -17,7 +18,7 @@ describe('reducer', () => {
       engine: [
         middleware('engine'),
       ],
-    })('code')(prefix)()
+    })('code')(prefix)(name)()
     expect(
       testPrefix(initState, undefined),
     ).toMatchSnapshot()
@@ -28,9 +29,9 @@ describe('reducer', () => {
       engine: [
         middleware('engine'),
       ],
-    })('code')(prefix)()
+    })('code')(prefix)(name)()
     expect(
-      testPrefix(initState, add(prefix)({ code: '1', some: 'info' })),
+      testPrefix(initState, add(prefix)(name)({ code: '1', some: 'info' })),
     ).toMatchSnapshot()
   })
 
@@ -40,10 +41,10 @@ describe('reducer', () => {
         middleware('pre1'),
         middleware('pre2'),
       ],
-    })('code')(prefix)()
+    })('code')(prefix)(name)()
 
     expect(
-      testPrefix(initState, add(prefix)({ code: '1', some: 'info' })),
+      testPrefix(initState, add(prefix)(name)({ code: '1', some: 'info' })),
     ).toMatchSnapshot()
   })
 
@@ -53,10 +54,10 @@ describe('reducer', () => {
         middleware('post1'),
         middleware('post2'),
       ],
-    })('code')(prefix)()
+    })('code')(prefix)(name)()
 
     expect(
-      testPrefix(initState, add(prefix)({ code: '1', some: 'info' })),
+      testPrefix(initState, add(prefix)(name)({ code: '1', some: 'info' })),
     ).toMatchSnapshot()
   })
 })

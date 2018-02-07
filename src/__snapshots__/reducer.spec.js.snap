@@ -10,14 +10,15 @@ Object {
   "defaultData": undefined,
   "engine": true,
   "key": "code",
-  "path": "testPrefix",
+  "name": "testName",
+  "prefix": "testPrefix",
   "prev": Object {
     "action": Object {
       "payload": Object {
         "code": "1",
         "some": "info",
       },
-      "type": "@@krf/ADD_TESTPREFIX",
+      "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
     },
     "state": Object {
       "data": Array [
@@ -39,17 +40,18 @@ Object {
   ],
   "defaultData": undefined,
   "key": "code",
-  "path": "testPrefix",
+  "name": "testName",
   "post1": true,
   "post2": true,
+  "prefix": "testPrefix",
   "prev": Object {
     "action": Object {
       "payload": Object {
         "code": "1",
         "some": "info",
       },
-      "post1": true,
-      "type": "@@krf/ADD_TESTPREFIX",
+      "testName": true,
+      "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
     },
     "state": Object {
       "data": Array [
@@ -59,15 +61,16 @@ Object {
       ],
       "defaultData": undefined,
       "key": "code",
-      "path": "testPrefix",
+      "name": "testName",
       "post1": true,
+      "prefix": "testPrefix",
       "prev": Object {
         "action": Object {
           "payload": Object {
             "code": "1",
             "some": "info",
           },
-          "type": "@@krf/ADD_TESTPREFIX",
+          "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
         },
         "state": Object {
           "data": Array [
@@ -91,17 +94,18 @@ Object {
   ],
   "defaultData": undefined,
   "key": "code",
-  "path": "testPrefix",
+  "name": "testName",
   "pre1": true,
   "pre2": true,
+  "prefix": "testPrefix",
   "prev": Object {
     "action": Object {
       "payload": Object {
         "code": "1",
         "some": "info",
       },
-      "pre1": true,
-      "type": "@@krf/ADD_TESTPREFIX",
+      "testName": true,
+      "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
     },
     "state": Object {
       "data": Array [
@@ -111,15 +115,16 @@ Object {
       ],
       "defaultData": undefined,
       "key": "code",
-      "path": "testPrefix",
+      "name": "testName",
       "pre1": true,
+      "prefix": "testPrefix",
       "prev": Object {
         "action": Object {
           "payload": Object {
             "code": "1",
             "some": "info",
           },
-          "type": "@@krf/ADD_TESTPREFIX",
+          "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
         },
         "state": Object {
           "data": Array [
@@ -144,7 +149,8 @@ Object {
   "defaultData": undefined,
   "engine": true,
   "key": "code",
-  "path": "testPrefix",
+  "name": "testName",
+  "prefix": "testPrefix",
   "prev": Object {
     "action": Object {
       "payload": undefined,

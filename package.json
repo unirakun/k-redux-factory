@@ -94,7 +94,8 @@
       "semi": [
         2,
         "never"
-      ]
+      ],
+      "max-len": { "code": 200 }
     }
   },
   "dependencies": {}

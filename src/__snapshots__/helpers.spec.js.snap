@@ -7,25 +7,9 @@ Object {
 }
 `;
 
-exports[`helpers/mapPayload should map payload (type matcher OK) 1`] = `
-Object {
-  "action": Object {
-    "payload": "PAYLOAD MAPPED !",
-    "type": "TYPE",
-  },
-  "state": Object {},
-}
-`;
+exports[`helpers/mapPayload should map payload (type matcher OK) 1`] = `[Function]`;
 
-exports[`helpers/mapPayload should map payload without matching type 1`] = `
-Object {
-  "action": Object {
-    "payload": "PAYLOAD MAPPED !",
-    "type": "TYPE",
-  },
-  "state": Object {},
-}
-`;
+exports[`helpers/mapPayload should map payload without matching type 1`] = `[Function]`;
 
 exports[`helpers/mapPayload should not map payload (type matcher is KO) 1`] = `
 Object {

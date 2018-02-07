@@ -1,4 +1,4 @@
-export default middlewares => key => prefix => defaultData =>
+export default middlewares => key => prefix => name => defaultData =>
   (state, { type = 'UNKNOWN', payload } = {}) => {
     let prevCtx = { state, action: { type, payload } }
 
@@ -14,7 +14,7 @@ export default middlewares => key => prefix => defaultData =>
 
     middlewaresToCall
       // pass parameters
-      .map(middleware => middleware(key)(prefix)(defaultData))
+      .map(middleware => middleware(key)(prefix)(name)(defaultData))
       // call middlewares
       .forEach((middleware) => {
         prevCtx = middleware(prevCtx)

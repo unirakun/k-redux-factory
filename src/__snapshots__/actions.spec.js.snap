@@ -3,13 +3,13 @@
 exports[`actions should trigger a remove action 1`] = `
 Object {
   "payload": "remove",
-  "type": "@@krf/REMOVE_TESTPREFIX",
+  "type": "@@krf/REMOVE>TESTPREFIX>TESTNAME",
 }
 `;
 
 exports[`actions should trigger a reset action 1`] = `
 Object {
-  "type": "@@krf/RESET_TESTPREFIX",
+  "type": "@@krf/RESET>TESTPREFIX>TESTNAME",
 }
 `;
 
@@ -25,7 +25,7 @@ Object {
       "code": "set2",
     },
   ],
-  "type": "@@krf/SET_TESTPREFIX",
+  "type": "@@krf/SET>TESTPREFIX>TESTNAME",
 }
 `;
 
@@ -35,7 +35,7 @@ Object {
     "an": "element_add",
     "code": "add",
   },
-  "type": "@@krf/ADD_TESTPREFIX",
+  "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
 }
 `;
 
@@ -45,7 +45,7 @@ Object {
     "an": "element_add",
     "code": "add",
   },
-  "type": "@@krf/ADD_OR_UPDATE_TESTPREFIX",
+  "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
 }
 `;
 
@@ -55,6 +55,6 @@ Object {
     "an": "element_replace",
     "code": "replace",
   },
-  "type": "@@krf/REPLACE_TESTPREFIX",
+  "type": "@@krf/REPLACE>TESTPREFIX>TESTNAME",
 }
 `;

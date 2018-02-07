@@ -6,13 +6,13 @@ const getWrappedStore = (middlewares = {}) => (options) => {
   const typeConfig = types[type]
 
   return Object.assign(
-    reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(`${prefix}${name}`)(defaultData),
+    reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(prefix)(name)(defaultData),
 
     // type (debug purpose)
     { krfType: type },
 
     // actions
-    ...Object.keys(typeConfig.actions).map(k => ({ [k]: typeConfig.actions[k](`${prefix}${name}`) })),
+    ...Object.keys(typeConfig.actions).map(k => ({ [k]: typeConfig.actions[k](prefix)(name) })),
 
     // selectors
     ...Object.keys(typeConfig.selectors).map(k => ({ [k]: typeConfig.selectors[k](options) })),
