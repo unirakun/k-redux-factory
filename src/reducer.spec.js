@@ -2,15 +2,14 @@
 import { add } from './actions'
 import reducer from './reducer'
 
-const initState = { data: [{ some: 'data' }] }
-
-const prefix = 'testPrefix'
-const name = 'testName'
-
 const middleware = middlewareName => key => prefix => name => defaultData => ctx => ({
   state: { ...ctx.state, key, prefix, name, defaultData, [middlewareName]: true, prev: ctx },
   action: { ...ctx.action, [name]: true },
 })
+
+const initState = { data: [{ some: 'data' }] }
+const prefix = 'testPrefix'
+const name = 'testName'
 
 describe('reducer', () => {
   it('should initialize an action if undefined', () => {
