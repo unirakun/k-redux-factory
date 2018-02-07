@@ -79,14 +79,14 @@ Parameters are :
 
 | function name | description | signature | generated action |
 |---|---|---|---|
-| `set` | set an array of instances of your resource | `set(<array>)` | `{ type: '@@krf/SET_TODOS', payload: <array> }` |
-| `add` | add an instance of your resource | `add(<instance>)` | `{ type: '@@krf/ADD_TODOS', payload: <instance> }` |
-| `update` | update an existing instance of your resource | `update(<instance>)` | `{ type: '@@krf/UPDATE_TODOS', payload: <instance> }` |
-| `addOrUpdate` | update an existing instance of your resource, or add it if not found | `addOrUpdate(<instance>)` | `{ type: '@@krf/ADD_OR_UPDATE_TODOS', payload: <instance> }` |
-| `replace` | replace an existing instance of your resource, unlike `update`, `replace` will remove the old instance | `replace(<instance>)` | `{ type: '@@krf/REPLACE_TODOS', payload: <instance> }` |
-| `remove` | remove one or more instance of your resource by its key | `remove([<key>])` | `{ type: '@@krf/REMOVE_TODOS', payload: [<key>] }` |
+| `set` | set an array of instances of your resource | `set(<array>)` | `{ type: '@@krf/SET>TODOS', payload: <array> }` |
+| `add` | add an instance of your resource | `add(<instance>)` | `{ type: '@@krf/ADD>TODOS', payload: <instance> }` |
+| `update` | update an existing instance of your resource | `update(<instance>)` | `{ type: '@@krf/UPDATE>TODOS', payload: <instance> }` |
+| `addOrUpdate` | update an existing instance of your resource, or add it if not found | `addOrUpdate(<instance>)` | `{ type: '@@krf/ADD_OR_UPDATE>TODOS', payload: <instance> }` |
+| `replace` | replace an existing instance of your resource, unlike `update`, `replace` will remove the old instance | `replace(<instance>)` | `{ type: '@@krf/REPLACE>TODOS', payload: <instance> }` |
+| `remove` | remove one or more instance of your resource by its key | `remove([<key>])` | `{ type: '@@krf/REMOVE>TODOS', payload: [<key>] }` |
 | `orderBy` | order array and keys by path (see lodash function `orderBy` and `get`). The payload can be a `string` or a `function`, then the desc is `false`. | <code>orderBy({ by: <path&#124;function>, desc: <boolean>) })</code> | <code>{ type: '@@krf/ORDER_BY_TODOS', payload: { by: <path&#124;function>, desc: <boolean> } }</code> |
-| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@@krf/RESET_TODOS' }` |
+| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@@krf/RESET>TODOS' }` |
 
 ### selectors
 | signature | description | comment |
@@ -149,8 +149,8 @@ Parameters are :
 | function name | description | signature | generated action |
 |---|---|---|---|
 | `set` | set the instance | `set(<instance>)` | `{ type: '@@krf/SET_TODOS', payload: <instance> }` |
-| `update` | update the instance of your resource | `update(<instance>)` | `{ type: '@@krf/UPDATE_TODOS', payload: <instance> }` |
-| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@@krf/RESET_TODOS' }` |
+| `update` | update the instance of your resource | `update(<instance>)` | `{ type: '@@krf/UPDATE>TODOS', payload: <instance> }` |
+| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@@krf/RESET>TODOS' }` |
 
 ### selectors
 

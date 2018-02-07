@@ -261,7 +261,7 @@ import { mapState } from 'k-redux-factory/helpers'
 // define a function to change state
 const mapper = state => ({...state, todos: 'TODO_CHANGED'})
 // create your reducer and transform the state before core middleware
-export default factory({ pre: [mapState(/SET_TODOS/)(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
+export default factory({ pre: [mapState(/SET>TODOS/)(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
 
 #### Example, we create a middleware but we modify action and state :
@@ -291,7 +291,7 @@ import { mapPayload } from 'k-redux-factory/helpers'
 // define a function to map payload
 const mapper = payload => payload.map(p => ({ ...p, id: `ID_${p.id}` }))
 // create your reducer and transform the payload before core middleware
-export default factory({ pre: [mapPayload(/SET_TODOS/)(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
+export default factory({ pre: [mapPayload(/SET>TODOS/)(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
 ```
 
 # About ![alakarte](https://i.imgur.com/PKlqzvj.png)
