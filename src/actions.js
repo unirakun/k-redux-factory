@@ -1,25 +1,27 @@
 const scope = action => `@@krf/${action.toUpperCase()}`
 
-export const SET = prefix => scope(`SET_${prefix}`)
-export const set = prefix => payload => ({ type: SET(prefix), payload })
+const getPrefix = prefix => name => `${prefix ? '>' : ''}${prefix}>${name}`
 
-export const RESET = prefix => scope(`RESET_${prefix}`)
-export const reset = prefix => () => ({ type: RESET(prefix) })
+export const SET = prefix => name => scope(`SET${getPrefix(prefix)(name)}`)
+export const set = prefix => name => payload => ({ type: SET(prefix)(name), payload })
 
-export const ADD = prefix => scope(`ADD_${prefix}`)
-export const add = prefix => payload => ({ type: ADD(prefix), payload })
+export const RESET = prefix => name => scope(`RESET${getPrefix(prefix)(name)}`)
+export const reset = prefix => name => () => ({ type: RESET(prefix)(name) })
 
-export const UPDATE = prefix => scope(`UPDATE_${prefix}`)
-export const update = prefix => payload => ({ type: UPDATE(prefix), payload })
+export const ADD = prefix => name => scope(`ADD${getPrefix(prefix)(name)}`)
+export const add = prefix => name => payload => ({ type: ADD(prefix)(name), payload })
 
-export const REMOVE = prefix => scope(`REMOVE_${prefix}`)
-export const remove = prefix => key => ({ type: REMOVE(prefix), payload: key })
+export const UPDATE = prefix => name => scope(`UPDATE${getPrefix(prefix)(name)}`)
+export const update = prefix => name => payload => ({ type: UPDATE(prefix)(name), payload })
 
-export const ADD_OR_UPDATE = prefix => scope(`ADD_OR_UPDATE_${prefix}`)
-export const addOrUpdate = prefix => payload => ({ type: ADD_OR_UPDATE(prefix), payload })
+export const REMOVE = prefix => name => scope(`REMOVE${getPrefix(prefix)(name)}`)
+export const remove = prefix => name => key => ({ type: REMOVE(prefix)(name), payload: key })
 
-export const REPLACE = prefix => scope(`REPLACE_${prefix}`)
-export const replace = prefix => payload => ({ type: REPLACE(prefix), payload })
+export const ADD_OR_UPDATE = prefix => name => scope(`ADD_OR_UPDATE${getPrefix(prefix)(name)}`)
+export const addOrUpdate = prefix => name => payload => ({ type: ADD_OR_UPDATE(prefix)(name), payload })
 
-export const ORDER_BY = prefix => scope(`ORDER_BY_${prefix}`)
-export const orderBy = prefix => payload => ({ type: ORDER_BY(prefix), payload })
+export const REPLACE = prefix => name => scope(`REPLACE${getPrefix(prefix)(name)}`)
+export const replace = prefix => name => payload => ({ type: REPLACE(prefix)(name), payload })
+
+export const ORDER_BY = prefix => name => scope(`ORDER_BY${getPrefix(prefix)(name)}`)
+export const orderBy = prefix => name => payload => ({ type: ORDER_BY(prefix)(name), payload })

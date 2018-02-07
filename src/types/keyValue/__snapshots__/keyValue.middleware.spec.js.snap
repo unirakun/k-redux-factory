@@ -11,7 +11,7 @@ Object {
         "info": "elm4",
       },
     },
-    "type": "@@krf/ADD_TESTPREFIX",
+    "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -104,7 +104,7 @@ Object {
         "info": "elm4",
       },
     },
-    "type": "@@krf/ADD_TESTPREFIX",
+    "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -146,7 +146,7 @@ Object {
         "info": "elm12",
       },
     },
-    "type": "@@krf/ADD_OR_UPDATE_TESTPREFIX",
+    "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -309,7 +309,7 @@ Object {
         "info": "elm2",
       },
     },
-    "type": "@@krf/ADD_TESTPREFIX",
+    "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -385,7 +385,7 @@ Object {
         "info": "elm12",
       },
     },
-    "type": "@@krf/REPLACE_TESTPREFIX",
+    "type": "@@krf/REPLACE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -461,7 +461,7 @@ Object {
         "info": "elm12",
       },
     },
-    "type": "@@krf/UPDATE_TESTPREFIX",
+    "type": "@@krf/UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -530,7 +530,7 @@ exports[`middlewares/keyValue should order elements by identity -code asc- 1`] =
 Object {
   "action": Object {
     "payload": "code",
-    "type": "@@krf/ORDER_BY_TESTPREFIX",
+    "type": "@@krf/ORDER_BY>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -602,7 +602,7 @@ Object {
       "by": "code",
       "desc": true,
     },
-    "type": "@@krf/ORDER_BY_TESTPREFIX",
+    "type": "@@krf/ORDER_BY>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -671,7 +671,7 @@ exports[`middlewares/keyValue should order elements by identity -sub info asc- 1
 Object {
   "action": Object {
     "payload": "subinfos.info",
-    "type": "@@krf/ORDER_BY_TESTPREFIX",
+    "type": "@@krf/ORDER_BY>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -743,7 +743,7 @@ Object {
       "by": "subinfos.info",
       "desc": true,
     },
-    "type": "@@krf/ORDER_BY_TESTPREFIX",
+    "type": "@@krf/ORDER_BY>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -815,7 +815,7 @@ Object {
       "by": [Function],
       "desc": false,
     },
-    "type": "@@krf/ORDER_BY_TESTPREFIX",
+    "type": "@@krf/ORDER_BY>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -884,7 +884,7 @@ exports[`middlewares/keyValue should order elements with function -code asc- 1`]
 Object {
   "action": Object {
     "payload": [Function],
-    "type": "@@krf/ORDER_BY_TESTPREFIX",
+    "type": "@@krf/ORDER_BY>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -956,7 +956,7 @@ Object {
       "by": [Function],
       "desc": true,
     },
-    "type": "@@krf/ORDER_BY_TESTPREFIX",
+    "type": "@@krf/ORDER_BY>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -1025,7 +1025,7 @@ exports[`middlewares/keyValue should remove element [elm1] 1`] = `
 Object {
   "action": Object {
     "payload": "elm1",
-    "type": "@@krf/REMOVE_TESTPREFIX",
+    "type": "@@krf/REMOVE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -1080,7 +1080,7 @@ Object {
       "elm1",
       "elm2",
     ],
-    "type": "@@krf/REMOVE_TESTPREFIX",
+    "type": "@@krf/REMOVE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -1119,7 +1119,7 @@ Object {
       "infos": "elm1",
       "some": "other",
     },
-    "type": "@@krf/REPLACE_TESTPREFIX",
+    "type": "@@krf/REPLACE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -1181,7 +1181,7 @@ Object {
 exports[`middlewares/keyValue should reset state 1`] = `
 Object {
   "action": Object {
-    "type": "@@krf/RESET_TESTPREFIX",
+    "type": "@@krf/RESET>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [],
@@ -1213,7 +1213,7 @@ Object {
         },
       },
     ],
-    "type": "@@krf/SET_TESTPREFIX",
+    "type": "@@krf/SET>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -1272,7 +1272,7 @@ Object {
         "info": "elm3",
       },
     },
-    "type": "@@krf/UPDATE_TESTPREFIX",
+    "type": "@@krf/UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [
@@ -1348,7 +1348,7 @@ Object {
         "info": "elm3",
       },
     },
-    "type": "@@krf/ADD_OR_UPDATE_TESTPREFIX",
+    "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
     "array": Array [

@@ -4,6 +4,7 @@ import { initState } from '../../reducer'
 import keyValue from './keyValue.middleware'
 
 const prefix = 'testPrefix'
+const name = 'testName'
 const Element = code => ({ code, some: 'other', infos: code, subinfos: { info: code } })
 const ElementWithoutSubInfo = code => ({ code, some: 'other', infos: code })
 const Elements = [
@@ -25,8 +26,8 @@ const state = {
 describe('middlewares/keyValue', () => {
   // Use the factory to create a new reducer named 'testPrefix'
   // It uses 'code' as key in givent elements
-  const testPrefix = keyValue('code')(prefix)(/* defaultData */)
-  const testPrefixWithDefaultData = keyValue('code')(prefix)(Elements)
+  const testPrefix = keyValue('code')(prefix)(name)(/* defaultData */)
+  const testPrefixWithDefaultData = keyValue('code')(prefix)(name)(Elements)
 
   it('should initialize', () => expect(testPrefix()).toMatchSnapshot())
 
@@ -35,140 +36,140 @@ describe('middlewares/keyValue', () => {
   it('should add element [elm4] on initial store', () => expect(
     testPrefix({
       state: initState,
-      action: add(prefix)(Element('elm4')),
+      action: add(prefix)(name)(Element('elm4')),
     }),
   ).toMatchSnapshot())
 
   it('should add element [elm4]', () => expect(
     testPrefix({
       state,
-      action: add(prefix)(Element('elm4')),
+      action: add(prefix)(name)(Element('elm4')),
     }),
   ).toMatchSnapshot())
 
   it('should set elements [elm1,elm2]', () => expect(
     testPrefix({
       state,
-      action: set(prefix)([Element('elm1'), Element('elm2')]),
+      action: set(prefix)(name)([Element('elm1'), Element('elm2')]),
     }),
   ).toMatchSnapshot())
 
   it('should remove element [elm1]', () => expect(
     testPrefix({
       state,
-      action: remove(prefix)('elm1'),
+      action: remove(prefix)(name)('elm1'),
     }),
   ).toMatchSnapshot())
 
   it('should remove many element [elm1, elm2]', () => expect(
     testPrefix({
       state,
-      action: remove(prefix)(['elm1', 'elm2']),
+      action: remove(prefix)(name)(['elm1', 'elm2']),
     }),
   ).toMatchSnapshot())
 
   it('should reset state', () => expect(
     testPrefix({
       state,
-      action: reset(prefix)(),
+      action: reset(prefix)(name)(),
     }),
   ).toMatchSnapshot())
 
   it('should not duplicate object with same key [elm2]', () => expect(
     testPrefix({
       state,
-      action: add(prefix)(Element('elm2')),
+      action: add(prefix)(name)(Element('elm2')),
     }),
   ).toMatchSnapshot())
 
   it('should update an element [elm3]', () => expect(
     testPrefix({
       state,
-      action: update(prefix)({ ...Element('elm3'), some: 'other UPDATE' }),
+      action: update(prefix)(name)({ ...Element('elm3'), some: 'other UPDATE' }),
     }),
   ).toMatchSnapshot())
 
   it('should not update element if not found [elm12]', () => expect(
     testPrefix({
       state,
-      action: update(prefix)(Element('elm12')),
+      action: update(prefix)(name)(Element('elm12')),
     }),
   ).toMatchSnapshot())
 
   it('should update element [elm3]', () => expect(
     testPrefix({
       state,
-      action: addOrUpdate(prefix)({ ...Element('elm3'), some: 'other ADD OR UPDATE' }),
+      action: addOrUpdate(prefix)(name)({ ...Element('elm3'), some: 'other ADD OR UPDATE' }),
     }),
   ).toMatchSnapshot())
 
   it('should add element if not found [elm12]', () => expect(
     testPrefix({
       state,
-      action: addOrUpdate(prefix)(Element('elm12')),
+      action: addOrUpdate(prefix)(name)(Element('elm12')),
     }),
   ).toMatchSnapshot())
 
   it('should replace element [elm1]', () => expect(
     testPrefix({
       state,
-      action: replace(prefix)(ElementWithoutSubInfo('elm1')),
+      action: replace(prefix)(name)(ElementWithoutSubInfo('elm1')),
     }),
   ).toMatchSnapshot())
 
   it('should not replace element doesn\'t exist [elm12]', () => expect(
     testPrefix({
       state,
-      action: replace(prefix)(Element('elm12')),
+      action: replace(prefix)(name)(Element('elm12')),
     }),
   ).toMatchSnapshot())
 
   it('should order elements by identity -code asc-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)('code'),
+      action: orderBy(prefix)(name)('code'),
     }),
   ).toMatchSnapshot())
 
   it('should order elements by identity -sub info asc-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)('subinfos.info'),
+      action: orderBy(prefix)(name)('subinfos.info'),
     }),
   ).toMatchSnapshot())
 
   it('should order elements by identity -code desc-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)({ by: 'code', desc: true }),
+      action: orderBy(prefix)(name)({ by: 'code', desc: true }),
     }),
   ).toMatchSnapshot())
 
   it('should order elements by identity -sub info desc-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)({ by: 'subinfos.info', desc: true }),
+      action: orderBy(prefix)(name)({ by: 'subinfos.info', desc: true }),
     }),
   ).toMatchSnapshot())
 
   it('should order elements with function -code desc-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)({ by: e => e.code, desc: true }),
+      action: orderBy(prefix)(name)({ by: e => e.code, desc: true }),
     }),
   ).toMatchSnapshot())
 
   it('should order elements with function -code asc (objec mode)-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)({ by: e => e.code, desc: false }),
+      action: orderBy(prefix)(name)({ by: e => e.code, desc: false }),
     }),
   ).toMatchSnapshot())
 
   it('should order elements with function -code asc-', () => expect(
     testPrefix({
       state,
-      action: orderBy(prefix)(e => e.code),
+      action: orderBy(prefix)(name)(e => e.code),
     }),
   ).toMatchSnapshot())
 })

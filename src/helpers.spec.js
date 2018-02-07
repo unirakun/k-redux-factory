@@ -22,7 +22,7 @@ const mapperPayload = () => 'PAYLOAD MAPPED !'
 const mapperState = state => `${state} MAPPED !`
 const customReducer = (action, state) => (/CUSTOM/.test(action.type) ? 'CUSTOM_STATE' : state)
 
-const execHelper = context => helper => helper()()()(context)
+const execHelper = context => helper => helper()()()()(context)
 
 describe('helpers/reducer', () => {
   it('should add reducer but not change state', () => expect(execHelper(ctx)(reducer(customReducer))).toMatchSnapshot())

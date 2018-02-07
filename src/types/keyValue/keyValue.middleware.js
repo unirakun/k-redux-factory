@@ -54,24 +54,24 @@ const replace = (key, state, payload) => {
 const defaultState =
   (key, defaultData) => (defaultData !== undefined ? set(key, defaultData) : initState)
 
-const reducer = key => prefix => defaultData =>
+const reducer = key => prefix => name => defaultData =>
   (state = defaultState(key, defaultData), { type, payload } = {}) => {
     switch (type) {
-      case SET(prefix): return set(key, payload)
-      case ADD(prefix): return add(key, state, payload)
-      case ADD_OR_UPDATE(prefix): {
+      case SET(prefix)(name): return set(key, payload)
+      case ADD(prefix)(name): return add(key, state, payload)
+      case ADD_OR_UPDATE(prefix)(name): {
         if (!keyAlreadyExists(state)(key, payload[key])) return add(key, state, payload)
         return update(key, state, payload)
       }
-      case UPDATE(prefix): {
+      case UPDATE(prefix)(name): {
         if (!keyAlreadyExists(state)(key, payload[key])) return state
         return update(key, state, payload)
       }
-      case REPLACE(prefix): {
+      case REPLACE(prefix)(name): {
         if (!keyAlreadyExists(state)(key, payload[key])) return state
         return replace(key, state, payload)
       }
-      case ORDER_BY(prefix): {
+      case ORDER_BY(prefix)(name): {
         let by = payload
         let orders = 'asc'
         if (isObjectLike(payload)) {
@@ -89,7 +89,7 @@ const reducer = key => prefix => defaultData =>
           keys: uniq(arraySorted.map(element => element[key])),
         }
       }
-      case REMOVE(prefix): {
+      case REMOVE(prefix)(name): {
         const removeIds = flatten([payload])
         return {
           ...state,
@@ -98,14 +98,14 @@ const reducer = key => prefix => defaultData =>
           array: state.array ? state.array.filter(o => !removeIds.includes(o[key])) : [],
         }
       }
-      case RESET(prefix):
+      case RESET(prefix)(name):
         return defaultState(key, defaultData)
       default:
         return state
     }
   }
 
-export default key => prefix => defaultData => (ctx = {}) => ({
+export default key => prefix => name => defaultData => (ctx = {}) => ({
   ...ctx,
-  state: reducer(key)(prefix)(defaultData)(ctx.state, ctx.action),
+  state: reducer(key)(prefix)(name)(defaultData)(ctx.state, ctx.action),
 })

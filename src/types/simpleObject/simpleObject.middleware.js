@@ -3,21 +3,21 @@ import { SET, RESET, UPDATE } from './simpleObject.actions'
 export const initState = {}
 const defaultState = defaultData => (defaultData !== undefined ? defaultData : initState)
 
-const reducer = (/* key */) => prefix => defaultData =>
+const reducer = (/* key */) => prefix => name => defaultData =>
   (state = defaultState(defaultData), { type, payload } = {}) => {
     switch (type) {
-      case SET(prefix):
+      case SET(prefix)(name):
         return payload
-      case UPDATE(prefix):
+      case UPDATE(prefix)(name):
         return { ...state, ...payload }
-      case RESET(prefix):
+      case RESET(prefix)(name):
         return defaultState(defaultData)
       default:
         return state
     }
   }
 
-export default key => prefix => defaultData => (ctx = {}) => ({
+export default key => prefix => name => defaultData => (ctx = {}) => ({
   ...ctx,
-  state: reducer(key)(prefix)(defaultData)(ctx.state, ctx.action),
+  state: reducer(key)(prefix)(name)(defaultData)(ctx.state, ctx.action),
 })
