@@ -25,7 +25,7 @@ export const mapPayload = actionMatches => mapper =>
   (/* key */) => (/* prefix */) => (/* name */) => (/* defaultData */) => (ctx) => {
     const { payload, type } = ctx.action
     if (!actionMatches || actionMatches.test(type)) {
-      return mapAction(action => ({ ...action, payload: mapper(payload) }))()()()(ctx)
+      return mapAction(action => ({ ...action, payload: mapper(payload) }))()()()()(ctx)
     }
     return ctx
   }
