@@ -95,7 +95,12 @@
         2,
         "never"
       ],
-      "max-len": { "code": 200 }
+      "max-len": [
+        2,
+        {
+          "code": 200
+        }
+      ]
     }
   },
   "dependencies": {}
