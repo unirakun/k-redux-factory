@@ -1,5 +1,7 @@
 # k-redux-factory
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/alakarteio/k-redux-factory.svg)](https://greenkeeper.io/)
+
 Factory of Redux reducers and their associated actions and selectors.
 > Make your Redux code base tinier and simpler to maintain
 
