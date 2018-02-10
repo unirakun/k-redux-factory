@@ -6,6 +6,16 @@
   "license": "MIT",
   "repository": "https://github.com/alakarteio/k-redux-factory",
   "bugs": "https://github.com/alakarteio/k-redux-factory/issues",
+  "scripts": {
+    "lint:js": "eslint --ext js,jsx src",
+    "lint": "npm-run-all --parallel lint:*",
+    "build:core": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.js",
+    "build:helpers": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.helpers.js",
+    "build": "npm-run-all --parallel build:*",
+    "test": "jest",
+    "coveralls": "jest --coverage --collectCoverageFrom=src/**/*.{js,jsx} && cat ./coverage/lcov.info | coveralls",
+    "ci": "npm-run-all --parallel coveralls lint"
+  },
   "peerDependencies": {
     "lodash": "^4.17.4"
   },
@@ -13,6 +23,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.2.2",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -21,9 +32,9 @@
     "eslint": "~4.17.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-babel": "^4.1.1",
-    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-react": "^7.4.0",
     "jest": "^22.2.2",
     "lodash": "^4.17.4",
     "npm-run-all": "^4.0.2",
@@ -31,16 +42,6 @@
     "rollup-plugin-babel": "^3.0.3",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-uglify": "^3.0.0"
-  },
-  "scripts": {
-    "lint:js": "eslint --ext js,jsx src",
-    "lint": "npm-run-all --parallel lint:*",
-    "build:core": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.js",
-    "build:helpers": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.helpers.js",
-    "build": "npm-run-all --parallel build:*",
-    "test": "jest",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "ci": "npm-run-all --parallel coveralls lint"
   },
   "babel": {
     "presets": [

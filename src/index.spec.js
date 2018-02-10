@@ -52,8 +52,19 @@ describe('index', () => {
   describe('with middleware', () => {
     const middleware = middlewareName => key => prefix => name => defaultData => ctx => ({
       ...ctx,
-      state: { ...ctx.state, [middlewareName]: true, key, prefix, name, defaultData, prevCtx: ctx },
-      action: { ...ctx.action, [middlewareName]: true },
+      state: {
+        ...ctx.state,
+        [middlewareName]: true,
+        key,
+        prefix,
+        name,
+        defaultData,
+        prevCtx: ctx,
+      },
+      action: {
+        ...ctx.action,
+        [middlewareName]: true,
+      },
     })
 
     test(
