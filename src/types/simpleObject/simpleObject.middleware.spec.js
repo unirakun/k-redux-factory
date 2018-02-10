@@ -16,26 +16,20 @@ describe('middlewares/simpleObject', () => {
 
   it('should initialize with defaultData', () => expect(testPrefix('default')()).toMatchSnapshot())
 
-  it('should set element [elm2]', () => expect(
-    testPrefix(/* defaultData */)({
-      state,
-      action: set(prefix)(name)(Element('elm2')),
-    }),
-  ).toMatchSnapshot())
+  it('should set element [elm2]', () => expect(testPrefix(/* defaultData */)({
+    state,
+    action: set(prefix)(name)(Element('elm2')),
+  })).toMatchSnapshot())
 
-  it('should reset state', () => expect(
-    testPrefix(/* defaultData */)({
-      state,
-      action: reset(prefix)(name)(),
-    }),
-  ).toMatchSnapshot())
+  it('should reset state', () => expect(testPrefix(/* defaultData */)({
+    state,
+    action: reset(prefix)(name)(),
+  })).toMatchSnapshot())
 
-  it('should update element', () => expect(
-    testPrefix(/* defaultData */)({
-      state,
-      action: update(prefix)(name)({ some: 'other 2', modifi: 'cation' }),
-    }),
-  ).toMatchSnapshot())
+  it('should update element', () => expect(testPrefix(/* defaultData */)({
+    state,
+    action: update(prefix)(name)({ some: 'other 2', modifi: 'cation' }),
+  })).toMatchSnapshot())
 
   it('should take defaultData param to populate data field -init-', () => {
     // init - with empty object

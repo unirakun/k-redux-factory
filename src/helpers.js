@@ -13,7 +13,7 @@ export const mapAction = mapper =>
 export const mapState = actionMatches => mapper =>
   // middleware signature
   (/* key */) => (/* prefix */) => (/* name */) => (/* defaultData */) => (ctx) => {
-    const action = ctx.action
+    const { action } = ctx
     if (!actionMatches || actionMatches.test(action.type)) {
       return { action, state: mapper(ctx.state) }
     }

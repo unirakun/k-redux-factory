@@ -3,7 +3,15 @@ import { add } from './actions'
 import reducer from './reducer'
 
 const middleware = middlewareName => key => prefix => name => defaultData => ctx => ({
-  state: { ...ctx.state, key, prefix, name, defaultData, [middlewareName]: true, prev: ctx },
+  state: {
+    ...ctx.state,
+    key,
+    prefix,
+    name,
+    defaultData,
+    [middlewareName]: true,
+    prev: ctx,
+  },
   action: { ...ctx.action, [name]: true },
 })
 
@@ -18,9 +26,7 @@ describe('reducer', () => {
         middleware('engine'),
       ],
     })('code')(prefix)(name)()
-    expect(
-      testPrefix(initState, undefined),
-    ).toMatchSnapshot()
+    expect(testPrefix(initState, undefined)).toMatchSnapshot()
   })
 
   it('should call -engine- middleware', () => {
@@ -29,9 +35,7 @@ describe('reducer', () => {
         middleware('engine'),
       ],
     })('code')(prefix)(name)()
-    expect(
-      testPrefix(initState, add(prefix)(name)({ code: '1', some: 'info' })),
-    ).toMatchSnapshot()
+    expect(testPrefix(initState, add(prefix)(name)({ code: '1', some: 'info' }))).toMatchSnapshot()
   })
 
   it('should call -pre- middlewares', () => {
@@ -42,9 +46,7 @@ describe('reducer', () => {
       ],
     })('code')(prefix)(name)()
 
-    expect(
-      testPrefix(initState, add(prefix)(name)({ code: '1', some: 'info' })),
-    ).toMatchSnapshot()
+    expect(testPrefix(initState, add(prefix)(name)({ code: '1', some: 'info' }))).toMatchSnapshot()
   })
 
   it('should call -post- middlewares', () => {
@@ -55,8 +57,6 @@ describe('reducer', () => {
       ],
     })('code')(prefix)(name)()
 
-    expect(
-      testPrefix(initState, add(prefix)(name)({ code: '1', some: 'info' })),
-    ).toMatchSnapshot()
+    expect(testPrefix(initState, add(prefix)(name)({ code: '1', some: 'info' }))).toMatchSnapshot()
   })
 })

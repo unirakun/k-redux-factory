@@ -1,7 +1,12 @@
 import { keyBy, without, uniq, omit, orderBy, get, isObjectLike, isString, flatten } from 'lodash'
 import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE, REPLACE, ORDER_BY } from './keyValue.actions'
 
-export const initState = { data: {}, keys: [], array: [], initialized: false }
+export const initState = {
+  data: {},
+  keys: [],
+  array: [],
+  initialized: false,
+}
 
 const keyAlreadyExists =
   state => (key, instanceKey) => state.array.find(o => o[key] === instanceKey)
@@ -75,7 +80,7 @@ const reducer = key => prefix => name => defaultData =>
         let by = payload
         let orders = 'asc'
         if (isObjectLike(payload)) {
-          by = payload.by
+          by = payload.by // eslint-disable-line prefer-destructuring
           orders = payload.desc ? 'desc' : 'asc'
         }
         const arraySorted = orderBy(

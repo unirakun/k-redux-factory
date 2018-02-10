@@ -2,7 +2,13 @@ import * as types from './types'
 import reducer from './reducer'
 
 const getWrappedStore = (middlewares = {}) => (options) => {
-  const { key, type = 'keyValue', prefix = '', name, defaultData } = options
+  const {
+    key,
+    type = 'keyValue',
+    prefix = '',
+    name,
+    defaultData,
+  } = options
   const typeConfig = types[type]
 
   return Object.assign(

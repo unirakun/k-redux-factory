@@ -4,7 +4,7 @@ export const getState = options => (state) => {
   let subState = state
   const { name, path } = options
 
-  if (path !== undefined && path.length > 0) subState = at(state, path)[0]
+  if (path !== undefined && path.length > 0) [subState] = at(state, path)
 
   return subState[name]
 }

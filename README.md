@@ -4,7 +4,7 @@ Factory of Redux reducers and their associated actions and selectors.
 > Make your Redux code base tinier and simpler to maintain
 
 [![CircleCI](https://circleci.com/gh/alakarteio/k-redux-factory.svg?style=shield)](https://circleci.com/gh/alakarteio/k-redux-factory) [![Coverage Status](https://coveralls.io/repos/github/alakarteio/k-redux-factory/badge.svg?branch=master)](https://coveralls.io/github/alakarteio/k-redux-factory?branch=master) [![NPM Version](https://badge.fury.io/js/k-redux-factory.svg)](https://www.npmjs.com/package/k-redux-factory)
-[![Size](http://img.badgesize.io/alakarteio/k-redux-factory/master/index.js.svg)]()
+[![Size](http://img.badgesize.io/alakarteio/k-redux-factory/master/index.js.svg)]() [![Greenkeeper badge](https://badges.greenkeeper.io/alakarteio/k-redux-factory.svg)](https://greenkeeper.io/)
 
 ## Contents
  - [Purpose](#purpose)
