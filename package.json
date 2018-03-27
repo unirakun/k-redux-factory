@@ -1,6 +1,6 @@
 {
   "name": "k-redux-factory",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "main": "index.js",
   "helpers": "helpers.js",
   "license": "MIT",

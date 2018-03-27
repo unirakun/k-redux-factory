@@ -23,6 +23,8 @@ const subState = {
       elm3: Element('elm3'),
       elm4: SubElement('elm4')('subelm4'),
       elm5: SubElement('elm5')('subelm5'),
+      false: Element(false),
+      0: Element(0),
     },
     keys: ['elm2', 'elm1', 'elm3', 'elm4', 'elm5'],
     array: [Element('elm2'), Element('elm1'), Element('elm3'), SubElement('elm4')('subelm4'), SubElement('elm5')('subelm5')],
@@ -44,6 +46,9 @@ describe('selectors', () => {
   it('should retrieve length', () => expect(getLength({ path, name })(state)).toMatchSnapshot())
   it('should retrieve initialized value', () => expect(isInitialized({ path, name })(state)).toMatchSnapshot())
   it('should retrieve all data, without key', () => expect(get({ path, name })()(state)).toMatchSnapshot())
+  it('should retrieve all data, with null parameters', () => expect(get({ path, name })(null)(state)).toMatchSnapshot())
+  it('should retrieve data by ids, when ids is false', () => expect(get({ path, name })(false)(state)).toMatchSnapshot())
+  it('should retrieve data by ids, when ids is 0', () => expect(get({ path, name })(0)(state)).toMatchSnapshot())
   it('should retrieve data by ids, with an array of keys', () => expect(get({ path, name })(['elm1', 'elm3'])(state)).toMatchSnapshot())
   it('should retrieve data by id, with a single key', () => expect(get({ path, name })('elm3')(state)).toMatchSnapshot())
   it('should retrieve all data, without key to array', () => expect(getAsArray({ path, name })(state)).toMatchSnapshot())

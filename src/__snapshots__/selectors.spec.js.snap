@@ -68,8 +68,13 @@ Array [
 
 exports[`selectors should retrieve all data, validate (path, values), with wrong path 1`] = `Array []`;
 
-exports[`selectors should retrieve all data, without key 1`] = `
+exports[`selectors should retrieve all data, with null parameters 1`] = `
 Object {
+  "0": Object {
+    "code": 0,
+    "infos": 0,
+    "some": "other",
+  },
   "elm1": Object {
     "code": "elm1",
     "infos": "elm1",
@@ -100,6 +105,57 @@ Object {
     "sub": Object {
       "subCode": "subelm5",
     },
+  },
+  "false": Object {
+    "code": false,
+    "infos": false,
+    "some": "other",
+  },
+}
+`;
+
+exports[`selectors should retrieve all data, without key 1`] = `
+Object {
+  "0": Object {
+    "code": 0,
+    "infos": 0,
+    "some": "other",
+  },
+  "elm1": Object {
+    "code": "elm1",
+    "infos": "elm1",
+    "some": "other",
+  },
+  "elm2": Object {
+    "code": "elm2",
+    "infos": "elm2",
+    "some": "other",
+  },
+  "elm3": Object {
+    "code": "elm3",
+    "infos": "elm3",
+    "some": "other",
+  },
+  "elm4": Object {
+    "code": "elm4",
+    "infos": "elm4",
+    "some": "other",
+    "sub": Object {
+      "subCode": "subelm4",
+    },
+  },
+  "elm5": Object {
+    "code": "elm5",
+    "infos": "elm5",
+    "some": "other",
+    "sub": Object {
+      "subCode": "subelm5",
+    },
+  },
+  "false": Object {
+    "code": false,
+    "infos": false,
+    "some": "other",
   },
 }
 `;
@@ -144,6 +200,22 @@ exports[`selectors should retrieve data by id, with a single key 1`] = `
 Object {
   "code": "elm3",
   "infos": "elm3",
+  "some": "other",
+}
+`;
+
+exports[`selectors should retrieve data by ids, when ids is 0 1`] = `
+Object {
+  "code": 0,
+  "infos": 0,
+  "some": "other",
+}
+`;
+
+exports[`selectors should retrieve data by ids, when ids is false 1`] = `
+Object {
+  "code": false,
+  "infos": false,
   "some": "other",
 }
 `;
@@ -213,6 +285,11 @@ Object {
     },
   ],
   "data": Object {
+    "0": Object {
+      "code": 0,
+      "infos": 0,
+      "some": "other",
+    },
     "elm1": Object {
       "code": "elm1",
       "infos": "elm1",
@@ -243,6 +320,11 @@ Object {
       "sub": Object {
         "subCode": "subelm5",
       },
+    },
+    "false": Object {
+      "code": false,
+      "infos": false,
+      "some": "other",
     },
   },
   "initialized": true,
@@ -292,6 +374,11 @@ Object {
     },
   ],
   "data": Object {
+    "0": Object {
+      "code": 0,
+      "infos": 0,
+      "some": "other",
+    },
     "elm1": Object {
       "code": "elm1",
       "infos": "elm1",
@@ -322,6 +409,11 @@ Object {
       "sub": Object {
         "subCode": "subelm5",
       },
+    },
+    "false": Object {
+      "code": false,
+      "infos": false,
+      "some": "other",
     },
   },
   "initialized": true,

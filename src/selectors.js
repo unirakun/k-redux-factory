@@ -19,7 +19,7 @@ const getData = options => getFactory('data')(options)
 export const get = options => keys => (state) => {
   const data = getData(options)(state)
   // All data
-  if (!keys) return data
+  if (keys === undefined || keys === null) return data
   // By keys
   if (Array.isArray(keys)) return keys.map(k => data[k])
   // By key
