@@ -63,16 +63,40 @@ const reducer = key => prefix => name => defaultData =>
   (state = defaultState(key, defaultData), { type, payload } = {}) => {
     switch (type) {
       case SET(prefix)(name): return set(key, payload)
-      case ADD(prefix)(name): return add(key, state, payload)
+      case ADD(prefix)(name): {
+      if (Array.isArray(payload))
+        return payload.reduce((newState, entity) => add(key, newState, entity), state)
+      return add(key, state, payload)
+      }
       case ADD_OR_UPDATE(prefix)(name): {
+      if (Array.isArray(payload))
+        return payload.reduce(
+          (newState, entity) =>
+            keyAlreadyExists(state)(key, entty[key])
+              ? update(key, state, entity)
+              : add(key, newState, entity),
+          state,
+        )
         if (!keyAlreadyExists(state)(key, payload[key])) return add(key, state, payload)
         return update(key, state, payload)
       }
       case UPDATE(prefix)(name): {
+      if (Array.isArray(payload))
+        return payload.reduce(
+          (newState, entity) =>
+            keyAlreadyExists(state)(key, entty[key]) ? update(key, state, entity) : newState,
+          state,
+        )
         if (!keyAlreadyExists(state)(key, payload[key])) return state
         return update(key, state, payload)
       }
       case REPLACE(prefix)(name): {
+      if (Array.isArray(payload))
+        return payload.reduce(
+          (newState, entity) =>
+            keyAlreadyExists(state)(key, entty[key]) ? replace(key, state, entity) : newState,
+          state,
+        )
         if (!keyAlreadyExists(state)(key, payload[key])) return state
         return replace(key, state, payload)
       }
