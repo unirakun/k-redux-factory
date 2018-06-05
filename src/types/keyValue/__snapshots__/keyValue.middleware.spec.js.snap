@@ -1064,7 +1064,7 @@ Object {
         },
       },
     },
-    "initialized": false,
+    "initialized": true,
     "keys": Array [
       "elm2",
       "elm3",
@@ -1103,7 +1103,7 @@ Object {
         },
       },
     },
-    "initialized": false,
+    "initialized": true,
     "keys": Array [
       "elm3",
     ],
@@ -1168,7 +1168,7 @@ Object {
         },
       },
     },
-    "initialized": false,
+    "initialized": true,
     "keys": Array [
       "elm2",
       "elm1",
@@ -1327,7 +1327,7 @@ Object {
         },
       },
     },
-    "initialized": false,
+    "initialized": true,
     "keys": Array [
       "elm2",
       "elm1",
@@ -1403,7 +1403,7 @@ Object {
         },
       },
     },
-    "initialized": false,
+    "initialized": true,
     "keys": Array [
       "elm2",
       "elm1",
