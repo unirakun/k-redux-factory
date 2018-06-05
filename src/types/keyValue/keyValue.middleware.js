@@ -8,7 +8,16 @@ export const initState = {
   initialized: false,
 }
 
-const keyAlreadyExists = state => key => state.keys.includes(key)
+const getAsArray = entry => (Array.isArray(entry) ? entry : [entry])
+
+const toObject = (key, entry) => {
+  const object = {}
+  getAsArray(entry).forEach((entity) => { object[entity[key]] = entity })
+
+  return object
+}
+
+const keyAlreadyExists = state => key => (state.data[key] !== undefined)
 
 const mapDataToState = state => data => ({
   ...state,
@@ -18,14 +27,7 @@ const mapDataToState = state => data => ({
   initialized: true,
 })
 
-const set = (key, state, payload) => {
-  const data = [].concat(payload).reduce(
-    (acc, curr) => ({ ...acc, [curr[key]]: curr }),
-    {},
-  )
-
-  return mapDataToState(state)(data)
-}
+const set = (key, state, payload) => mapDataToState(state)(toObject(key, payload))
 
 const add = (key, state, payload) => {
   const instanceKey = payload[key]
