@@ -22,21 +22,30 @@ describe('index', () => {
 
   describe('with name and prefix', () => {
     test(
-      factory({ key: 'id', name: 'todos', prefix: 'ui' }),
+      factory({ name: 'todos', prefix: 'ui' }),
       { todos: subState },
     )
   })
 
+  describe('with name and key', () => {
+    it('should use custom key', () => {
+      const reducer = factory({ name: 'todos', key: 'some' })
+      const state = reducer(undefined, reducer.set([Todo(7), Todo(11)]))
+
+      expect(reducer.getKeys({ todos: state })).toMatchSnapshot()
+    })
+  })
+
   describe('with name and empty prefix', () => {
     test(
-      factory({ key: 'id', name: 'todos', prefix: undefined }),
+      factory({ name: 'todos' }),
       { todos: subState },
     )
   })
 
   describe('with path', () => {
     test(
-      factory({ key: 'id', path: 'api', name: 'todos' }),
+      factory({ path: 'api', name: 'todos' }),
       {
         api: {
           todos: subState,
@@ -46,7 +55,7 @@ describe('index', () => {
   })
 
   describe('without path', () => {
-    test(factory({ key: 'id', name: 'todos' }), { todos: subState })
+    test(factory({ name: 'todos' }), { todos: subState })
   })
 
   describe('with middleware', () => {
@@ -71,7 +80,7 @@ describe('index', () => {
       factory({
         pre: [middleware('pre1')],
         post: [middleware('post1')],
-      })({ key: 'id', name: 'todos' }),
+      })({ name: 'todos' }),
       { todos: subState },
     )
   })
