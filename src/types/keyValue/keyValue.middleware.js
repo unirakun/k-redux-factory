@@ -1,4 +1,4 @@
-import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE, update } from './keyValue.actions'
+import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE } from './keyValue.actions'
 
 export const initState = {
   data: {},
