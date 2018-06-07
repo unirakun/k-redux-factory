@@ -1065,11 +1065,7 @@ Object {
   "action": Object {
     "payload": Object {
       "code": "elm3",
-      "infos": "elm3",
       "some": "other UPDATE",
-      "subinfos": Object {
-        "info": "elm3",
-      },
     },
     "type": "@@krf/UPDATE>TESTPREFIX>TESTNAME",
   },
@@ -1141,11 +1137,7 @@ Object {
   "action": Object {
     "payload": Object {
       "code": "elm3",
-      "infos": "elm3",
       "some": "other ADD OR UPDATE",
-      "subinfos": Object {
-        "info": "elm3",
-      },
     },
     "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
   },
@@ -1218,20 +1210,10 @@ Object {
     "payload": Array [
       Object {
         "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
         "update": "elm2 is updated",
       },
       Object {
         "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
         "update": "elm3 is updated",
       },
     ],
@@ -1310,20 +1292,10 @@ Object {
     "payload": Array [
       Object {
         "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
         "update": "elm2 is updated",
       },
       Object {
         "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
         "update": "elm3 is updated",
       },
     ],

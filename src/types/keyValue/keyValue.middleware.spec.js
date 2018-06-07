@@ -90,14 +90,14 @@ describe('middlewares/keyValue', () => {
 
   it('should update an element [elm3]', () => expect(testPrefix({
     state,
-    action: update(prefix)(name)({ ...Element('elm3'), some: 'other UPDATE' }),
+    action: update(prefix)(name)({ code: 'elm3', some: 'other UPDATE' }),
   })).toMatchSnapshot())
 
   it('should update elements [elm2, elm3]', () => expect(testPrefix({
     state,
     action: update(prefix)(name)([
-      { ...Element('elm2'), update: 'elm2 is updated' },
-      { ...Element('elm3'), update: 'elm3 is updated' },
+      { code: 'elm2', update: 'elm2 is updated' },
+      { code: 'elm3', update: 'elm3 is updated' },
     ]),
   })).toMatchSnapshot())
 
@@ -113,14 +113,14 @@ describe('middlewares/keyValue', () => {
 
   it('should update element [elm3]', () => expect(testPrefix({
     state,
-    action: addOrUpdate(prefix)(name)({ ...Element('elm3'), some: 'other ADD OR UPDATE' }),
+    action: addOrUpdate(prefix)(name)({ code: 'elm3', some: 'other ADD OR UPDATE' }),
   })).toMatchSnapshot())
 
   it('should update elements [elm2, elm3]', () => expect(testPrefix({
     state,
     action: addOrUpdate(prefix)(name)([
-      { ...Element('elm2'), update: 'elm2 is updated' },
-      { ...Element('elm3'), update: 'elm3 is updated' },
+      { code: 'elm2', update: 'elm2 is updated' },
+      { code: 'elm3', update: 'elm3 is updated' },
     ]),
   })).toMatchSnapshot())
 
