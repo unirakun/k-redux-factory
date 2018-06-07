@@ -1,16 +1,17 @@
 {
   "name": "k-redux-factory",
   "version": "5.0.2",
-  "main": "index.js",
-  "helpers": "helpers.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "license": "MIT",
   "repository": "https://github.com/alakarteio/k-redux-factory",
   "bugs": "https://github.com/alakarteio/k-redux-factory/issues",
   "scripts": {
     "lint:js": "eslint --ext js,jsx src",
     "lint": "npm-run-all --parallel lint:*",
-    "build:core": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.js",
-    "build:helpers": "cross-env NODE_ENV=build rollup -c ./misc/rollup.config.helpers.js",
+    "cmd:build": "microbundle --external all --sourcemap false -f es,cjs -i ",
+    "build:core": "yarn cmd:build src/index.js",
+    "build:helper": "yarn cmd:build src/helpers.js -o helpers/index.js",
     "build": "npm-run-all --parallel build:*",
     "test": "jest",
     "coveralls": "jest --coverage --collectCoverageFrom=src/**/*.{js,jsx} && cat ./coverage/lcov.info | coveralls",
@@ -37,11 +38,8 @@
     "eslint-plugin-react": "^7.4.0",
     "jest": "^22.2.2",
     "lodash": "^4.17.4",
-    "npm-run-all": "^4.0.2",
-    "rollup": "^0.57.1",
-    "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-commonjs": "^9.1.0",
-    "rollup-plugin-uglify": "^3.0.0"
+    "microbundle": "^0.4.4",
+    "npm-run-all": "^4.0.2"
   },
   "babel": {
     "presets": [
