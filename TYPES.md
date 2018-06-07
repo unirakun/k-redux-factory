@@ -55,7 +55,7 @@ There are multiple factories signatures, take you favorite between:
 Parameters are :
  - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware
  - **options** (mandatory), either a string representating the reducer `name`, either an object with these fields :
-   - **key** (mandatory), the field used to identify your objects (`id` for example)
+   - **key** (optional), the field used to identify your objects (`id` is the default value)
    - **path** (optional), where the reducer will be combined via `combineReducer`
      - if empty, the reducer will be register at the root level of the redux state
      - you can use dot notation, like `api.raw`: your reducer will be combined into `state.api.raw.<your_reducer>`
