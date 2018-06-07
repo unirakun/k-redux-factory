@@ -55,7 +55,7 @@ There are multiple factories signatures, take you favorite between:
 Parameters are :
  - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware
  - **options** (mandatory), either a string representating the reducer `name`, either an object with these fields :
-   - **key** (mandatory), the field used to identify your objects (`id` for example)
+   - **key** (optional), the field used to identify your objects (`id` is the default value)
    - **path** (optional), where the reducer will be combined via `combineReducer`
      - if empty, the reducer will be register at the root level of the redux state
      - you can use dot notation, like `api.raw`: your reducer will be combined into `state.api.raw.<your_reducer>`
@@ -83,9 +83,7 @@ Parameters are :
 | `add` | add an instance of your resource | `add(<instance>)` | `{ type: '@@krf/ADD>TODOS', payload: <instance> }` |
 | `update` | update an existing instance of your resource | `update(<instance>)` | `{ type: '@@krf/UPDATE>TODOS', payload: <instance> }` |
 | `addOrUpdate` | update an existing instance of your resource, or add it if not found | `addOrUpdate(<instance>)` | `{ type: '@@krf/ADD_OR_UPDATE>TODOS', payload: <instance> }` |
-| `replace` | replace an existing instance of your resource, unlike `update`, `replace` will remove the old instance | `replace(<instance>)` | `{ type: '@@krf/REPLACE>TODOS', payload: <instance> }` |
 | `remove` | remove one or more instance of your resource by its key | `remove([<key>])` | `{ type: '@@krf/REMOVE>TODOS', payload: [<key>] }` |
-| `orderBy` | order array and keys by path (see lodash function `orderBy` and `get`). The payload can be a `string` or a `function`, then the desc is `false`. | <code>orderBy({ by: <path&#124;function>, desc: <boolean>) })</code> | <code>{ type: '@@krf/ORDER_BY_TODOS', payload: { by: <path&#124;function>, desc: <boolean> } }</code> |
 | `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@@krf/RESET>TODOS' }` |
 
 ### selectors
