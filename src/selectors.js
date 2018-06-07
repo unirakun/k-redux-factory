@@ -1,10 +1,15 @@
-import { at } from 'lodash'
-
+const getFromPath = (data, path) => {
+  try {
+    return eval(`data.${path}`) // eslint-disable-line no-eval
+  } catch (e) {
+    return undefined
+  }
+}
 export const getState = options => (state) => {
   let subState = state
   const { name, path } = options
 
-  if (path !== undefined && path.length > 0) [subState] = at(state, path)
+  if (path !== undefined && path.length > 0) subState = getFromPath(state, path)
 
   return subState[name]
 }
@@ -26,10 +31,12 @@ export const get = options => keys => (state) => {
   return data[keys]
 }
 
-export const getBy = options => (propertyPath, values) => (state) => {
+// const at = (data, path) => eval(`${data}${path}`)
+export const getBy = options => (path, values) => (state) => {
   const data = getAsArray(options)(state)
-  if (Array.isArray(values)) return data.filter(d => values.includes(at(d, propertyPath)[0]))
-  return data.filter(d => values === at(d, propertyPath)[0])
+
+  if (Array.isArray(values)) return data.filter(d => values.includes(getFromPath(d, path)))
+  return data.filter(d => values === getFromPath(d, path))
 }
 
 export const hasKey = options => key => (state) => {

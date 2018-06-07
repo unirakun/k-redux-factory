@@ -1,4 +1,3 @@
-import { omit } from 'lodash'
 import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE } from './keyValue.actions'
 
 export const initState = {
@@ -41,7 +40,14 @@ const addOrUpdate = (key, state, payload) => {
   return mapDataToState(state)({ ...state.data, [instanceKey]: { ...state.data[instanceKey], ...payload } })
 }
 
-const remove = (key, state, payload) => mapDataToState(state)(omit(state.data, [].concat(payload)))
+const remove = (key, state, payload) => {
+  const keysToRemove = getAsArray(payload)
+  const data = { ...state.data }
+
+  keysToRemove.forEach((k) => { delete data[k] })
+
+  return mapDataToState(state)(data)
+}
 
 const defaultState = (key, defaultData) => (defaultData !== undefined ? set(key, {}, defaultData) : initState)
 
