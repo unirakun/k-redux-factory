@@ -1,13 +1,7 @@
-const getFromPath = (data, path) => {
-  const subs = path.split('.')
-  let curr = data
-
-  subs.forEach((sub) => {
-    curr = curr && curr[sub]
-  })
-
-  return curr
-}
+const getFromPath = (data, path) => path.split('.').reduce(
+  (curr, sub) => curr && curr[sub],
+  data,
+)
 
 export const getState = options => (state) => {
   let subState = state
