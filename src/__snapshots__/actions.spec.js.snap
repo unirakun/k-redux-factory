@@ -48,13 +48,3 @@ Object {
   "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
 }
 `;
-
-exports[`actions should trigger an replace action 1`] = `
-Object {
-  "payload": Object {
-    "an": "element_replace",
-    "code": "replace",
-  },
-  "type": "@@krf/REPLACE>TESTPREFIX>TESTNAME",
-}
-`;
