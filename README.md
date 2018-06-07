@@ -53,9 +53,6 @@ We created this lightweight library, a factory of reducers, actions and selector
  - `yarn add k-redux-factory`
  - `npm i k-redux-factory`
 
-### peer dependency
- - `lodash` : we use the minimum of lodash function trying to have a lightweight webpack bundle.
-
 ## Documentation
  - [factory](#factory)
  - [actions](#actions)
