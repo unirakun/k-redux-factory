@@ -1,4 +1,4 @@
-import * as types from './types'
+import * as types from './types/index'
 import reducer from './reducer'
 
 const defaultOptions = {
