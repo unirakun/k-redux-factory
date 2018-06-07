@@ -228,6 +228,315 @@ Object {
 }
 `;
 
+exports[`middlewares/keyValue should add elements (not-found) [elm12, elm13] 1`] = `
+Object {
+  "action": Object {
+    "payload": Array [
+      Object {
+        "code": "elm12",
+        "infos": "elm12",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm12",
+        },
+      },
+      Object {
+        "code": "elm13",
+        "infos": "elm13",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm13",
+        },
+      },
+    ],
+    "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+      Object {
+        "code": "elm12",
+        "infos": "elm12",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm12",
+        },
+      },
+      Object {
+        "code": "elm13",
+        "infos": "elm13",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm13",
+        },
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      "elm12": Object {
+        "code": "elm12",
+        "infos": "elm12",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm12",
+        },
+      },
+      "elm13": Object {
+        "code": "elm13",
+        "infos": "elm13",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm13",
+        },
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm2",
+      "elm1",
+      "elm3",
+      "elm12",
+      "elm13",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should add elements [elm4, elm5] 1`] = `
+Object {
+  "action": Object {
+    "payload": Array [
+      Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm4",
+        },
+      },
+      Object {
+        "code": "elm5",
+        "infos": "elm5",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm5",
+        },
+      },
+    ],
+    "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+      Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm4",
+        },
+      },
+      Object {
+        "code": "elm5",
+        "infos": "elm5",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm5",
+        },
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+      "elm4": Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm4",
+        },
+      },
+      "elm5": Object {
+        "code": "elm5",
+        "infos": "elm5",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm5",
+        },
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm2",
+      "elm1",
+      "elm3",
+      "elm4",
+      "elm5",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should add elements [elm4, elm5] on initial store 1`] = `
+Object {
+  "action": Object {
+    "payload": Array [
+      Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm4",
+        },
+      },
+      Object {
+        "code": "elm5",
+        "infos": "elm5",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm5",
+        },
+      },
+    ],
+    "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm4",
+        },
+      },
+      Object {
+        "code": "elm5",
+        "infos": "elm5",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm5",
+        },
+      },
+    ],
+    "data": Object {
+      "elm4": Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm4",
+        },
+      },
+      "elm5": Object {
+        "code": "elm5",
+        "infos": "elm5",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm5",
+        },
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm4",
+      "elm5",
+    ],
+  },
+}
+`;
+
 exports[`middlewares/keyValue should initialize 1`] = `
 Object {
   "state": Object {
@@ -450,6 +759,92 @@ Object {
 }
 `;
 
+exports[`middlewares/keyValue should not update elements (not-found) [elm12, elm13] 1`] = `
+Object {
+  "action": Object {
+    "payload": Array [
+      Object {
+        "code": "elm12",
+        "infos": "elm12",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm12",
+        },
+      },
+      Object {
+        "code": "elm13",
+        "infos": "elm13",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm13",
+        },
+      },
+    ],
+    "type": "@@krf/UPDATE>TESTPREFIX>TESTNAME",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    },
+    "initialized": false,
+    "keys": Array [
+      "elm2",
+      "elm1",
+      "elm3",
+    ],
+  },
+}
+`;
+
 exports[`middlewares/keyValue should remove element [elm1] 1`] = `
 Object {
   "action": Object {
@@ -502,7 +897,7 @@ Object {
 }
 `;
 
-exports[`middlewares/keyValue should remove many element [elm1, elm2] 1`] = `
+exports[`middlewares/keyValue should remove elements [elm1, elm2] 1`] = `
 Object {
   "action": Object {
     "payload": Array [
@@ -550,6 +945,48 @@ Object {
     "data": Object {},
     "initialized": false,
     "keys": Array [],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should set element [elm1] 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+      "subinfos": Object {
+        "info": "elm1",
+      },
+    },
+    "type": "@@krf/SET>TESTPREFIX>TESTNAME",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm1",
+    ],
   },
 }
 `;
@@ -763,6 +1200,190 @@ Object {
         "subinfos": Object {
           "info": "elm3",
         },
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm2",
+      "elm1",
+      "elm3",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should update elements [elm2, elm3] 1`] = `
+Object {
+  "action": Object {
+    "payload": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+        "update": "elm2 is updated",
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+        "update": "elm3 is updated",
+      },
+    ],
+    "type": "@@krf/UPDATE>TESTPREFIX>TESTNAME",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+        "update": "elm2 is updated",
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+        "update": "elm3 is updated",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+        "update": "elm2 is updated",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+        "update": "elm3 is updated",
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm2",
+      "elm1",
+      "elm3",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should update elements [elm2, elm3] 2`] = `
+Object {
+  "action": Object {
+    "payload": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+        "update": "elm2 is updated",
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+        "update": "elm3 is updated",
+      },
+    ],
+    "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+        "update": "elm2 is updated",
+      },
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+        "update": "elm3 is updated",
+      },
+    ],
+    "data": Object {
+      "elm1": Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+        "update": "elm2 is updated",
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+        "update": "elm3 is updated",
       },
     },
     "initialized": true,
