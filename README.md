@@ -4,7 +4,7 @@ Factory of Redux reducers and their associated actions and selectors.
 > Make your Redux code base tinier and simpler to maintain
 
 [![CircleCI](https://circleci.com/gh/alakarteio/k-redux-factory.svg?style=shield)](https://circleci.com/gh/alakarteio/k-redux-factory) [![Coverage Status](https://coveralls.io/repos/github/alakarteio/k-redux-factory/badge.svg?branch=master)](https://coveralls.io/github/alakarteio/k-redux-factory?branch=master) [![NPM Version](https://badge.fury.io/js/k-redux-factory.svg)](https://www.npmjs.com/package/k-redux-factory)
-[![Size](http://img.badgesize.io/alakarteio/k-redux-factory/master/index.js.svg)]() [![Greenkeeper badge](https://badges.greenkeeper.io/alakarteio/k-redux-factory.svg)](https://greenkeeper.io/)
+[![Size](http://img.badgesize.io/alakarteio/k-redux-factory/master/dist/index.js.svg)]() [![Greenkeeper badge](https://badges.greenkeeper.io/alakarteio/k-redux-factory.svg)](https://greenkeeper.io/)
 
 ## Contents
  - [Purpose](#purpose)
@@ -18,11 +18,13 @@ Factory of Redux reducers and their associated actions and selectors.
 
 ```es6
 import { keyValue } from 'k-redux-factory'
-export default keyValue({ key: 'id', path: 'api', name: 'todos' })
+export default keyValue({ path: 'api', name: 'todos' })
 ```
 That's it, you just exported the reducer function and now you can register it through combinerReducer in Redux.
 
 In this example, we have a `todos` reducer, it has to be combined into `state.api.todos`.
+
+The default `key` is `id`.
 
 You can now use it to dispatch actions and select some datas from this reducer:
 ```es6
@@ -81,7 +83,7 @@ There are multiple factories signatures, take you preferred between :
 Parameters are :
  - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware
  - **options** (mandatory), either a string representating the reducer `name`, either an object with these fields :
-   - **key** (exists only for the `keyValue` type -mandatory-), the field used to identify your objects (`id` for example)
+   - **key** (exists only for the `keyValue` type -optional-), the field used to identify your objects (`id` is the default value)
    - **path** (optional), where the reducer will be combined via `combineReducer`
      - if empty, the reducer will be register at the root level of the redux state
      - you can use dot notation, like `api.raw`: your reducer will be combined into `state.api.raw.<your_reducer>`
@@ -100,7 +102,7 @@ Example:
 ```es6
 import factory from 'k-redux-factory'
 
-export default factory({ key: 'id', path: 'api.raw', name: 'todos' })
+export default factory({ path: 'api.raw', name: 'todos' })
 ```
 
 Data will be stored into `state.api.raw.todos`.
@@ -167,14 +169,14 @@ const defaultData = [
   },
 ]
 
-export default keyValue({ key: 'id', defaultData})
+export default keyValue({ defaultData })
 ```
 
 ```es6
 {
   data: { 1: { id: 1, todo: 'write README.MD' }, 2: { id: 2, todo: 'watch rick and morty season three' }},
   array: [{ id: 1, todo: 'write README.MD' }, { id: 2, todo: 'watch rick and morty season three' }],
-  keys: [1, 2],
+  keys: ['1', '2'],
   initialized: true,
 }
 ```
@@ -246,7 +248,7 @@ import { mapAction } from 'k-redux-factory/helpers'
 // define a function to map action
 const mapper = action => ({ ...action, type: `SET_${action.type}` })
 // create your reducer and transform the type of action before core middleware
-export default factory({ pre: [mapAction(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
+export default factory({ pre: [mapAction(mapper)] })({ path: 'api.raw', name: 'todos' })
 ```
 
 #### Example, we create a middleware but we modify only the state :
@@ -258,7 +260,7 @@ import { mapState } from 'k-redux-factory/helpers'
 // define a function to change state
 const mapper = state => ({...state, todos: 'TODO_CHANGED'})
 // create your reducer and transform the state before core middleware
-export default factory({ pre: [mapState(/SET>TODOS/)(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
+export default factory({ pre: [mapState(/SET>TODOS/)(mapper)] })({ path: 'api.raw', name: 'todos' })
 ```
 
 #### Example, we create a middleware but we modify action and state :
@@ -276,7 +278,7 @@ const mapper = (action, state) => {
   }
 }
 // create your reducer and transform the action and state before core middleware
-export default factory({ pre: [reducer(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
+export default factory({ pre: [reducer(mapper)] })({ path: 'api.raw', name: 'todos' })
 ```
 
 #### Example, we create a middleware but we modify only the payload :
@@ -288,7 +290,7 @@ import { mapPayload } from 'k-redux-factory/helpers'
 // define a function to map payload
 const mapper = payload => payload.map(p => ({ ...p, id: `ID_${p.id}` }))
 // create your reducer and transform the payload before core middleware
-export default factory({ pre: [mapPayload(/SET>TODOS/)(mapper)] })({ key: 'id', path: 'api.raw', name: 'todos' })
+export default factory({ pre: [mapPayload(/SET>TODOS/)(mapper)] })({ path: 'api.raw', name: 'todos' })
 ```
 
 # About ![alakarteio](http://alakarte.io/assets/img/logo.markdown.png)

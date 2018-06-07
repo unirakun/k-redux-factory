@@ -207,6 +207,13 @@ Object {
 }
 `;
 
+exports[`index with name and key should use custom key 1`] = `
+Array [
+  "information 7",
+  "information 11",
+]
+`;
+
 exports[`index with name and prefix should prefix actions 1`] = `
 Object {
   "payload": Object {
