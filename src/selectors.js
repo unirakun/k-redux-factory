@@ -1,10 +1,14 @@
 const getFromPath = (data, path) => {
-  try {
-    return eval(`data.${path}`) // eslint-disable-line no-eval
-  } catch (e) {
-    return undefined
-  }
+  const subs = path.split('.')
+  let curr = data
+
+  subs.forEach((sub) => {
+    curr = curr && curr[sub]
+  })
+
+  return curr
 }
+
 export const getState = options => (state) => {
   let subState = state
   const { name, path } = options
