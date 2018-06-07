@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import { set, add, update, remove, reset, addOrUpdate, replace, orderBy } from '../../actions'
+import { set, add, update, remove, reset, addOrUpdate } from '../../actions'
 import { initState } from '../../reducer'
 import keyValue from './keyValue.middleware'
 
@@ -91,50 +91,5 @@ describe('middlewares/keyValue', () => {
   it('should add element if not found [elm12]', () => expect(testPrefix({
     state,
     action: addOrUpdate(prefix)(name)(Element('elm12')),
-  })).toMatchSnapshot())
-
-  it('should replace element [elm1]', () => expect(testPrefix({
-    state,
-    action: replace(prefix)(name)(ElementWithoutSubInfo('elm1')),
-  })).toMatchSnapshot())
-
-  it('should not replace element doesn\'t exist [elm12]', () => expect(testPrefix({
-    state,
-    action: replace(prefix)(name)(Element('elm12')),
-  })).toMatchSnapshot())
-
-  it('should order elements by identity -code asc-', () => expect(testPrefix({
-    state,
-    action: orderBy(prefix)(name)('code'),
-  })).toMatchSnapshot())
-
-  it('should order elements by identity -sub info asc-', () => expect(testPrefix({
-    state,
-    action: orderBy(prefix)(name)('subinfos.info'),
-  })).toMatchSnapshot())
-
-  it('should order elements by identity -code desc-', () => expect(testPrefix({
-    state,
-    action: orderBy(prefix)(name)({ by: 'code', desc: true }),
-  })).toMatchSnapshot())
-
-  it('should order elements by identity -sub info desc-', () => expect(testPrefix({
-    state,
-    action: orderBy(prefix)(name)({ by: 'subinfos.info', desc: true }),
-  })).toMatchSnapshot())
-
-  it('should order elements with function -code desc-', () => expect(testPrefix({
-    state,
-    action: orderBy(prefix)(name)({ by: e => e.code, desc: true }),
-  })).toMatchSnapshot())
-
-  it('should order elements with function -code asc (objec mode)-', () => expect(testPrefix({
-    state,
-    action: orderBy(prefix)(name)({ by: e => e.code, desc: false }),
-  })).toMatchSnapshot())
-
-  it('should order elements with function -code asc-', () => expect(testPrefix({
-    state,
-    action: orderBy(prefix)(name)(e => e.code),
   })).toMatchSnapshot())
 })
