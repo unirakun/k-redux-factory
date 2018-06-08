@@ -116,7 +116,15 @@ or
 ```es6
 import factory from 'k-redux-factory'
 
-export default factory({ type: 'simpleObject', /* other options */ })
+export default factory({ type: 'simple', /* other options */ })
+```
+
+or
+
+```es6
+import factory from 'k-redux-factory'
+
+export default factory({ type: 'simple.string', /* other options */ })
 ```
 
 There are multiple factories signatures, take you favorite between:
