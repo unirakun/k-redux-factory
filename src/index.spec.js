@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import factory, { keyValue, simpleObject } from './index'
+import factory, { keyValue, simple, simpleObject } from './index'
 
 const Todo = id => ({ id, some: `information ${id}` })
 
@@ -121,7 +121,7 @@ describe('index', () => {
 
   describe('named factory', () => {
     it('should instanciate a simpleObject reducer', () => {
-      expect(simpleObject({ name: 'a simpleObject' }).krfType).toMatchSnapshot()
+      expect(simple({ name: 'a simpleObject' }).krfType).toMatchSnapshot()
     })
 
     it('should instanciate a keyValue reducer (specified)', () => {
@@ -135,16 +135,40 @@ describe('index', () => {
 
   describe('extended selectors', () => {
     it('should extends isInitialized selector on simpleObject', () => {
-      expect(simpleObject({ name: 'o' }).isInitialized({ o: '' })).toMatchSnapshot()
+      expect(simple({ name: 'o' }).isInitialized({ o: '' })).toMatchSnapshot()
     })
     it('should extends get selector on simpleObject', () => {
-      expect(simpleObject({ name: 'o', defaultData: {} }).get()({ o: 'DATA' })).toMatchSnapshot()
+      expect(simple({ name: 'o', defaultData: {} }).get()({ o: 'DATA' })).toMatchSnapshot()
     })
   })
 
   describe('action type factories', () => {
     it('should export action type factories', () => {
-      expect(simpleObject({ name: 'a simpleObject' }).SET).toMatchSnapshot()
+      expect(simple({ name: 'a simpleObject' }).SET).toMatchSnapshot()
+    })
+  })
+
+  describe('suffix of simple factory', () => {
+    it('should make a simple object init to empty', () => {
+      expect(simple({ name: 'object' }).krfDefaultData).toMatchSnapshot()
+    })
+    it('should make a simple boolean init to false', () => {
+      expect(simple.bool({ name: 'bool' }).krfDefaultData).toMatchSnapshot()
+    })
+    it('should make a simple string init to blank', () => {
+      expect(simple.string({ name: 'string' }).krfDefaultData).toMatchSnapshot()
+    })
+    it('should make a simple array init to empty', () => {
+      expect(simple.array({ name: 'array' }).krfDefaultData).toMatchSnapshot()
+    })
+  })
+
+  describe('suffix of simpleObject factory', () => {
+    it('should make a simple object init to empty', () => {
+      expect(simpleObject({ name: 'object' }).krfDefaultData).toMatchSnapshot()
+    })
+    it('should make a simple string init to blank', () => {
+      expect(simpleObject({ name: 'object', defaultData: '' }).krfDefaultData).toMatchSnapshot()
     })
   })
 })
