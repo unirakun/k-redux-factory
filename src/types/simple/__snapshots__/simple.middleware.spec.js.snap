@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`middlewares/simpleObject should initialize 1`] = `
+exports[`middlewares/simple should initialize 1`] = `
 Object {
   "state": Object {},
 }
 `;
 
-exports[`middlewares/simpleObject should initialize with defaultData 1`] = `
+exports[`middlewares/simple should initialize with defaultData 1`] = `
 Object {
   "state": "default",
 }
 `;
 
-exports[`middlewares/simpleObject should reset state 1`] = `
+exports[`middlewares/simple should reset state 1`] = `
 Object {
   "action": Object {
     "type": "@@krf/RESET>TESTPREFIX>TESTNAME",
@@ -21,7 +21,7 @@ Object {
 }
 `;
 
-exports[`middlewares/simpleObject should set element [elm2] 1`] = `
+exports[`middlewares/simple should set element [elm2] 1`] = `
 Object {
   "action": Object {
     "payload": Object {
@@ -39,13 +39,13 @@ Object {
 }
 `;
 
-exports[`middlewares/simpleObject should take defaultData param to populate data field -init- 1`] = `
+exports[`middlewares/simple should take defaultData param to populate data field -init- 1`] = `
 Object {
   "state": Object {},
 }
 `;
 
-exports[`middlewares/simpleObject should take defaultData param to populate data field -init- 2`] = `
+exports[`middlewares/simple should take defaultData param to populate data field -init- 2`] = `
 Object {
   "state": Object {
     "im": "default",
@@ -53,13 +53,13 @@ Object {
 }
 `;
 
-exports[`middlewares/simpleObject should take defaultData param to populate data field -init- 3`] = `
+exports[`middlewares/simple should take defaultData param to populate data field -init- 3`] = `
 Object {
   "state": "",
 }
 `;
 
-exports[`middlewares/simpleObject should take defaultData param to populate data field -reset- 1`] = `
+exports[`middlewares/simple should take defaultData param to populate data field -reset- 1`] = `
 Object {
   "action": Object {
     "type": "@@krf/RESET>TESTPREFIX>TESTNAME",
@@ -70,7 +70,7 @@ Object {
 }
 `;
 
-exports[`middlewares/simpleObject should update element 1`] = `
+exports[`middlewares/simple should update element 1`] = `
 Object {
   "action": Object {
     "payload": Object {

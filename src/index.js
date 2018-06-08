@@ -7,6 +7,13 @@ const defaultOptions = {
   prefix: '',
 }
 
+const simpleDefaultData = {
+  bool: false,
+  string: '',
+  array: [],
+  object: {},
+}
+
 const getWrappedStore = (middlewares = {}) => (options = {}) => {
   const innerOptions = { ...defaultOptions, ...options }
   const {
@@ -17,10 +24,12 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
     defaultData,
   } = innerOptions
 
-  const typeConfig = types[type]
+  const [innerType, subType] = type.split('.')
+  const typeConfig = types[innerType]
+  const innerDefaultData = (innerType === 'simple' && subType) ? simpleDefaultData[subType] : defaultData
 
   return Object.assign(
-    reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(prefix)(name)(defaultData),
+    reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(prefix)(name)(innerDefaultData),
 
     // type (debug purpose)
     { krfType: type },
@@ -61,15 +70,14 @@ const factory = (forcedOptions = {}) => (params) => {
 
 export const keyValue = factory({ type: 'keyValue' })
 
-const simpleFactory = defaultData => factory({ type: 'simpleObject', defaultData })
-export const simple = factory({ type: 'simpleObject' })
+export const simple = factory({ type: 'simple' })
 Object.assign(
   simple,
   {
-    object: simpleFactory({}),
-    bool: simpleFactory(false),
-    string: simpleFactory(''),
-    array: simpleFactory([]),
+    object: factory({ type: 'simple.object' }),
+    bool: factory({ type: 'simple.bool' }),
+    string: factory({ type: 'simple.string' }),
+    array: factory({ type: 'simple.array' }),
   },
 )
 

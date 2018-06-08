@@ -1,24 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index action type factories should export action type factories 1`] = `"@@krf/SET>A SIMPLEOBJECT"`;
+exports[`index action type factories should export action type factories 1`] = `"@@krf/SET>A SIMPLE"`;
 
-exports[`index extended selectors should extends get selector on simpleObject 1`] = `"DATA"`;
+exports[`index extended selectors should extends get selector on simple 1`] = `"DATA"`;
 
-exports[`index extended selectors should extends isInitialized selector on simpleObject 1`] = `true`;
+exports[`index extended selectors should extends isInitialized selector on simple 1`] = `true`;
 
 exports[`index named factory should instanciate a keyValue reducer (default) 1`] = `"keyValue"`;
 
 exports[`index named factory should instanciate a keyValue reducer (specified) 1`] = `"keyValue"`;
 
-exports[`index named factory should instanciate a simpleObject reducer 1`] = `"simpleObject"`;
+exports[`index named factory should instanciate a simple reducer 1`] = `"simple"`;
 
 exports[`index suffix of simple factory should make a simple array init to empty 1`] = `Array []`;
 
 exports[`index suffix of simple factory should make a simple array init to empty 2`] = `Array []`;
 
+exports[`index suffix of simple factory should make a simple array init to empty 3`] = `Array []`;
+
 exports[`index suffix of simple factory should make a simple boolean init to false 1`] = `false`;
 
 exports[`index suffix of simple factory should make a simple boolean init to false 2`] = `false`;
+
+exports[`index suffix of simple factory should make a simple boolean init to false 3`] = `false`;
 
 exports[`index suffix of simple factory should make a simple object init to empty 1`] = `Object {}`;
 
@@ -26,9 +30,15 @@ exports[`index suffix of simple factory should make a simple object init to empt
 
 exports[`index suffix of simple factory should make a simple object init to empty 3`] = `Object {}`;
 
+exports[`index suffix of simple factory should make a simple object init to empty 4`] = `Object {}`;
+
+exports[`index suffix of simple factory should make a simple object init to empty when subtype is unknow 1`] = `Object {}`;
+
 exports[`index suffix of simple factory should make a simple string init to blank 1`] = `""`;
 
 exports[`index suffix of simple factory should make a simple string init to blank 2`] = `""`;
+
+exports[`index suffix of simple factory should make a simple string init to blank 3`] = `""`;
 
 exports[`index suffix of simpleObject factory should make a simple object init to empty 1`] = `Object {}`;
 
