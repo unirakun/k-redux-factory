@@ -11,6 +11,7 @@ const getAsArray = entry => (Array.isArray(entry) ? entry : [entry])
 
 const toObject = (key, entry) => {
   const object = {}
+
   getAsArray(entry).forEach((entity) => { object[entity[key]] = entity })
 
   return object
@@ -26,18 +27,23 @@ const mapDataToState = state => data => ({
   initialized: true,
 })
 
-const set = (key, state, payload) => mapDataToState(state)(toObject(key, payload))
+const set = (key, state, payload) => mapDataToState(state)(toObject(key, getAsArray(payload)))
 
-const add = (key, state, payload) => {
-  const instanceKey = payload[key]
+const add = (key, state, payload) => mapDataToState(state)({ ...state.data, ...toObject(key, getAsArray(payload)) })
 
-  return mapDataToState(state)({ ...state.data, [instanceKey]: payload })
-}
+const addOrUpdate = shouldAdd => (key, state, payload) => {
+  const instances = getAsArray(payload)
+  const updatedInstances = []
 
-const addOrUpdate = (key, state, payload) => {
-  const instanceKey = payload[key]
+  instances.forEach((instance) => {
+    if (shouldAdd || keyAlreadyExists(state)(instance[key])) {
+      updatedInstances.push({ ...state.data[instance[key]], ...instance })
+    }
+  })
 
-  return mapDataToState(state)({ ...state.data, [instanceKey]: { ...state.data[instanceKey], ...payload } })
+  if (updatedInstances.length === 0) return state
+
+  return mapDataToState(state)({ ...state.data, ...toObject(key, updatedInstances) })
 }
 
 const remove = (key, state, payload) => {
@@ -54,17 +60,12 @@ const defaultState = (key, defaultData) => (defaultData !== undefined ? set(key,
 const reducer = key => prefix => name => defaultData =>
   (state = defaultState(key, defaultData), { type, payload } = {}) => {
     switch (type) {
-      // simple
       case SET(prefix)(name): return set(key, state, payload)
       case ADD(prefix)(name): return add(key, state, payload)
-      case ADD_OR_UPDATE(prefix)(name): return addOrUpdate(key, state, payload)
+      case ADD_OR_UPDATE(prefix)(name): return addOrUpdate(true)(key, state, payload)
       case REMOVE(prefix)(name): return remove(key, state, payload)
       case RESET(prefix)(name): return defaultState(key, defaultData)
-
-      // with key existance test
-      case UPDATE(prefix)(name): return keyAlreadyExists(state)(payload[key]) ? addOrUpdate(key, state, payload) : state
-
-      // default
+      case UPDATE(prefix)(name): return addOrUpdate(false)(key, state, payload)
       default: return state
     }
   }
