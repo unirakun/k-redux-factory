@@ -23,10 +23,7 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
     reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(prefix)(name)(defaultData),
 
     // type (debug purpose)
-    {
-      krfType: type,
-      krfDefaultData: defaultData,
-    },
+    { krfType: type },
 
     // actions
     ...Object.keys(typeConfig.actions).map(k => ({ [k]: typeConfig.actions[k](prefix)(name) })),
@@ -65,7 +62,7 @@ const factory = (forcedOptions = {}) => (params) => {
 export const keyValue = factory({ type: 'keyValue' })
 
 const simpleFactory = defaultData => factory({ type: 'simpleObject', defaultData })
-export const simple = simpleFactory({})
+export const simple = factory({ type: 'simpleObject' })
 Object.assign(
   simple,
   {
@@ -78,7 +75,7 @@ Object.assign(
 // older method deprecated
 export const simpleObject = (params) => {
   console.warn('/KRF/ You use a deprecated "simpleObject" method. We recommended using only "simple" method')
-  return factory({ type: 'simpleObject' })(params)
+  return simple(params)
 }
 
 // default public factory

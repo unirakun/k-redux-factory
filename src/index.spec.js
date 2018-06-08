@@ -150,25 +150,29 @@ describe('index', () => {
 
   describe('suffix of simple factory', () => {
     it('should make a simple object init to empty', () => {
-      expect(simple({ name: 'object' }).krfDefaultData).toMatchSnapshot()
+      expect(simple({ name: 'object' })()).toMatchSnapshot()
+      expect(simple({ name: 'simple object', defaultData: {} })()).toMatchSnapshot()
     })
     it('should make a simple boolean init to false', () => {
-      expect(simple.bool({ name: 'bool' }).krfDefaultData).toMatchSnapshot()
+      expect(simple.bool({ name: 'bool' })()).toMatchSnapshot()
+      expect(simple({ name: 'simple bool', defaultData: false })()).toMatchSnapshot()
     })
     it('should make a simple string init to blank', () => {
-      expect(simple.string({ name: 'string' }).krfDefaultData).toMatchSnapshot()
+      expect(simple.string({ name: 'string' })()).toMatchSnapshot()
+      expect(simple({ name: 'simple string', defaultData: '' })()).toMatchSnapshot()
     })
     it('should make a simple array init to empty', () => {
-      expect(simple.array({ name: 'array' }).krfDefaultData).toMatchSnapshot()
+      expect(simple.array({ name: 'array' })()).toMatchSnapshot()
+      expect(simple({ name: 'simple array', defaultData: [] })()).toMatchSnapshot()
     })
   })
 
   describe('suffix of simpleObject factory', () => {
     it('should make a simple object init to empty', () => {
-      expect(simpleObject({ name: 'object' }).krfDefaultData).toMatchSnapshot()
+      expect(simpleObject({ name: 'object' })()).toMatchSnapshot()
     })
     it('should make a simple string init to blank', () => {
-      expect(simpleObject({ name: 'object', defaultData: '' }).krfDefaultData).toMatchSnapshot()
+      expect(simpleObject({ name: 'string', defaultData: '' })()).toMatchSnapshot()
     })
   })
 })

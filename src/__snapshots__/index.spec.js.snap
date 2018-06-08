@@ -14,13 +14,21 @@ exports[`index named factory should instanciate a simpleObject reducer 1`] = `"s
 
 exports[`index suffix of simple factory should make a simple array init to empty 1`] = `Array []`;
 
+exports[`index suffix of simple factory should make a simple array init to empty 2`] = `Array []`;
+
 exports[`index suffix of simple factory should make a simple boolean init to false 1`] = `false`;
+
+exports[`index suffix of simple factory should make a simple boolean init to false 2`] = `false`;
 
 exports[`index suffix of simple factory should make a simple object init to empty 1`] = `Object {}`;
 
+exports[`index suffix of simple factory should make a simple object init to empty 2`] = `Object {}`;
+
 exports[`index suffix of simple factory should make a simple string init to blank 1`] = `""`;
 
-exports[`index suffix of simpleObject factory should make a simple object init to empty 1`] = `undefined`;
+exports[`index suffix of simple factory should make a simple string init to blank 2`] = `""`;
+
+exports[`index suffix of simpleObject factory should make a simple object init to empty 1`] = `Object {}`;
 
 exports[`index suffix of simpleObject factory should make a simple string init to blank 1`] = `""`;
 
