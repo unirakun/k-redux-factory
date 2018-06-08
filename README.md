@@ -65,7 +65,10 @@ You need to use the factory to get a new set of reducer/actions/selectors :
 // modular factory
 import factory from 'k-redux-factory'
 
-// or - prebuild simpleObject factory
+// or - prebuild simple factory
+import { simple } from 'k-redux-factory'
+
+// or - prebuild simpleObject factory (DEPRECATED)
 import { simpleObject } from 'k-redux-factory'
 
 // or - prebuild keyValue factory
@@ -75,8 +78,10 @@ import { keyValue } from 'k-redux-factory'
 There are multiple factories signatures, take you preferred between :
  - `factory(middlewares)(options)` : this is the root factory, with middlewares
  - `factory(options)` : this is the root factory, without middlewares
- - `simpleObject(middlewares)(options)` : this is a `simpleObject` factory with middlewares
- - `simpleObject(options)` : this is a `simpleObject` factory without middlewares
+ - `simple(middlewares)(options)` : this is a `simple` factory with middlewares
+ - `simple(options)` : this is a `simple` factory without middlewares
+ - *DEPRECATED* `simpleObject(middlewares)(options)` : this is a `simpleObject` factory with middlewares
+ - *DEPRECATED* `simpleObject(options)` : this is a `simpleObject` factory without middlewares
  - `keyValue(middlewares)(options)` : this is a `keyValue`  factory with middlewares
  - `keyValue(options)` : this is a `keyValue`  factory without middlewares
 
@@ -119,7 +124,8 @@ Types are :
 }
 ```
 
-  - `simpleObject` : your state is directly your `<instance>`. **This implies that you can not set undefined.**
+  - `simple` : your state is directly your `<instance>`. **This implies that you can not set undefined.**
+  - *DEPRECATED* `simpleObject` : your state is directly your `<instance>`. **This implies that you can not set undefined.**
 
 Default type is `keyValue`.
 

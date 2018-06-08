@@ -9,8 +9,10 @@ Factories are used to create a reducer with its selectors and its actions.
 There are multiple factories signatures, take you favorite between:
  - `factory(middlewares)(options)` : this is the root factory, with middlewares
  - `factory(options)` : this is the root factory, without middlewares
- - `simpleObject(middlewares)(options)` : this is a `simpleObject` factory with middlewares
- - `simpleObject(options)` : this is a `simpleObject` factory without middlewares
+ - `simple(middlewares)(options)` : this is a `simpleObject` factory with middlewares
+ - `simple(options)` : this is a `simpleObject` factory without middlewares
+ - *DEPRECATED* `simpleObject(middlewares)(options)` : this is a `simpleObject` factory with middlewares
+ - *DEPRECATED* `simpleObject(options)` : this is a `simpleObject` factory without middlewares
  - `keyValue(middlewares)(options)` : this is a `keyValue`  factory with middlewares
  - `keyValue(options)` : this is a `keyValue`  factory without middlewares
 
@@ -30,7 +32,8 @@ Parameters are :
 
 You can see documentation about specific factories there:
  - [keyValue](#keyvalue)
- - [simpleObject](#simpleobject)
+ - [simple](#simple)
+ - *DEPRECATED* [simpleObject](#simpleobject)
 
 ## keyValue
 ### factory
@@ -99,6 +102,70 @@ Parameters are :
 | `getState(state)` | returns the global state of your reducer | |
 | secondary |
 | `hasKey(<key>)(state)` | returns `true` if the given `<key>` is present | |
+
+## simple
+### factory
+```es6
+import { simple } from 'k-redux-factory'
+
+export default simple(/* options */)
+```
+
+or
+
+```es6
+import factory from 'k-redux-factory'
+
+export default factory({ type: 'simpleObject', /* other options */ })
+```
+
+There are multiple factories signatures, take you favorite between:
+ - `simple(middlewares)(options)` : this is a `simple` factory with middlewares
+ - `simple(options)` : this is a `simple` factory without middlewares
+ - `simple.bool(options)` : this is a `simple boolean` factory initialize to `false`
+ - `simple.string(options)` : this is a `simple string` factory initialize to `''`
+ - `simple.array(options)` : this is a `simple array` factory initialize to `[]`
+
+Parameters are :
+ - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware
+ - **options** (mandatory), either a string representating the reducer `name`, either an object with these fields :
+   - **path** (optional), where the reducer will be combined via `combineReducer`
+     - if empty, the reducer will be register at the root level of the redux state
+     - you can use dot notation, like `api.raw`: your reducer will be combined into `state.api.raw.<your_reducer>`
+   - **name** (mandatory), the reducer name (for instance: `todos`)
+     - it's used to generate actions types
+     - it's used to retrieve informations from selectors
+   - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
+   - **defaultData** (optional), set the default data value, used by `reset` action and for initialisation (default is an empty object `{}`)
+
+### state (without defaultData)
+```es6
+{}
+```
+### state (with defaultData: `'todo'`)
+```es6
+'todo'
+```
+### state (with simple.bool)
+```es6
+false
+```
+
+
+### actions
+
+| function name | description | signature | generated action |
+|---|---|---|---|
+| `set` | set the instance | `set(<instance>)` | `{ type: '@@krf/SET_TODOS', payload: <instance> }` |
+| `update` | update the instance of your resource | `update(<instance>)` | `{ type: '@@krf/UPDATE>TODOS', payload: <instance> }` |
+| `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@@krf/RESET>TODOS' }` |
+
+### selectors
+
+| signature | description | comment |
+|---|---|---|
+| `get()(state)` | returns data (instance) | |
+| `isInitialized(state)` | returns true if the store has been initialized (by `set` action) | |
 
 ## simpleObject
 ### factory
