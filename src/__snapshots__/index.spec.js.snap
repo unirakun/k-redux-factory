@@ -24,6 +24,8 @@ exports[`index suffix of simple factory should make a simple object init to empt
 
 exports[`index suffix of simple factory should make a simple object init to empty 2`] = `Object {}`;
 
+exports[`index suffix of simple factory should make a simple object init to empty 3`] = `Object {}`;
+
 exports[`index suffix of simple factory should make a simple string init to blank 1`] = `""`;
 
 exports[`index suffix of simple factory should make a simple string init to blank 2`] = `""`;

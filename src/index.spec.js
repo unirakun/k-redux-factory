@@ -152,6 +152,7 @@ describe('index', () => {
     it('should make a simple object init to empty', () => {
       expect(simple({ name: 'object' })()).toMatchSnapshot()
       expect(simple({ name: 'simple object', defaultData: {} })()).toMatchSnapshot()
+      expect(simple.object({ name: 'simple object' })()).toMatchSnapshot()
     })
     it('should make a simple boolean init to false', () => {
       expect(simple.bool({ name: 'bool' })()).toMatchSnapshot()

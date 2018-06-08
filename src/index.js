@@ -66,6 +66,7 @@ export const simple = factory({ type: 'simpleObject' })
 Object.assign(
   simple,
   {
+    object: simpleFactory({}),
     bool: simpleFactory(false),
     string: simpleFactory(''),
     array: simpleFactory([]),
