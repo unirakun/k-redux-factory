@@ -83,7 +83,7 @@ Parameters are :
 | `add` | add instance(s) of your resource | `add(<instance>)` or `add(<array>)` | `{ type: '@@krf/ADD>TODOS', payload: <instance> or <array> }` |
 | `update` | update existing instance(s) of your resource | `update(<instance>)` or `update(<array>)` | `{ type: '@@krf/UPDATE>TODOS', payload: <instance> or <array> }` |
 | `addOrUpdate` | update existing instance(s) of your resource, or add them if not found | `addOrUpdate(<instance>)` or `addOrUpdate(<array>)` | `{ type: '@@krf/ADD_OR_UPDATE>TODOS', payload: <instance> or <array> }` |
-| `remove` | remove instance(s) of your resource by its key | `remove([<key>])` | `{ type: '@@krf/REMOVE>TODOS', payload: [<key>] }` |
+| `remove` | remove instance(s) of your resource by its key or by an instance | `remove([<key>])` or `remove([<instance>])` | `{ type: '@@krf/REMOVE>TODOS', payload: [<key> or <instance>] }` |
 | `reset` | reset the reducer (wipe all data) | `reset()` | `{ type: '@@krf/RESET>TODOS' }` |
 
 ### selectors

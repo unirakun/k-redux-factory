@@ -897,12 +897,123 @@ Object {
 }
 `;
 
+exports[`middlewares/keyValue should remove element by its reference [elm1] 1`] = `
+Object {
+  "action": Object {
+    "payload": Object {
+      "code": "elm1",
+      "infos": "elm1",
+      "some": "other",
+      "subinfos": Object {
+        "info": "elm1",
+      },
+    },
+    "type": "@@krf/REMOVE>TESTPREFIX>TESTNAME",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    ],
+    "data": Object {
+      "elm2": Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm2",
+      "elm3",
+    ],
+  },
+}
+`;
+
 exports[`middlewares/keyValue should remove elements [elm1, elm2] 1`] = `
 Object {
   "action": Object {
     "payload": Array [
       "elm1",
       "elm2",
+    ],
+    "type": "@@krf/REMOVE>TESTPREFIX>TESTNAME",
+  },
+  "state": Object {
+    "array": Array [
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    ],
+    "data": Object {
+      "elm3": Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm3",
+        },
+      },
+    },
+    "initialized": true,
+    "keys": Array [
+      "elm3",
+    ],
+  },
+}
+`;
+
+exports[`middlewares/keyValue should remove elements by their references [elm1, elm2] 1`] = `
+Object {
+  "action": Object {
+    "payload": Array [
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm1",
+        },
+      },
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
+        "subinfos": Object {
+          "info": "elm2",
+        },
+      },
     ],
     "type": "@@krf/REMOVE>TESTPREFIX>TESTNAME",
   },
