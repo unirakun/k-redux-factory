@@ -47,10 +47,13 @@ const addOrUpdate = shouldAdd => (key, state, payload) => {
 }
 
 const remove = (key, state, payload) => {
-  const keysToRemove = getAsArray(payload)
+  const payloadAsArray = getAsArray(payload)
   const data = { ...state.data }
 
-  keysToRemove.forEach((k) => { delete data[k] })
+  payloadAsArray.forEach((entity) => {
+    const keyToRemove = typeof entity === 'object' ? entity[key] : entity
+    delete data[keyToRemove]
+  })
 
   return mapDataToState(state)(data)
 }
