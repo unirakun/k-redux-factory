@@ -1,16 +1,16 @@
 /* eslint-env jest */
 import { set, reset, update } from '../../actions'
-import simpleObject from './simpleObject.middleware'
+import simple from './simple.middleware'
 
 const prefix = 'testPrefix'
 const name = 'testName'
 const Element = code => ({ code, some: 'other', infos: code })
 const state = Element('elm')
 
-describe('middlewares/simpleObject', () => {
+describe('middlewares/simple', () => {
   // Use the factory to create a new reducer named 'testPrefix'
   // It uses 'code' as key in givent elements
-  const testPrefix = simpleObject('code')(prefix)(name)
+  const testPrefix = simple('code')(prefix)(name)
 
   it('should initialize', () => expect(testPrefix(/* defaultData */)()).toMatchSnapshot())
 

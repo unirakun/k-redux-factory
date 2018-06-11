@@ -1,4 +1,4 @@
-import { initState } from './simpleObject.middleware'
+import { initState } from './simple.middleware'
 import { getState } from '../../selectors'
 
 export const get = options => () => state => getState(options)(state)

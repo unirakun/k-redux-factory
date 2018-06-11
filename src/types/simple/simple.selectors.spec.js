@@ -1,8 +1,8 @@
 /* eslint-env jest */
-import * as selectors from './simpleObject.selectors'
-import { initState } from './simpleObject.middleware'
+import * as selectors from './simple.selectors'
+import { initState } from './simple.middleware'
 
-describe('selectors/simpleObject => ', () => {
+describe('selectors/simple => ', () => {
   describe('isInitialized', () => {
     describe('without defaultData', () => {
       const options = { name: 'o' }
