@@ -130,6 +130,7 @@ export default factory({ type: 'simple.string', /* other options */ })
 There are multiple factories signatures, take you favorite between:
  - `simple(middlewares)(options)` : this is a `simple` factory with middlewares
  - `simple(options)` : this is a `simple` factory without middlewares
+ - `simple.object(options)` : this is a `simple object` factory initialize to `{}`
  - `simple.bool(options)` : this is a `simple boolean` factory initialize to `false`
  - `simple.string(options)` : this is a `simple string` factory initialize to `''`
  - `simple.array(options)` : this is a `simple array` factory initialize to `[]`
