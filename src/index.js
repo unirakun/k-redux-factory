@@ -25,7 +25,7 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
   } = innerOptions
 
   // eslint-disable-next-line max-len
-  if (type === 'simpleObject') console.warn('/k-redux-factory/ You are using a deprecated "simpleObject" type. We recommend using one of those types : simple.object, simple.array, simple.bool or simple.string.')
+  if (type === 'simpleObject') console.warn('/k-redux-factory/ You are using a deprecated "simpleObject" type. We recommend using one of these types: simple.object, simple.array, simple.bool or simple.string.')
 
   const [innerType, subType] = type.split('.')
   const typeConfig = types[innerType]
