@@ -8,14 +8,14 @@
   "bugs": "https://github.com/alakarteio/k-redux-factory/issues",
   "scripts": {
     "lint:js": "eslint --ext js,jsx src",
-    "lint": "npm-run-all --parallel lint:*",
+    "lint": "run-p lint:*",
     "cmd:build": "microbundle --external all --sourcemap false -f es,cjs -i ",
-    "build:core": "yarn cmd:build src/index.js",
-    "build:helper": "yarn cmd:build src/helpers.js -o helpers/index.js",
-    "build": "npm-run-all --parallel build:*",
+    "build:core": "run-s \"cmd:build src/index.js\"",
+    "build:helper": "run-s \"cmd:build src/helpers.js -o helpers/index.js\"",
+    "build": "run-p build:*",
     "test": "jest",
     "coveralls": "jest --coverage --collectCoverageFrom=src/**/*.{js,jsx} && cat ./coverage/lcov.info | coveralls",
-    "ci": "npm-run-all --parallel coveralls lint"
+    "ci": "run-p coveralls lint"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -23,19 +23,33 @@
     "babel-eslint": "^8.2.1",
     "babel-jest": "^23.0.1",
     "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
     "cross-env": "^5.0.1",
+    "doctrine": "^2.1.0",
+    "escope": "^3.6.0",
     "eslint": "~4.19.0",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-node": "^0.3.2",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.4.0",
+    "espree": "^3.5.4",
+    "estraverse": "^4.2.0",
+    "esutils": "^2.0.2",
+    "functional-red-black-tree": "^1.0.1",
+    "globals": "^11.5.0",
+    "ignore": "^3.3.8",
     "jest": "^22.2.2",
+    "jest-environment-jsdom": "^23.1.0",
+    "lodash": "^4.17.10",
     "microbundle": "^0.4.4",
-    "npm-run-all": "^4.0.2"
+    "natural-compare": "^1.4.0",
+    "npm-run-all": "^4.0.2",
+    "regexpp": "^1.1.0"
   },
   "babel": {
     "presets": [
@@ -97,6 +111,5 @@
         }
       ]
     }
-  },
-  "dependencies": {}
+  }
 }
