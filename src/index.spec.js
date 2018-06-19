@@ -183,4 +183,24 @@ describe('index', () => {
       expect(simpleObject({ name: 'string', defaultData: '' })()).toMatchSnapshot()
     })
   })
+
+  describe('default data', () => {
+    it('should have default inner data', () => {
+      expect({
+        bool: simple.bool({ name: 'bool' })(),
+        array: simple.array({ name: 'array' })(),
+        object: simple.object({ name: 'object' })(),
+        string: simple.string({ name: 'string' })(),
+      }).toMatchSnapshot()
+    })
+
+    it('should override inner default data', () => {
+      expect({
+        bool: simple.bool({ name: 'bool', defaultData: true })(),
+        array: simple.array({ name: 'array', defaultData: ['default'] })(),
+        object: simple.object({ name: 'object', defaultData: { object: true } })(),
+        string: simple.string({ name: 'string', defaultData: 'string' })(),
+      }).toMatchSnapshot()
+    })
+  })
 })

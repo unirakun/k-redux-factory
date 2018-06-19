@@ -2,6 +2,28 @@
 
 exports[`index action type factories should export action type factories 1`] = `"@@krf/SET>A SIMPLE"`;
 
+exports[`index default data should have default inner data 1`] = `
+Object {
+  "array": Array [],
+  "bool": false,
+  "object": Object {},
+  "string": "",
+}
+`;
+
+exports[`index default data should override inner default data 1`] = `
+Object {
+  "array": Array [
+    "default",
+  ],
+  "bool": true,
+  "object": Object {
+    "object": true,
+  },
+  "string": "string",
+}
+`;
+
 exports[`index extended selectors should extends get selector on simple 1`] = `"DATA"`;
 
 exports[`index extended selectors should extends isInitialized selector on simple 1`] = `true`;

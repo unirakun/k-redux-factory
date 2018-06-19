@@ -24,9 +24,22 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
     defaultData,
   } = innerOptions
 
+  // eslint-disable-next-line max-len
+  if (type === 'simpleObject') console.warn('/k-redux-factory/ You are using a deprecated "simpleObject" type. We recommend using one of these types: simple.object, simple.array, simple.bool or simple.string.')
+
   const [innerType, subType] = type.split('.')
   const typeConfig = types[innerType]
-  const innerDefaultData = (innerType === 'simple' && subType) ? simpleDefaultData[subType] : defaultData
+
+  // get default data
+  // - default is the given one
+  // - if there is no given one we try to retrieve the one associated with the type (simple.<type>)
+  let innerDefaultData
+  if (innerType === 'simple') {
+    innerDefaultData = defaultData
+    if (innerDefaultData === undefined && subType) {
+      innerDefaultData = simpleDefaultData[subType]
+    }
+  }
 
   return Object.assign(
     reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(prefix)(name)(innerDefaultData),
@@ -82,10 +95,7 @@ Object.assign(
 )
 
 // older method deprecated
-export const simpleObject = (params) => {
-  console.warn('/KRF/ You use a deprecated "simpleObject" method. We recommended using only "simple" method')
-  return simple(params)
-}
+export const simpleObject = simple
 
 // default public factory
 export default factory()
