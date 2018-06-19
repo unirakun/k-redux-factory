@@ -1,6 +1,6 @@
 {
   "name": "k-redux-factory",
-  "version": "6.0.0-rc1",
+  "version": "6.0.0-rc2",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "license": "MIT",
