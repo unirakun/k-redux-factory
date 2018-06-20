@@ -34,7 +34,7 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
   // - default is the given one
   // - if there is no given one we try to retrieve the one associated with the type (simple.<type>)
   let innerDefaultData
-  if (innerType === 'simple') {
+  if (innerType === 'simple' || type === 'simpleObject') {
     innerDefaultData = defaultData
     if (innerDefaultData === undefined && subType) {
       innerDefaultData = simpleDefaultData[subType]
