@@ -23,8 +23,6 @@ const state = {
     elm1: Element('elm1'),
     elm3: Element('elm3'),
   },
-  keys: ['elm2', 'elm1', 'elm3'],
-  array: [Element('elm2'), Element('elm1'), Element('elm3')],
   initialized: false,
 }
 

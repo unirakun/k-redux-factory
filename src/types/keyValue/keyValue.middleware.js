@@ -2,8 +2,6 @@ import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE } from './keyValue.actio
 
 export const initState = {
   data: {},
-  keys: [],
-  array: [],
   initialized: false,
 }
 
@@ -22,8 +20,6 @@ const keyAlreadyExists = state => key => (state.data[key] !== undefined)
 const mapDataToState = state => data => ({
   ...state,
   data,
-  keys: Object.keys(data),
-  array: Object.values(data),
   initialized: true,
 })
 

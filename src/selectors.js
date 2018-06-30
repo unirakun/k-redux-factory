@@ -13,12 +13,9 @@ export const getState = options => (state) => {
 }
 
 const getFactory = key => options => state => getState(options)(state)[key]
-export const getKeys = getFactory('keys')
-export const getAsArray = getFactory('array')
-export const getLength = options => state => getKeys(options)(state).length
 export const isInitialized = getFactory('initialized')
-
 const getData = options => getFactory('data')(options)
+
 export const get = options => keys => (state) => {
   const data = getData(options)(state)
   // All data
@@ -29,7 +26,10 @@ export const get = options => keys => (state) => {
   return data[keys]
 }
 
-// const at = (data, path) => eval(`${data}${path}`)
+export const getKeys = options => state => Object.keys(getData(options)(state))
+export const getAsArray = options => state => Object.values(getData(options)(state))
+export const getLength = options => state => getKeys(options)(state).length
+
 export const getBy = options => (path, values) => (state) => {
   const data = getAsArray(options)(state)
 
@@ -37,8 +37,4 @@ export const getBy = options => (path, values) => (state) => {
   return data.filter(d => values === getFromPath(d, path))
 }
 
-export const hasKey = options => key => (state) => {
-  const keys = getKeys(options)(state)
-
-  return keys.includes(key)
-}
+export const hasKey = options => key => state => !!get(options)(key)(state)
