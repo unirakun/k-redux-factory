@@ -46,7 +46,7 @@ export default keyValue(/* options */)
 or
 
 ```es6
-import factory from 'k-redux-factory'
+import { factory } from 'k-redux-factory'
 
 export default factory({ type: 'keyValue', /* other options */ })
 ```
@@ -114,7 +114,7 @@ export default simple(/* options */)
 or
 
 ```es6
-import factory from 'k-redux-factory'
+import { factory } from 'k-redux-factory'
 
 export default factory({ type: 'simple', /* other options */ })
 ```
@@ -122,7 +122,7 @@ export default factory({ type: 'simple', /* other options */ })
 or
 
 ```es6
-import factory from 'k-redux-factory'
+import { factory } from 'k-redux-factory'
 
 export default factory({ type: 'simple.string', /* other options */ })
 ```
@@ -187,7 +187,7 @@ export default simpleObject(/* options */)
 or
 
 ```es6
-import factory from 'k-redux-factory'
+import { factory } from 'k-redux-factory'
 
 export default factory({ type: 'simpleObject', /* other options */ })
 ```
