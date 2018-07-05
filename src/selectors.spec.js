@@ -17,15 +17,15 @@ const path = 'api.raw'
 const name = 'testName'
 const subState = {
   testName: {
-    data: {
-      elm2: Element('elm2'),
-      elm1: Element('elm1'),
-      elm3: Element('elm3'),
-      elm4: SubElement('elm4')('subelm4'),
-      elm5: SubElement('elm5')('subelm5'),
-      false: Element(false),
-      0: Element(0),
-    },
+    data: [
+      ['elm2', Element('elm2')],
+      ['elm1', Element('elm1')],
+      ['elm3', Element('elm3')],
+      ['elm4', SubElement('elm4')('subelm4')],
+      ['elm5', SubElement('elm5')('subelm5')],
+      [false, Element(false)],
+      [0, Element(0)],
+    ],
     initialized: true,
   },
 }

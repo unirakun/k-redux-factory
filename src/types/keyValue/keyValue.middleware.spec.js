@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import { set, add, update, remove, reset, addOrUpdate } from '../../actions'
-import { initState } from '../../reducer'
 import keyValue from './keyValue.middleware'
 
 const prefix = 'testPrefix'
@@ -18,11 +17,11 @@ const Elements = [
   ElementWithoutSubInfo('elmSub'),
 ]
 const state = {
-  data: {
-    elm2: Element('elm2'),
-    elm1: Element('elm1'),
-    elm3: Element('elm3'),
-  },
+  data: [
+    ['elm2', Element('elm2')],
+    ['elm1', Element('elm1')],
+    ['elm3', Element('elm3')],
+  ],
   initialized: false,
 }
 
@@ -37,12 +36,12 @@ describe('middlewares/keyValue', () => {
   it('should initialize with defaultData', () => expect(testPrefixWithDefaultData()).toMatchSnapshot())
 
   it('should add element [elm4] on initial store', () => expect(testPrefix({
-    state: initState,
+    state: undefined,
     action: add(prefix)(name)(Element('elm4')),
   })).toMatchSnapshot())
 
   it('should add elements [elm4, elm5] on initial store', () => expect(testPrefix({
-    state: initState,
+    state: undefined,
     action: add(prefix)(name)([Element('elm4'), Element('elm5')]),
   })).toMatchSnapshot())
 
@@ -78,12 +77,12 @@ describe('middlewares/keyValue', () => {
 
   it('should remove element by its reference [elm1]', () => expect(testPrefix({
     state,
-    action: remove(prefix)(name)(state.data.elm1),
+    action: remove(prefix)(name)(state.data.find(([key]) => key === 'elm1')[1]),
   })).toMatchSnapshot())
 
   it('should remove elements by their references [elm1, elm2]', () => expect(testPrefix({
     state,
-    action: remove(prefix)(name)([state.data.elm1, state.data.elm2]),
+    action: remove(prefix)(name)([state.data.find(([key]) => key === 'elm1')[1], state.data.find(([key]) => key === 'elm2')[1]]),
   })).toMatchSnapshot())
 
   it('should reset state', () => expect(testPrefix({

@@ -1,21 +1,13 @@
 import { SET, ADD, UPDATE, REMOVE, RESET, ADD_OR_UPDATE } from './keyValue.actions'
 
 export const initState = {
-  data: {},
+  data: [], // this is a serialized Map [[key, value], [key2, value2]]
   initialized: false,
 }
 
 const getAsArray = entry => (Array.isArray(entry) ? entry : [entry])
 
-const toObject = (key, entry) => {
-  const object = {}
-
-  getAsArray(entry).forEach((entity) => { object[entity[key]] = entity })
-
-  return object
-}
-
-const keyAlreadyExists = state => key => (state.data[key] !== undefined)
+const toEntries = (key, payload) => payload.map(entity => [entity[key], entity])
 
 const mapDataToState = state => data => ({
   ...state,
@@ -23,38 +15,38 @@ const mapDataToState = state => data => ({
   initialized: true,
 })
 
-const set = (key, state, payload) => mapDataToState(state)(toObject(key, getAsArray(payload)))
+const set = (key, state, payload) => mapDataToState(state)(toEntries(key, getAsArray(payload)))
 
-const add = (key, state, payload) => mapDataToState(state)({ ...state.data, ...toObject(key, getAsArray(payload)) })
+const add = (key, state, payload) => mapDataToState(state)(Array.from(new Map([...state.data, ...toEntries(key, getAsArray(payload))])))
 
 const addOrUpdate = shouldAdd => (key, state, payload) => {
+  const map = new Map(state.data)
   const instances = getAsArray(payload)
-  const updatedInstances = []
 
   instances.forEach((instance) => {
-    if (shouldAdd || keyAlreadyExists(state)(instance[key])) {
-      updatedInstances.push({ ...state.data[instance[key]], ...instance })
+    const stored = map.get(instance[key])
+    if (shouldAdd || instance) {
+      map.set(instance[key], { ...stored, ...instance })
     }
   })
 
-  if (updatedInstances.length === 0) return state
+  if (map.size === 0) return state
 
-  return mapDataToState(state)({ ...state.data, ...toObject(key, updatedInstances) })
+  return mapDataToState(state)(Array.from(map.entries()))
 }
 
 const remove = (key, state, payload) => {
-  const payloadAsArray = getAsArray(payload)
-  const data = { ...state.data }
+  const map = new Map(state.data)
+  const instances = getAsArray(payload)
 
-  payloadAsArray.forEach((entity) => {
-    const keyToRemove = typeof entity === 'object' ? entity[key] : entity
-    delete data[keyToRemove]
+  instances.forEach((instance) => {
+    map.delete(typeof instance === 'object' ? instance[key] : instance)
   })
 
-  return mapDataToState(state)(data)
+  return mapDataToState(state)(Array.from(map.entries()))
 }
 
-const defaultState = (key, defaultData) => (defaultData !== undefined ? set(key, {}, defaultData) : initState)
+const defaultState = (key, defaultData) => (defaultData !== undefined ? set(key, initState, defaultData) : initState)
 
 const reducer = key => prefix => name => defaultData =>
   (state = defaultState(key, defaultData), { type, payload } = {}) => {
