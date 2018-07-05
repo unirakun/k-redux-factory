@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import factory, { keyValue, simple, simpleObject } from './index'
+import { factory, keyValue, simple, simpleObject } from './index'
 
 const Todo = id => ({ id, some: `information ${id}` })
 

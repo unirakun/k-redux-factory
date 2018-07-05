@@ -63,7 +63,7 @@ We created this lightweight library, a factory of reducers, actions and selector
 You need to use the factory to get a new set of reducer/actions/selectors :
 ```es6
 // modular factory
-import factory from 'k-redux-factory'
+import { factory } from 'k-redux-factory'
 
 // or - prebuild simple factory
 import { simple } from 'k-redux-factory'
@@ -105,7 +105,7 @@ Example:
  - it's name is `todos`
  - have default data
 ```es6
-import factory from 'k-redux-factory'
+import { factory } from 'k-redux-factory'
 
 export default factory({ path: 'api.raw', name: 'todos' })
 ```
@@ -247,7 +247,7 @@ todos.get('1')(state)
 
 #### Example, we create a middleware but we modify only the action :
 ```es6
-import factory from 'k-redux-factory'
+import { factory } from 'k-redux-factory'
 // import your helpers
 import { mapAction } from 'k-redux-factory/helpers'
 
@@ -259,7 +259,7 @@ export default factory({ pre: [mapAction(mapper)] })({ path: 'api.raw', name: 't
 
 #### Example, we create a middleware but we modify only the state :
 ```es6
-import factory from 'k-redux-factory'
+import { factory } from 'k-redux-factory'
 // import your helpers
 import { mapState } from 'k-redux-factory/helpers'
 
@@ -271,7 +271,7 @@ export default factory({ pre: [mapState(/SET>TODOS/)(mapper)] })({ path: 'api.ra
 
 #### Example, we create a middleware but we modify action and state :
 ```es6
-import factory from 'k-redux-factory'
+import { factory } from 'k-redux-factory'
 // import your helpers
 import { reducer } from 'k-redux-factory/helpers'
 
@@ -289,7 +289,7 @@ export default factory({ pre: [reducer(mapper)] })({ path: 'api.raw', name: 'tod
 
 #### Example, we create a middleware but we modify only the payload :
 ```es6
-import factory from 'k-redux-factory'
+import { factory } from 'k-redux-factory'
 // import your helpers
 import { mapPayload } from 'k-redux-factory/helpers'
 
