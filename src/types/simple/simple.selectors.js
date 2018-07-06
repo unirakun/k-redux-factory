@@ -1,9 +1,29 @@
 import { initState } from './simple.middleware'
-import { getState } from '../../selectors'
 
-export const get = options => () => state => getState(options)(state)
+// TODO: make it a util (and factorize code)
+const getFromPath = (data, path) => path.split('.').reduce(
+  (curr, sub) => curr && curr[sub],
+  data,
+)
 
-export const isInitialized = options => (state) => {
-  if (options.defaultData !== undefined) return getState(options)(state) !== options.defaultData
-  return get(options)()(state) !== initState
+export default (options) => {
+  // TODO: make it a util (and factorize code)
+  const getState = (rootState) => {
+    const { path, name } = options
+    let subState = rootState
+
+    if (path !== undefined && path.length > 0) subState = getFromPath(rootState, path)
+
+    return subState[name]
+  }
+
+  const get = () => rootState => getState(rootState)
+
+  return {
+    get,
+    isInitialized: (rootState) => {
+      if (options.defaultData !== undefined) return getState(rootState) !== options.defaultData
+      return get()(rootState) !== initState
+    },
+  }
 }
