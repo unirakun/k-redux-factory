@@ -1,37 +1,12 @@
-const getFromPath = (data, path) => path.split('.').reduce(
-  (curr, sub) => curr && curr[sub],
-  data,
-)
-
-const memoize = (callback) => {
-  const memory = {
-    data: undefined,
-    result: undefined,
-  }
-
-  return (data) => {
-    if (memory.data !== data) {
-      memory.data = data
-      memory.result = callback(data)
-    }
-
-    return memory.result
-  }
-}
+import { getFromPath, memoize } from '../../utils'
+import { getState } from '../../selectors'
 
 export default (options) => {
   // get reducer state from rootState
-  const getState = (rootState) => {
-    const { path, name } = options
-    let subState = rootState
-
-    if (path !== undefined && path.length > 0) subState = getFromPath(rootState, path)
-
-    return subState[name]
-  }
+  const getStateWithOptions = getState(options)
 
   // basic selectors
-  const getData = rootState => getState(rootState).data
+  const getData = rootState => getStateWithOptions(rootState).data
   const getMap = memoize(data => new Map(data))
   const mapToKeys = memoize(data => Array.from(getMap(data).keys()))
   const mapToValues = memoize(data => Array.from(getMap(data).values()))
@@ -60,13 +35,13 @@ export default (options) => {
   }
 
   return {
-    getState,
     get,
     getKeys,
     getBy,
+    getState: getStateWithOptions,
     getAsArray: rootState => mapToValues(getData(rootState)),
     getLength: rootState => getData(rootState).length,
     hasKey: key => rootState => getMap(getData(rootState)).has(key),
-    isInitialized: rootState => getState(rootState).initialized,
+    isInitialized: rootState => getStateWithOptions(rootState).initialized,
   }
 }
