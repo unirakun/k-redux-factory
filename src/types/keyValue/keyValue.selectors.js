@@ -5,7 +5,7 @@ const getFromPath = (data, path) => path.split('.').reduce(
 
 const memoize = (callback) => {
   const memory = {
-    args: undefined,
+    data: undefined,
     result: undefined,
   }
 
