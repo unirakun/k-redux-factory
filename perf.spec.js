@@ -70,7 +70,7 @@ describe('performance', () => {
     else result = args !== undefined ? rerunSelectors(() => reducer[action === 'getById' ? 'get' : what](...args)(state)) : rerunSelectors(() => reducer[what](state))
 
     timers[readOrWrite][what] = Date.now() - timers[readOrWrite][what]
-    timers[readOrWrite][what] = `${timers[readOrWrite][what] / RERUN}ms / op [${multiple ? LENGTH : 1}]`
+    timers[readOrWrite][what] = `${timers[readOrWrite][what] / (readOrWrite === 'writes' ? RERUN : RERUN_SELECTORS)}ms / op [${multiple ? LENGTH : 1}]`
 
     return result
   }
