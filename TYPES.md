@@ -71,9 +71,10 @@ Parameters are :
 ### state
 ```es6
 {
-  data: { <key1>: <instance1>, <key2>: <instance2> },
-  array: [<instance1>, <instance2>],
-  keys: [<key1>, <key2>],
+  data: [
+    [<key1>, <instance1>],
+    [<key2>, <instance2>],
+  ],
   initialized: <boolean>,
 }
 ```
