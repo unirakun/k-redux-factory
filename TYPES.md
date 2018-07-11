@@ -134,6 +134,7 @@ There are multiple factories signatures, take you favorite between:
  - `simple.bool(options)` : this is a `simple boolean` factory initialize to `false`
  - `simple.string(options)` : this is a `simple string` factory initialize to `''`
  - `simple.array(options)` : this is a `simple array` factory initialize to `[]`
+ - `simple.number(options)` : this is a `simple number` factory initialize to `0`
 
 Parameters are :
  - **middlewares** (optional), contain an object with `pre` and `post` fields. Both are an array of middlewares to apply before and after the `core` middleware
@@ -176,7 +177,7 @@ false
 | `get()(state)` | returns data (instance) | |
 | `isInitialized(state)` | returns true if the store has been initialized (by `set` action) | |
 
-## simpleObject
+## simpleObject (DEPRECATED)
 ### factory
 ```es6
 import { simpleObject } from 'k-redux-factory'
