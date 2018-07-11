@@ -18,7 +18,7 @@
     * **Now**: `import { factory, keyValue } from 'k-redux-factory'`
  - `state` created by `k-redux-factory` is modified to be less bloated when serialized:
     * `getState` selector returns a new shape, see [dedicated chapter](#state)
-    * all other selectors are impacted and should work as before 👌
+    * all other selectors work as before 👌
 
 ### State
 The state shape used by `k-redux-factory` is changed to be less bloated when serialized.
@@ -28,7 +28,7 @@ This is a breaking change when you:
  - manually retrieve the substate from a `k-redux-factory` reducer
  - or use the `getState` selector
 
-All other selectors are impacted and should work as before 👌
+All other selectors work as before 👌
 
 **k-redux-factory v5.x.x**
 ```js
