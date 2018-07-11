@@ -96,8 +96,8 @@ Parameters are :
      - it's used to generate actions types
      - it's used to retrieve informations from selectors
    - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
-   - **type** (optional) can be `keyValue` or `simpleObject` (default is `keyValue`)
-   - **defaultData** (optional), set the default data value, used by `reset` action and for initialisation (default is an empty object `{}` for `simpleObject` and default hashmap model for `keyValue` - see [keyValue types section](./TYPES.md#state))
+   - **type** (optional) can be `keyValue` or `simple.<type>` (default is `keyValue`)
+   - **defaultData** (optional), set the default data value, used by `reset` action and for initialisation (default is an empty object `{}` for `simple.object` and default hashmap model for `keyValue` - see [keyValue types section](./TYPES.md#state))
 
 Example:
  - this reducer will use `id` as key field
