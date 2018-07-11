@@ -7,7 +7,7 @@ Factory of Redux reducers and their associated actions and selectors.
 [![Size](http://img.badgesize.io/alakarteio/k-redux-factory/master/dist/index.js.svg)]() [![Greenkeeper badge](https://badges.greenkeeper.io/alakarteio/k-redux-factory.svg)](https://greenkeeper.io/)
 
 ## Migrating
-Hey ! If you come from an early version of `k-redux-factory` and want to upgrade, [you can read this migrating guide 💎](./MIGRATING.md)
+Hey ! If you come from an early version of `k-redux-factory` and want to upgrade, [you can read this migration guide 💎](./MIGRATING.md)
 
 ## Contents
  - [Purpose](#purpose)
