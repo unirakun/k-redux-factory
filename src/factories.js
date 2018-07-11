@@ -42,7 +42,7 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
     }
   }
 
-  return Object.assign(
+  const result = Object.assign(
     reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(prefix)(name)(innerDefaultData),
 
     // type (debug purpose)
@@ -52,8 +52,10 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
     ...Object.keys(typeConfig.actions).map(k => ({ [k]: typeConfig.actions[k](prefix)(name) })),
 
     // selectors
-    ...Object.keys(typeConfig.selectors).map(k => ({ [k]: typeConfig.selectors[k](innerOptions) })),
+    typeConfig.selectors(innerOptions),
   )
+
+  return result
 }
 
 // error :( - not a middleware nor an option parameter

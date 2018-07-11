@@ -14,81 +14,53 @@ Object {
     "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
-      Object {
-        "code": "elm4",
-        "infos": "elm4",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm4",
+      ],
+      Array [
+        "elm4",
+        Object {
+          "code": "elm4",
+          "infos": "elm4",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm4",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-      "elm4": Object {
-        "code": "elm4",
-        "infos": "elm4",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm4",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-      "elm4",
-    ],
   },
 }
 `;
@@ -107,30 +79,20 @@ Object {
     "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm4",
-        "infos": "elm4",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm4",
+    "data": Array [
+      Array [
+        "elm4",
+        Object {
+          "code": "elm4",
+          "infos": "elm4",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm4",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm4": Object {
-        "code": "elm4",
-        "infos": "elm4",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm4",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm4",
-    ],
   },
 }
 `;
@@ -149,81 +111,53 @@ Object {
     "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
-      Object {
-        "code": "elm12",
-        "infos": "elm12",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm12",
+      ],
+      Array [
+        "elm12",
+        Object {
+          "code": "elm12",
+          "infos": "elm12",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm12",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm12": Object {
-        "code": "elm12",
-        "infos": "elm12",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm12",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-      "elm12",
-    ],
   },
 }
 `;
@@ -252,98 +186,64 @@ Object {
     "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
-      Object {
-        "code": "elm12",
-        "infos": "elm12",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm12",
+      ],
+      Array [
+        "elm12",
+        Object {
+          "code": "elm12",
+          "infos": "elm12",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm12",
+          },
         },
-      },
-      Object {
-        "code": "elm13",
-        "infos": "elm13",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm13",
+      ],
+      Array [
+        "elm13",
+        Object {
+          "code": "elm13",
+          "infos": "elm13",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm13",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm12": Object {
-        "code": "elm12",
-        "infos": "elm12",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm12",
-        },
-      },
-      "elm13": Object {
-        "code": "elm13",
-        "infos": "elm13",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm13",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-      "elm12",
-      "elm13",
-    ],
   },
 }
 `;
@@ -372,98 +272,64 @@ Object {
     "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
-      Object {
-        "code": "elm4",
-        "infos": "elm4",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm4",
+      ],
+      Array [
+        "elm4",
+        Object {
+          "code": "elm4",
+          "infos": "elm4",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm4",
+          },
         },
-      },
-      Object {
-        "code": "elm5",
-        "infos": "elm5",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm5",
+      ],
+      Array [
+        "elm5",
+        Object {
+          "code": "elm5",
+          "infos": "elm5",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm5",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-      "elm4": Object {
-        "code": "elm4",
-        "infos": "elm4",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm4",
-        },
-      },
-      "elm5": Object {
-        "code": "elm5",
-        "infos": "elm5",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm5",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-      "elm4",
-      "elm5",
-    ],
   },
 }
 `;
@@ -492,47 +358,31 @@ Object {
     "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm4",
-        "infos": "elm4",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm4",
+    "data": Array [
+      Array [
+        "elm4",
+        Object {
+          "code": "elm4",
+          "infos": "elm4",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm4",
+          },
         },
-      },
-      Object {
-        "code": "elm5",
-        "infos": "elm5",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm5",
+      ],
+      Array [
+        "elm5",
+        Object {
+          "code": "elm5",
+          "infos": "elm5",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm5",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm4": Object {
-        "code": "elm4",
-        "infos": "elm4",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm4",
-        },
-      },
-      "elm5": Object {
-        "code": "elm5",
-        "infos": "elm5",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm5",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm4",
-      "elm5",
-    ],
   },
 }
 `;
@@ -540,10 +390,8 @@ Object {
 exports[`middlewares/keyValue should initialize 1`] = `
 Object {
   "state": Object {
-    "array": Array [],
-    "data": Object {},
+    "data": Array [],
     "initialized": false,
-    "keys": Array [],
   },
 }
 `;
@@ -551,58 +399,39 @@ Object {
 exports[`middlewares/keyValue should initialize with defaultData 1`] = `
 Object {
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+    "data": Array [
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+      ],
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elmSub",
-        "infos": "elmSub",
-        "some": "other",
-      },
+      ],
+      Array [
+        "elmSub",
+        Object {
+          "code": "elmSub",
+          "infos": "elmSub",
+          "some": "other",
+        },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elmSub": Object {
-        "code": "elmSub",
-        "infos": "elmSub",
-        "some": "other",
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm1",
-      "elm2",
-      "elmSub",
-    ],
   },
 }
 `;
@@ -621,64 +450,42 @@ Object {
     "type": "@@krf/ADD>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-    ],
   },
 }
 `;
@@ -697,64 +504,53 @@ Object {
     "type": "@@krf/UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
+      ],
+      Array [
+        "elm12",
+        Object {
+          "code": "elm12",
+          "infos": "elm12",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm12",
+          },
+        },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
-    "initialized": false,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-    ],
+    "initialized": true,
   },
 }
 `;
@@ -783,64 +579,64 @@ Object {
     "type": "@@krf/UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
+      ],
+      Array [
+        "elm12",
+        Object {
+          "code": "elm12",
+          "infos": "elm12",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm12",
+          },
+        },
+      ],
+      Array [
+        "elm13",
+        Object {
+          "code": "elm13",
+          "infos": "elm13",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm13",
+          },
+        },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
-    "initialized": false,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-    ],
+    "initialized": true,
   },
 }
 `;
@@ -852,47 +648,31 @@ Object {
     "type": "@@krf/REMOVE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm3",
-    ],
   },
 }
 `;
@@ -911,47 +691,31 @@ Object {
     "type": "@@krf/REMOVE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm3",
-    ],
   },
 }
 `;
@@ -966,30 +730,20 @@ Object {
     "type": "@@krf/REMOVE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+    "data": Array [
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm3",
-    ],
   },
 }
 `;
@@ -1018,30 +772,20 @@ Object {
     "type": "@@krf/REMOVE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+    "data": Array [
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm3",
-    ],
   },
 }
 `;
@@ -1052,10 +796,8 @@ Object {
     "type": "@@krf/RESET>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [],
-    "data": Object {},
+    "data": Array [],
     "initialized": false,
-    "keys": Array [],
   },
 }
 `;
@@ -1074,30 +816,20 @@ Object {
     "type": "@@krf/SET>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+    "data": Array [
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm1",
-    ],
   },
 }
 `;
@@ -1126,47 +858,31 @@ Object {
     "type": "@@krf/SET>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+    "data": Array [
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+      ],
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm1",
-      "elm2",
-    ],
   },
 }
 `;
@@ -1181,64 +897,42 @@ Object {
     "type": "@@krf/UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other UPDATE",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other UPDATE",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other UPDATE",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-    ],
   },
 }
 `;
@@ -1253,64 +947,42 @@ Object {
     "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
         },
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other ADD OR UPDATE",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other ADD OR UPDATE",
+          "subinfos": Object {
+            "info": "elm3",
+          },
         },
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other ADD OR UPDATE",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-    ],
   },
 }
 `;
@@ -1331,68 +1003,44 @@ Object {
     "type": "@@krf/UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
+          "update": "elm2 is updated",
         },
-        "update": "elm2 is updated",
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
+          "update": "elm3 is updated",
         },
-        "update": "elm3 is updated",
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-        "update": "elm2 is updated",
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-        "update": "elm3 is updated",
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-    ],
   },
 }
 `;
@@ -1413,68 +1061,44 @@ Object {
     "type": "@@krf/ADD_OR_UPDATE>TESTPREFIX>TESTNAME",
   },
   "state": Object {
-    "array": Array [
-      Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
+    "data": Array [
+      Array [
+        "elm2",
+        Object {
+          "code": "elm2",
+          "infos": "elm2",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm2",
+          },
+          "update": "elm2 is updated",
         },
-        "update": "elm2 is updated",
-      },
-      Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
+      ],
+      Array [
+        "elm1",
+        Object {
+          "code": "elm1",
+          "infos": "elm1",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm1",
+          },
         },
-      },
-      Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
+      ],
+      Array [
+        "elm3",
+        Object {
+          "code": "elm3",
+          "infos": "elm3",
+          "some": "other",
+          "subinfos": Object {
+            "info": "elm3",
+          },
+          "update": "elm3 is updated",
         },
-        "update": "elm3 is updated",
-      },
+      ],
     ],
-    "data": Object {
-      "elm1": Object {
-        "code": "elm1",
-        "infos": "elm1",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm1",
-        },
-      },
-      "elm2": Object {
-        "code": "elm2",
-        "infos": "elm2",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm2",
-        },
-        "update": "elm2 is updated",
-      },
-      "elm3": Object {
-        "code": "elm3",
-        "infos": "elm3",
-        "some": "other",
-        "subinfos": Object {
-          "info": "elm3",
-        },
-        "update": "elm3 is updated",
-      },
-    },
     "initialized": true,
-    "keys": Array [
-      "elm2",
-      "elm1",
-      "elm3",
-    ],
   },
 }
 `;

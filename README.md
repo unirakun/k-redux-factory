@@ -120,9 +120,10 @@ Types are :
   - `keyValue` : your state is a hashmap, useful to bind your API to Redux with the following redux state model :
 ```es6
 {
-  data: { <key1>: <instance1>, <key2>: <instance2> },
-  array: [<instance1>, <instance2>],
-  keys: [<key1>, <key2>],
+  data: [
+    [<key1>, <instance1>],
+    [<key2>, <instance2>],
+  ],
   initialized: true,
 }
 ```
@@ -183,9 +184,10 @@ export default keyValue({ defaultData })
 
 ```es6
 {
-  data: { 1: { id: 1, todo: 'write README.MD' }, 2: { id: 2, todo: 'watch rick and morty season three' }},
-  array: [{ id: 1, todo: 'write README.MD' }, { id: 2, todo: 'watch rick and morty season three' }],
-  keys: ['1', '2'],
+  data: [
+    [1, { id: 1, todo: 'write README.MD' }],
+    [2, { id: 2, todo: 'watch rick and morty season three' }],
+  ],
   initialized: true,
 }
 ```

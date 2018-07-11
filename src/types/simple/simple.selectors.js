@@ -1,9 +1,16 @@
-import { initState } from './simple.middleware'
 import { getState } from '../../selectors'
+import { initState } from './simple.middleware'
 
-export const get = options => () => state => getState(options)(state)
+export default (options) => {
+  const getStateWithOptions = getState(options)
+  const get = () => rootState => getStateWithOptions(rootState)
+  const isInitialized = (rootState) => {
+    if (options.defaultData !== undefined) return getStateWithOptions(rootState) !== options.defaultData
+    return get()(rootState) !== initState
+  }
 
-export const isInitialized = options => (state) => {
-  if (options.defaultData !== undefined) return getState(options)(state) !== options.defaultData
-  return get(options)()(state) !== initState
+  return {
+    get,
+    isInitialized,
+  }
 }

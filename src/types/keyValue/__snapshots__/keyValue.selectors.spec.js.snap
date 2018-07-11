@@ -193,6 +193,16 @@ Array [
       "subCode": "subelm5",
     },
   },
+  Object {
+    "code": false,
+    "infos": false,
+    "some": "other",
+  },
+  Object {
+    "code": 0,
+    "infos": 0,
+    "some": "other",
+  },
 ]
 `;
 
@@ -244,185 +254,149 @@ Array [
   "elm3",
   "elm4",
   "elm5",
+  false,
+  0,
 ]
 `;
 
-exports[`selectors should retrieve length 1`] = `5`;
+exports[`selectors should retrieve length 1`] = `7`;
 
 exports[`selectors should retrieve state 1`] = `
 Object {
-  "array": Array [
-    Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
-    Object {
-      "code": "elm4",
-      "infos": "elm4",
-      "some": "other",
-      "sub": Object {
-        "subCode": "subelm4",
+  "data": Array [
+    Array [
+      "elm2",
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
       },
-    },
-    Object {
-      "code": "elm5",
-      "infos": "elm5",
-      "some": "other",
-      "sub": Object {
-        "subCode": "subelm5",
+    ],
+    Array [
+      "elm1",
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
       },
-    },
+    ],
+    Array [
+      "elm3",
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    ],
+    Array [
+      "elm4",
+      Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+        "sub": Object {
+          "subCode": "subelm4",
+        },
+      },
+    ],
+    Array [
+      "elm5",
+      Object {
+        "code": "elm5",
+        "infos": "elm5",
+        "some": "other",
+        "sub": Object {
+          "subCode": "subelm5",
+        },
+      },
+    ],
+    Array [
+      false,
+      Object {
+        "code": false,
+        "infos": false,
+        "some": "other",
+      },
+    ],
+    Array [
+      0,
+      Object {
+        "code": 0,
+        "infos": 0,
+        "some": "other",
+      },
+    ],
   ],
-  "data": Object {
-    "0": Object {
-      "code": 0,
-      "infos": 0,
-      "some": "other",
-    },
-    "elm1": Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    "elm2": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    "elm3": Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
-    "elm4": Object {
-      "code": "elm4",
-      "infos": "elm4",
-      "some": "other",
-      "sub": Object {
-        "subCode": "subelm4",
-      },
-    },
-    "elm5": Object {
-      "code": "elm5",
-      "infos": "elm5",
-      "some": "other",
-      "sub": Object {
-        "subCode": "subelm5",
-      },
-    },
-    "false": Object {
-      "code": false,
-      "infos": false,
-      "some": "other",
-    },
-  },
   "initialized": true,
-  "keys": Array [
-    "elm2",
-    "elm1",
-    "elm3",
-    "elm4",
-    "elm5",
-  ],
 }
 `;
 
 exports[`selectors should retrieve state, without path set 1`] = `
 Object {
-  "array": Array [
-    Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
-    Object {
-      "code": "elm4",
-      "infos": "elm4",
-      "some": "other",
-      "sub": Object {
-        "subCode": "subelm4",
+  "data": Array [
+    Array [
+      "elm2",
+      Object {
+        "code": "elm2",
+        "infos": "elm2",
+        "some": "other",
       },
-    },
-    Object {
-      "code": "elm5",
-      "infos": "elm5",
-      "some": "other",
-      "sub": Object {
-        "subCode": "subelm5",
+    ],
+    Array [
+      "elm1",
+      Object {
+        "code": "elm1",
+        "infos": "elm1",
+        "some": "other",
       },
-    },
+    ],
+    Array [
+      "elm3",
+      Object {
+        "code": "elm3",
+        "infos": "elm3",
+        "some": "other",
+      },
+    ],
+    Array [
+      "elm4",
+      Object {
+        "code": "elm4",
+        "infos": "elm4",
+        "some": "other",
+        "sub": Object {
+          "subCode": "subelm4",
+        },
+      },
+    ],
+    Array [
+      "elm5",
+      Object {
+        "code": "elm5",
+        "infos": "elm5",
+        "some": "other",
+        "sub": Object {
+          "subCode": "subelm5",
+        },
+      },
+    ],
+    Array [
+      false,
+      Object {
+        "code": false,
+        "infos": false,
+        "some": "other",
+      },
+    ],
+    Array [
+      0,
+      Object {
+        "code": 0,
+        "infos": 0,
+        "some": "other",
+      },
+    ],
   ],
-  "data": Object {
-    "0": Object {
-      "code": 0,
-      "infos": 0,
-      "some": "other",
-    },
-    "elm1": Object {
-      "code": "elm1",
-      "infos": "elm1",
-      "some": "other",
-    },
-    "elm2": Object {
-      "code": "elm2",
-      "infos": "elm2",
-      "some": "other",
-    },
-    "elm3": Object {
-      "code": "elm3",
-      "infos": "elm3",
-      "some": "other",
-    },
-    "elm4": Object {
-      "code": "elm4",
-      "infos": "elm4",
-      "some": "other",
-      "sub": Object {
-        "subCode": "subelm4",
-      },
-    },
-    "elm5": Object {
-      "code": "elm5",
-      "infos": "elm5",
-      "some": "other",
-      "sub": Object {
-        "subCode": "subelm5",
-      },
-    },
-    "false": Object {
-      "code": false,
-      "infos": false,
-      "some": "other",
-    },
-  },
   "initialized": true,
-  "keys": Array [
-    "elm2",
-    "elm1",
-    "elm3",
-    "elm4",
-    "elm5",
-  ],
 }
 `;
