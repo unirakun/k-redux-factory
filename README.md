@@ -6,6 +6,9 @@ Factory of Redux reducers and their associated actions and selectors.
 [![CircleCI](https://circleci.com/gh/alakarteio/k-redux-factory.svg?style=shield)](https://circleci.com/gh/alakarteio/k-redux-factory) [![Coverage Status](https://coveralls.io/repos/github/alakarteio/k-redux-factory/badge.svg?branch=master)](https://coveralls.io/github/alakarteio/k-redux-factory?branch=master) [![NPM Version](https://badge.fury.io/js/k-redux-factory.svg)](https://www.npmjs.com/package/k-redux-factory)
 [![Size](http://img.badgesize.io/alakarteio/k-redux-factory/master/dist/index.js.svg)]() [![Greenkeeper badge](https://badges.greenkeeper.io/alakarteio/k-redux-factory.svg)](https://greenkeeper.io/)
 
+## Migrating
+Hey ! If you come from an early version of `k-redux-factory` and want to upgrade, [you can read this migrating guide 💎](./MIGRATING.md)
+
 ## Contents
  - [Purpose](#purpose)
  - [Why ?](#why)
