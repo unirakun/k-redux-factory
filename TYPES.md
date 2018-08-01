@@ -1,7 +1,7 @@
 # Types
  - [Factories](#factories)
  - [keyValue](#keyvalue)
- - [simpleObject](#simpleobject)
+ - [simple](#simple)
 
 # Factories
 Factories are used to create a reducer with its selectors and its actions.
@@ -9,8 +9,8 @@ Factories are used to create a reducer with its selectors and its actions.
 There are multiple factories signatures, take you favorite between:
  - `factory(middlewares)(options)` : this is the root factory, with middlewares
  - `factory(options)` : this is the root factory, without middlewares
- - `simple(middlewares)(options)` : this is a `simpleObject` factory with middlewares
- - `simple(options)` : this is a `simpleObject` factory without middlewares
+ - `simple(middlewares)(options)` : this is a `simple` factory with middlewares
+ - `simple(options)` : this is a `simple` factory without middlewares
  - *DEPRECATED* `simpleObject(middlewares)(options)` : this is a `simpleObject` factory with middlewares
  - *DEPRECATED* `simpleObject(options)` : this is a `simpleObject` factory without middlewares
  - `keyValue(middlewares)(options)` : this is a `keyValue`  factory with middlewares
@@ -27,7 +27,7 @@ Parameters are :
      - it's used to generate actions types
      - it's used to retrieve informations from selectors
    - **prefix** (optional) is added to actions to avoid some collisions when there are two reducers with the same name in two distincts paths
-   - **type** (optional) can be `keyValue` or `simpleObject` (default is `keyValue`)
+   - **type** (optional) can be `keyValue` or `simple` (`simple.object`, `simple.number`, etc) (default is `keyValue`)
    - **defaultData** (optional), set the default data value, used by `reset` action and for initialisation
 
 You can see documentation about specific factories there:
