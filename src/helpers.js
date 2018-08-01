@@ -1,16 +1,18 @@
-export const reducer = mapper =>
+export const reducer = mapper => (
   // middleware signature
   (/* key */) => (/* prefix */) => (/* name */) => (/* defaultData */) => ctx => ({ ...ctx, state: mapper(ctx.action, ctx.state) })
+)
 
 
-export const mapAction = mapper =>
+export const mapAction = mapper => (
   // middleware signature
   (/* key */) => (/* prefix */) => (/* name */) => (/* defaultData */) => ctx => ({
     ...ctx,
     action: mapper(ctx.action),
   })
+)
 
-export const mapState = actionMatches => mapper =>
+export const mapState = actionMatches => mapper => (
   // middleware signature
   (/* key */) => (/* prefix */) => (/* name */) => (/* defaultData */) => (ctx) => {
     const { action } = ctx
@@ -19,8 +21,9 @@ export const mapState = actionMatches => mapper =>
     }
     return ctx
   }
+)
 
-export const mapPayload = actionMatches => mapper =>
+export const mapPayload = actionMatches => mapper => (
   // middleware signature
   (/* key */) => (/* prefix */) => (/* name */) => (/* defaultData */) => (ctx) => {
     const { payload, type } = ctx.action
@@ -29,3 +32,4 @@ export const mapPayload = actionMatches => mapper =>
     }
     return ctx
   }
+)

@@ -48,7 +48,7 @@ const remove = (key, state, payload) => {
 
 const defaultState = (key, defaultData) => (defaultData !== undefined ? set(key, initState, defaultData) : initState)
 
-const reducer = key => prefix => name => defaultData =>
+const reducer = key => prefix => name => defaultData => (
   (state = defaultState(key, defaultData), { type, payload } = {}) => {
     switch (type) {
       case SET(prefix)(name): return set(key, state, payload)
@@ -60,6 +60,7 @@ const reducer = key => prefix => name => defaultData =>
       default: return state
     }
   }
+)
 
 export default key => prefix => name => defaultData => (ctx = {}) => ({
   ...ctx,
