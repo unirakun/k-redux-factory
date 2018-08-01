@@ -1,4 +1,4 @@
-export default middlewares => key => prefix => name => defaultData =>
+export default middlewares => key => prefix => name => defaultData => (
   (state, { type = 'UNKNOWN', payload } = {}) => {
     let prevCtx = { state, action: { type, payload } }
 
@@ -23,3 +23,4 @@ export default middlewares => key => prefix => name => defaultData =>
     // returns last results to Redux
     return prevCtx.state
   }
+)
