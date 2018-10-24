@@ -1,16 +1,16 @@
 # Migrating Guide
 ## From 5.X.X to 6.0.0
 ### Deprecated
- - `simpleObject` factory is deprecated. [You can now use `simple`(s) factories](./TYPES.md), they are:
+ - `simpleObject` factory is deprecated. [You can now use `simple` factories](./TYPES.md):
     * `simple.object`
     * `simple.string`
     * `simple.bool`
     * `simple.array`
 
 ### Breaking changes
- - `replace` action is removed, you can use `add` action
+ - `replace` action is removed, use `add` action
  - `orderBy` action is removed
-    * You can wrote [your own with a middleware](./README.md#example-we-create-a-middleware-but-we-modify-action-and-state-)
+    * You can write [your own with a middleware](./README.md#example-we-create-a-middleware-but-we-modify-action-and-state-)
     * You can use [k-ramel](https://github.com/alakarteio/k-ramel) to handle your logical code and use `k-redux-factory` for the key/value store only
     * You can use [redux-saga](https://github.com/redux-saga/redux-saga) to handle your logical code and use `k-redux-factory` for the key/value store only
  - `factory` export is not the default one
