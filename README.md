@@ -13,7 +13,7 @@ Hey ! If you come from an early version of `k-redux-factory` and want to upgrade
  - [Purpose](#purpose)
  - [Why ?](#why)
  - [Installation](#installation)
- - [Documentation](#api)
+ - [Documentation](#documentation)
  - [API](./TYPES.md)
 
 ## Purpose
