@@ -1,2 +1,5 @@
 src
 .circleci
+**.log
+**.spec.js
+yarn.lock
