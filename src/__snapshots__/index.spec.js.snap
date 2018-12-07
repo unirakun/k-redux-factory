@@ -24,6 +24,21 @@ Object {
 }
 `;
 
+exports[`index default data should use default data (array) in keyValue 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "name": "first",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
 exports[`index extended selectors should extends get selector on simple 1`] = `"DATA"`;
 
 exports[`index extended selectors should extends isInitialized selector on simple 1`] = `true`;

@@ -201,5 +201,13 @@ describe('index', () => {
         string: simple.string({ name: 'string', defaultData: 'string' })(),
       }).toMatchSnapshot()
     })
+
+    it('should use default data (array) in keyValue', () => {
+      const options = {
+        name: 'keyValue-name',
+        defaultData: [{ id: 1, name: 'first' }],
+      }
+      expect(keyValue(options)()).toMatchSnapshot()
+    })
   })
 })
