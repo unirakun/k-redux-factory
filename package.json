@@ -7,7 +7,7 @@
   "repository": "https://github.com/alakarteio/k-redux-factory",
   "bugs": "https://github.com/alakarteio/k-redux-factory/issues",
   "scripts": {
-    "lint:js": "eslint --ext js,jsx src",
+    "lint:js": "eslint --cache . --ext js,jsx --ignore-pattern dist/ --ignore-pattern coverage/ --ignore-pattern node_modules/ --ignore-pattern helpers/",
     "lint": "npm-run-all --parallel lint:*",
     "cmd:build": "microbundle --external all --sourcemap false -f es,cjs -i ",
     "build:core": "yarn cmd:build src/index.js",
@@ -41,6 +41,10 @@
     "npm-run-all": "4.1.5"
   },
   "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     }
