@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index action type factories should export action type factories 1`] = `"@@krf/SET>A SIMPLE"`;
+exports[`src/index action type factories should export action type factories 1`] = `"@@krf/SET>A SIMPLE"`;
 
-exports[`index default data should have default inner data 1`] = `
+exports[`src/index default data should have default inner data 1`] = `
 Object {
   "array": Array [],
   "bool": false,
@@ -11,7 +11,7 @@ Object {
 }
 `;
 
-exports[`index default data should override inner default data 1`] = `
+exports[`src/index default data should override inner default data 1`] = `
 Object {
   "array": Array [
     "default",
@@ -24,7 +24,7 @@ Object {
 }
 `;
 
-exports[`index default data should use default data (array) in keyValue 1`] = `
+exports[`src/index default data should use default data (array) in keyValue 1`] = `
 Object {
   "data": Array [
     Array [
@@ -39,57 +39,57 @@ Object {
 }
 `;
 
-exports[`index extended selectors should extends get selector on simple 1`] = `"DATA"`;
+exports[`src/index extended selectors should extends get selector on simple 1`] = `"DATA"`;
 
-exports[`index extended selectors should extends isInitialized selector on simple 1`] = `true`;
+exports[`src/index extended selectors should extends isInitialized selector on simple 1`] = `true`;
 
-exports[`index named factory should instanciate a keyValue reducer (default) 1`] = `"keyValue"`;
+exports[`src/index named factory should instanciate a keyValue reducer (default) 1`] = `"keyValue"`;
 
-exports[`index named factory should instanciate a keyValue reducer (specified) 1`] = `"keyValue"`;
+exports[`src/index named factory should instanciate a keyValue reducer (specified) 1`] = `"keyValue"`;
 
-exports[`index named factory should instanciate a simple reducer 1`] = `"simple"`;
+exports[`src/index named factory should instanciate a simple reducer 1`] = `"simple"`;
 
-exports[`index suffix of simple factory should make a simple array init to empty 1`] = `Array []`;
+exports[`src/index suffix of simple factory should make a simple array init to empty 1`] = `Array []`;
 
-exports[`index suffix of simple factory should make a simple array init to empty 2`] = `Array []`;
+exports[`src/index suffix of simple factory should make a simple array init to empty 2`] = `Array []`;
 
-exports[`index suffix of simple factory should make a simple array init to empty 3`] = `Array []`;
+exports[`src/index suffix of simple factory should make a simple array init to empty 3`] = `Array []`;
 
-exports[`index suffix of simple factory should make a simple boolean init to false 1`] = `false`;
+exports[`src/index suffix of simple factory should make a simple boolean init to false 1`] = `false`;
 
-exports[`index suffix of simple factory should make a simple boolean init to false 2`] = `false`;
+exports[`src/index suffix of simple factory should make a simple boolean init to false 2`] = `false`;
 
-exports[`index suffix of simple factory should make a simple boolean init to false 3`] = `false`;
+exports[`src/index suffix of simple factory should make a simple boolean init to false 3`] = `false`;
 
-exports[`index suffix of simple factory should make a simple object init to empty 1`] = `Object {}`;
+exports[`src/index suffix of simple factory should make a simple object init to empty 1`] = `Object {}`;
 
-exports[`index suffix of simple factory should make a simple object init to empty 2`] = `Object {}`;
+exports[`src/index suffix of simple factory should make a simple object init to empty 2`] = `Object {}`;
 
-exports[`index suffix of simple factory should make a simple object init to empty 3`] = `Object {}`;
+exports[`src/index suffix of simple factory should make a simple object init to empty 3`] = `Object {}`;
 
-exports[`index suffix of simple factory should make a simple object init to empty 4`] = `Object {}`;
+exports[`src/index suffix of simple factory should make a simple object init to empty 4`] = `Object {}`;
 
-exports[`index suffix of simple factory should make a simple object init to empty when subtype is unknow 1`] = `Object {}`;
+exports[`src/index suffix of simple factory should make a simple object init to empty when subtype is unknow 1`] = `Object {}`;
 
-exports[`index suffix of simple factory should make a simple string init to blank 1`] = `""`;
+exports[`src/index suffix of simple factory should make a simple string init to blank 1`] = `""`;
 
-exports[`index suffix of simple factory should make a simple string init to blank 2`] = `""`;
+exports[`src/index suffix of simple factory should make a simple string init to blank 2`] = `""`;
 
-exports[`index suffix of simple factory should make a simple string init to blank 3`] = `""`;
+exports[`src/index suffix of simple factory should make a simple string init to blank 3`] = `""`;
 
-exports[`index suffix of simpleObject factory should make a simple object init to empty 1`] = `Object {}`;
+exports[`src/index suffix of simpleObject factory should make a simple object init to empty 1`] = `Object {}`;
 
-exports[`index suffix of simpleObject factory should make a simple string init to blank 1`] = `""`;
+exports[`src/index suffix of simpleObject factory should make a simple string init to blank 1`] = `""`;
 
-exports[`index type validation should be on error [not a middleware object, nor an option object] 1`] = `[Error: parameter is not a middleware configuration, nor a factory option object.]`;
+exports[`src/index type validation should be on error [not a middleware object, nor an option object] 1`] = `[Error: parameter is not a middleware configuration, nor a factory option object.]`;
 
-exports[`index type validation should be on error [undefined] 1`] = `[Error: parameter is not a middleware configuration, nor a factory option object.]`;
+exports[`src/index type validation should be on error [undefined] 1`] = `[Error: parameter is not a middleware configuration, nor a factory option object.]`;
 
-exports[`index type validation should instanciate a reducer (options as object) 1`] = `"keyValue"`;
+exports[`src/index type validation should instanciate a reducer (options as object) 1`] = `"keyValue"`;
 
-exports[`index type validation should instanciate a reducer (options as string -name-) 1`] = `"keyValue"`;
+exports[`src/index type validation should instanciate a reducer (options as string -name-) 1`] = `"keyValue"`;
 
-exports[`index with middleware should prefix actions 1`] = `
+exports[`src/index with middleware should prefix actions 1`] = `
 Object {
   "payload": Object {
     "id": 2,
@@ -99,7 +99,7 @@ Object {
 }
 `;
 
-exports[`index with middleware should prefix reducer 1`] = `
+exports[`src/index with middleware should prefix reducer 1`] = `
 Object {
   "data": Array [
     Array [
@@ -190,7 +190,7 @@ Object {
 }
 `;
 
-exports[`index with middleware should prefix selectors 1`] = `
+exports[`src/index with middleware should prefix selectors 1`] = `
 Object {
   "1": Object {
     "id": 1,
@@ -207,7 +207,7 @@ Object {
 }
 `;
 
-exports[`index with name and empty prefix should prefix actions 1`] = `
+exports[`src/index with name and empty prefix should prefix actions 1`] = `
 Object {
   "payload": Object {
     "id": 2,
@@ -217,7 +217,7 @@ Object {
 }
 `;
 
-exports[`index with name and empty prefix should prefix reducer 1`] = `
+exports[`src/index with name and empty prefix should prefix reducer 1`] = `
 Object {
   "data": Array [
     Array [
@@ -239,7 +239,7 @@ Object {
 }
 `;
 
-exports[`index with name and empty prefix should prefix selectors 1`] = `
+exports[`src/index with name and empty prefix should prefix selectors 1`] = `
 Object {
   "1": Object {
     "id": 1,
@@ -256,14 +256,14 @@ Object {
 }
 `;
 
-exports[`index with name and key should use custom key 1`] = `
+exports[`src/index with name and key should use custom key 1`] = `
 Array [
   "information 7",
   "information 11",
 ]
 `;
 
-exports[`index with name and prefix should prefix actions 1`] = `
+exports[`src/index with name and prefix should prefix actions 1`] = `
 Object {
   "payload": Object {
     "id": 2,
@@ -273,7 +273,7 @@ Object {
 }
 `;
 
-exports[`index with name and prefix should prefix reducer 1`] = `
+exports[`src/index with name and prefix should prefix reducer 1`] = `
 Object {
   "data": Array [
     Array [
@@ -295,7 +295,7 @@ Object {
 }
 `;
 
-exports[`index with name and prefix should prefix selectors 1`] = `
+exports[`src/index with name and prefix should prefix selectors 1`] = `
 Object {
   "1": Object {
     "id": 1,
@@ -312,7 +312,7 @@ Object {
 }
 `;
 
-exports[`index with path should prefix actions 1`] = `
+exports[`src/index with path should prefix actions 1`] = `
 Object {
   "payload": Object {
     "id": 2,
@@ -322,7 +322,7 @@ Object {
 }
 `;
 
-exports[`index with path should prefix reducer 1`] = `
+exports[`src/index with path should prefix reducer 1`] = `
 Object {
   "data": Array [
     Array [
@@ -344,7 +344,7 @@ Object {
 }
 `;
 
-exports[`index with path should prefix selectors 1`] = `
+exports[`src/index with path should prefix selectors 1`] = `
 Object {
   "1": Object {
     "id": 1,
@@ -361,7 +361,7 @@ Object {
 }
 `;
 
-exports[`index without path should prefix actions 1`] = `
+exports[`src/index without path should prefix actions 1`] = `
 Object {
   "payload": Object {
     "id": 2,
@@ -371,7 +371,7 @@ Object {
 }
 `;
 
-exports[`index without path should prefix reducer 1`] = `
+exports[`src/index without path should prefix reducer 1`] = `
 Object {
   "data": Array [
     Array [
@@ -393,7 +393,7 @@ Object {
 }
 `;
 
-exports[`index without path should prefix selectors 1`] = `
+exports[`src/index without path should prefix selectors 1`] = `
 Object {
   "1": Object {
     "id": 1,

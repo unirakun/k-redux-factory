@@ -1,0 +1,821 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cjs version action type factories should export action type factories 1`] = `"@@krf/SET>A SIMPLE"`;
+
+exports[`cjs version default data should have default inner data 1`] = `
+Object {
+  "array": Array [],
+  "bool": false,
+  "object": Object {},
+  "string": "",
+}
+`;
+
+exports[`cjs version default data should override inner default data 1`] = `
+Object {
+  "array": Array [
+    "default",
+  ],
+  "bool": true,
+  "object": Object {
+    "object": true,
+  },
+  "string": "string",
+}
+`;
+
+exports[`cjs version default data should use default data (array) in keyValue 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "name": "first",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
+exports[`cjs version extended selectors should extends get selector on simple 1`] = `"DATA"`;
+
+exports[`cjs version extended selectors should extends isInitialized selector on simple 1`] = `true`;
+
+exports[`cjs version named factory should instanciate a keyValue reducer (default) 1`] = `"keyValue"`;
+
+exports[`cjs version named factory should instanciate a keyValue reducer (specified) 1`] = `"keyValue"`;
+
+exports[`cjs version named factory should instanciate a simple reducer 1`] = `"simple"`;
+
+exports[`cjs version suffix of simple factory should make a simple array init to empty 1`] = `Array []`;
+
+exports[`cjs version suffix of simple factory should make a simple array init to empty 2`] = `Array []`;
+
+exports[`cjs version suffix of simple factory should make a simple array init to empty 3`] = `Array []`;
+
+exports[`cjs version suffix of simple factory should make a simple boolean init to false 1`] = `false`;
+
+exports[`cjs version suffix of simple factory should make a simple boolean init to false 2`] = `false`;
+
+exports[`cjs version suffix of simple factory should make a simple boolean init to false 3`] = `false`;
+
+exports[`cjs version suffix of simple factory should make a simple object init to empty 1`] = `Object {}`;
+
+exports[`cjs version suffix of simple factory should make a simple object init to empty 2`] = `Object {}`;
+
+exports[`cjs version suffix of simple factory should make a simple object init to empty 3`] = `Object {}`;
+
+exports[`cjs version suffix of simple factory should make a simple object init to empty 4`] = `Object {}`;
+
+exports[`cjs version suffix of simple factory should make a simple object init to empty when subtype is unknow 1`] = `Object {}`;
+
+exports[`cjs version suffix of simple factory should make a simple string init to blank 1`] = `""`;
+
+exports[`cjs version suffix of simple factory should make a simple string init to blank 2`] = `""`;
+
+exports[`cjs version suffix of simple factory should make a simple string init to blank 3`] = `""`;
+
+exports[`cjs version suffix of simpleObject factory should make a simple object init to empty 1`] = `Object {}`;
+
+exports[`cjs version suffix of simpleObject factory should make a simple string init to blank 1`] = `""`;
+
+exports[`cjs version type validation should be on error [not a middleware object, nor an option object] 1`] = `[Error: parameter is not a middleware configuration, nor a factory option object.]`;
+
+exports[`cjs version type validation should be on error [undefined] 1`] = `[Error: parameter is not a middleware configuration, nor a factory option object.]`;
+
+exports[`cjs version type validation should instanciate a reducer (options as object) 1`] = `"keyValue"`;
+
+exports[`cjs version type validation should instanciate a reducer (options as string -name-) 1`] = `"keyValue"`;
+
+exports[`cjs version with middleware should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@@krf/ADD>TODOS",
+}
+`;
+
+exports[`cjs version with middleware should prefix reducer 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "some": "information 1",
+      },
+    ],
+    Array [
+      2,
+      Object {
+        "id": 2,
+        "some": "information 2",
+      },
+    ],
+  ],
+  "defaultData": undefined,
+  "initialized": true,
+  "key": "id",
+  "name": "todos",
+  "post1": true,
+  "pre1": true,
+  "prefix": "",
+  "prevCtx": Object {
+    "action": Object {
+      "payload": 20,
+      "pre1": true,
+      "type": "@@krf/REMOVE>TODOS",
+    },
+    "state": Object {
+      "data": Array [
+        Array [
+          1,
+          Object {
+            "id": 1,
+            "some": "information 1",
+          },
+        ],
+        Array [
+          2,
+          Object {
+            "id": 2,
+            "some": "information 2",
+          },
+        ],
+      ],
+      "defaultData": undefined,
+      "initialized": true,
+      "key": "id",
+      "name": "todos",
+      "pre1": true,
+      "prefix": "",
+      "prevCtx": Object {
+        "action": Object {
+          "payload": 20,
+          "type": "@@krf/REMOVE>TODOS",
+        },
+        "state": Object {
+          "data": Array [
+            Array [
+              1,
+              Object {
+                "id": 1,
+                "some": "information 1",
+              },
+            ],
+            Array [
+              20,
+              Object {
+                "id": 20,
+                "some": "information 20",
+              },
+            ],
+            Array [
+              2,
+              Object {
+                "id": 2,
+                "some": "information 2",
+              },
+            ],
+          ],
+          "initialized": true,
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`cjs version with middleware should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`cjs version with name and empty prefix should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@@krf/ADD>TODOS",
+}
+`;
+
+exports[`cjs version with name and empty prefix should prefix reducer 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "some": "information 1",
+      },
+    ],
+    Array [
+      2,
+      Object {
+        "id": 2,
+        "some": "information 2",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
+exports[`cjs version with name and empty prefix should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`cjs version with name and key should use custom key 1`] = `
+Array [
+  "information 7",
+  "information 11",
+]
+`;
+
+exports[`cjs version with name and prefix should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@@krf/ADD>UI>TODOS",
+}
+`;
+
+exports[`cjs version with name and prefix should prefix reducer 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "some": "information 1",
+      },
+    ],
+    Array [
+      2,
+      Object {
+        "id": 2,
+        "some": "information 2",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
+exports[`cjs version with name and prefix should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`cjs version with path should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@@krf/ADD>TODOS",
+}
+`;
+
+exports[`cjs version with path should prefix reducer 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "some": "information 1",
+      },
+    ],
+    Array [
+      2,
+      Object {
+        "id": 2,
+        "some": "information 2",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
+exports[`cjs version with path should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`cjs version without path should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@@krf/ADD>TODOS",
+}
+`;
+
+exports[`cjs version without path should prefix reducer 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "some": "information 1",
+      },
+    ],
+    Array [
+      2,
+      Object {
+        "id": 2,
+        "some": "information 2",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
+exports[`cjs version without path should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`es version action type factories should export action type factories 1`] = `"@@krf/SET>A SIMPLE"`;
+
+exports[`es version default data should have default inner data 1`] = `
+Object {
+  "array": Array [],
+  "bool": false,
+  "object": Object {},
+  "string": "",
+}
+`;
+
+exports[`es version default data should override inner default data 1`] = `
+Object {
+  "array": Array [
+    "default",
+  ],
+  "bool": true,
+  "object": Object {
+    "object": true,
+  },
+  "string": "string",
+}
+`;
+
+exports[`es version default data should use default data (array) in keyValue 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "name": "first",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
+exports[`es version extended selectors should extends get selector on simple 1`] = `"DATA"`;
+
+exports[`es version extended selectors should extends isInitialized selector on simple 1`] = `true`;
+
+exports[`es version named factory should instanciate a keyValue reducer (default) 1`] = `"keyValue"`;
+
+exports[`es version named factory should instanciate a keyValue reducer (specified) 1`] = `"keyValue"`;
+
+exports[`es version named factory should instanciate a simple reducer 1`] = `"simple"`;
+
+exports[`es version suffix of simple factory should make a simple array init to empty 1`] = `Array []`;
+
+exports[`es version suffix of simple factory should make a simple array init to empty 2`] = `Array []`;
+
+exports[`es version suffix of simple factory should make a simple array init to empty 3`] = `Array []`;
+
+exports[`es version suffix of simple factory should make a simple boolean init to false 1`] = `false`;
+
+exports[`es version suffix of simple factory should make a simple boolean init to false 2`] = `false`;
+
+exports[`es version suffix of simple factory should make a simple boolean init to false 3`] = `false`;
+
+exports[`es version suffix of simple factory should make a simple object init to empty 1`] = `Object {}`;
+
+exports[`es version suffix of simple factory should make a simple object init to empty 2`] = `Object {}`;
+
+exports[`es version suffix of simple factory should make a simple object init to empty 3`] = `Object {}`;
+
+exports[`es version suffix of simple factory should make a simple object init to empty 4`] = `Object {}`;
+
+exports[`es version suffix of simple factory should make a simple object init to empty when subtype is unknow 1`] = `Object {}`;
+
+exports[`es version suffix of simple factory should make a simple string init to blank 1`] = `""`;
+
+exports[`es version suffix of simple factory should make a simple string init to blank 2`] = `""`;
+
+exports[`es version suffix of simple factory should make a simple string init to blank 3`] = `""`;
+
+exports[`es version suffix of simpleObject factory should make a simple object init to empty 1`] = `Object {}`;
+
+exports[`es version suffix of simpleObject factory should make a simple string init to blank 1`] = `""`;
+
+exports[`es version type validation should be on error [not a middleware object, nor an option object] 1`] = `[Error: parameter is not a middleware configuration, nor a factory option object.]`;
+
+exports[`es version type validation should be on error [undefined] 1`] = `[Error: parameter is not a middleware configuration, nor a factory option object.]`;
+
+exports[`es version type validation should instanciate a reducer (options as object) 1`] = `"keyValue"`;
+
+exports[`es version type validation should instanciate a reducer (options as string -name-) 1`] = `"keyValue"`;
+
+exports[`es version with middleware should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@@krf/ADD>TODOS",
+}
+`;
+
+exports[`es version with middleware should prefix reducer 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "some": "information 1",
+      },
+    ],
+    Array [
+      2,
+      Object {
+        "id": 2,
+        "some": "information 2",
+      },
+    ],
+  ],
+  "defaultData": undefined,
+  "initialized": true,
+  "key": "id",
+  "name": "todos",
+  "post1": true,
+  "pre1": true,
+  "prefix": "",
+  "prevCtx": Object {
+    "action": Object {
+      "payload": 20,
+      "pre1": true,
+      "type": "@@krf/REMOVE>TODOS",
+    },
+    "state": Object {
+      "data": Array [
+        Array [
+          1,
+          Object {
+            "id": 1,
+            "some": "information 1",
+          },
+        ],
+        Array [
+          2,
+          Object {
+            "id": 2,
+            "some": "information 2",
+          },
+        ],
+      ],
+      "defaultData": undefined,
+      "initialized": true,
+      "key": "id",
+      "name": "todos",
+      "pre1": true,
+      "prefix": "",
+      "prevCtx": Object {
+        "action": Object {
+          "payload": 20,
+          "type": "@@krf/REMOVE>TODOS",
+        },
+        "state": Object {
+          "data": Array [
+            Array [
+              1,
+              Object {
+                "id": 1,
+                "some": "information 1",
+              },
+            ],
+            Array [
+              20,
+              Object {
+                "id": 20,
+                "some": "information 20",
+              },
+            ],
+            Array [
+              2,
+              Object {
+                "id": 2,
+                "some": "information 2",
+              },
+            ],
+          ],
+          "initialized": true,
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`es version with middleware should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`es version with name and empty prefix should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@@krf/ADD>TODOS",
+}
+`;
+
+exports[`es version with name and empty prefix should prefix reducer 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "some": "information 1",
+      },
+    ],
+    Array [
+      2,
+      Object {
+        "id": 2,
+        "some": "information 2",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
+exports[`es version with name and empty prefix should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`es version with name and key should use custom key 1`] = `
+Array [
+  "information 7",
+  "information 11",
+]
+`;
+
+exports[`es version with name and prefix should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@@krf/ADD>UI>TODOS",
+}
+`;
+
+exports[`es version with name and prefix should prefix reducer 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "some": "information 1",
+      },
+    ],
+    Array [
+      2,
+      Object {
+        "id": 2,
+        "some": "information 2",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
+exports[`es version with name and prefix should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`es version with path should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@@krf/ADD>TODOS",
+}
+`;
+
+exports[`es version with path should prefix reducer 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "some": "information 1",
+      },
+    ],
+    Array [
+      2,
+      Object {
+        "id": 2,
+        "some": "information 2",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
+exports[`es version with path should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
+
+exports[`es version without path should prefix actions 1`] = `
+Object {
+  "payload": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "type": "@@krf/ADD>TODOS",
+}
+`;
+
+exports[`es version without path should prefix reducer 1`] = `
+Object {
+  "data": Array [
+    Array [
+      1,
+      Object {
+        "id": 1,
+        "some": "information 1",
+      },
+    ],
+    Array [
+      2,
+      Object {
+        "id": 2,
+        "some": "information 2",
+      },
+    ],
+  ],
+  "initialized": true,
+}
+`;
+
+exports[`es version without path should prefix selectors 1`] = `
+Object {
+  "1": Object {
+    "id": 1,
+    "some": "information 1",
+  },
+  "2": Object {
+    "id": 2,
+    "some": "information 2",
+  },
+  "20": Object {
+    "id": 20,
+    "some": "information 20",
+  },
+}
+`;
