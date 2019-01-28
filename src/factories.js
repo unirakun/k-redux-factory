@@ -49,7 +49,7 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
     ...Object.keys(typeConfig.actions).map(k => ({ [k]: typeConfig.actions[k](prefix)(name) })),
 
     // selectors
-    typeConfig.selectors(innerOptions),
+    typeConfig.selectors({ ...innerOptions, defaultData: defaultData || innerDefaultData }),
   )
 
   return result
