@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`factories should use options of object type 1`] = `
+Object {
+  "defaultData": Object {},
+  "key": "id",
+  "name": "object",
+  "prefix": "",
+  "type": "simple.object",
+}
+`;
+
+exports[`factories should use options of specific array type 1`] = `
+Object {
+  "defaultData": Array [],
+  "key": "id",
+  "name": "array",
+  "prefix": "",
+  "type": "simple.array",
+}
+`;
+
+exports[`factories should use options of specific boolean type 1`] = `
+Object {
+  "defaultData": false,
+  "key": "id",
+  "name": "boolean",
+  "prefix": "",
+  "type": "simple.bool",
+}
+`;
+
+exports[`factories should use options of specific keyValue type 1`] = `
+Object {
+  "key": "id",
+  "name": "keyValue",
+  "prefix": "",
+  "type": "keyValue",
+}
+`;
+
+exports[`factories should use options of specific string type 1`] = `
+Object {
+  "defaultData": "",
+  "key": "id",
+  "name": "string",
+  "prefix": "",
+  "type": "simple.string",
+}
+`;
+
+exports[`factories should use overwrited options of object type 1`] = `
+Object {
+  "defaultData": Object {
+    "o": "test",
+  },
+  "key": "id",
+  "name": "object",
+  "prefix": "",
+  "type": "simple.object",
+}
+`;
+
+exports[`factories should use overwrited options of specific array type 1`] = `
+Object {
+  "defaultData": Array [
+    "test",
+    1,
+    2,
+  ],
+  "key": "id",
+  "name": "array",
+  "prefix": "",
+  "type": "simple.array",
+}
+`;
+
+exports[`factories should use overwrited options of specific boolean type 1`] = `
+Object {
+  "defaultData": true,
+  "key": "id",
+  "name": "boolean",
+  "prefix": "",
+  "type": "simple.bool",
+}
+`;
+
+exports[`factories should use overwrited options of specific keyValue type 1`] = `
+Object {
+  "defaultData": Array [
+    Object {
+      "id": 1,
+      "value": "test1",
+    },
+    Object {
+      "id": 2,
+      "value": "test2",
+    },
+  ],
+  "key": "id",
+  "name": "string",
+  "prefix": "",
+  "type": "keyValue",
+}
+`;
+
+exports[`factories should use overwrited options of specific string type 1`] = `
+Object {
+  "defaultData": "test",
+  "key": "id",
+  "name": "string",
+  "prefix": "",
+  "type": "simple.string",
+}
+`;

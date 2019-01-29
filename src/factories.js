@@ -34,17 +34,15 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
   // get default data
   // - default is the given one
   // - if there is no given one we try to retrieve the one associated with the type (simple.<type>)
-  let innerDefaultData = defaultData
-  if (innerDefaultData === undefined && subType) {
-    innerDefaultData = simpleDefaultData[subType]
-    innerOptions.defaultData = innerDefaultData
+  if (defaultData === undefined && subType) {
+    innerOptions.defaultData = simpleDefaultData[subType]
   }
 
   const result = Object.assign(
-    reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(prefix)(name)(innerDefaultData),
+    reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(prefix)(name)(innerOptions.defaultData),
 
-    // type (debug purpose)
-    { krfType: type },
+    // options (debug purpose)
+    { krfType: type, options: innerOptions },
 
     // actions
     ...Object.keys(typeConfig.actions).map(k => ({ [k]: typeConfig.actions[k](prefix)(name) })),
