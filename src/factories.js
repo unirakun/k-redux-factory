@@ -37,6 +37,7 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
   let innerDefaultData = defaultData
   if (innerDefaultData === undefined && subType) {
     innerDefaultData = simpleDefaultData[subType]
+    innerOptions.defaultData = innerDefaultData
   }
 
   const result = Object.assign(
@@ -49,7 +50,7 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
     ...Object.keys(typeConfig.actions).map(k => ({ [k]: typeConfig.actions[k](prefix)(name) })),
 
     // selectors
-    typeConfig.selectors({ ...innerOptions, defaultData: defaultData || innerDefaultData }),
+    typeConfig.selectors(innerOptions),
   )
 
   return result
