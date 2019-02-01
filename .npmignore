@@ -3,3 +3,8 @@ src
 **.log
 **.spec.js
 yarn.lock
+coverage
+.eslintcache
+babel.config.js
+**.snap
+misc/
