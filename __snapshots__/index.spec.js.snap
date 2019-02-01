@@ -39,6 +39,15 @@ Object {
 }
 `;
 
+exports[`cjs version default data should use default data on isInitialized selectors 1`] = `
+Map {
+  "bool" => false,
+  "array" => false,
+  "object" => false,
+  "string" => false,
+}
+`;
+
 exports[`cjs version extended selectors should extends get selector on simple 1`] = `"DATA"`;
 
 exports[`cjs version extended selectors should extends isInitialized selector on simple 1`] = `true`;
@@ -446,6 +455,15 @@ Object {
     ],
   ],
   "initialized": true,
+}
+`;
+
+exports[`es version default data should use default data on isInitialized selectors 1`] = `
+Map {
+  "bool" => false,
+  "array" => false,
+  "object" => false,
+  "string" => false,
 }
 `;
 
