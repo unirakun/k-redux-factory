@@ -209,6 +209,15 @@ export default (lib, description = 'index') => {
         }).toMatchSnapshot()
       })
 
+      it('should use default data on isInitialized selectors', () => {
+        const isInitialized = (name) => {
+          const reducer = simple[name]({ name })
+          return [name, reducer.isInitialized({ [name]: reducer() })]
+        }
+
+        expect(new Map(['bool', 'array', 'object', 'string'].map(isInitialized))).toMatchSnapshot()
+      })
+
       it('should use default data (array) in keyValue', () => {
         const options = {
           name: 'keyValue-name',

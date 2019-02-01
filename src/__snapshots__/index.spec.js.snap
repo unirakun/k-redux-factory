@@ -39,6 +39,15 @@ Object {
 }
 `;
 
+exports[`src/index default data should use default data on isInitialized selectors 1`] = `
+Map {
+  "bool" => false,
+  "array" => false,
+  "object" => false,
+  "string" => false,
+}
+`;
+
 exports[`src/index extended selectors should extends get selector on simple 1`] = `"DATA"`;
 
 exports[`src/index extended selectors should extends isInitialized selector on simple 1`] = `true`;
