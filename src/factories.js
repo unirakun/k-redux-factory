@@ -42,7 +42,7 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
     reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(prefix)(name)(innerOptions.defaultData),
 
     // options (debug purpose)
-    { krfType: type, options: innerOptions },
+    { krfType: type },
 
     // actions
     ...Object.keys(typeConfig.actions).map(k => ({ [k]: typeConfig.actions[k](prefix)(name) })),
