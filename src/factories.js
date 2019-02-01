@@ -41,7 +41,7 @@ const getWrappedStore = (middlewares = {}) => (options = {}) => {
   const result = Object.assign(
     reducer({ ...middlewares, engine: typeConfig.middlewares })(key)(prefix)(name)(innerOptions.defaultData),
 
-    // options (debug purpose)
+    // type (debug purpose)
     { krfType: type },
 
     // actions
