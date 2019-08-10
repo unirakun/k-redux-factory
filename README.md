@@ -3,8 +3,8 @@
 Factory of Redux reducers and their associated actions and selectors.
 > Make your Redux code base tinier and simpler to maintain
 
-[![CircleCI](https://circleci.com/gh/alakarteio/k-redux-factory.svg?style=shield)](https://circleci.com/gh/alakarteio/k-redux-factory) [![Coverage Status](https://coveralls.io/repos/github/alakarteio/k-redux-factory/badge.svg?branch=master)](https://coveralls.io/github/alakarteio/k-redux-factory?branch=master) [![NPM Version](https://badge.fury.io/js/k-redux-factory.svg)](https://www.npmjs.com/package/k-redux-factory)
-[![Size](http://img.badgesize.io/alakarteio/k-redux-factory/master/dist/index.js.svg)]() [![Greenkeeper badge](https://badges.greenkeeper.io/alakarteio/k-redux-factory.svg)](https://greenkeeper.io/)
+[![CircleCI](https://circleci.com/gh/unirakun/k-redux-factory.svg?style=shield)](https://circleci.com/gh/unirakun/k-redux-factory) [![Coverage Status](https://coveralls.io/repos/github/unirakun/k-redux-factory/badge.svg?branch=master)](https://coveralls.io/github/unirakun/k-redux-factory?branch=master) [![NPM Version](https://badge.fury.io/js/k-redux-factory.svg)](https://www.npmjs.com/package/k-redux-factory)
+[![Size](http://img.badgesize.io/unirakun/k-redux-factory/master/dist/index.js.svg)]() [![Greenkeeper badge](https://badges.greenkeeper.io/unirakun/k-redux-factory.svg)](https://greenkeeper.io/)
 
 ## Migrating
 Hey ! If you come from an early version of `k-redux-factory` and want to upgrade, [you can read this migration guide 💎](./MIGRATING.md)
@@ -304,10 +304,10 @@ const mapper = payload => payload.map(p => ({ ...p, id: `ID_${p.id}` }))
 export default factory({ pre: [mapPayload(/SET>TODOS/)(mapper)] })({ path: 'api.raw', name: 'todos' })
 ```
 
-# About ![alakarteio](http://alakarte.io/assets/img/logo.markdown.png)
-**alakarteio** is created by two passionate french developers.
+# About ![uni rakun](https://unirakun.fr)
+**uni rakun** is created by two passionate french developers.
 
-Do you want to contact them ? Go to their [website](http://alakarte.io)
+Do you want to contact them ? Go to their [website](https://unirakun.fr)
 
 <table border="0">
  <tr>
