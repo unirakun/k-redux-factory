@@ -12,7 +12,7 @@
     "cmd:build": "microbundle --external all --sourcemap false -f es,cjs -i ",
     "build:core": "yarn cmd:build src/index.js",
     "build:helper": "yarn cmd:build src/helpers.js -o helpers/index.js",
-    "build:copy-types": "cp typing/index.d.ts dist/index.d.ts",
+    "build:copy-types": "node typing/copy.js",
     "build": "npm-run-all --parallel build:*",
     "test": "jest",
     "coveralls": "jest --coverage --collectCoverageFrom=src/**/*.{js,jsx} && cat ./coverage/lcov.info | coveralls",
