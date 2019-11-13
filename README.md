@@ -304,7 +304,7 @@ const mapper = payload => payload.map(p => ({ ...p, id: `ID_${p.id}` }))
 export default factory({ pre: [mapPayload(/SET>TODOS/)(mapper)] })({ path: 'api.raw', name: 'todos' })
 ```
 
-# About ![uni rakun](https://unirakun.fr)
+# About [uni rakun](https://unirakun.fr)
 **uni rakun** is created by two passionate french developers.
 
 Do you want to contact them ? Go to their [website](https://unirakun.fr)
